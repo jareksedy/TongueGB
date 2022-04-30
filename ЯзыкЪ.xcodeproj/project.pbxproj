@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
+		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
 		CA8B608D2818D78300D7769B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608C2818D78300D7769B /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
+		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA06A836281CF0F60086BD0B /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
+				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		CA06A837281CF0FE0086BD0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CA06A836281CF0F60086BD0B /* LoginScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		CA8B607C2818D78300D7769B = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +80,7 @@
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 				CA8B608C2818D78300D7769B /* ViewController.swift */,
+				CA06A837281CF0FE0086BD0B /* Scenes */,
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
 				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
@@ -140,7 +162,9 @@
 			files = (
 				CA8B608D2818D78300D7769B /* ViewController.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
+				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
+				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
