@@ -21,6 +21,8 @@
 		CA1457CD281C0D9600856D6C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CA1457CC281C0D9600856D6C /* FirebaseStorage */; };
 		CA1457CF281C0D9600856D6C /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CA1457CE281C0D9600856D6C /* FirebaseStorageCombine-Community */; };
 		CA1457D1281C0D9600856D6C /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CA1457D0281C0D9600856D6C /* FirebaseStorageSwift-Beta */; };
+		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
+		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
 		CA8B608D2818D78300D7769B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608C2818D78300D7769B /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 		CA1457A0281BF9D500856D6C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CA1457A2281BF9DF00856D6C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		CA1457A5281BFD4800856D6C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
+		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,21 @@
 				CA1457A5281BFD4800856D6C /* GoogleService-Info.plist */,
 			);
 			path = Configuration;
+		CA06A836281CF0F60086BD0B /* LoginScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
+				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
+			);
+			path = LoginScene;
+			sourceTree = "<group>";
+		};
+		CA06A837281CF0FE0086BD0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CA06A836281CF0F60086BD0B /* LoginScene */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		CA8B607C2818D78300D7769B = {
@@ -111,6 +130,7 @@
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 				CA8B608C2818D78300D7769B /* ViewController.swift */,
+				CA06A837281CF0FE0086BD0B /* Scenes */,
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
 				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
@@ -217,9 +237,11 @@
 				CA8B608D2818D78300D7769B /* ViewController.swift in Sources */,
 				CA1457A1281BF9D500856D6C /* Card.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
+				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
 				CA8EE284281D2542002BCCEB /* FIrebaseAPI.swift in Sources */,
 				CA1457A3281BF9DF00856D6C /* Category.swift in Sources */,
+				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
