@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="674" y="197"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Card Scene View Controller-->
         <scene sceneID="uLR-tD-y9T">
             <objects>
-                <viewController storyboardIdentifier="AddCardScene" id="IER-PV-OGR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCardScene" id="IER-PV-OGR" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3p9-Rl-App">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,12 +106,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYH-Gq-Mvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="-493"/>
+            <point key="canvasLocation" x="2687" y="-508"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Scene View Controller-->
         <scene sceneID="fjr-z2-Xjp">
             <objects>
-                <viewController storyboardIdentifier="MainScene" id="EIP-Fk-IJT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainScene" id="EIP-Fk-IJT" customClass="MainSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Px1-fE-baJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,10 +148,10 @@
             </objects>
             <point key="canvasLocation" x="1484" y="197"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Scene View Controller-->
         <scene sceneID="ir3-x3-Qf5">
             <objects>
-                <viewController storyboardIdentifier="SearchScene" id="bPb-3I-GTr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchScene" id="bPb-3I-GTr" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YGs-88-2iw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,12 +166,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIa-Vx-W1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="151"/>
+            <point key="canvasLocation" x="2687" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Scene View Controller-->
         <scene sceneID="nJl-yr-MiE">
             <objects>
-                <viewController storyboardIdentifier="ProfileScene" id="juf-TK-y7j" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileScene" id="juf-TK-y7j" customClass="ProfileSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bdz-pP-aWB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
