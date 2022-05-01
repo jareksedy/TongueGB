@@ -22,8 +22,8 @@ class LoginSceneViewController: UIViewController {
     lazy var presenter = LoginScenePresenter()
     
     // MARK: - Properties
-    let greetingLabelText = "Добро пожаловать ✌️\nв приложение «ЯзыкЪ» 👅"
-    let greetingSubLabelText = "Удобный инструмент для изучения иностранных слов. Войдите в приложение со своим Apple ID"
+    let greetingLabelText = "Привет ✌️"
+    let greetingSubLabelText = "«ЯзыкЪ» 👅 приветствует тебя! «ЯзыкЪ» — это удобный инструмент для изучения иностранных слов."
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     let appVersionLabelText = "Версия"
     let loginButtonTitle = "Войти с Apple ID"
