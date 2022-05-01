@@ -10,10 +10,16 @@ import AuthenticationServices
 
 // MARK: - Protocol
 protocol LoginSceneViewDelegate: NSObjectProtocol {
+    func proceedToMainScene()
 }
 
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
+    func proceedToMainScene() {
+        let mainTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+        self.navigationController?.pushViewController(mainTabBarController, animated: true)
+    }
+    
 }
 
 // MARK: - Additional extensions
@@ -47,6 +53,7 @@ class LoginSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
+        proceedToMainScene()
     }
     
     // MARK: - Selectors
