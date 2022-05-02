@@ -19,7 +19,6 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let mainTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         self.navigationController?.pushViewController(mainTabBarController, animated: true)
     }
-    
 }
 
 // MARK: - Additional extensions
