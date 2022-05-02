@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="2687" y="-1169"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Yazyk Tab Bar Controller-->
         <scene sceneID="3qr-HM-cY1">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" id="0ik-c8-cev" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" id="0ik-c8-cev" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kUb-iI-c2H"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wmm-X7-BL0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
