@@ -132,10 +132,10 @@
         <!--Yazyk Tab Bar Controller-->
         <scene sceneID="3qr-HM-cY1">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" id="0ik-c8-cev" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="kUb-iI-c2H">
-                        <barButtonItem key="leftBarButtonItem" id="ryt-4S-e1d">
-                            <imageReference key="image" image="list.dash" catalog="system" symbolScale="medium"/>
+                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="0ik-c8-cev" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="kUb-iI-c2H">
+                        <barButtonItem key="rightBarButtonItem" id="pZy-rR-DGh">
+                            <imageReference key="image" image="list.triangle" catalog="system" symbolScale="medium"/>
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         </barButtonItem>
                     </navigationItem>
@@ -216,7 +216,7 @@
     </scenes>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="list.triangle" catalog="system" width="128" height="91"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

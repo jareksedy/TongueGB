@@ -25,7 +25,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Карточки"
+        self.tabBarController?.title = "Мои карточки"
     }
 
     // MARK: - Outlets
