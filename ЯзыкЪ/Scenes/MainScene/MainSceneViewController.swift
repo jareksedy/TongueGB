@@ -23,6 +23,10 @@ class MainSceneViewController: UIViewController {
     // MARK: - Methods
     private func setupUI() {
     }
+    
+    private func setupNavigationOptions() {
+        self.tabBarController?.title = "Карточки"
+    }
 
     // MARK: - Outlets
     
@@ -35,5 +39,10 @@ class MainSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationOptions()
     }
 }

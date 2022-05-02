@@ -23,6 +23,10 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Methods
     private func setupUI() {
     }
+    
+    private func setupNavigationOptions() {
+        self.tabBarController?.title = "Профиль"
+    }
 
     // MARK: - Outlets
     
@@ -35,5 +39,10 @@ class ProfileSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationOptions()
     }
 }
