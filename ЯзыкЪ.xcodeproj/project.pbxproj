@@ -23,6 +23,7 @@
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
 		CAE63EB6281F89710028A080 /* YazykTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE63EB5281F89710028A080 /* YazykTabBarController.swift */; };
+		CAE63EB9281F8CA90028A080 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE63EB8281F8CA90028A080 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAE63EB5281F89710028A080 /* YazykTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykTabBarController.swift; sourceTree = "<group>"; };
+		CAE63EB8281F8CA90028A080 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
+				CAE63EBA281F8CCD0028A080 /* Extensions */,
 				CAE63EB7281F89E20028A080 /* UIComponents */,
 				CA06A837281CF0FE0086BD0B /* Scenes */,
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
@@ -151,6 +154,14 @@
 				CAE63EB5281F89710028A080 /* YazykTabBarController.swift */,
 			);
 			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CAE63EBA281F8CCD0028A080 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CAE63EB8281F8CA90028A080 /* UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6E9A3A281E5477000F6F64 /* SearchScenePresenter.swift in Sources */,
+				CAE63EB9281F8CA90028A080 /* UIColor.swift in Sources */,
 				CA6E9A3F281E54A1000F6F64 /* ProfileScenePresenter.swift in Sources */,
 				CA6E9A3D281E5493000F6F64 /* ProfileSceneViewController.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
