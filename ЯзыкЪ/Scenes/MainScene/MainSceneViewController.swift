@@ -21,6 +21,10 @@ class MainSceneViewController: UIViewController {
     lazy var presenter = MainScenePresenter()
     
     // MARK: - Methods
+    private func createTestCards() -> [Card] {
+        return [Card(word: "Juggernaut", translation: "Джаггернаут", description: "[dʒəɡərˌnɔt]", category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Trifle", translation: "Трайфл", description: "[trʌɪfl]", category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Syllabub", translation: "Силлабаб", description: "[siləˌbəb]", category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Wanderlust", translation: "Вандерласт", description: "[wändərˌləst]", category: Category(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil), userEmail: "")]
+    }
+    
     private func setupUI() {
     }
     

@@ -24,6 +24,8 @@ struct Category {
 // -- remove his later <end> --
 
 class CardView: UIView {
+    var card: Card?
+    
     var wordLabel: UILabel?
     var descriptionLabel: UILabel?
     var categoryLabel: UILabel?
@@ -44,8 +46,16 @@ class CardView: UIView {
     func setupView() {
         self.backgroundColor = .systemPink
         self.layer.cornerRadius = 24.0
+        
+        wordLabel = UILabel()
+        wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+        wordLabel?.text = "Juggernaut"
+        addSubview(wordLabel!)
     }
     
     func setupConstraints() {
+        wordLabel?.translatesAutoresizingMaskIntoConstraints = false
+        wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
     }
 }
