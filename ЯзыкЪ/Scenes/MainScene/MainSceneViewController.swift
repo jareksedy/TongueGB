@@ -17,8 +17,11 @@ extension MainSceneViewController: MainSceneViewDelegate {
 
 // MARK: - Additional extensions
 // MARK: - View controller
-class MainSceneViewController: UIViewController {
+class MainSceneViewController: UIViewController, UIScrollViewDelegate {
     lazy var presenter = MainScenePresenter()
+    
+    // MARK: - Properties
+    var frame = CGRect.zero
     
     // MARK: - Methods
     private func createTestCards() -> [Card] {
@@ -26,13 +29,22 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupUI() {
+        let cards = createTestCards()
+        
+        for card in cards {
+            let cardView = CardView()
+            cardView.card = card
+            cardsStackView.addArrangedSubview(cardView)
+        }
     }
     
     private func setupNavigationOptions() {
         self.tabBarController?.title = "Мои карточки"
     }
-
+    
     // MARK: - Outlets
+    @IBOutlet var cardsScrollView: UIScrollView!
+    @IBOutlet var cardsStackView: UIStackView!
     
     // MARK: - Actions
     
@@ -48,5 +60,6 @@ class MainSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        
     }
 }

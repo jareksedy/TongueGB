@@ -31,6 +31,10 @@ class CardView: UIView {
     var categoryLabel: UILabel?
     var translationLabel: UILabel?
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 300, height: 0)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -44,12 +48,12 @@ class CardView: UIView {
     }
     
     func setupView() {
-        self.backgroundColor = .systemPink
+        self.backgroundColor = UIColor.random
         self.layer.cornerRadius = 24.0
         
         wordLabel = UILabel()
         wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-        wordLabel?.text = "Juggernaut"
+        wordLabel?.text = "Херъ"// card?.word
         addSubview(wordLabel!)
     }
     
