@@ -49,7 +49,7 @@ class CardView: UIView {
     
     func setupView() {
         self.backgroundColor = UIColor.random
-        self.layer.cornerRadius = 24.0
+        self.layer.cornerRadius = 18.0
         
         wordLabel = UILabel()
         wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
