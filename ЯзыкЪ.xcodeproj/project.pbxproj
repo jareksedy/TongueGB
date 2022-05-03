@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0313E32820F2EC001DF744 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0313E22820F2EC001DF744 /* CardView.swift */; };
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
 		CA6E9A2C281E519B000F6F64 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A2B281E519B000F6F64 /* MainSceneViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0313E22820F2EC001DF744 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
 		CA6E9A2B281E519B000F6F64 /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE63EB5281F89710028A080 /* YazykTabBarController.swift */,
+				CA0313E22820F2EC001DF744 /* CardView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				CAE63EB9281F8CA90028A080 /* UIColor.swift in Sources */,
 				CA6E9A3F281E54A1000F6F64 /* ProfileScenePresenter.swift in Sources */,
 				CA6E9A3D281E5493000F6F64 /* ProfileSceneViewController.swift in Sources */,
+				CA0313E32820F2EC001DF744 /* CardView.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
 				CA6E9A2C281E519B000F6F64 /* MainSceneViewController.swift in Sources */,
 				CA6E9A38281E546C000F6F64 /* SearchSceneViewController.swift in Sources */,
