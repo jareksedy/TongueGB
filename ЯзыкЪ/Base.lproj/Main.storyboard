@@ -119,9 +119,9 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-GJ-n7n">
                                 <rect key="frame" x="0.0" y="44" width="414" height="720"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
-                                        <edgeInsets key="layoutMargins" top="25" left="0.0" bottom="25" right="0.0"/>
+                                        <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
