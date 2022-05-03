@@ -24,7 +24,7 @@ struct Category {
 }
 // -- remove his later <end> --
 
-class CardView: UIView {
+class CardView: UIControl {
     var card: Card? {
         get {
             return Card(word: wordLabel?.text ?? "",
@@ -49,6 +49,21 @@ class CardView: UIView {
     private var categoryLabel: UILabel?
     private var translationLabel: UILabel?
     private var userEmail: String?
+    
+    lazy var tapDownAnimation = {
+        self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
+        self.layer.cornerRadius = 48.0
+    }
+    
+    lazy var tapUpAnimation = {
+        self.transform = .identity
+        self.layer.cornerRadius = 24.0
+    }
+    
+    let animationDuration = 0.10
+    let animationSpringDamping = 0.50
+    let animationSpringVelocity = 0.25
+    let animationOptions: AnimationOptions = [.allowUserInteraction]
     
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 300, height: 0)
@@ -82,6 +97,14 @@ class CardView: UIView {
         }
     }
     
+    @objc func tapDown() {
+        UIView.animate(withDuration: animationDuration, delay: 0, animations: tapDownAnimation)
+    }
+    
+    @objc func tapUp() {
+        UIView.transition(with: self, duration: 0.25, options: .transitionFlipFromRight, animations: tapUpAnimation)
+    }
+    
     func setupView() {
         self.backgroundColor = UIColor.random.withAlphaComponent(0.95)
         self.layer.cornerRadius = 24.0
@@ -104,6 +127,9 @@ class CardView: UIView {
         speakButton?.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
         speakButton?.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         addSubview(speakButton!)
+        
+        self.addTarget(self, action: #selector(tapDown), for: [.touchDown, .touchDragEnter])
+        self.addTarget(self, action: #selector(tapUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
     }
     
     func setupConstraints() {
