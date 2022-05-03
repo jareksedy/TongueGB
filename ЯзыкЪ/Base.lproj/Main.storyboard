@@ -121,6 +121,7 @@
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                        <edgeInsets key="layoutMargins" top="25" left="0.0" bottom="25" right="0.0"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
