@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 // -- remove this later <start> --
 struct Card {
@@ -66,12 +67,24 @@ class CardView: UIView {
     }
     
     @objc func speakButtonTapped() {
-        print("i speak \(card?.word ?? "")")
+        guard let wordToSpeak = card?.word else { return }
+        speakButton?.setImage(UIImage(systemName: "speaker.wave.3")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        
+        let utterance = AVSpeechUtterance(string: wordToSpeak)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
     }
     
     func setupView() {
-        self.backgroundColor = UIColor.random
-        self.layer.cornerRadius = 14.0
+        self.backgroundColor = UIColor.random.withAlphaComponent(0.95)
+        self.layer.cornerRadius = 24.0
         
         wordLabel = UILabel()
         wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
@@ -89,6 +102,7 @@ class CardView: UIView {
         speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
         speakButton?.tintColor = .label
         speakButton?.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
+        speakButton?.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         addSubview(speakButton!)
     }
     
