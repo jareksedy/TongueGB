@@ -52,12 +52,14 @@ class CardView: UIControl {
     
     lazy var tapDownAnimation = {
         self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
-        self.layer.cornerRadius = 48.0
+        self.layer.cornerRadius = 36.0
+        self.alpha = 0.90
     }
     
     lazy var tapUpAnimation = {
         self.transform = .identity
         self.layer.cornerRadius = 24.0
+        self.alpha = 1.0
     }
     
     let animationDuration = 0.10
@@ -66,7 +68,7 @@ class CardView: UIControl {
     let animationOptions: AnimationOptions = [.allowUserInteraction]
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 300, height: 0)
+        return CGSize(width: UIScreen.main.bounds.size.width * 0.85, height: 0)
     }
     
     override init(frame: CGRect) {
