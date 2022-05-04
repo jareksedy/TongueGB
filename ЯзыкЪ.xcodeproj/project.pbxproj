@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
-		CA862F5D28225840002AFB6A /* Firebasabale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasabale.swift */; };
+		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
 		CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F63282258EF002AFB6A /* CardsCategory.swift */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
-		CA862F5C28225840002AFB6A /* Firebasabale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasabale.swift; sourceTree = "<group>"; };
+		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CA862F63282258EF002AFB6A /* CardsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCategory.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		CA862F5B28225827002AFB6A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				CA862F5C28225840002AFB6A /* Firebasabale.swift */,
+				CA862F5C28225840002AFB6A /* Firebasable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
-				CA862F5D28225840002AFB6A /* Firebasabale.swift in Sources */,
+				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,

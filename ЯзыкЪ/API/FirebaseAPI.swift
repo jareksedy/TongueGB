@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FirebaseAPI: Firebasabale {
+class FirebaseAPI: Firebasable {
     func authFirebase(_ user: User) {
         //TODO: Need code
     }

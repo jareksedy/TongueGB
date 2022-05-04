@@ -1,5 +1,5 @@
 //
-//  Firebasabale.swift
+//  Firebasable.swift
 //  ЯзыкЪ
 //
 //  Created by Denis Kazarin on 04.05.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Firebasabale {
+protocol Firebasable {
     //MARK: - Auth FB funcs
        
        func authFirebase(_ user: User)
