@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
+		CA862F5D28225840002AFB6A /* Firebasabale.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasabale.swift */; };
+		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
+		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
+		CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F63282258EF002AFB6A /* CardsCategory.swift */; };
+		CA862F6728225992002AFB6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA862F6628225992002AFB6A /* GoogleService-Info.plist */; };
+		CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
 		CA8B608D2818D78300D7769B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608C2818D78300D7769B /* ViewController.swift */; };
@@ -20,6 +26,12 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
+		CA862F5C28225840002AFB6A /* Firebasabale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasabale.swift; sourceTree = "<group>"; };
+		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CA862F63282258EF002AFB6A /* CardsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCategory.swift; sourceTree = "<group>"; };
+		CA862F6628225992002AFB6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPI.swift; sourceTree = "<group>"; };
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,41 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		CA862F5B28225827002AFB6A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CA862F5C28225840002AFB6A /* Firebasabale.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CA862F5E28225878002AFB6A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA862F5F28225884002AFB6A /* User.swift */,
+				CA862F61282258BF002AFB6A /* Card.swift */,
+				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CA862F6528225969002AFB6A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B60962818D78500D7769B /* Info.plist */,
+				CA862F6628225992002AFB6A /* GoogleService-Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CA862F6828225AEB002AFB6A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		CA8B607C2818D78300D7769B = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +124,10 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
+				CA862F6828225AEB002AFB6A /* API */,
+				CA862F6528225969002AFB6A /* Configuration */,
+				CA862F5E28225878002AFB6A /* Models */,
+				CA862F5B28225827002AFB6A /* Protocols */,
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 				CA8B608C2818D78300D7769B /* ViewController.swift */,
@@ -84,7 +135,6 @@
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
 				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
-				CA8B60962818D78500D7769B /* Info.plist */,
 			);
 			path = "ЯзыкЪ";
 			sourceTree = "<group>";
@@ -148,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
+				CA862F6728225992002AFB6A /* GoogleService-Info.plist in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
 			);
@@ -163,8 +214,13 @@
 				CA8B608D2818D78300D7769B /* ViewController.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
+				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
+				CA862F5D28225840002AFB6A /* Firebasabale.swift in Sources */,
+				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
+				CA862F6028225884002AFB6A /* User.swift in Sources */,
+				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +367,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -341,9 +397,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
