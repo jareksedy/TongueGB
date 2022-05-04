@@ -56,7 +56,7 @@ class CardView: UIControl {
     
     lazy var tapDownAnimation = {
         self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
-        self.layer.cornerRadius = 36.0
+        self.layer.cornerRadius = 18.0
         self.alpha = self.cardAlphaTapped
     }
     
@@ -110,7 +110,11 @@ class CardView: UIControl {
     }
     
     @objc func tapUp() {
-        UIView.transition(with: self, duration: 0.25, options: .transitionFlipFromRight, animations: tapUpAnimation)
+        UIView.transition(with: self, duration: 0.275, options: .transitionFlipFromRight, animations: tapUpAnimation)
+    }
+    
+    @objc func tapUpCancelled() {
+        UIView.animate(withDuration: animationDuration, delay: 0, animations: tapUpAnimation)
     }
     
     func setupView() {
@@ -136,8 +140,9 @@ class CardView: UIControl {
         speakButton?.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         addSubview(speakButton!)
         
-        self.addTarget(self, action: #selector(tapDown), for: [.touchDown, .touchDragEnter])
-        self.addTarget(self, action: #selector(tapUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
+        self.addTarget(self, action: #selector(tapDown), for: [.touchDown])
+        self.addTarget(self, action: #selector(tapUp), for: [.touchUpInside])
+        self.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
     }
     
     func setupConstraints() {
