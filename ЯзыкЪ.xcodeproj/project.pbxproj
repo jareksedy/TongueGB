@@ -11,6 +11,7 @@
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
 		CA08223428217A280006F0B0 /* YazykNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08223328217A280006F0B0 /* YazykNavigationController.swift */; };
+		CA42BEB82822FE7900466960 /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42BEB72822FE7900466960 /* ScrollOverlayView.swift */; };
 		CA6E9A2C281E519B000F6F64 /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A2B281E519B000F6F64 /* MainSceneViewController.swift */; };
 		CA6E9A2E281E51A9000F6F64 /* MainScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A2D281E51A9000F6F64 /* MainScenePresenter.swift */; };
 		CA6E9A33281E51F2000F6F64 /* AddCardSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A32281E51F2000F6F64 /* AddCardSceneViewController.swift */; };
@@ -34,6 +35,7 @@
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
 		CA08223328217A280006F0B0 /* YazykNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykNavigationController.swift; sourceTree = "<group>"; };
+		CA42BEB72822FE7900466960 /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
 		CA6E9A2B281E519B000F6F64 /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
 		CA6E9A2D281E51A9000F6F64 /* MainScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScenePresenter.swift; sourceTree = "<group>"; };
 		CA6E9A32281E51F2000F6F64 /* AddCardSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSceneViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CAE63EB5281F89710028A080 /* YazykTabBarController.swift */,
+				CA42BEB72822FE7900466960 /* ScrollOverlayView.swift */,
 				CA08223328217A280006F0B0 /* YazykNavigationController.swift */,
 				CA0313E22820F2EC001DF744 /* CardView.swift */,
 			);
@@ -256,6 +259,7 @@
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA8521572822E024006B9A04 /* Configuration.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
+				CA42BEB82822FE7900466960 /* ScrollOverlayView.swift in Sources */,
 				CA6E9A35281E51FF000F6F64 /* AddCardScenePresenter.swift in Sources */,
 				CAE63EB6281F89710028A080 /* YazykTabBarController.swift in Sources */,
 				CA6E9A2E281E51A9000F6F64 /* MainScenePresenter.swift in Sources */,

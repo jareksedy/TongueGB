@@ -116,31 +116,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-GJ-n7n">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-di-SX3" customClass="ScrollOverlayView" customModule="ЯзыкЪ" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="720"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-GJ-n7n">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
-                                        <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
-                                    </stackView>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                                <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="width" secondItem="3kj-GJ-n7n" secondAttribute="width" priority="250" id="Thd-2t-g2B"/>
+                                            <constraint firstAttribute="bottom" secondItem="pVC-6O-vGL" secondAttribute="bottom" id="Z9t-GM-nnH"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="height" secondItem="3kj-GJ-n7n" secondAttribute="height" id="djv-Hf-knt"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="top" secondItem="3kj-GJ-n7n" secondAttribute="top" id="h5K-ft-Aag"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="leading" secondItem="3kj-GJ-n7n" secondAttribute="leading" id="n3v-QD-UZr"/>
+                                            <constraint firstAttribute="trailing" secondItem="pVC-6O-vGL" secondAttribute="trailing" id="qXe-Ws-D62"/>
+                                        </constraints>
+                                    </scrollView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="pVC-6O-vGL" firstAttribute="width" secondItem="3kj-GJ-n7n" secondAttribute="width" priority="250" id="Thd-2t-g2B"/>
-                                    <constraint firstAttribute="bottom" secondItem="pVC-6O-vGL" secondAttribute="bottom" id="Z9t-GM-nnH"/>
-                                    <constraint firstItem="pVC-6O-vGL" firstAttribute="height" secondItem="3kj-GJ-n7n" secondAttribute="height" id="djv-Hf-knt"/>
-                                    <constraint firstItem="pVC-6O-vGL" firstAttribute="top" secondItem="3kj-GJ-n7n" secondAttribute="top" id="h5K-ft-Aag"/>
-                                    <constraint firstItem="pVC-6O-vGL" firstAttribute="leading" secondItem="3kj-GJ-n7n" secondAttribute="leading" id="n3v-QD-UZr"/>
-                                    <constraint firstAttribute="trailing" secondItem="pVC-6O-vGL" secondAttribute="trailing" id="qXe-Ws-D62"/>
+                                    <constraint firstAttribute="trailing" secondItem="3kj-GJ-n7n" secondAttribute="trailing" id="BOn-kz-Bib"/>
+                                    <constraint firstItem="3kj-GJ-n7n" firstAttribute="leading" secondItem="g4M-di-SX3" secondAttribute="leading" id="EvU-Ct-afy"/>
+                                    <constraint firstAttribute="bottom" secondItem="3kj-GJ-n7n" secondAttribute="bottom" id="laJ-ak-hXC"/>
+                                    <constraint firstItem="3kj-GJ-n7n" firstAttribute="top" secondItem="g4M-di-SX3" secondAttribute="top" id="uJS-dF-R8A"/>
                                 </constraints>
-                            </scrollView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oaZ-I0-KiF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="top" secondItem="oaZ-I0-KiF" secondAttribute="top" id="Q8o-Lt-FNO"/>
-                            <constraint firstItem="oaZ-I0-KiF" firstAttribute="bottom" secondItem="3kj-GJ-n7n" secondAttribute="bottom" id="YBO-jy-3HS"/>
-                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="trailing" secondItem="oaZ-I0-KiF" secondAttribute="trailing" id="ng4-fT-nhu"/>
-                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="leading" secondItem="oaZ-I0-KiF" secondAttribute="leading" id="xbp-lY-1Fb"/>
+                            <constraint firstItem="g4M-di-SX3" firstAttribute="leading" secondItem="oaZ-I0-KiF" secondAttribute="leading" id="UjL-So-HxL"/>
+                            <constraint firstItem="g4M-di-SX3" firstAttribute="top" secondItem="oaZ-I0-KiF" secondAttribute="top" id="bVu-aK-rAt"/>
+                            <constraint firstItem="oaZ-I0-KiF" firstAttribute="bottom" secondItem="g4M-di-SX3" secondAttribute="bottom" id="hcX-H6-DQq"/>
+                            <constraint firstItem="oaZ-I0-KiF" firstAttribute="trailing" secondItem="g4M-di-SX3" secondAttribute="trailing" id="wWV-md-FXj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="uiL-kZ-aVi">
@@ -150,9 +162,10 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="cardScrollViewLeading" destination="xbp-lY-1Fb" id="aaE-im-UBW"/>
-                        <outlet property="cardScrollViewTrailing" destination="ng4-fT-nhu" id="Nxm-TK-UBP"/>
+                        <outlet property="cardsScrollOverlay" destination="g4M-di-SX3" id="ytj-Mp-rui"/>
                         <outlet property="cardsScrollView" destination="3kj-GJ-n7n" id="Vai-Uf-LvC"/>
+                        <outlet property="cardsScrollViewLeading" destination="EvU-Ct-afy" id="Ebh-BP-Yp1"/>
+                        <outlet property="cardsScrollViewTrailing" destination="BOn-kz-Bib" id="SR8-Qo-m79"/>
                         <outlet property="cardsStackView" destination="pVC-6O-vGL" id="7bg-4Q-5Kl"/>
                     </connections>
                 </viewController>

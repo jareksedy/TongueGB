@@ -30,6 +30,8 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupUI() {
+        cardsScrollOverlay.referenceView = cardsScrollView
+        
         cardsStackView.spacing = stackSpacing
         cardsStackView.layoutMargins.left = stackSpacing / 2
         cardsStackView.layoutMargins.right = stackSpacing / 2
@@ -53,19 +55,19 @@ class MainSceneViewController: UIViewController {
     private func setupConstraints() {
         let gap = ((screenWidth - (screenWidth * screenWidthMultiplier)) / 2) - (stackSpacing / 2)
         
-        cardScrollViewLeading.constant = gap
-        cardScrollViewTrailing.constant = -gap
-        
+        cardsScrollViewLeading.constant = gap
+        cardsScrollViewTrailing.constant = gap
         self.view.layoutIfNeeded()
     }
     
     // MARK: - Outlets
+    @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
     @IBOutlet var cardsScrollView: UIScrollView!
     @IBOutlet var cardsStackView: UIStackView!
     
     // MARK: - Constraint outlets
-    @IBOutlet weak var cardScrollViewLeading: NSLayoutConstraint!
-    @IBOutlet weak var cardScrollViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var cardsScrollViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var cardsScrollViewTrailing: NSLayoutConstraint!
     
     // MARK: - Actions
     

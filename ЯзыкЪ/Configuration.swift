@@ -9,4 +9,4 @@ import UIKit
 
 let screenWidth = UIScreen.main.bounds.size.width
 let screenWidthMultiplier: CGFloat = 0.80
-let stackSpacing: CGFloat = 0.0
+let stackSpacing: CGFloat = 2.0

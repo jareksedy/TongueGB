@@ -133,7 +133,7 @@ class CardView: UIControl {
         speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
         speakButton?.tintColor = .label
         speakButton?.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
-        speakButton?.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        speakButton?.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         addSubview(speakButton!)
         
         self.addTarget(self, action: #selector(tapDown), for: [.touchDown, .touchDragEnter])
