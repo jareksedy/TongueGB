@@ -16,19 +16,6 @@ extension MainSceneViewController: MainSceneViewDelegate {
 }
 
 // MARK: - Additional extensions
-extension MainSceneViewController: UIScrollViewDelegate {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        if let pageOffset = ScrollPageController().pageOffset(for: scrollView.contentOffset.x, velocity: velocity.x, in: pageOffsets(in: scrollView)) {
-            targetContentOffset.pointee.x = pageOffset
-            print(pageOffset)
-            //print(pageOffsets(in: scrollView))
-        }
-    }
-
-    private func pageOffsets(in scrollView: UIScrollView) -> [CGFloat] {
-        return cardsStackView.subviews.compactMap { $0 }.map { $0.frame.minX }
-    }
-}
 
 // MARK: - View controller
 class MainSceneViewController: UIViewController {
@@ -69,13 +56,11 @@ class MainSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDelegate = self
-        cardsScrollView.delegate = self
         setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
-        
     }
 }
