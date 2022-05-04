@@ -6,14 +6,50 @@
 //
 
 import Foundation
+import Firebase
+import UIKit
+
 
 class FirebaseAPI: Firebasable {
+    
+    let controller: UIViewController
+    
+    init(controller: UIViewController) {
+        self.controller = controller
+    }
+    
+    var actionCodeSettings = ActionCodeSettings()
+    
+    private func configureActionCodeSettings(_ actionCodeSettings: ActionCodeSettings) -> ActionCodeSettings {
+        actionCodeSettings.url = URL(string: "tonguegb-16695.firebaseapp.com")
+        actionCodeSettings.handleCodeInApp = true
+        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
+        return actionCodeSettings
+    }
+    
+    
     func authFirebase(_ user: User) {
-        //TODO: Need code
+       
+        actionCodeSettings = configureActionCodeSettings(actionCodeSettings)
+        Auth.auth().sendSignInLink(toEmail: user.email, actionCodeSettings: actionCodeSettings) { error in
+            guard error == nil else {
+                // TODO: Добавить сообщение для пользователя об ошибке
+                return
+            }
+               // The link was successfully sent. Inform the user.
+               // Save the email locally so you don't need to ask the user for it again
+               // if they open the link on the same device.
+            
+                // TODO: Добавить сохранение пользователя в KeyChain (UserDefaults не подойдет, так как не обеспечивает защиту данных.
+            UserDefaults.standard.set(user.email, forKey: "Email")
+                // TODO: Добавить сообщение для пользователя.
+            
+        }
     }
     
     func storeUser(_ user: User) {
         //TODO: Need code
+        Auth.auth().createUser(withEmail: user.email, password: String(user.id))
     }
     
     func fetchUserByEmail(_ userEmail: String) -> User? {
