@@ -117,10 +117,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-GJ-n7n">
-                                <rect key="frame" x="28" y="44" width="358" height="720"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="720"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                                         <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
                                     </stackView>
                                 </subviews>
@@ -139,8 +139,8 @@
                         <constraints>
                             <constraint firstItem="3kj-GJ-n7n" firstAttribute="top" secondItem="oaZ-I0-KiF" secondAttribute="top" id="Q8o-Lt-FNO"/>
                             <constraint firstItem="oaZ-I0-KiF" firstAttribute="bottom" secondItem="3kj-GJ-n7n" secondAttribute="bottom" id="YBO-jy-3HS"/>
-                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="trailing" secondItem="oaZ-I0-KiF" secondAttribute="trailing" constant="-28" id="ng4-fT-nhu"/>
-                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="leading" secondItem="oaZ-I0-KiF" secondAttribute="leading" constant="28" id="xbp-lY-1Fb"/>
+                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="trailing" secondItem="oaZ-I0-KiF" secondAttribute="trailing" id="ng4-fT-nhu"/>
+                            <constraint firstItem="3kj-GJ-n7n" firstAttribute="leading" secondItem="oaZ-I0-KiF" secondAttribute="leading" id="xbp-lY-1Fb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="uiL-kZ-aVi">
@@ -150,6 +150,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cardScrollViewLeading" destination="xbp-lY-1Fb" id="aaE-im-UBW"/>
+                        <outlet property="cardScrollViewTrailing" destination="ng4-fT-nhu" id="Nxm-TK-UBP"/>
                         <outlet property="cardsScrollView" destination="3kj-GJ-n7n" id="Vai-Uf-LvC"/>
                         <outlet property="cardsStackView" destination="pVC-6O-vGL" id="7bg-4Q-5Kl"/>
                     </connections>

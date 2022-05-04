@@ -19,6 +19,7 @@
 		CA6E9A3A281E5477000F6F64 /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A39281E5477000F6F64 /* SearchScenePresenter.swift */; };
 		CA6E9A3D281E5493000F6F64 /* ProfileSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A3C281E5493000F6F64 /* ProfileSceneViewController.swift */; };
 		CA6E9A3F281E54A1000F6F64 /* ProfileScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6E9A3E281E54A1000F6F64 /* ProfileScenePresenter.swift */; };
+		CA8521572822E024006B9A04 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8521562822E024006B9A04 /* Configuration.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
 		CA8B60902818D78300D7769B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		CA6E9A39281E5477000F6F64 /* SearchScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScenePresenter.swift; sourceTree = "<group>"; };
 		CA6E9A3C281E5493000F6F64 /* ProfileSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSceneViewController.swift; sourceTree = "<group>"; };
 		CA6E9A3E281E54A1000F6F64 /* ProfileScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScenePresenter.swift; sourceTree = "<group>"; };
+		CA8521562822E024006B9A04 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
+				CA8521562822E024006B9A04 /* Configuration.swift */,
 				CAE63EBA281F8CCD0028A080 /* Extensions */,
 				CAE63EB7281F89E20028A080 /* UIComponents */,
 				CA06A837281CF0FE0086BD0B /* Scenes */,
@@ -251,6 +254,7 @@
 				CA6E9A2C281E519B000F6F64 /* MainSceneViewController.swift in Sources */,
 				CA6E9A38281E546C000F6F64 /* SearchSceneViewController.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
+				CA8521572822E024006B9A04 /* Configuration.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
 				CA6E9A35281E51FF000F6F64 /* AddCardScenePresenter.swift in Sources */,
 				CAE63EB6281F89710028A080 /* YazykTabBarController.swift in Sources */,

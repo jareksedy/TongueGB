@@ -30,12 +30,18 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupUI() {
-        //cardsScrollView.decelerationRate = .fast
+        cardsStackView.spacing = stackSpacing
+        cardsStackView.layoutMargins.left = stackSpacing / 2
+        cardsStackView.layoutMargins.right = stackSpacing / 2
+        
         let cards = createTestCards()
         
         for card in cards {
             let cardView = CardView()
+            
             cardView.card = card
+            cardView.screenWidthMultiplier = screenWidthMultiplier
+            
             cardsStackView.addArrangedSubview(cardView)
         }
     }
@@ -44,9 +50,22 @@ class MainSceneViewController: UIViewController {
         self.tabBarController?.title = "Мои карточки"
     }
     
+    private func setupConstraints() {
+        let gap = ((screenWidth - (screenWidth * screenWidthMultiplier)) / 2) - (stackSpacing / 2)
+        
+        cardScrollViewLeading.constant = gap
+        cardScrollViewTrailing.constant = -gap
+        
+        self.view.layoutIfNeeded()
+    }
+    
     // MARK: - Outlets
     @IBOutlet var cardsScrollView: UIScrollView!
     @IBOutlet var cardsStackView: UIStackView!
+    
+    // MARK: - Constraint outlets
+    @IBOutlet weak var cardScrollViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var cardScrollViewTrailing: NSLayoutConstraint!
     
     // MARK: - Actions
     
@@ -56,6 +75,7 @@ class MainSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDelegate = self
+        setupConstraints()
         setupUI()
     }
     

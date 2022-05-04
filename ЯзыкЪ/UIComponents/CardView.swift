@@ -25,6 +25,10 @@ struct Category {
 // -- remove his later <end> --
 
 class CardView: UIControl {
+    let screenWidth = UIScreen.main.bounds.size.width
+    
+    var screenWidthMultiplier: CGFloat = 0.85
+    
     var card: Card? {
         get {
             return Card(word: wordLabel?.text ?? "",
@@ -53,7 +57,7 @@ class CardView: UIControl {
     lazy var tapDownAnimation = {
         self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
         self.layer.cornerRadius = 36.0
-        self.alpha = 0.90
+        self.alpha = self.cardAlphaTapped
     }
     
     lazy var tapUpAnimation = {
@@ -66,9 +70,11 @@ class CardView: UIControl {
     let animationSpringDamping = 0.50
     let animationSpringVelocity = 0.25
     let animationOptions: AnimationOptions = [.allowUserInteraction]
+    let cardBackgroundAlpha: CGFloat = 0.85
+    let cardAlphaTapped: CGFloat = 0.90
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIScreen.main.bounds.size.width * 0.85, height: 0)
+        return CGSize(width: screenWidth * screenWidthMultiplier, height: 0)
     }
     
     override init(frame: CGRect) {
@@ -108,7 +114,7 @@ class CardView: UIControl {
     }
     
     func setupView() {
-        self.backgroundColor = UIColor.random.withAlphaComponent(0.95)
+        self.backgroundColor = UIColor.random.withAlphaComponent(cardBackgroundAlpha)
         self.layer.cornerRadius = 24.0
         
         wordLabel = UILabel()
