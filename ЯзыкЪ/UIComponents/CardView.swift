@@ -42,7 +42,7 @@ class CardView: UIControl {
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
-    var flipTransitionDuration = 0.215
+    var flipTransitionDuration = 0.275
     
     var animationOptions: AnimationOptions = [.allowUserInteraction]
     var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut]
@@ -70,7 +70,11 @@ class CardView: UIControl {
     
     // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: screenWidth * screenWidthMultiplier, height: 0)
+        return CGSize(width: screenWidth * screenWidthMultiplier, height: 100.0)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        frontView.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
     }
     
     // MARK: - Initializers
@@ -143,7 +147,7 @@ class CardView: UIControl {
     private func makeCardFrontView() -> UIControl {
         let frontView = UIControl()
         
-        frontView.backgroundColor = UIColor.random
+        frontView.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
         frontView.layer.cornerRadius = cornerRadius
         
         wordLabel = UILabel()
