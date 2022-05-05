@@ -8,5 +8,7 @@
 import UIKit
 
 let screenWidth = UIScreen.main.bounds.size.width
-let screenWidthMultiplier: CGFloat = 0.80
-let stackSpacing: CGFloat = 0.0
+
+// MARK: - Card stack & card view configurations
+let cardScreenWidthMultiplier: CGFloat = 0.80
+let cardStackSpacing: CGFloat = 2.0

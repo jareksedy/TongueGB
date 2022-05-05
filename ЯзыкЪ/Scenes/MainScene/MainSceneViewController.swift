@@ -21,30 +21,40 @@ extension MainSceneViewController: MainSceneViewDelegate {
 class MainSceneViewController: UIViewController {
     lazy var presenter = MainScenePresenter()
     
+    // MARK: - Services
+    let tempUICardMockProvider = TempUICardMockProvider()
+    
     // MARK: - Properties
+    var cards: [Card]?
     var frame = CGRect.zero
     
     // MARK: - Methods
-    private func createTestCards() -> [Card] {
-        return [Card(word: "Juggernaut", translation: "Джаггернаут", description: "[dʒəɡərˌnɔt]", category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Trifle", translation: "Трайфл", description: "[trʌɪfl]", category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Syllabub", translation: "Силлабаб", description: "[siləˌbəb]", category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil), userEmail: ""), Card(word: "Wanderlust", translation: "Вандерласт", description: "[wändərˌləst]", category: Category(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil), userEmail: "")]
+    private func fetchCards() {
+        cards = tempUICardMockProvider.createMockCards()
     }
     
     private func setupUI() {
         cardsScrollOverlay.referenceView = cardsScrollView
         
-        cardsStackView.spacing = stackSpacing
-        cardsStackView.layoutMargins.left = stackSpacing / 2
-        cardsStackView.layoutMargins.right = stackSpacing / 2
+        cardsStackView.spacing = cardStackSpacing
+        cardsStackView.layoutMargins.left = cardStackSpacing / 2
+        cardsStackView.layoutMargins.right = cardStackSpacing / 2
         
-        let cards = createTestCards()
+        fetchCards()
         
-        for card in cards {
-            let cardView = CardView()
-            
-            cardView.card = card
-            cardView.screenWidthMultiplier = screenWidthMultiplier
-            
-            cardsStackView.addArrangedSubview(cardView)
+        if let cards = cards {
+            for card in cards {
+                let cardView = CardView()
+                
+                cardView.word = card.word
+                cardView.translation = card.translation
+                cardView.transcription = card.description
+                cardView.category = card.category.categoryKey
+                
+                cardView.screenWidthMultiplier = cardScreenWidthMultiplier
+                
+                cardsStackView.addArrangedSubview(cardView)
+            }
         }
     }
     
@@ -53,7 +63,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        let gap = ((screenWidth - (screenWidth * screenWidthMultiplier)) / 2) - (stackSpacing / 2)
+        let gap = ((screenWidth - (screenWidth * cardScreenWidthMultiplier)) / 2) - (cardStackSpacing / 2)
         
         cardsScrollViewLeading.constant = gap
         cardsScrollViewTrailing.constant = gap

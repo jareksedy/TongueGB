@@ -8,89 +8,92 @@
 import UIKit
 import AVFoundation
 
-// -- remove this later <start> --
-struct Card {
-    let word: String
-    let translation: String
-    let description: String?
-    let category: Category
-    let userEmail: String
-}
-
-struct Category {
-    let categoryKey: String
-    let categoryColor: String?
-    let categoryImage: String?
-}
-// -- remove his later <end> --
-
 class CardView: UIControl {
     let screenWidth = UIScreen.main.bounds.size.width
     
+    // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.85
     
-    var card: Card? {
-        get {
-            return Card(word: wordLabel?.text ?? "",
-                        translation: translationLabel?.text ?? "",
-                        description: descriptionLabel?.text ?? "",
-                        category: Category(categoryKey: categoryLabel?.text ?? "",
-                                           categoryColor: nil, categoryImage: nil),
-                        userEmail: self.userEmail ?? "")
-        }
-        
-        set {
-            wordLabel?.text = newValue?.word
-            descriptionLabel?.text = newValue?.description
-            translationLabel?.text = newValue?.translation
-            categoryLabel?.text = newValue?.category.categoryKey
-        }
+    var word: String? {
+        get { return wordLabel?.text }
+        set { wordLabel?.text = newValue?.capitalizeFirstLetter() }
     }
     
+    var translation: String? {
+        get { return translationLabel?.text }
+        set { translationLabel?.text = newValue?.capitalizeFirstLetter() }
+    }
+    
+    var transcription: String? {
+        get { return descriptionLabel?.text }
+        set { if let newValue = newValue { descriptionLabel?.text = "[\(newValue)]" } }
+    }
+    
+    var category: String? {
+        get { return categoryLabel?.text }
+        set { categoryLabel?.text = newValue; categoryLabelBack?.text = newValue }
+    }
+    
+    var isFront = true
+    
+    // MARK: - Configurable properties
+    var cornerRadius = 24.0
+    var backViewBackgroundColor: UIColor = .systemGray5
+    
+    var tapAnimationDuration = 0.15
+    var tapScaleFactor = 0.975
+    var flipTransitionDuration = 0.215
+    
+    var animationOptions: AnimationOptions = [.allowUserInteraction]
+    var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut]
+    
+    // MARK: - Private properties
     private var speakButton: UIButton?
     private var wordLabel: UILabel?
     private var descriptionLabel: UILabel?
     private var categoryLabel: UILabel?
+    private var categoryLabelBack: UILabel?
     private var translationLabel: UILabel?
-    private var userEmail: String?
     
+    // MARK: - Front and back Views
+    lazy var frontView = makeCardFrontView()
+    lazy var backView = makeCardBackView()
+    
+    // MARK: - Animations
     lazy var tapDownAnimation = {
-        self.transform = CGAffineTransform(scaleX: 0.975, y: 0.975)
-        self.layer.cornerRadius = 18.0
-        self.alpha = self.cardAlphaTapped
+        self.transform = CGAffineTransform(scaleX: self.tapScaleFactor, y: self.tapScaleFactor)
     }
     
     lazy var tapUpAnimation = {
         self.transform = .identity
-        self.layer.cornerRadius = 24.0
-        self.alpha = 1.0
     }
     
-    let animationDuration = 0.10
-    let animationSpringDamping = 0.50
-    let animationSpringVelocity = 0.25
-    let animationOptions: AnimationOptions = [.allowUserInteraction]
-    let cardBackgroundAlpha: CGFloat = 0.85
-    let cardAlphaTapped: CGFloat = 0.90
-    
+    // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
         return CGSize(width: screenWidth * screenWidthMultiplier, height: 0)
     }
     
+    // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         setupView()
-        setupConstraints()
+        setupFrontViewConstraints()
+        setupBackViewConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         setupView()
-        setupConstraints()
+        setupFrontViewConstraints()
+        setupBackViewConstraints()
     }
     
+    // MARK: - Selectors
     @objc func speakButtonTapped() {
-        guard let wordToSpeak = card?.word else { return }
+        guard let wordToSpeak = word else { return }
+        
         speakButton?.setImage(UIImage(systemName: "speaker.wave.3")?.withRenderingMode(.alwaysTemplate), for: .normal)
         
         let utterance = AVSpeechUtterance(string: wordToSpeak)
@@ -106,53 +109,118 @@ class CardView: UIControl {
     }
     
     @objc func tapDown() {
-        UIView.animate(withDuration: animationDuration, delay: 0, animations: tapDownAnimation)
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
     }
     
-    @objc func tapUp() {
-        UIView.transition(with: self, duration: 0.275, options: .transitionFlipFromRight, animations: tapUpAnimation)
+    @objc func flip() {
+        let tapUpAnimationFront = {
+            self.transform = .identity
+            self.frontView.alpha = self.isFront ? 0 : 1
+        }
+        
+        let tapUpAnimationBack = {
+            self.transform = .identity
+            self.backView.alpha = self.isFront ? 1 : 0
+        }
+        
+        isFront ? backView.removeFromSuperview() : frontView.removeFromSuperview()
+        addSubview(isFront ? backView : frontView)
+        tieConstraintsToSuperView(isFront ? backView : frontView)
+        setupFrontViewConstraints()
+        setupBackViewConstraints()
+        
+        UIView.transition(with: frontView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationFront)
+        UIView.transition(with: backView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationBack)
+        
+        isFront.toggle()
     }
     
     @objc func tapUpCancelled() {
-        UIView.animate(withDuration: animationDuration, delay: 0, animations: tapUpAnimation)
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
     
-    func setupView() {
-        self.backgroundColor = UIColor.random.withAlphaComponent(cardBackgroundAlpha)
-        self.layer.cornerRadius = 24.0
+    // MARK: - Private methods
+    private func makeCardFrontView() -> UIControl {
+        let frontView = UIControl()
+        
+        frontView.backgroundColor = UIColor.random
+        frontView.layer.cornerRadius = cornerRadius
         
         wordLabel = UILabel()
         wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
-        addSubview(wordLabel!)
+        frontView.addSubview(wordLabel!)
         
         descriptionLabel = UILabel()
         descriptionLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
-        addSubview(descriptionLabel!)
+        frontView.addSubview(descriptionLabel!)
         
         categoryLabel = UILabel()
         categoryLabel?.font = UIFont.preferredFont(forTextStyle: .caption2)
-        addSubview(categoryLabel!)
+        frontView.addSubview(categoryLabel!)
         
         speakButton = UIButton()
         speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
         speakButton?.tintColor = .label
         speakButton?.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
         speakButton?.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        addSubview(speakButton!)
+        speakButton?.adjustsImageWhenHighlighted = false
+        frontView.addSubview(speakButton!)
         
-        self.addTarget(self, action: #selector(tapDown), for: [.touchDown])
-        self.addTarget(self, action: #selector(tapUp), for: [.touchUpInside])
-        self.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
+        frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
+        frontView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
+        frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
+        
+        return frontView
     }
     
-    func setupConstraints() {
+    private func makeCardBackView() -> UIControl {
+        let backView = UIControl()
+        
+        backView.backgroundColor = backViewBackgroundColor
+        backView.layer.cornerRadius = cornerRadius
+        
+        translationLabel = UILabel()
+        translationLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+        backView.addSubview(translationLabel!)
+        
+        categoryLabelBack = UILabel()
+        categoryLabelBack?.font = UIFont.preferredFont(forTextStyle: .caption2)
+        backView.addSubview(categoryLabelBack!)
+        
+        backView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
+        backView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
+        backView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
+        
+        backView.alpha = 0
+        
+        return backView
+    }
+    
+    private func setupView() {
+        addSubview(frontView)
+        addSubview(backView)
+        
+        tieConstraintsToSuperView(frontView)
+        tieConstraintsToSuperView(backView)
+    }
+    
+    private func tieConstraintsToSuperView(_ view: UIView) {
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
+    
+    private func setupFrontViewConstraints() {
         wordLabel?.translatesAutoresizingMaskIntoConstraints = false
         wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
+        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 25).isActive = true
+        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 30).isActive = true
         
         categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -160,6 +228,16 @@ class CardView: UIControl {
         
         speakButton?.translatesAutoresizingMaskIntoConstraints = false
         speakButton?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        speakButton?.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
+        speakButton?.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
+    }
+    
+    private func setupBackViewConstraints() {
+        translationLabel?.translatesAutoresizingMaskIntoConstraints = false
+        translationLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+        categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
+        categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
     }
 }
