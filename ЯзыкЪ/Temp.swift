@@ -26,54 +26,65 @@ struct Category {
 class TempUICardMockProvider {
     func createMockCards() -> [Card] {
         return [
-            Card(word: "swoop",
-                 translation: "наскок",
-                 description: "swuːp",
+            Card(word: "heather",
+                 translation: "вереск",
+                 description: "ˈheðə",
+                 category: Category(categoryKey: "Растения", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "incantation",
+                 translation: "заклинание",
+                 description: "ɪnkænˈteɪʃn",
                  category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
-            Card(word: "tabby",
-                 translation: "полосатый",
-                 description: "ˈtæbɪ",
+            Card(word: "outwit",
+                 translation: "перехитрить",
+                 description: "aʊtˈwɪt",
+                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "whistleblower",
+                 translation: "осведомитель",
+                 description: "ˈwɪslbləʊər",
+                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "starling",
+                 translation: "скворец",
+                 description: "ˈstɑːlɪŋ",
                  category: Category(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
-            Card(word: "switchman",
-                 translation: "стрелочник",
-                 description: "ˈswɪʧmən",
-                 category: Category(categoryKey: "Транспорт", categoryColor: nil, categoryImage: nil),
+            Card(word: "evocative",
+                 translation: "запоминающийся",
+                 description: "ɪˈvɒkətɪv",
+                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+                        
+            Card(word: "equanimity",
+                 translation: "невозмутимость",
+                 description: "ekwəˈnɪmɪtɪ",
+                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
-            Card(word: "sultry",
-                 translation: "знойный",
-                 description: "ˈsʌltrɪ",
-                 category: Category(categoryKey: "Погода", categoryColor: nil, categoryImage: nil),
+            Card(word: "schnitzel",
+                 translation: "шницель",
+                 description: "ʃnɪtsl",
+                 category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "wanderlust",
+                 translation: "страсть к путешествиям",
+                 description: "ˈwɒndəlʌst",
+                 category: Category(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "heron",
+                 translation: "цапля",
+                 description: "ˈherən",
+                 category: Category(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
                  userEmail: "")
         ]
-//        return [
-//            Card(word: "Juggernaut",
-//                 translation: "Джаггернаут",
-//                 description: "ˈʤʌgənɔːt",
-//                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
-//                 userEmail: ""),
-//
-//            Card(word: "Trifle",
-//                 translation: "Трайфл",
-//                 description: "traɪfl",
-//                 category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil),
-//                 userEmail: ""),
-//
-//            Card(word: "Syllabub",
-//                 translation: "Силлабаб",
-//                 description: "ˈsiləˌbəb",
-//                 category: Category(categoryKey: "Еда", categoryColor: nil, categoryImage: nil),
-//                 userEmail: ""),
-//
-//            Card(word: "Wanderlust",
-//                 translation: "Вандерласт",
-//                 description: "ˈwɒndəlʌst",
-//                 category: Category(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil),
-//                 userEmail: "")
-//        ]
     }
 }

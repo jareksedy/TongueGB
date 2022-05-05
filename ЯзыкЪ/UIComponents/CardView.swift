@@ -147,7 +147,7 @@ class CardView: UIControl {
         frontView.layer.cornerRadius = cornerRadius
         
         wordLabel = UILabel()
-        wordLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+        wordLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         frontView.addSubview(wordLabel!)
         
         descriptionLabel = UILabel()
@@ -180,7 +180,7 @@ class CardView: UIControl {
         backView.layer.cornerRadius = cornerRadius
         
         translationLabel = UILabel()
-        translationLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
+        translationLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
         backView.addSubview(translationLabel!)
         
         categoryLabelBack = UILabel()
@@ -220,11 +220,11 @@ class CardView: UIControl {
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 30).isActive = true
+        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 25).isActive = true
         
         categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -45).isActive = true
         
         speakButton?.translatesAutoresizingMaskIntoConstraints = false
         speakButton?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -238,6 +238,6 @@ class CardView: UIControl {
         
         categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -45).isActive = true
     }
 }
