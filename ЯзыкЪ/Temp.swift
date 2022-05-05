@@ -26,10 +26,22 @@ struct Category {
 class TempUICardMockProvider {
     func createMockCards() -> [Card] {
         return [
-            Card(word: "heather",
-                 translation: "вереск",
-                 description: "ˈheðə",
+            Card(word: "carnation",
+                 translation: "гвоздика",
+                 description: "kɑːˈneɪʃn",
                  category: Category(categoryKey: "Растения", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "whistleblower",
+                 translation: "осведомитель",
+                 description: "ˈwɪslbləʊər",
+                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "guinea pig",
+                 translation: "морская свинка",
+                 description: "ˈgɪnɪ pɪg",
+                 category: Category(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
             Card(word: "incantation",
@@ -42,18 +54,6 @@ class TempUICardMockProvider {
                  translation: "перехитрить",
                  description: "aʊtˈwɪt",
                  category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
-                 userEmail: ""),
-            
-            Card(word: "whistleblower",
-                 translation: "осведомитель",
-                 description: "ˈwɪslbləʊər",
-                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
-                 userEmail: ""),
-            
-            Card(word: "starling",
-                 translation: "скворец",
-                 description: "ˈstɑːlɪŋ",
-                 category: Category(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
             Card(word: "evocative",

@@ -147,8 +147,8 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
-				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
+				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8521562822E024006B9A04 /* Configuration.swift */,
 				CA71E65528240E770075E2C4 /* Temp.swift */,
 				CAE63EBA281F8CCD0028A080 /* Extensions */,
