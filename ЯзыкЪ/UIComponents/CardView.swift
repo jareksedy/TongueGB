@@ -42,7 +42,7 @@ class CardView: UIControl {
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
-    var flipTransitionDuration = 0.275
+    var flipTransitionDuration = 0.225
     
     var animationOptions: AnimationOptions = [.allowUserInteraction]
     var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut]
