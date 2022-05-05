@@ -42,4 +42,14 @@ class CardFirebase {
         self.userEmail = userEmail
         self.ref = snapshot.ref
     }
+    
+    func toAnyObject() -> [String: Any] {
+        return [
+            "word": word,
+            "translation": translation,
+            "description": description as Any,
+            "category": CardsCategory.self,
+            "user_email": userEmail
+        ]
+    }
 }
