@@ -26,9 +26,9 @@ class UserFirebase {
             return nil
         }
         
-        self.ref = snapshot.ref
         self.email = email
         self.id = id
+        self.ref = snapshot.ref
     }
     
     func toAnyObject() -> [String: Any] {
