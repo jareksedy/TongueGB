@@ -12,44 +12,56 @@ import UIKit
 
 class FirebaseAPI: Firebasable {
     
+    //MARK: - Properties
     let controller: UIViewController
+    let authService = Auth.auth()
+    var token: AuthStateDidChangeListenerHandle? = nil
     
     init(controller: UIViewController) {
         self.controller = controller
     }
     
-    var actionCodeSettings = ActionCodeSettings()
-    
-    private func configureActionCodeSettings(_ actionCodeSettings: ActionCodeSettings) -> ActionCodeSettings {
-        actionCodeSettings.url = URL(string: "tonguegb-16695.firebaseapp.com")
-        actionCodeSettings.handleCodeInApp = true
-        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
-        return actionCodeSettings
+    //MARK: - Private funcs
+    private func showAlert(_ title: String, _ message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Хорошо", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        self.controller.present(alert, animated: true, completion: nil)
     }
     
-    
-    func authFirebase(_ user: User) {
-       
-        actionCodeSettings = configureActionCodeSettings(actionCodeSettings)
-        Auth.auth().sendSignInLink(toEmail: user.email, actionCodeSettings: actionCodeSettings) { error in
-            guard error == nil else {
-                // TODO: Добавить сообщение для пользователя об ошибке
-                return
-            }
-               // The link was successfully sent. Inform the user.
-               // Save the email locally so you don't need to ask the user for it again
-               // if they open the link on the same device.
-            
-                // TODO: Добавить сохранение пользователя в KeyChain (UserDefaults не подойдет, так как не обеспечивает защиту данных.
-            UserDefaults.standard.set(user.email, forKey: "Email")
-                // TODO: Добавить сообщение для пользователя.
-            
+    //MARK: - Service funcs
+    func addListener() {
+        authService.addStateDidChangeListener { auth, user in
+            guard user != nil else { return }
         }
     }
     
-    func storeUser(_ user: User) {
+    //MARK: - Protocol funcs
+    func createUser(_ user: User) {
         //TODO: Need code
-        Auth.auth().createUser(withEmail: user.email, password: String(user.id))
+        authService.createUser(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+            guard error == nil else {
+                self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                return
+            }
+            self?.authService.signIn(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+                guard error == nil else {
+                    self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                    return
+                }
+                //TODO: Навигация на следующий экран + добавление listener
+            }
+        }
+    }
+    
+    func authUser(_ user: User) {
+        Auth.auth().signIn(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+            guard error == nil else {
+                self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                return
+            }
+            //TODO: Навигация на следующий экран + добавление listener
+        }
     }
     
     func fetchUserByEmail(_ userEmail: String) -> User? {
@@ -57,7 +69,7 @@ class FirebaseAPI: Firebasable {
         return nil //TODO: Correct return
     }
     
-    func storeWordCard(_ card: Card) {
+    func storeWordCard(_ card: Card, _ userEmail: String) {
         //TODO: Need code
     }
     
