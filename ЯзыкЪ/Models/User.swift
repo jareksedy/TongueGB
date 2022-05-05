@@ -9,6 +9,6 @@ import Foundation
 import Firebase
 
 struct User {
-    let email: String
-    let id: Int
+    let userEmail: String
+    let userId: Int
 }

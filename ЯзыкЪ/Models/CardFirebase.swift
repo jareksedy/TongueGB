@@ -50,6 +50,6 @@ class CardFirebase {
             "description": description as Any,
             "category": CardsCategory.self,
             "user_email": userEmail
-        ]
+        ] as [String: Any]
     }
 }

@@ -41,6 +41,6 @@ class CardsCategoryFirebase {
             "category_key": categoryKey,
             "category_color": categoryColor as Any,
             "category_image": categoryImage as Any
-        ]
+        ] as [String: Any]
     }
 }

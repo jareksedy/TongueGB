@@ -15,6 +15,7 @@ class FirebaseAPI: Firebasable {
     //MARK: - Properties
     let controller: UIViewController
     let authService = Auth.auth()
+    let cardsDatabaseReference = Database.database().reference(withPath: "cards")
     var token: AuthStateDidChangeListenerHandle? = nil
     
     init(controller: UIViewController) {
@@ -39,12 +40,12 @@ class FirebaseAPI: Firebasable {
     //MARK: - Protocol funcs
     func createUser(_ user: User) {
         //TODO: Need code
-        authService.createUser(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+        authService.createUser(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
             guard error == nil else {
                 self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                 return
             }
-            self?.authService.signIn(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+            self?.authService.signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
                 guard error == nil else {
                     self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                     return
@@ -55,7 +56,7 @@ class FirebaseAPI: Firebasable {
     }
     
     func authUser(_ user: User) {
-        Auth.auth().signIn(withEmail: user.email, password: String(user.id)) { [weak self] _, error in
+        Auth.auth().signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
             guard error == nil else {
                 self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                 return
