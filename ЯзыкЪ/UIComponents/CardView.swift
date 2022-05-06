@@ -26,7 +26,7 @@ class CardView: UIControl {
     
     var transcription: String? {
         get { return descriptionLabel?.text }
-        set { if let newValue = newValue { descriptionLabel?.text = "[\(newValue)]" } }
+        set { if let newValue = newValue { descriptionLabel?.text = "[ \(newValue) ]" } }
     }
     
     var category: String? {
@@ -38,7 +38,7 @@ class CardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var backViewBackgroundColor: UIColor = .systemGray5
+    var backViewBackgroundColor: UIColor = .systemGray4
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
