@@ -45,7 +45,7 @@ class CardView: UIControl {
     var flipTransitionDuration = 0.225
     
     var animationOptions: AnimationOptions = [.allowUserInteraction]
-    var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut]
+    var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut, .allowUserInteraction]
     
     // MARK: - Private properties
     private var speakButton: UIButton?
