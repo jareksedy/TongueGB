@@ -56,10 +56,10 @@ class TempUICardMockProvider {
                  category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
             
-            Card(word: "timber",
-                 translation: "древесина",
-                 description: "ˈtɪmbə",
-                 category: Category(categoryKey: "Разное", categoryColor: nil, categoryImage: nil),
+            Card(word: "route",
+                 translation: "маршрут",
+                 description: "ruːt",
+                 category: Category(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil),
                  userEmail: ""),
                         
             Card(word: "chimpanzee",
