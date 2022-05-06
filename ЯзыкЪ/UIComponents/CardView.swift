@@ -38,7 +38,7 @@ class CardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var backViewBackgroundColor: UIColor = .systemGray5
+    var backViewBackgroundColor: UIColor = .systemGray4
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
