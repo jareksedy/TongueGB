@@ -224,7 +224,7 @@ class CardView: UIControl {
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 25).isActive = true
+        descriptionLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40).isActive = true
         
         categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
