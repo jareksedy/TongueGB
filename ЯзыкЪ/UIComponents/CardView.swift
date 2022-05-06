@@ -38,7 +38,7 @@ class CardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var backViewBackgroundColor: UIColor = .systemGray4
+    var backViewBackgroundColor: UIColor = .systemGray5
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
@@ -74,7 +74,10 @@ class CardView: UIControl {
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        frontView.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
+
+        frontView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
     }
     
     // MARK: - Initializers
