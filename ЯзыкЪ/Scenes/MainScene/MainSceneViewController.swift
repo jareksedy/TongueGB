@@ -42,7 +42,7 @@ class MainSceneViewController: UIViewController {
         
         fetchCards()
         
-        if let cards = cards {
+        if let cards = cards, cards.count > 0 {
             for card in cards {
                 let cardView = CardView()
                 
@@ -55,6 +55,11 @@ class MainSceneViewController: UIViewController {
                 
                 cardsStackView.addArrangedSubview(cardView)
             }
+        } else {
+            let emptyCardView = EmptyCardView()
+            emptyCardView.screenWidthMultiplier = cardScreenWidthMultiplier
+            
+            cardsStackView.addArrangedSubview(emptyCardView)
         }
     }
     

@@ -25,6 +25,7 @@ struct Category {
 
 class TempUICardMockProvider {
     func createMockCards() -> [Card] {
+        return []
         return [
             Card(word: "carnation",
                  translation: "гвоздика",
