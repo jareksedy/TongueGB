@@ -161,6 +161,7 @@ class CardView: UIControl {
         
         descriptionLabel = UILabel()
         descriptionLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+        descriptionLabel?.alpha = 0.5
         frontView.addSubview(descriptionLabel!)
         
         categoryLabel = UILabel()
@@ -225,7 +226,7 @@ class CardView: UIControl {
     private func setupFrontViewConstraints() {
         wordLabel?.translatesAutoresizingMaskIntoConstraints = false
         wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -243,7 +244,7 @@ class CardView: UIControl {
     private func setupBackViewConstraints() {
         translationLabel?.translatesAutoresizingMaskIntoConstraints = false
         translationLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
         
         categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
