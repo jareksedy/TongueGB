@@ -85,6 +85,6 @@ class TempUICardMockProvider {
                  description: "ˈherən",
                  category: Category(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
                  userEmail: "")
-        ]
+        ].shuffled()
     }
 }
