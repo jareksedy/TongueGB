@@ -19,18 +19,18 @@ extension UIColor {
     
     static var randomLight: UIColor {
         return UIColor(
-            red: .random(in: 0.35...0.90),
-            green: .random(in: 0.35...0.90),
-            blue: .random(in: 0.35...0.90),
+            red: .random(in: 0.35...0.98),
+            green: .random(in: 0.35...0.98),
+            blue: .random(in: 0.35...0.98),
             alpha: 1.0
         )
     }
     
     static var randomDark: UIColor {
         return UIColor(
-            red: .random(in: 0.10...0.65),
-            green: .random(in: 0.10...0.65),
-            blue: .random(in: 0.10...0.65),
+            red: .random(in: 0.2...0.65),
+            green: .random(in: 0.2...0.65),
+            blue: .random(in: 0.2...0.65),
             alpha: 1.0
         )
     }
