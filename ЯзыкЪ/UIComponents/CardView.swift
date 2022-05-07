@@ -38,6 +38,8 @@ class CardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
+    var frontViewBackgroundColorLight: UIColor = .randomLight
+    var frontViewBackgroundColorDark: UIColor = .randomDark
     var backViewBackgroundColor: UIColor = .systemGray4
     
     var tapAnimationDuration = 0.15
@@ -77,7 +79,7 @@ class CardView: UIControl {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
 
-        frontView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
+        frontView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? frontViewBackgroundColorDark : frontViewBackgroundColorLight
     }
     
     // MARK: - Initializers
@@ -150,7 +152,7 @@ class CardView: UIControl {
     private func makeCardFrontView() -> UIControl {
         let frontView = UIControl()
         
-        frontView.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
+        frontView.backgroundColor = self.traitCollection.userInterfaceStyle == .dark ? frontViewBackgroundColorDark : frontViewBackgroundColorLight
         frontView.layer.cornerRadius = cornerRadius
         
         wordLabel = UILabel()
