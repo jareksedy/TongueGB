@@ -226,15 +226,15 @@ class CardView: UIControl {
     private func setupFrontViewConstraints() {
         wordLabel?.translatesAutoresizingMaskIntoConstraints = false
         wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
+        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel?.centerYAnchor ?? self.centerYAnchor, constant: 30).isActive = true
+        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel?.centerYAnchor ?? self.centerYAnchor, constant: 25).isActive = true
         
         categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -45).isActive = true
+        categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
         
         speakButton?.translatesAutoresizingMaskIntoConstraints = false
         speakButton?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -244,10 +244,10 @@ class CardView: UIControl {
     private func setupBackViewConstraints() {
         translationLabel?.translatesAutoresizingMaskIntoConstraints = false
         translationLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -2).isActive = true
+        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         
         categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -45).isActive = true
+        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
     }
 }
