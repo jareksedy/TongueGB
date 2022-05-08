@@ -157,15 +157,21 @@ class CardView: UIControl {
         
         wordLabel = UILabel()
         wordLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        wordLabel?.numberOfLines = 0
+        wordLabel?.textAlignment = .center
         frontView.addSubview(wordLabel!)
         
         descriptionLabel = UILabel()
         descriptionLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
         descriptionLabel?.alpha = 0.5
+        descriptionLabel?.numberOfLines = 0
+        descriptionLabel?.textAlignment = .center
         frontView.addSubview(descriptionLabel!)
         
         categoryLabel = UILabel()
         categoryLabel?.font = UIFont.preferredFont(forTextStyle: .caption2)
+        categoryLabel?.numberOfLines = 0
+        categoryLabel?.textAlignment = .center
         frontView.addSubview(categoryLabel!)
         
         speakButton = UIButton()
@@ -180,6 +186,8 @@ class CardView: UIControl {
         frontView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
         frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
         
+        frontView.clipsToBounds = true
+        
         return frontView
     }
     
@@ -191,10 +199,14 @@ class CardView: UIControl {
         
         translationLabel = UILabel()
         translationLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        translationLabel?.numberOfLines = 0
+        translationLabel?.textAlignment = .center
         backView.addSubview(translationLabel!)
         
         categoryLabelBack = UILabel()
         categoryLabelBack?.font = UIFont.preferredFont(forTextStyle: .caption2)
+        categoryLabelBack?.numberOfLines = 0
+        categoryLabelBack?.textAlignment = .center
         backView.addSubview(categoryLabelBack!)
         
         backView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
@@ -202,11 +214,18 @@ class CardView: UIControl {
         backView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
         
         backView.alpha = 0
+        backView.clipsToBounds = true
         
         return backView
     }
     
     private func setupView() {
+        let gap = ((screenWidth - (screenWidth * cardScreenWidthMultiplier)) / 2) - (cardStackSpacing / 2)
+        let effectiveWidth = screenWidth - (gap * 2 + cardStackSpacing)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalToConstant: effectiveWidth).isActive = true
+        
         addSubview(frontView)
         addSubview(backView)
         
@@ -227,14 +246,17 @@ class CardView: UIControl {
         wordLabel?.translatesAutoresizingMaskIntoConstraints = false
         wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        wordLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
         
         descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel?.centerYAnchor ?? self.centerYAnchor, constant: 25).isActive = true
+        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel!.bottomAnchor, constant: 20).isActive = true
+        descriptionLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
         
         categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        categoryLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
         
         speakButton?.translatesAutoresizingMaskIntoConstraints = false
         speakButton?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -245,9 +267,11 @@ class CardView: UIControl {
         translationLabel?.translatesAutoresizingMaskIntoConstraints = false
         translationLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        translationLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
         
         categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
         categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        categoryLabelBack?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
     }
 }
