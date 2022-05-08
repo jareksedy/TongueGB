@@ -26,17 +26,20 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
 class LoginSceneViewController: UIViewController {
     lazy var presenter = LoginScenePresenter()
     
+    // MARK: - Services
+    let greetingGenerator = GreetingGenerator()
+    
     // MARK: - Properties
-    let greetingLabelText = "Привет ✌️"
-    let greetingSubLabelText = "«ЯзыкЪ» 👅 приветствует тебя! «ЯзыкЪ» — это удобный инструмент для изучения иностранных слов."
+    let greetingLabelText = "Теперь вы знаете как сказать привет "
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     let appVersionLabelText = "Версия"
     let loginButtonTitle = "Войти с Apple ID"
     
-    let appleIDProvider = ASAuthorizationAppleIDProvider()
-    
     // MARK: - Methods
     private func setupUI() {
+        greetingLabel.text = "\(greetingLabelText)"
+        greetingLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        
         appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")"
         appVersionLabel.font = UIFont.monospacedSystemFont(ofSize: 10.0, weight: .light)
         
@@ -44,13 +47,11 @@ class LoginSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.title = "Добрый день"
+        self.title = greetingGenerator.randomGreeting().hello
     }
 
     // MARK: - Outlets
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var greetingLabel: UILabel!
-    @IBOutlet weak var greetingSubLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     

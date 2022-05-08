@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn">
-                                <rect key="frame" x="100" y="431.5" width="214" height="33"/>
+                                <rect key="frame" x="100" y="742" width="214" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -37,21 +37,31 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приветствие" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
+                                <rect key="frame" x="17" y="98" width="380" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zhn-PT-4Ay"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="100" id="0wj-a0-l5Z"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
                             <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="Nhc-oi-BoW"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="25" id="T8r-25-4UH"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="50" id="TYQ-2a-ivO"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Sy7-Mq-AnJ" secondAttribute="trailing" constant="17" id="foG-JM-KCC"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
-                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="centerY" secondItem="6r6-Rh-X18" secondAttribute="centerY" id="hml-kQ-kCg"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="10" id="mo2-DX-iUb"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="100" id="rZ7-tI-ffY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HQ3-5Z-W8X"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="QxA-Xu-LOa" id="bph-k7-IaC"/>
+                        <outlet property="greetingLabel" destination="Sy7-Mq-AnJ" id="kIJ-7p-8B7"/>
                         <outlet property="loginButton" destination="Fq0-Zx-ejn" id="KCZ-AT-Qvr"/>
                     </connections>
                 </viewController>

@@ -26,6 +26,8 @@
 		CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */; };
 		CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */; };
 		CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */; };
+		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
+		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
 		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
@@ -59,6 +61,8 @@
 		CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScenePresenter.swift; sourceTree = "<group>"; };
 		CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScenePresenter.swift; sourceTree = "<group>"; };
 		CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
+		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
+		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				CA862F5F28225884002AFB6A /* User.swift */,
+				CA6AFDBA2828150F0098718E /* Greeting.swift */,
 				CA862F61282258BF002AFB6A /* Card.swift */,
 				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
 			);
@@ -203,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */,
+				CA6AFDB8282804E70098718E /* GreetingGenerator.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -334,8 +340,10 @@
 				CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
+				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
 				CA6AFD822827A77F0098718E /* Configuration.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
+				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
 				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
 				CA6AFD862827A7C70098718E /* Temp.swift in Sources */,
