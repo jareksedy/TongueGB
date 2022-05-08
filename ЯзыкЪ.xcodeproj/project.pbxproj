@@ -88,8 +88,8 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
+				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";

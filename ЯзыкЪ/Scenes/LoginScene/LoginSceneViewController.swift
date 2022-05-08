@@ -37,10 +37,14 @@ class LoginSceneViewController: UIViewController {
     
     // MARK: - Methods
     private func setupUI() {
-        greetingLabel.text = greetingLabelText
-        greetingSubLabel.text = greetingSubLabelText
         appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")"
+        appVersionLabel.font = UIFont.monospacedSystemFont(ofSize: 10.0, weight: .light)
+        
         loginButton.setTitle(loginButtonTitle, for: .normal)
+    }
+    
+    private func setupNavigationOptions() {
+        self.title = "Добрый день"
     }
 
     // MARK: - Outlets
@@ -62,5 +66,10 @@ class LoginSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationOptions()
     }
 }
