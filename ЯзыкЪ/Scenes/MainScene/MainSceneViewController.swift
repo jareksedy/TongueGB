@@ -14,9 +14,7 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
-    func addCardTapped() {
-        print("Add card card tapped! Do something!")
-    }
+    func addCardTapped() {}
 }
 
 // MARK: - Additional extensions

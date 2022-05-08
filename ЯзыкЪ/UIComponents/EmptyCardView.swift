@@ -86,7 +86,6 @@ class EmptyCardView: UIControl {
         let addIconConfig = UIImage.SymbolConfiguration(pointSize: 36, weight: .light, scale: .large)
         
         addIcon = UIImageView()
-        //addIcon?.tintColor = .systemGray5
         addIcon?.image = UIImage(systemName: "plus.rectangle.portrait")?
             .withRenderingMode(.alwaysTemplate)
             .withConfiguration(addIconConfig)
