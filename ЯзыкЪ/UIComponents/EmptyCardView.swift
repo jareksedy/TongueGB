@@ -61,6 +61,10 @@ class EmptyCardView: UIControl {
     }
     
     // MARK: - Selectors
+    @objc func tapUp() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
+    }
+    
     @objc func tapDown() {
         UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
     }
@@ -102,8 +106,8 @@ class EmptyCardView: UIControl {
         frontView.addSubview(subHeadingLabel!)
         
         frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
-        //frontView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
-        frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchUpInside, .touchDragExit, .touchCancel, .touchUpOutside])
+        frontView.addTarget(self, action: #selector(tapUp), for: [.touchUpInside])
+        frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
         
         frontView.clipsToBounds = true
         
