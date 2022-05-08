@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Knv-8s-9hL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,13 +13,13 @@
         <!--Login Scene View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScene" id="BYZ-38-t0r" customClass="LoginSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yazykLogo" translatesAutoresizingMaskIntoConstraints="NO" id="omb-Df-Cq9">
-                                <rect key="frame" x="169.5" y="54" width="75" height="75"/>
+                                <rect key="frame" x="169.5" y="113" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="ijm-1I-Aky"/>
                                     <constraint firstAttribute="width" secondItem="omb-Df-Cq9" secondAttribute="height" multiplier="1:1" id="jW4-2U-0kR"/>
@@ -39,8 +40,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtN-xS-MmT">
                                 <rect key="frame" x="100" y="489.5" width="214" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="-5" minY="-2" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Войти с Apple ID" image="applelogo" catalog="system">
                                     <color key="titleColor" systemColor="linkColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
@@ -69,12 +70,13 @@
                             <constraint firstItem="R4Z-vu-0l3" firstAttribute="top" secondItem="wk4-x8-HiF" secondAttribute="bottom" constant="10" id="Skq-5n-FJk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TtN-xS-MmT" secondAttribute="trailing" constant="100" id="T51-RE-yJT"/>
                             <constraint firstItem="wk4-x8-HiF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="eJU-g2-dxq"/>
-                            <constraint firstItem="omb-Df-Cq9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="g6K-rR-OKK"/>
+                            <constraint firstItem="omb-Df-Cq9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="g6K-rR-OKK"/>
                             <constraint firstItem="omb-Df-Cq9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iYC-NP-SbU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xh9-YH-qth" secondAttribute="bottom" constant="25" id="rgp-Ub-m2X"/>
                             <constraint firstItem="Xh9-YH-qth" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="vEN-sp-ygA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LTT-zF-Utw"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="Xh9-YH-qth" id="9hG-Es-Zqi"/>
                         <outlet property="greetingLabel" destination="wk4-x8-HiF" id="hCy-lq-NBq"/>
@@ -85,11 +87,191 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="674" y="197"/>
+        </scene>
+        <!--Add Card Scene View Controller-->
+        <scene sceneID="uLR-tD-y9T">
+            <objects>
+                <viewController storyboardIdentifier="AddCardScene" id="IER-PV-OGR" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3p9-Rl-App">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Eps-ax-cbd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="fjv-b2-QOy">
+                        <imageReference key="image" image="plus.rectangle.portrait" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="plus.rectangle.portrait.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYH-Gq-Mvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="-508"/>
+        </scene>
+        <!--Main Scene View Controller-->
+        <scene sceneID="fjr-z2-Xjp">
+            <objects>
+                <viewController storyboardIdentifier="MainScene" id="EIP-Fk-IJT" customClass="MainSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Px1-fE-baJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4M-di-SX3" customClass="ScrollOverlayView" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="720"/>
+                                <subviews>
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-GJ-n7n">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-6O-vGL">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                                <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="width" secondItem="3kj-GJ-n7n" secondAttribute="width" priority="250" id="Thd-2t-g2B"/>
+                                            <constraint firstAttribute="bottom" secondItem="pVC-6O-vGL" secondAttribute="bottom" id="Z9t-GM-nnH"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="height" secondItem="3kj-GJ-n7n" secondAttribute="height" id="djv-Hf-knt"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="top" secondItem="3kj-GJ-n7n" secondAttribute="top" id="h5K-ft-Aag"/>
+                                            <constraint firstItem="pVC-6O-vGL" firstAttribute="leading" secondItem="3kj-GJ-n7n" secondAttribute="leading" id="n3v-QD-UZr"/>
+                                            <constraint firstAttribute="trailing" secondItem="pVC-6O-vGL" secondAttribute="trailing" id="qXe-Ws-D62"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3kj-GJ-n7n" secondAttribute="trailing" id="BOn-kz-Bib"/>
+                                    <constraint firstItem="3kj-GJ-n7n" firstAttribute="leading" secondItem="g4M-di-SX3" secondAttribute="leading" id="EvU-Ct-afy"/>
+                                    <constraint firstAttribute="bottom" secondItem="3kj-GJ-n7n" secondAttribute="bottom" id="laJ-ak-hXC"/>
+                                    <constraint firstItem="3kj-GJ-n7n" firstAttribute="top" secondItem="g4M-di-SX3" secondAttribute="top" id="uJS-dF-R8A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oaZ-I0-KiF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g4M-di-SX3" firstAttribute="leading" secondItem="oaZ-I0-KiF" secondAttribute="leading" id="UjL-So-HxL"/>
+                            <constraint firstItem="g4M-di-SX3" firstAttribute="top" secondItem="oaZ-I0-KiF" secondAttribute="top" id="bVu-aK-rAt"/>
+                            <constraint firstItem="oaZ-I0-KiF" firstAttribute="bottom" secondItem="g4M-di-SX3" secondAttribute="bottom" id="hcX-H6-DQq"/>
+                            <constraint firstItem="oaZ-I0-KiF" firstAttribute="trailing" secondItem="g4M-di-SX3" secondAttribute="trailing" id="wWV-md-FXj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="uiL-kZ-aVi">
+                        <imageReference key="image" image="rectangle.portrait" catalog="system" symbolScale="small"/>
+                        <imageReference key="selectedImage" image="rectangle.portrait.fill" catalog="system" symbolScale="small"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cardsScrollOverlay" destination="g4M-di-SX3" id="ytj-Mp-rui"/>
+                        <outlet property="cardsScrollView" destination="3kj-GJ-n7n" id="Vai-Uf-LvC"/>
+                        <outlet property="cardsScrollViewLeading" destination="EvU-Ct-afy" id="Ebh-BP-Yp1"/>
+                        <outlet property="cardsScrollViewTrailing" destination="BOn-kz-Bib" id="SR8-Qo-m79"/>
+                        <outlet property="cardsStackView" destination="pVC-6O-vGL" id="7bg-4Q-5Kl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jVQ-Co-UQt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686.9565217391305" y="-1169.1964285714284"/>
+        </scene>
+        <!--Yazyk Tab Bar Controller-->
+        <scene sceneID="3qr-HM-cY1">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="0ik-c8-cev" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="kUb-iI-c2H">
+                        <barButtonItem key="rightBarButtonItem" id="pZy-rR-DGh">
+                            <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <connections>
+                                <action selector="categoriesBarButtonItemTapped:" destination="0ik-c8-cev" id="fWq-l7-JsL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wmm-X7-BL0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="categoriesBarButtonItem" destination="pZy-rR-DGh" id="OIA-9Z-tt9"/>
+                        <segue destination="EIP-Fk-IJT" kind="relationship" relationship="viewControllers" id="qDV-gL-VyI"/>
+                        <segue destination="IER-PV-OGR" kind="relationship" relationship="viewControllers" id="EHT-vQ-ROq"/>
+                        <segue destination="bPb-3I-GTr" kind="relationship" relationship="viewControllers" id="pRc-nS-Q1N"/>
+                        <segue destination="juf-TK-y7j" kind="relationship" relationship="viewControllers" id="z1K-EW-1Qc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TVK-KX-zDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="197"/>
+        </scene>
+        <!--Search Scene View Controller-->
+        <scene sceneID="ir3-x3-Qf5">
+            <objects>
+                <viewController storyboardIdentifier="SearchScene" id="bPb-3I-GTr" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YGs-88-2iw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qWa-eV-dtS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="Lw5-kB-Jcx">
+                        <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="small"/>
+                        <imageReference key="selectedImage" image="magnifyingglass" catalog="system" symbolScale="small"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIa-Vx-W1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="143"/>
+        </scene>
+        <!--Profile Scene View Controller-->
+        <scene sceneID="nJl-yr-MiE">
+            <objects>
+                <viewController storyboardIdentifier="ProfileScene" id="juf-TK-y7j" customClass="ProfileSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bdz-pP-aWB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jo4-dk-doD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" id="APb-ca-JTb">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="small"/>
+                        <imageReference key="selectedImage" image="person.fill" catalog="system" symbolScale="small"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XqM-nU-2Jd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="797"/>
+        </scene>
+        <!--Yazyk Navigation Controller-->
+        <scene sceneID="qeH-kh-CEe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Knv-8s-9hL" customClass="YazykNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JsB-zO-gAf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TiZ-YG-xAi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bRM-TE-pBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-128" y="197"/>
         </scene>
     </scenes>
     <resources>
         <image name="applelogo" catalog="system" width="103" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="plus.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
+        <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
+        <image name="rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <image name="yazykLogo" width="600" height="600"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
