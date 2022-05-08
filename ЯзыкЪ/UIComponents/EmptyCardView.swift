@@ -17,7 +17,7 @@ class EmptyCardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var frontViewBackgroundColor: UIColor = .systemGray5.withAlphaComponent(0.5)
+    var frontViewBackgroundColor: UIColor = .clear //.systemGray5.withAlphaComponent(0.5)
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
@@ -94,7 +94,7 @@ class EmptyCardView: UIControl {
         
         headingLabel = UILabel()
         headingLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        headingLabel?.text = "Здесь пусто"
+        headingLabel?.text = "Сейчас здесь совершенно пусто"
         headingLabel?.numberOfLines = 0
         headingLabel?.textAlignment = .center
         frontView.addSubview(headingLabel!)
@@ -102,10 +102,13 @@ class EmptyCardView: UIControl {
         subHeadingLabel = UILabel()
         subHeadingLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
         subHeadingLabel?.alpha = 0.5
-        subHeadingLabel?.text = "Нажмите чтобы добавить вашу первую карточку."
+        subHeadingLabel?.text = "Нажмите чтобы добавить вашу первую карточку"
         subHeadingLabel?.numberOfLines = 0
         subHeadingLabel?.textAlignment = .center
         frontView.addSubview(subHeadingLabel!)
+        
+        frontView.layer.borderColor = UIColor.systemGray5.cgColor
+        frontView.layer.borderWidth = 2.0
         
         frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
         frontView.addTarget(self, action: #selector(tapUp), for: [.touchUpInside])
@@ -117,6 +120,12 @@ class EmptyCardView: UIControl {
     }
     
     private func setupView() {
+        let gap = ((screenWidth - (screenWidth * cardScreenWidthMultiplier)) / 2) - (cardStackSpacing / 2)
+        let effectiveWidth = screenWidth - (gap * 2 + cardStackSpacing)
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.widthAnchor.constraint(equalToConstant: effectiveWidth).isActive = true
+        
         addSubview(frontView)
         tieConstraintsToSuperView(frontView)
     }
@@ -138,11 +147,11 @@ class EmptyCardView: UIControl {
         headingLabel?.translatesAutoresizingMaskIntoConstraints = false
         headingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         headingLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        headingLabel?.widthAnchor.constraint(equalToConstant: screenWidth * screenWidthMultiplier - 80).isActive = true
+        headingLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
         
         subHeadingLabel?.translatesAutoresizingMaskIntoConstraints = false
         subHeadingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        subHeadingLabel?.centerYAnchor.constraint(equalTo: self.headingLabel?.centerYAnchor ?? self.centerYAnchor, constant: 55).isActive = true
-        subHeadingLabel?.widthAnchor.constraint(equalToConstant: screenWidth * screenWidthMultiplier - 80).isActive = true
+        subHeadingLabel?.centerYAnchor.constraint(equalTo: self.headingLabel!.bottomAnchor, constant: 40).isActive = true
+        subHeadingLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
     }
 }
