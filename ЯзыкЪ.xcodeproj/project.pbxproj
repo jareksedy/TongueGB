@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
+		CA6AFD822827A77F0098718E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD812827A77F0098718E /* Configuration.swift */; };
+		CA6AFD842827A79C0098718E /* UIComponents in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD832827A79C0098718E /* UIComponents */; };
+		CA6AFD862827A7C70098718E /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* Temp.swift */; };
+		CA6AFD8B2827A7E70098718E /* AddCardScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD872827A7E70098718E /* AddCardScene */; };
+		CA6AFD8C2827A7E70098718E /* ProfileScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD882827A7E70098718E /* ProfileScene */; };
+		CA6AFD8D2827A7E70098718E /* MainScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD892827A7E70098718E /* MainScene */; };
+		CA6AFD8E2827A7E70098718E /* SearchScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD8A2827A7E70098718E /* SearchScene */; };
+		CA6AFD902827A8F80098718E /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD8F2827A8F80098718E /* Extensions */; };
 		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
@@ -17,7 +25,6 @@
 		CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
-		CA8B608D2818D78300D7769B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608C2818D78300D7769B /* ViewController.swift */; };
 		CA8B60902818D78300D7769B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* Main.storyboard */; };
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
@@ -26,6 +33,14 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
+		CA6AFD812827A77F0098718E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		CA6AFD832827A79C0098718E /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIComponents; sourceTree = "<group>"; };
+		CA6AFD852827A7C70098718E /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		CA6AFD872827A7E70098718E /* AddCardScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AddCardScene; sourceTree = "<group>"; };
+		CA6AFD882827A7E70098718E /* ProfileScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ProfileScene; sourceTree = "<group>"; };
+		CA6AFD892827A7E70098718E /* MainScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainScene; sourceTree = "<group>"; };
+		CA6AFD8A2827A7E70098718E /* SearchScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SearchScene; sourceTree = "<group>"; };
+		CA6AFD8F2827A8F80098718E /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = "<group>"; };
 		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -35,7 +50,6 @@
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA8B608C2818D78300D7769B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA8B608F2818D78300D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA8B60912818D78500D7769B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				CA06A836281CF0F60086BD0B /* LoginScene */,
+				CA6AFD892827A7E70098718E /* MainScene */,
+				CA6AFD872827A7E70098718E /* AddCardScene */,
+				CA6AFD882827A7E70098718E /* ProfileScene */,
+				CA6AFD8A2827A7E70098718E /* SearchScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -124,13 +142,16 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
+				CA8B60882818D78300D7769B /* AppDelegate.swift */,
+				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
+				CA6AFD812827A77F0098718E /* Configuration.swift */,
+				CA6AFD852827A7C70098718E /* Temp.swift */,
 				CA862F6828225AEB002AFB6A /* API */,
 				CA862F6528225969002AFB6A /* Configuration */,
 				CA862F5E28225878002AFB6A /* Models */,
 				CA862F5B28225827002AFB6A /* Protocols */,
-				CA8B60882818D78300D7769B /* AppDelegate.swift */,
-				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
-				CA8B608C2818D78300D7769B /* ViewController.swift */,
+				CA6AFD8F2827A8F80098718E /* Extensions */,
+				CA6AFD832827A79C0098718E /* UIComponents */,
 				CA06A837281CF0FE0086BD0B /* Scenes */,
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
@@ -197,10 +218,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6AFD902827A8F80098718E /* Extensions in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CA862F6728225992002AFB6A /* GoogleService-Info.plist in Resources */,
+				CA6AFD8E2827A7E70098718E /* SearchScene in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
+				CA6AFD8C2827A7E70098718E /* ProfileScene in Resources */,
+				CA6AFD8D2827A7E70098718E /* MainScene in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
+				CA6AFD842827A79C0098718E /* UIComponents in Resources */,
+				CA6AFD8B2827A7E70098718E /* AddCardScene in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +238,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8B608D2818D78300D7769B /* ViewController.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
@@ -221,6 +247,8 @@
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
+				CA6AFD822827A77F0098718E /* Configuration.swift in Sources */,
+				CA6AFD862827A7C70098718E /* Temp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
