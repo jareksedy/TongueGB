@@ -26,27 +26,46 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
 class LoginSceneViewController: UIViewController {
     lazy var presenter = LoginScenePresenter()
     
+    // MARK: - Services
+    let greetingGenerator = GreetingGenerator()
+    
     // MARK: - Properties
-    let greetingLabelText = "Привет ✌️"
-    let greetingSubLabelText = "«ЯзыкЪ» 👅 приветствует тебя! «ЯзыкЪ» — это удобный инструмент для изучения иностранных слов."
+    var randomGreeting: Greeting?
+    let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
+    let welcomeLabelText = "Добро пожаловать! Войдите в приложение с помощью своего Apple ID."
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     let appVersionLabelText = "Версия"
     let loginButtonTitle = "Войти с Apple ID"
     
-    let appleIDProvider = ASAuthorizationAppleIDProvider()
-    
     // MARK: - Methods
     private func setupUI() {
-        greetingLabel.text = greetingLabelText
-        greetingSubLabel.text = greetingSubLabelText
+        randomGreeting = greetingGenerator.randomGreeting()
+        
+        transcriptionLabel.text = randomGreeting?.transcription
+        transcriptionLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        transcriptionLabel.alpha = 0.5
+        
+        greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
+        greetingLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        
+        welcomeLabel.text = welcomeLabelText
+        welcomeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        welcomeLabel.textColor = .secondaryLabel
+        
         appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")"
+        appVersionLabel.font = UIFont.monospacedSystemFont(ofSize: 10.0, weight: .light)
+        
         loginButton.setTitle(loginButtonTitle, for: .normal)
+    }
+    
+    private func setupNavigationOptions() {
+        self.title = randomGreeting?.hello
     }
 
     // MARK: - Outlets
-    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var transcriptionLabel: UILabel!
     @IBOutlet weak var greetingLabel: UILabel!
-    @IBOutlet weak var greetingSubLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -62,5 +81,10 @@ class LoginSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationOptions()
     }
 }

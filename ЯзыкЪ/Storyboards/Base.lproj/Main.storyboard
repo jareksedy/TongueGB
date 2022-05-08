@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,33 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yazykLogo" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-Uw-AiN">
-                                <rect key="frame" x="169.5" y="113" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn" customClass="YazykButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="17" y="725" width="380" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="R0Z-Uw-AiN" secondAttribute="height" multiplier="1:1" id="376-aw-YFP"/>
-                                    <constraint firstAttribute="width" constant="75" id="axN-9c-Llf"/>
+                                    <constraint firstAttribute="height" constant="65" id="Gw6-tC-4uz"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приветствие" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLb-Rf-Nlc">
-                                <rect key="frame" x="25" y="383.5" width="364" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подзаголовок приветствия" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKS-aA-E2Q">
-                                <rect key="frame" x="25" y="422.5" width="364" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn">
-                                <rect key="frame" x="100" y="489.5" width="214" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Войти с Apple ID" image="applelogo" catalog="system">
-                                    <color key="titleColor" systemColor="linkColor"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Войти с Apple ID">
+                                    <color key="titleColor" name="AccentColor"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="Wfr-tf-ua3" eventType="touchUpInside" id="F1u-kw-I8f"/>
@@ -56,38 +39,57 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
+                                <rect key="frame" x="17" y="103" width="380" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-6w-dIm">
+                                <rect key="frame" x="17" y="138.5" width="380" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать! Войдите в приложение..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-lM-mr3">
+                                <rect key="frame" x="17" y="190.5" width="380" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zhn-PT-4Ay"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="100" id="0wj-a0-l5Z"/>
-                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="top" secondItem="QKS-aA-E2Q" secondAttribute="bottom" constant="50" id="5FZ-ja-zzx"/>
-                            <constraint firstItem="QKS-aA-E2Q" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="7W4-Dq-Qbh"/>
-                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QKS-aA-E2Q" secondAttribute="trailing" constant="25" id="7aI-dK-o7R"/>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0CJ-sK-08e"/>
+                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0wj-a0-l5Z"/>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="top" secondItem="Sy7-Mq-AnJ" secondAttribute="bottom" constant="15" id="B9C-Da-ouh"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="E6e-BO-qks"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="top" secondItem="zUZ-6w-dIm" secondAttribute="bottom" constant="35" id="MfD-Qj-g66"/>
                             <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="Nhc-oi-BoW"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="25" id="T8r-25-4UH"/>
-                            <constraint firstItem="R0Z-Uw-AiN" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="25" id="VAz-gn-wYn"/>
-                            <constraint firstItem="HLb-Rf-Nlc" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="aks-Ev-r96"/>
-                            <constraint firstItem="R0Z-Uw-AiN" firstAttribute="centerX" secondItem="6r6-Rh-X18" secondAttribute="centerX" id="ed0-R2-sxY"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="35" id="TYQ-2a-ivO"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Sy7-Mq-AnJ" secondAttribute="trailing" constant="17" id="foG-JM-KCC"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
-                            <constraint firstItem="QKS-aA-E2Q" firstAttribute="top" secondItem="HLb-Rf-Nlc" secondAttribute="bottom" constant="10" id="iIb-7U-lOT"/>
-                            <constraint firstItem="HLb-Rf-Nlc" firstAttribute="centerY" secondItem="6r6-Rh-X18" secondAttribute="centerY" constant="-50" id="oUX-Kv-gEp"/>
-                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="100" id="rZ7-tI-ffY"/>
-                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="HLb-Rf-Nlc" secondAttribute="trailing" constant="25" id="uO2-qZ-7Ke"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="15" id="mo2-DX-iUb"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="zUZ-6w-dIm" secondAttribute="trailing" constant="17" id="qF1-do-5UD"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="17" id="rZ7-tI-ffY"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="IwF-lM-mr3" secondAttribute="trailing" constant="17" id="tQP-Ir-zqk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HQ3-5Z-W8X"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="QxA-Xu-LOa" id="bph-k7-IaC"/>
-                        <outlet property="greetingLabel" destination="HLb-Rf-Nlc" id="3LS-zv-R5N"/>
-                        <outlet property="greetingSubLabel" destination="QKS-aA-E2Q" id="qlG-fd-5ff"/>
+                        <outlet property="greetingLabel" destination="zUZ-6w-dIm" id="7gz-de-duk"/>
                         <outlet property="loginButton" destination="Fq0-Zx-ejn" id="KCZ-AT-Qvr"/>
-                        <outlet property="logoImageView" destination="R0Z-Uw-AiN" id="ATA-jD-gvW"/>
+                        <outlet property="transcriptionLabel" destination="Sy7-Mq-AnJ" id="SDK-Gg-YUc"/>
+                        <outlet property="welcomeLabel" destination="IwF-lM-mr3" id="EqC-4H-x1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-nE-vMP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="197"/>
+            <point key="canvasLocation" x="673.91304347826087" y="196.875"/>
         </scene>
         <!--Add Card Scene View Controller-->
         <scene sceneID="17d-tc-oCR">
@@ -263,7 +265,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="applelogo" catalog="system" width="103" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
@@ -272,10 +273,9 @@
         <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
         <image name="rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="rectangle.portrait.fill" catalog="system" width="115" height="128"/>
-        <image name="yazykLogo" width="600" height="600"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
