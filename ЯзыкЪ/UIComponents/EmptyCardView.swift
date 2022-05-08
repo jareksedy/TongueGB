@@ -15,7 +15,7 @@ class EmptyCardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var frontViewBackgroundColor: UIColor = .systemGray5
+    var frontViewBackgroundColor: UIColor = .systemGray5.withAlphaComponent(0.5)
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
@@ -24,8 +24,9 @@ class EmptyCardView: UIControl {
     var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut, .allowUserInteraction]
     
     // MARK: - Private properties
-    private var wordLabel: UILabel?
-    private var descriptionLabel: UILabel?
+    private var headingLabel: UILabel?
+    private var subHeadingLabel: UILabel?
+    private var addIcon: UIImageView?
     
     // MARK: - Front and back Views
     lazy var frontView = makeCardFrontView()
@@ -75,20 +76,36 @@ class EmptyCardView: UIControl {
         frontView.backgroundColor = self.frontViewBackgroundColor
         frontView.layer.cornerRadius = cornerRadius
         
-        wordLabel = UILabel()
-        wordLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        wordLabel?.text = "Пустота"
-        frontView.addSubview(wordLabel!)
+        let addIconConfig = UIImage.SymbolConfiguration(pointSize: 36, weight: .light, scale: .large)
         
-        descriptionLabel = UILabel()
-        descriptionLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
-        descriptionLabel?.alpha = 0.5
-        descriptionLabel?.text = "Нажмите здесь чтобы добавить\nвашу первую карточку..."
-        frontView.addSubview(descriptionLabel!)
+        addIcon = UIImageView()
+        //addIcon?.tintColor = .systemGray5
+        addIcon?.image = UIImage(systemName: "plus.rectangle.portrait")?
+            .withRenderingMode(.alwaysTemplate)
+            .withConfiguration(addIconConfig)
+        
+        frontView.addSubview(addIcon!)
+        
+        headingLabel = UILabel()
+        headingLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        headingLabel?.text = "Здесь пусто"
+        headingLabel?.numberOfLines = 0
+        headingLabel?.textAlignment = .center
+        frontView.addSubview(headingLabel!)
+        
+        subHeadingLabel = UILabel()
+        subHeadingLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
+        subHeadingLabel?.alpha = 0.5
+        subHeadingLabel?.text = "Нажмите чтобы добавить вашу первую карточку."
+        subHeadingLabel?.numberOfLines = 0
+        subHeadingLabel?.textAlignment = .center
+        frontView.addSubview(subHeadingLabel!)
         
         frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
         //frontView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
         frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchUpInside, .touchDragExit, .touchCancel, .touchUpOutside])
+        
+        frontView.clipsToBounds = true
         
         return frontView
     }
@@ -108,12 +125,18 @@ class EmptyCardView: UIControl {
     }
     
     private func setupFrontViewConstraints() {
-        wordLabel?.translatesAutoresizingMaskIntoConstraints = false
-        wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        addIcon?.translatesAutoresizingMaskIntoConstraints = false
+        addIcon?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        addIcon?.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 100).isActive = true
         
-        descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel?.centerYAnchor ?? self.centerYAnchor, constant: 25).isActive = true
+        headingLabel?.translatesAutoresizingMaskIntoConstraints = false
+        headingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        headingLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        headingLabel?.widthAnchor.constraint(equalToConstant: screenWidth * screenWidthMultiplier - 80).isActive = true
+        
+        subHeadingLabel?.translatesAutoresizingMaskIntoConstraints = false
+        subHeadingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        subHeadingLabel?.centerYAnchor.constraint(equalTo: self.headingLabel?.centerYAnchor ?? self.centerYAnchor, constant: 55).isActive = true
+        subHeadingLabel?.widthAnchor.constraint(equalToConstant: screenWidth * screenWidthMultiplier - 80).isActive = true
     }
 }
