@@ -8,6 +8,8 @@
 import UIKit
 
 class EmptyCardView: UIControl {
+    weak var viewDelegate: MainSceneViewDelegate?
+    
     let screenWidth = UIScreen.main.bounds.size.width
     
     // MARK: - Public properties
@@ -63,6 +65,7 @@ class EmptyCardView: UIControl {
     // MARK: - Selectors
     @objc func tapUp() {
         UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
+        viewDelegate?.addCardTapped()
     }
     
     @objc func tapDown() {

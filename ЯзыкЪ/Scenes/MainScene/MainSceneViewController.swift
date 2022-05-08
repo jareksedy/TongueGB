@@ -9,10 +9,14 @@ import UIKit
 
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
+    func addCardTapped()
 }
 
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
+    func addCardTapped() {
+        print("Add card card tapped! Do something!")
+    }
 }
 
 // MARK: - Additional extensions
@@ -57,7 +61,9 @@ class MainSceneViewController: UIViewController {
             }
         } else {
             let emptyCardView = EmptyCardView()
+            
             emptyCardView.screenWidthMultiplier = cardScreenWidthMultiplier
+            emptyCardView.viewDelegate = self
             
             cardsStackView.addArrangedSubview(emptyCardView)
         }
