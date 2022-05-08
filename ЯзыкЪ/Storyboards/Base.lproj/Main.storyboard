@@ -37,9 +37,21 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Приветствие" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
-                                <rect key="frame" x="17" y="98" width="380" height="13.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
+                                <rect key="frame" x="17" y="103" width="380" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-6w-dIm">
+                                <rect key="frame" x="17" y="138.5" width="380" height="13.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-lM-mr3">
+                                <rect key="frame" x="17" y="187" width="380" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,27 +59,35 @@
                         <viewLayoutGuide key="safeArea" id="zhn-PT-4Ay"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0CJ-sK-08e"/>
                             <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="100" id="0wj-a0-l5Z"/>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="top" secondItem="Sy7-Mq-AnJ" secondAttribute="bottom" constant="15" id="B9C-Da-ouh"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="E6e-BO-qks"/>
                             <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="top" secondItem="zUZ-6w-dIm" secondAttribute="bottom" constant="35" id="MfD-Qj-g66"/>
                             <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="Nhc-oi-BoW"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="25" id="T8r-25-4UH"/>
                             <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="50" id="TYQ-2a-ivO"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Sy7-Mq-AnJ" secondAttribute="trailing" constant="17" id="foG-JM-KCC"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
-                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="10" id="mo2-DX-iUb"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="15" id="mo2-DX-iUb"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="zUZ-6w-dIm" secondAttribute="trailing" constant="17" id="qF1-do-5UD"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="100" id="rZ7-tI-ffY"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="IwF-lM-mr3" secondAttribute="trailing" constant="17" id="tQP-Ir-zqk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HQ3-5Z-W8X"/>
                     <connections>
                         <outlet property="appVersionLabel" destination="QxA-Xu-LOa" id="bph-k7-IaC"/>
-                        <outlet property="greetingLabel" destination="Sy7-Mq-AnJ" id="kIJ-7p-8B7"/>
+                        <outlet property="greetingLabel" destination="zUZ-6w-dIm" id="7gz-de-duk"/>
                         <outlet property="loginButton" destination="Fq0-Zx-ejn" id="KCZ-AT-Qvr"/>
+                        <outlet property="transcriptionLabel" destination="Sy7-Mq-AnJ" id="SDK-Gg-YUc"/>
+                        <outlet property="welcomeLabel" destination="IwF-lM-mr3" id="EqC-4H-x1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-nE-vMP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674" y="197"/>
+            <point key="canvasLocation" x="673.91304347826087" y="196.875"/>
         </scene>
         <!--Add Card Scene View Controller-->
         <scene sceneID="17d-tc-oCR">
