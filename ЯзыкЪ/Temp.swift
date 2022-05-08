@@ -25,14 +25,9 @@ struct Category {
 
 class TempUICardMockProvider {
     func createMockCards() -> [Card] {
-        return []
+        //return []
+        
         return [
-            Card(word: "this is a very long line of text probably the longest",
-                 translation: "это очень длинная строка текста",
-                 description: "kɑːˈneɪʃn",
-                 category: Category(categoryKey: "Растения", categoryColor: nil, categoryImage: nil),
-                 userEmail: ""),
-            
             Card(word: "carnation",
                  translation: "гвоздика",
                  description: "kɑːˈneɪʃn",
