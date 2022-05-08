@@ -10,8 +10,7 @@ import Foundation
 class GreetingGenerator {
     
     let greetings: [Greeting] = [
-        
-    Greeting(hello: "Hello!", transcription: "[ həˈləʊ ]", language: "по-английски"),
+    Greeting(hello: "Dia dhuit!", transcription: "[ diə ɣɪt ]", language: "по-ирландски"),
     Greeting(hello: "Γειά σας!", transcription: "[ ʝaˈ sas ]", language: "по-гречески"),
     Greeting(hello: "Salut!", transcription: "[ zaˈluːt ]", language: "по-немецки"),
     Greeting(hello: "Cześć!", transcription: "[ tʂɛɕʨ ]", language: "по-польски"),
@@ -21,7 +20,6 @@ class GreetingGenerator {
     Greeting(hello: "Здраво!", transcription: "[ zdravo ]", language: "по-сербски"),
     Greeting(hello: "Bonjour!", transcription: "[ bɔ̃ʒuʁ ]", language: "по-французски"),
     Greeting(hello: "Сайн уу?", transcription: "[ sain uu ]", language: "по-монгольски"),
-    
     ]
     
     func randomGreeting() -> Greeting {

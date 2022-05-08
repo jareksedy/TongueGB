@@ -46,7 +46,7 @@ class LoginSceneViewController: UIViewController {
         transcriptionLabel.alpha = 0.5
         
         greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
-        greetingLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+        greetingLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         
         welcomeLabel.text = welcomeLabelText
         welcomeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
