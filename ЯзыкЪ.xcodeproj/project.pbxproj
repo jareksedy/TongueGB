@@ -10,13 +10,22 @@
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
 		CA6AFD822827A77F0098718E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD812827A77F0098718E /* Configuration.swift */; };
-		CA6AFD842827A79C0098718E /* UIComponents in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD832827A79C0098718E /* UIComponents */; };
 		CA6AFD862827A7C70098718E /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* Temp.swift */; };
-		CA6AFD8B2827A7E70098718E /* AddCardScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD872827A7E70098718E /* AddCardScene */; };
-		CA6AFD8C2827A7E70098718E /* ProfileScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD882827A7E70098718E /* ProfileScene */; };
-		CA6AFD8D2827A7E70098718E /* MainScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD892827A7E70098718E /* MainScene */; };
-		CA6AFD8E2827A7E70098718E /* SearchScene in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD8A2827A7E70098718E /* SearchScene */; };
-		CA6AFD902827A8F80098718E /* Extensions in Resources */ = {isa = PBXBuildFile; fileRef = CA6AFD8F2827A8F80098718E /* Extensions */; };
+		CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */; };
+		CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */; };
+		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
+		CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD922827AA8C0098718E /* EmptyCardView.swift */; };
+		CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD962827AA8D0098718E /* CardView.swift */; };
+		CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD9D2827AAAF0098718E /* UIColor.swift */; };
+		CA6AFDA02827AAAF0098718E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD9E2827AAAF0098718E /* String.swift */; };
+		CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */; };
+		CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */; };
+		CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */; };
+		CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */; };
+		CA6AFDAE2827AB100098718E /* ProfileSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */; };
+		CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */; };
+		CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */; };
+		CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */; };
 		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
@@ -34,13 +43,22 @@
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
 		CA6AFD812827A77F0098718E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		CA6AFD832827A79C0098718E /* UIComponents */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UIComponents; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
-		CA6AFD872827A7E70098718E /* AddCardScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AddCardScene; sourceTree = "<group>"; };
-		CA6AFD882827A7E70098718E /* ProfileScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ProfileScene; sourceTree = "<group>"; };
-		CA6AFD892827A7E70098718E /* MainScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MainScene; sourceTree = "<group>"; };
-		CA6AFD8A2827A7E70098718E /* SearchScene */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SearchScene; sourceTree = "<group>"; };
-		CA6AFD8F2827A8F80098718E /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Extensions; sourceTree = "<group>"; };
+		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
+		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
+		CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykNavigationController.swift; sourceTree = "<group>"; };
+		CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykTabBarController.swift; sourceTree = "<group>"; };
+		CA6AFD962827AA8D0098718E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CA6AFD9D2827AAAF0098718E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CA6AFD9E2827AAAF0098718E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneViewController.swift; sourceTree = "<group>"; };
+		CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScenePresenter.swift; sourceTree = "<group>"; };
+		CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardScenePresenter.swift; sourceTree = "<group>"; };
+		CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardSceneViewController.swift; sourceTree = "<group>"; };
+		CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSceneViewController.swift; sourceTree = "<group>"; };
+		CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScenePresenter.swift; sourceTree = "<group>"; };
+		CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScenePresenter.swift; sourceTree = "<group>"; };
+		CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
 		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -80,12 +98,78 @@
 			isa = PBXGroup;
 			children = (
 				CA06A836281CF0F60086BD0B /* LoginScene */,
-				CA6AFD892827A7E70098718E /* MainScene */,
-				CA6AFD872827A7E70098718E /* AddCardScene */,
-				CA6AFD882827A7E70098718E /* ProfileScene */,
-				CA6AFD8A2827A7E70098718E /* SearchScene */,
+				CA6AFDA62827AAF30098718E /* MainScene */,
+				CA6AFDAB2827AB060098718E /* AddCardScene */,
+				CA6AFDB52827AB260098718E /* SearchScene */,
+				CA6AFDB02827AB170098718E /* ProfileScene */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CA6AFD9C2827AA9F0098718E /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFD962827AA8D0098718E /* CardView.swift */,
+				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
+				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
+				CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */,
+				CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		CA6AFDA12827AAB60098718E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFD9E2827AAAF0098718E /* String.swift */,
+				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CA6AFDA62827AAF30098718E /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
+				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		CA6AFDAB2827AB060098718E /* AddCardScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
+				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
+			);
+			path = AddCardScene;
+			sourceTree = "<group>";
+		};
+		CA6AFDB02827AB170098718E /* ProfileScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
+				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
+			);
+			path = ProfileScene;
+			sourceTree = "<group>";
+		};
+		CA6AFDB52827AB260098718E /* SearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
+				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
+			);
+			path = SearchScene;
+			sourceTree = "<group>";
+		};
+		CA6AFDB62827AB3F0098718E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B608E2818D78300D7769B /* Main.storyboard */,
+				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		CA862F5B28225827002AFB6A /* Protocols */ = {
@@ -150,12 +234,11 @@
 				CA862F6528225969002AFB6A /* Configuration */,
 				CA862F5E28225878002AFB6A /* Models */,
 				CA862F5B28225827002AFB6A /* Protocols */,
-				CA6AFD8F2827A8F80098718E /* Extensions */,
-				CA6AFD832827A79C0098718E /* UIComponents */,
+				CA6AFD9C2827AA9F0098718E /* UIComponents */,
+				CA6AFDA12827AAB60098718E /* Extensions */,
 				CA06A837281CF0FE0086BD0B /* Scenes */,
-				CA8B608E2818D78300D7769B /* Main.storyboard */,
+				CA6AFDB62827AB3F0098718E /* Storyboards */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
-				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
 			);
 			path = "ЯзыкЪ";
 			sourceTree = "<group>";
@@ -218,16 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA6AFD902827A8F80098718E /* Extensions in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CA862F6728225992002AFB6A /* GoogleService-Info.plist in Resources */,
-				CA6AFD8E2827A7E70098718E /* SearchScene in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
-				CA6AFD8C2827A7E70098718E /* ProfileScene in Resources */,
-				CA6AFD8D2827A7E70098718E /* MainScene in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
-				CA6AFD842827A79C0098718E /* UIComponents in Resources */,
-				CA6AFD8B2827A7E70098718E /* AddCardScene in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,17 +315,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
+				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
+				CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
+				CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */,
+				CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */,
+				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
+				CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */,
+				CA6AFDAE2827AB100098718E /* ProfileSceneViewController.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
+				CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */,
+				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 				CA6AFD822827A77F0098718E /* Configuration.swift in Sources */,
+				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
+				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
+				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
 				CA6AFD862827A7C70098718E /* Temp.swift in Sources */,
+				CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */,
+				CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -92,7 +92,7 @@
         <!--Add Card Scene View Controller-->
         <scene sceneID="17d-tc-oCR">
             <objects>
-                <viewController storyboardIdentifier="AddCardScene" id="FTD-gO-1QJ" customClass="AddCardSceneViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddCardScene" id="FTD-gO-1QJ" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2e-6u-EcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
         <!--Main Scene View Controller-->
         <scene sceneID="C3n-gF-zL9">
             <objects>
-                <viewController storyboardIdentifier="MainScene" id="nEI-ot-lZW" customClass="MainSceneViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainScene" id="nEI-ot-lZW" customClass="MainSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3k-Ql-VJp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
         <!--Yazyk Tab Bar Controller-->
         <scene sceneID="eXM-uV-bXW">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="Y3N-JU-NPw" customClass="YazykTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="Y3N-JU-NPw" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="gwK-Sg-pVh">
                         <barButtonItem key="rightBarButtonItem" id="Mbp-OC-zJI">
                             <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
@@ -206,7 +206,7 @@
         <!--Search Scene View Controller-->
         <scene sceneID="yIf-XD-P9h">
             <objects>
-                <viewController storyboardIdentifier="SearchScene" id="bJB-a6-ma7" customClass="SearchSceneViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchScene" id="bJB-a6-ma7" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2e-5f-yNp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,7 +226,7 @@
         <!--Profile Scene View Controller-->
         <scene sceneID="UqO-lH-CHN">
             <objects>
-                <viewController storyboardIdentifier="ProfileScene" id="pr5-ye-Uyg" customClass="ProfileSceneViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileScene" id="pr5-ye-Uyg" customClass="ProfileSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fgR-lg-ZSI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
         <!--Yazyk Navigation Controller-->
         <scene sceneID="Mxi-Fa-ZnF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNV-Ni-7eA" customClass="YazykNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNV-Ni-7eA" customClass="YazykNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXA-YZ-qIg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
