@@ -19,10 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn">
-                                <rect key="frame" x="100" y="742" width="214" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn" customClass="YazykButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="17" y="710" width="380" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Gw6-tC-4uz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Войти с Apple ID">
                                     <color key="titleColor" name="AccentColor"/>
@@ -60,7 +62,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zUZ-6w-dIm" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0CJ-sK-08e"/>
-                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="100" id="0wj-a0-l5Z"/>
+                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0wj-a0-l5Z"/>
                             <constraint firstItem="zUZ-6w-dIm" firstAttribute="top" secondItem="Sy7-Mq-AnJ" secondAttribute="bottom" constant="15" id="B9C-Da-ouh"/>
                             <constraint firstItem="IwF-lM-mr3" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="E6e-BO-qks"/>
                             <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
@@ -72,7 +74,7 @@
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
                             <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="15" id="mo2-DX-iUb"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="zUZ-6w-dIm" secondAttribute="trailing" constant="17" id="qF1-do-5UD"/>
-                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="100" id="rZ7-tI-ffY"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="17" id="rZ7-tI-ffY"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="IwF-lM-mr3" secondAttribute="trailing" constant="17" id="tQP-Ir-zqk"/>
                         </constraints>
                     </view>

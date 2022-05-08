@@ -28,6 +28,7 @@
 		CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */; };
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
+		CA6AFDBD282828490098718E /* YazykButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* YazykButton.swift */; };
 		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
@@ -63,6 +64,7 @@
 		CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
+		CA6AFDBC282828490098718E /* YazykButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykButton.swift; sourceTree = "<group>"; };
 		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6AFD962827AA8D0098718E /* CardView.swift */,
+				CA6AFDBC282828490098718E /* YazykButton.swift */,
 				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
 				CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */,
@@ -331,6 +334,7 @@
 				CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */,
 				CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */,
 				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
+				CA6AFDBD282828490098718E /* YazykButton.swift in Sources */,
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
 				CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */,
