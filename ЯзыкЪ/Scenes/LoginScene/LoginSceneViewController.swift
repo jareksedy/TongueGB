@@ -59,7 +59,7 @@ class LoginSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.title = randomGreeting?.hello
+        self.title = "\(randomGreeting?.hello ?? "Привет")!"
     }
 
     // MARK: - Outlets

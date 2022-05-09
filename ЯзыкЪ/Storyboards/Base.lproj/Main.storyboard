@@ -232,14 +232,40 @@
                     <view key="view" contentMode="scaleToFill" id="fgR-lg-ZSI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-Ab-J4f">
+                                <rect key="frame" x="17" y="59" width="380" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejp-Gh-v0l">
+                                <rect key="frame" x="17" y="94.5" width="380" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ih7-Yo-GiG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ih7-Yo-GiG" firstAttribute="trailing" secondItem="Ejp-Gh-v0l" secondAttribute="trailing" constant="17" id="231-dv-tJX"/>
+                            <constraint firstItem="3zy-Ab-J4f" firstAttribute="leading" secondItem="ih7-Yo-GiG" secondAttribute="leading" constant="17" id="9ob-Rh-Z1t"/>
+                            <constraint firstItem="Ejp-Gh-v0l" firstAttribute="leading" secondItem="ih7-Yo-GiG" secondAttribute="leading" constant="17" id="AzR-wH-geA"/>
+                            <constraint firstItem="Ejp-Gh-v0l" firstAttribute="top" secondItem="3zy-Ab-J4f" secondAttribute="bottom" constant="15" id="CJR-6c-JIe"/>
+                            <constraint firstItem="ih7-Yo-GiG" firstAttribute="trailing" secondItem="3zy-Ab-J4f" secondAttribute="trailing" constant="17" id="rRK-B1-95h"/>
+                            <constraint firstItem="3zy-Ab-J4f" firstAttribute="top" secondItem="ih7-Yo-GiG" secondAttribute="top" constant="15" id="yzV-zO-bFG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Y3W-Tf-PjE">
                         <imageReference key="image" image="person" catalog="system" symbolScale="small"/>
                         <imageReference key="selectedImage" image="person.fill" catalog="system" symbolScale="small"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="greetingLabel" destination="Ejp-Gh-v0l" id="uI0-LI-OWN"/>
+                        <outlet property="transcriptionLabel" destination="3zy-Ab-J4f" id="ci1-Z1-ApS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLN-cV-AXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

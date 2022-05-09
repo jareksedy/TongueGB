@@ -20,15 +20,32 @@ extension ProfileSceneViewController: ProfileSceneViewDelegate {
 class ProfileSceneViewController: UIViewController {
     lazy var presenter = ProfileScenePresenter()
     
+    // MARK: - Services
+    let greetingGenerator = GreetingGenerator()
+    
+    // MARK: - Properties
+    var randomGreeting: Greeting?
+    let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
+    
     // MARK: - Methods
     private func setupUI() {
+        randomGreeting = greetingGenerator.randomGreeting()
+        
+        transcriptionLabel.text = randomGreeting?.transcription
+        transcriptionLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        transcriptionLabel.alpha = 0.5
+        
+        greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
+        greetingLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Профиль"
+        self.tabBarController?.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
     }
 
     // MARK: - Outlets
+    @IBOutlet weak var transcriptionLabel: UILabel!
+    @IBOutlet weak var greetingLabel: UILabel!
     
     // MARK: - Actions
     
