@@ -34,7 +34,7 @@ class LoginSceneViewController: UIViewController {
     let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
     let welcomeLabelText = "Добро пожаловать! Войдите в приложение с помощью своего Apple ID."
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    let appVersionLabelText = "Версия"
+    let appVersionLabelText = "Разработано Like-Minded People в 2022. Версия"
     let loginButtonTitle = "Войти с Apple ID"
     
     // MARK: - Methods
@@ -52,8 +52,8 @@ class LoginSceneViewController: UIViewController {
         welcomeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
         welcomeLabel.textColor = .secondaryLabel
         
-        appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")"
-        appVersionLabel.font = UIFont.monospacedSystemFont(ofSize: 10.0, weight: .light)
+        appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")."
+        appVersionLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
         
         loginButton.setTitle(loginButtonTitle, for: .normal)
     }

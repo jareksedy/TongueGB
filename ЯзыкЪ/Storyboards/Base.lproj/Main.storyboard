@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn" customClass="YazykButton" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="17" y="725" width="380" height="65"/>
+                                <rect key="frame" x="17" y="733.5" width="380" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Gw6-tC-4uz"/>
                                 </constraints>
@@ -33,9 +33,9 @@
                                     <action selector="loginButtonTapped:" destination="Wfr-tf-ua3" eventType="touchUpInside" id="F1u-kw-I8f"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 0.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxA-Xu-LOa">
-                                <rect key="frame" x="25" y="825" width="364" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 0.0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxA-Xu-LOa">
+                                <rect key="frame" x="17" y="823.5" width="380" height="13.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -67,9 +67,9 @@
                             <constraint firstItem="IwF-lM-mr3" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="E6e-BO-qks"/>
                             <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
                             <constraint firstItem="IwF-lM-mr3" firstAttribute="top" secondItem="zUZ-6w-dIm" secondAttribute="bottom" constant="35" id="MfD-Qj-g66"/>
-                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="25" id="Nhc-oi-BoW"/>
-                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="25" id="T8r-25-4UH"/>
-                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="35" id="TYQ-2a-ivO"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Nhc-oi-BoW"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="17" id="T8r-25-4UH"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="25" id="TYQ-2a-ivO"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Sy7-Mq-AnJ" secondAttribute="trailing" constant="17" id="foG-JM-KCC"/>
                             <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
                             <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="15" id="mo2-DX-iUb"/>
