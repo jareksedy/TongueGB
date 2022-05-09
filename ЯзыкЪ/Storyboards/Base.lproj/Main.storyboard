@@ -233,28 +233,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zy-Ab-J4f">
-                                <rect key="frame" x="17" y="59" width="380" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejp-Gh-v0l">
-                                <rect key="frame" x="17" y="94.5" width="380" height="17"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-2l-ZsK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-HP-pLW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukT-kw-iCq">
+                                                <rect key="frame" x="17" y="15" width="380" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neo-Ny-i3d">
+                                                <rect key="frame" x="17" y="50.5" width="380" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ukT-kw-iCq" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="5Ed-Xk-WiH"/>
+                                            <constraint firstItem="neo-Ny-i3d" firstAttribute="top" secondItem="ukT-kw-iCq" secondAttribute="bottom" constant="15" id="6hG-Px-wnq"/>
+                                            <constraint firstItem="neo-Ny-i3d" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="707-vw-HRg"/>
+                                            <constraint firstAttribute="trailing" secondItem="neo-Ny-i3d" secondAttribute="trailing" constant="17" id="dln-fm-VRo"/>
+                                            <constraint firstAttribute="trailing" secondItem="ukT-kw-iCq" secondAttribute="trailing" constant="17" id="oNp-N6-FuO"/>
+                                            <constraint firstItem="ukT-kw-iCq" firstAttribute="top" secondItem="gCh-HP-pLW" secondAttribute="top" constant="15" id="rOl-Bh-vMZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gCh-HP-pLW" firstAttribute="trailing" secondItem="TEN-12-VUb" secondAttribute="trailing" id="Kmt-IJ-Xwj"/>
+                                    <constraint firstItem="gCh-HP-pLW" firstAttribute="bottom" secondItem="TEN-12-VUb" secondAttribute="bottom" id="bpV-WG-pDd"/>
+                                    <constraint firstItem="gCh-HP-pLW" firstAttribute="width" secondItem="kQB-iP-ojO" secondAttribute="width" id="iuZ-xm-hce"/>
+                                    <constraint firstItem="gCh-HP-pLW" firstAttribute="leading" secondItem="TEN-12-VUb" secondAttribute="leading" id="l8a-wi-COH"/>
+                                    <constraint firstItem="gCh-HP-pLW" firstAttribute="top" secondItem="TEN-12-VUb" secondAttribute="top" id="uUp-vH-Swf"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="TEN-12-VUb"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="kQB-iP-ojO"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ih7-Yo-GiG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ih7-Yo-GiG" firstAttribute="trailing" secondItem="Ejp-Gh-v0l" secondAttribute="trailing" constant="17" id="231-dv-tJX"/>
-                            <constraint firstItem="3zy-Ab-J4f" firstAttribute="leading" secondItem="ih7-Yo-GiG" secondAttribute="leading" constant="17" id="9ob-Rh-Z1t"/>
-                            <constraint firstItem="Ejp-Gh-v0l" firstAttribute="leading" secondItem="ih7-Yo-GiG" secondAttribute="leading" constant="17" id="AzR-wH-geA"/>
-                            <constraint firstItem="Ejp-Gh-v0l" firstAttribute="top" secondItem="3zy-Ab-J4f" secondAttribute="bottom" constant="15" id="CJR-6c-JIe"/>
-                            <constraint firstItem="ih7-Yo-GiG" firstAttribute="trailing" secondItem="3zy-Ab-J4f" secondAttribute="trailing" constant="17" id="rRK-B1-95h"/>
-                            <constraint firstItem="3zy-Ab-J4f" firstAttribute="top" secondItem="ih7-Yo-GiG" secondAttribute="top" constant="15" id="yzV-zO-bFG"/>
+                            <constraint firstItem="oi7-2l-ZsK" firstAttribute="top" secondItem="fgR-lg-ZSI" secondAttribute="top" id="49a-Gv-BqW"/>
+                            <constraint firstItem="oi7-2l-ZsK" firstAttribute="trailing" secondItem="ih7-Yo-GiG" secondAttribute="trailing" id="Cgm-Vn-DUY"/>
+                            <constraint firstItem="oi7-2l-ZsK" firstAttribute="leading" secondItem="ih7-Yo-GiG" secondAttribute="leading" id="now-4D-QbQ"/>
+                            <constraint firstAttribute="bottom" secondItem="oi7-2l-ZsK" secondAttribute="bottom" id="nuo-7g-iVZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="Y3W-Tf-PjE">
@@ -263,13 +289,13 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="greetingLabel" destination="Ejp-Gh-v0l" id="uI0-LI-OWN"/>
-                        <outlet property="transcriptionLabel" destination="3zy-Ab-J4f" id="ci1-Z1-ApS"/>
+                        <outlet property="greetingLabel" destination="neo-Ny-i3d" id="KhE-OC-Wcr"/>
+                        <outlet property="transcriptionLabel" destination="ukT-kw-iCq" id="zi4-91-dVS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLN-cV-AXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="557"/>
+            <point key="canvasLocation" x="2647.826086956522" y="555.80357142857144"/>
         </scene>
         <!--Yazyk Navigation Controller-->
         <scene sceneID="Mxi-Fa-ZnF">
