@@ -233,11 +233,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-2l-ZsK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi7-2l-ZsK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-HP-pLW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-HP-pLW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukT-kw-iCq">
                                                 <rect key="frame" x="17" y="15" width="380" height="20.5"/>
@@ -251,15 +251,107 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="TVT-mc-KXm">
+                                                <rect key="frame" x="17" y="102.5" width="380" height="145.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="dNh-tO-plV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="14.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество карточек" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahc-gZ-uaD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="126" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNp-qP-pyz">
+                                                                <rect key="frame" x="364.5" y="0.0" width="15.5" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N06-iz-pdl">
+                                                        <rect key="frame" x="0.0" y="39.5" width="380" height="1"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="RUc-U6-TKZ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-kS-Wkv">
+                                                        <rect key="frame" x="0.0" y="65.5" width="380" height="14.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество категорий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMB-sE-nfb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="133" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kR-sf-O7u">
+                                                                <rect key="frame" x="366.5" y="0.0" width="13.5" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEq-PR-uxV">
+                                                        <rect key="frame" x="0.0" y="105" width="380" height="1"/>
+                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="5re-1P-kwk"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ieC-XA-vGl">
+                                                        <rect key="frame" x="0.0" y="131" width="380" height="14.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата регистрации" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqU-X8-vjj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="108" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9 мая 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hac-lM-ffw">
+                                                                <rect key="frame" x="314" y="0.0" width="66" height="14.5"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="О приложении" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msX-Tk-bR6">
+                                                <rect key="frame" x="17" y="283" width="380" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработано Like-Minded People. Денис Казарин, Кирилл Сухов, Ярослав Седышев. Версия 0.0.0. Распространяется по лицензии MIT." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-qV-0ok">
+                                                <rect key="frame" x="17" y="328.5" width="380" height="46.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="ukT-kw-iCq" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="5Ed-Xk-WiH"/>
                                             <constraint firstItem="neo-Ny-i3d" firstAttribute="top" secondItem="ukT-kw-iCq" secondAttribute="bottom" constant="15" id="6hG-Px-wnq"/>
                                             <constraint firstItem="neo-Ny-i3d" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="707-vw-HRg"/>
+                                            <constraint firstItem="8bI-qV-0ok" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="9qQ-P8-aab"/>
+                                            <constraint firstAttribute="trailing" secondItem="8bI-qV-0ok" secondAttribute="trailing" constant="17" id="JTs-Vk-J4n"/>
+                                            <constraint firstAttribute="trailing" secondItem="TVT-mc-KXm" secondAttribute="trailing" constant="17" id="Jhp-Dy-SRF"/>
+                                            <constraint firstItem="8bI-qV-0ok" firstAttribute="top" secondItem="msX-Tk-bR6" secondAttribute="bottom" constant="25" id="SdB-oH-X9d"/>
+                                            <constraint firstAttribute="trailing" secondItem="msX-Tk-bR6" secondAttribute="trailing" constant="17" id="bri-9c-Cx8"/>
                                             <constraint firstAttribute="trailing" secondItem="neo-Ny-i3d" secondAttribute="trailing" constant="17" id="dln-fm-VRo"/>
+                                            <constraint firstItem="TVT-mc-KXm" firstAttribute="top" secondItem="neo-Ny-i3d" secondAttribute="bottom" constant="35" id="iij-y6-2tq"/>
+                                            <constraint firstItem="msX-Tk-bR6" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="m2h-TX-dc0"/>
+                                            <constraint firstItem="msX-Tk-bR6" firstAttribute="top" secondItem="TVT-mc-KXm" secondAttribute="bottom" constant="35" id="mAM-Hc-rVw"/>
                                             <constraint firstAttribute="trailing" secondItem="ukT-kw-iCq" secondAttribute="trailing" constant="17" id="oNp-N6-FuO"/>
+                                            <constraint firstItem="TVT-mc-KXm" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="pcW-xw-PwI"/>
                                             <constraint firstItem="ukT-kw-iCq" firstAttribute="top" secondItem="gCh-HP-pLW" secondAttribute="top" constant="15" id="rOl-Bh-vMZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="8bI-qV-0ok" secondAttribute="bottom" constant="25" id="zti-Sp-YTd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -330,6 +422,9 @@
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
