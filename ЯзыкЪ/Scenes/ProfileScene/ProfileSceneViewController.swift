@@ -26,6 +26,11 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Properties
     var randomGreeting: Greeting?
     let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
+    let captionCardsNumberLabelText = "Количество карточек"
+    let captionCategoriesNumberLabelText = "Количество категорий"
+    let captionRegistrationDateLabelText = "Дата регистрации"
+    let aboutAppHeadingLabelText = "О приложении"
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     
     // MARK: - Methods
     private func setupUI() {
@@ -37,6 +42,37 @@ class ProfileSceneViewController: UIViewController {
         
         greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
         greetingLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        
+        captionCardsNumberLabel.text = captionCardsNumberLabelText
+        captionCardsNumberLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        captionCardsNumberLabel.textColor = .secondaryLabel
+        
+        cardsNumberLabel.text = "48"
+        cardsNumberLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        cardsNumberLabel.textColor = .secondaryLabel
+        
+        captionCategoriesNumberLabel.text = captionCategoriesNumberLabelText
+        captionCategoriesNumberLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        captionCategoriesNumberLabel.textColor = .secondaryLabel
+        
+        categoriesNumberLabel.text = "14"
+        categoriesNumberLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        categoriesNumberLabel.textColor = .secondaryLabel
+        
+        captionRegistrationDateLabel.text = captionRegistrationDateLabelText
+        captionRegistrationDateLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        captionRegistrationDateLabel.textColor = .secondaryLabel
+        
+        registrationDateLabel.text = "9 мая 2022"
+        registrationDateLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        registrationDateLabel.textColor = .secondaryLabel
+        
+        aboutAppHeadingLabel.text = aboutAppHeadingLabelText
+        aboutAppHeadingLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        
+        aboutAppTextLabel.text = "Разработано Like-Minded People. Денис Казарин, Кирилл Сухов, Ярослав Седышев. Версия \(appVersion ?? "0.0.0"). Распространяется по лицензии MIT."
+        aboutAppTextLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        aboutAppTextLabel.textColor = .secondaryLabel
     }
     
     private func setupNavigationOptions() {

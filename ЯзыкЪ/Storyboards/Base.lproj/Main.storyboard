@@ -237,7 +237,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCh-HP-pLW">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="390"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukT-kw-iCq">
                                                 <rect key="frame" x="17" y="15" width="380" height="20.5"/>
@@ -328,7 +328,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Разработано Like-Minded People. Денис Казарин, Кирилл Сухов, Ярослав Седышев. Версия 0.0.0. Распространяется по лицензии MIT." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-qV-0ok">
-                                                <rect key="frame" x="17" y="328.5" width="380" height="46.5"/>
+                                                <rect key="frame" x="17" y="318.5" width="380" height="46.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                                 <nil key="highlightedColor"/>
@@ -342,7 +342,7 @@
                                             <constraint firstItem="8bI-qV-0ok" firstAttribute="leading" secondItem="gCh-HP-pLW" secondAttribute="leading" constant="17" id="9qQ-P8-aab"/>
                                             <constraint firstAttribute="trailing" secondItem="8bI-qV-0ok" secondAttribute="trailing" constant="17" id="JTs-Vk-J4n"/>
                                             <constraint firstAttribute="trailing" secondItem="TVT-mc-KXm" secondAttribute="trailing" constant="17" id="Jhp-Dy-SRF"/>
-                                            <constraint firstItem="8bI-qV-0ok" firstAttribute="top" secondItem="msX-Tk-bR6" secondAttribute="bottom" constant="25" id="SdB-oH-X9d"/>
+                                            <constraint firstItem="8bI-qV-0ok" firstAttribute="top" secondItem="msX-Tk-bR6" secondAttribute="bottom" constant="15" id="SdB-oH-X9d"/>
                                             <constraint firstAttribute="trailing" secondItem="msX-Tk-bR6" secondAttribute="trailing" constant="17" id="bri-9c-Cx8"/>
                                             <constraint firstAttribute="trailing" secondItem="neo-Ny-i3d" secondAttribute="trailing" constant="17" id="dln-fm-VRo"/>
                                             <constraint firstItem="TVT-mc-KXm" firstAttribute="top" secondItem="neo-Ny-i3d" secondAttribute="bottom" constant="35" id="iij-y6-2tq"/>
