@@ -46,6 +46,14 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var transcriptionLabel: UILabel!
     @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var captionCardsNumberLabel: UILabel!
+    @IBOutlet weak var cardsNumberLabel: UILabel!
+    @IBOutlet weak var captionCategoriesNumberLabel: UILabel!
+    @IBOutlet weak var categoriesNumberLabel: UILabel!
+    @IBOutlet weak var captionRegistrationDateLabel: UILabel!
+    @IBOutlet weak var registrationDateLabel: UILabel!
+    @IBOutlet weak var aboutAppHeadingLabel: UILabel!
+    @IBOutlet weak var aboutAppTextLabel: UILabel!
     
     // MARK: - Actions
     

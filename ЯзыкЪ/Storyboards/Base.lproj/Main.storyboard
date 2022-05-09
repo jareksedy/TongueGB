@@ -381,7 +381,15 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="aboutAppHeadingLabel" destination="msX-Tk-bR6" id="gne-Mr-aEa"/>
+                        <outlet property="aboutAppTextLabel" destination="8bI-qV-0ok" id="HdE-Nm-eck"/>
+                        <outlet property="captionCardsNumberLabel" destination="ahc-gZ-uaD" id="isb-0N-OZi"/>
+                        <outlet property="captionCategoriesNumberLabel" destination="TMB-sE-nfb" id="Pr6-Az-BDE"/>
+                        <outlet property="captionRegistrationDateLabel" destination="uqU-X8-vjj" id="kUc-BG-cQH"/>
+                        <outlet property="cardsNumberLabel" destination="qNp-qP-pyz" id="k0k-8I-5tY"/>
+                        <outlet property="categoriesNumberLabel" destination="0kR-sf-O7u" id="DEk-qI-eUU"/>
                         <outlet property="greetingLabel" destination="neo-Ny-i3d" id="KhE-OC-Wcr"/>
+                        <outlet property="registrationDateLabel" destination="hac-lM-ffw" id="Zgy-PX-9OG"/>
                         <outlet property="transcriptionLabel" destination="ukT-kw-iCq" id="zi4-91-dVS"/>
                     </connections>
                 </viewController>
