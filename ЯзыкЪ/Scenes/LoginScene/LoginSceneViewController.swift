@@ -34,7 +34,7 @@ class LoginSceneViewController: UIViewController {
     let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
     let welcomeLabelText = "Добро пожаловать! Войдите в приложение с помощью своего Apple ID."
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    let appVersionLabelText = "Разработано Like-Minded People в 2022. Версия"
+    let appVersionLabelText = "Разработано Like-Minded People. Версия"
     let loginButtonTitle = "Войти с Apple ID"
     
     // MARK: - Methods
