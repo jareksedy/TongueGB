@@ -40,7 +40,6 @@ class FirebaseAPI: Firebasable {
     
     //MARK: - Protocol funcs
     func createUser(_ user: User) {
-        //TODO: Need code
         authService.createUser(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
             guard error == nil else {
                 self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
@@ -78,8 +77,18 @@ class FirebaseAPI: Firebasable {
     }
     
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
-        //TODO: Need code
-        return nil //TODO: Correct return
+        let cardRef = self.cardsDatabaseReference.child("cards").child("\(keyWord)")
+        var card: Card? = nil
+        cardRef.getData { error, dataSnapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let cardFirebase = dataSnapshot?.value as? CardFirebase else { return }
+            
+            card = Card(word: cardFirebase.word, translation: cardFirebase.translation, description: cardFirebase.description, category: cardFirebase.category, userEmail: cardFirebase.userEmail)
+        }
+        return card
     }
     
     func fetchWordCardsByCategory(_ category: CardsCategory, _ userEmail: String) -> [Card]? {
@@ -88,15 +97,24 @@ class FirebaseAPI: Firebasable {
     }
     
     func storeCategory(_ category: CardsCategory) {
-        //TODO: Need code
         let categoryModel = CardsCategoryFirebase(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
         let categoryRef = self.categoriesDatabaseReference.child(categoryModel.categoryKey.lowercased())
         categoryRef.setValue(categoryModel.toAnyObject)
     }
     
     func fetchCategoryList() -> [CardsCategory]? {
-        //TODO: Need code
-        return nil //TODO: Correct return
+        var categories: [CardsCategory]? = nil
+        categoriesDatabaseReference.getData { error, dataSnapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let categoriesFirebase = dataSnapshot?.value as? [CardsCategoryFirebase] else { return }
+            for category in categoriesFirebase {
+                let cardCategory = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
+                categories?.append(cardCategory)
+            }
+        }
+        return categories
     }
-    
 }
