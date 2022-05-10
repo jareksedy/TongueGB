@@ -14,10 +14,10 @@ class CardsCategoryFirebase {
     let categoryImage: String?
     let ref: DatabaseReference?
     
-    init(categoryKey: String) {
+    init(categoryKey: String, categoryColor: String?, categoryImage: String?) {
         self.categoryKey = categoryKey
-        self.categoryColor = nil
-        self.categoryImage = nil
+        self.categoryColor = categoryColor
+        self.categoryImage = categoryImage
         self.ref = nil
     }
     

@@ -16,6 +16,7 @@ class FirebaseAPI: Firebasable {
     let controller: UIViewController
     let authService = Auth.auth()
     let cardsDatabaseReference = Database.database().reference(withPath: "cards")
+    let categoriesDatabaseReference = Database.database().reference(withPath: "categories")
     var token: AuthStateDidChangeListenerHandle? = nil
     
     init(controller: UIViewController) {
@@ -71,7 +72,9 @@ class FirebaseAPI: Firebasable {
     }
     
     func storeWordCard(_ card: Card, _ userEmail: String) {
-        //TODO: Need code
+        let cardModel = CardFirebase(word: card.word, translation: card.translation, description: card.description, category: card.category, userEmail: card.userEmail)
+        let cardRef = self.cardsDatabaseReference.child(cardModel.word.lowercased())
+        cardRef.setValue(cardModel.toAnyObject)
     }
     
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
@@ -86,6 +89,9 @@ class FirebaseAPI: Firebasable {
     
     func storeCategory(_ category: CardsCategory) {
         //TODO: Need code
+        let categoryModel = CardsCategoryFirebase(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
+        let categoryRef = self.categoriesDatabaseReference.child(categoryModel.categoryKey.lowercased())
+        categoryRef.setValue(categoryModel.toAnyObject)
     }
     
     func fetchCategoryList() -> [CardsCategory]? {

@@ -16,10 +16,10 @@ class CardFirebase {
     let userEmail: String
     let ref: DatabaseReference?
     
-    init(word: String, translation: String, category: CardsCategory, userEmail: String) {
+    init(word: String, translation: String, description: String?, category: CardsCategory, userEmail: String) {
         self.word = word
         self.translation = translation
-        self.description = nil
+        self.description = description
         self.category = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
         self.userEmail = userEmail
         self.ref = nil
