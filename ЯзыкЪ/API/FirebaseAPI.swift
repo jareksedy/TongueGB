@@ -84,7 +84,7 @@ class FirebaseAPI: Firebasable {
                 print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
-            guard let cardFirebase = dataSnapshot?.value as? CardFirebase else { return }
+            guard let cardFirebase = dataSnapshot.value as? CardFirebase else { return }
             
             card = Card(word: cardFirebase.word, translation: cardFirebase.translation, description: cardFirebase.description, category: cardFirebase.category, userEmail: cardFirebase.userEmail)
         }
@@ -109,7 +109,7 @@ class FirebaseAPI: Firebasable {
                 print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
-            guard let categoriesFirebase = dataSnapshot?.value as? [CardsCategoryFirebase] else { return }
+            guard let categoriesFirebase = dataSnapshot.value as? [CardsCategoryFirebase] else { return }
             for category in categoriesFirebase {
                 let cardCategory = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
                 categories?.append(cardCategory)
