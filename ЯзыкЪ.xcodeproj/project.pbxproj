@@ -29,6 +29,13 @@
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
 		CA6AFDBD282828490098718E /* YazykButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* YazykButton.swift */; };
+		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
+		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
+		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
+		CA847198282B98BF008861E5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CA847197282B98BF008861E5 /* FirebaseAuth */; };
+		CA84719A282B98BF008861E5 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CA847199282B98BF008861E5 /* FirebaseAuthCombine-Community */; };
+		CA84719C282B98BF008861E5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CA84719B282B98BF008861E5 /* FirebaseDatabase */; };
+		CA84719E282B98BF008861E5 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CA84719D282B98BF008861E5 /* FirebaseDatabaseSwift */; };
 		CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5C28225840002AFB6A /* Firebasable.swift */; };
 		CA862F6028225884002AFB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F5F28225884002AFB6A /* User.swift */; };
 		CA862F62282258BF002AFB6A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F61282258BF002AFB6A /* Card.swift */; };
@@ -65,6 +72,9 @@
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		CA6AFDBC282828490098718E /* YazykButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykButton.swift; sourceTree = "<group>"; };
+		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
+		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
+		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
 		CA862F5C28225840002AFB6A /* Firebasable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebasable.swift; sourceTree = "<group>"; };
 		CA862F5F28225884002AFB6A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CA862F61282258BF002AFB6A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -85,6 +95,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA84719E282B98BF008861E5 /* FirebaseDatabaseSwift in Frameworks */,
+				CA84719C282B98BF008861E5 /* FirebaseDatabase in Frameworks */,
+				CA847198282B98BF008861E5 /* FirebaseAuth in Frameworks */,
+				CA84719A282B98BF008861E5 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,9 +205,12 @@
 			isa = PBXGroup;
 			children = (
 				CA862F5F28225884002AFB6A /* User.swift */,
+				CA847190282B97A8008861E5 /* UserFirebase.swift */,
 				CA6AFDBA2828150F0098718E /* Greeting.swift */,
 				CA862F61282258BF002AFB6A /* Card.swift */,
+				CA847192282B97BC008861E5 /* CardFirebase.swift */,
 				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
+				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +285,12 @@
 			dependencies = (
 			);
 			name = "ЯзыкЪ";
+			packageProductDependencies = (
+				CA847197282B98BF008861E5 /* FirebaseAuth */,
+				CA847199282B98BF008861E5 /* FirebaseAuthCombine-Community */,
+				CA84719B282B98BF008861E5 /* FirebaseDatabase */,
+				CA84719D282B98BF008861E5 /* FirebaseDatabaseSwift */,
+			);
 			productName = "ЯзыкЪ";
 			productReference = CA8B60852818D78300D7769B /* ЯзыкЪ.app */;
 			productType = "com.apple.product-type.application";
@@ -296,6 +319,9 @@
 				Base,
 			);
 			mainGroup = CA8B607C2818D78300D7769B;
+			packageReferences = (
+				CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CA8B60862818D78300D7769B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -326,6 +352,7 @@
 			files = (
 				CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
+				CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
 				CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */,
@@ -334,6 +361,7 @@
 				CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */,
 				CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */,
 				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
+				CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */,
 				CA6AFDBD282828490098718E /* YazykButton.swift in Sources */,
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
@@ -341,6 +369,7 @@
 				CA6AFDAE2827AB100098718E /* ProfileSceneViewController.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
+				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
 				CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
@@ -576,6 +605,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA847197282B98BF008861E5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CA847199282B98BF008861E5 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		CA84719B282B98BF008861E5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CA84719D282B98BF008861E5 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA847196282B98BF008861E5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA8B607D2818D78300D7769B /* Project object */;
 }
