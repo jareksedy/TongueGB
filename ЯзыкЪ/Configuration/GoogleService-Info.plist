@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1058068133555-o4f3u7f12hprek2926dpb51ulvk6mk0j.apps.googleusercontent.com</string>
+	<string>1058068133555-hacdjq5fc7oqvjjc3oosgbkvl043plui.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1058068133555-o4f3u7f12hprek2926dpb51ulvk6mk0j</string>
+	<string>com.googleusercontent.apps.1058068133555-hacdjq5fc7oqvjjc3oosgbkvl043plui</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDQAA5p2wgOq0KggDJKhcgkAsYftkG2Czs</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jareksedy.tongue</string>
+	<string>com.jareksedy.tongueGB</string>
 	<key>PROJECT_ID</key>
 	<string>tonguegb-16695</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1058068133555:ios:99d01413e66b0e99d4a2c6</string>
+	<string>1:1058068133555:ios:592dc29f816119e4d4a2c6</string>
+	<key>DATABASE_URL</key>
+	<string>https://tonguegb-16695-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
