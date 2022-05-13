@@ -1,5 +1,5 @@
 //
-//  YazykNavigationController.swift
+//  MainNavigationController.swift
 //  ЯзыкЪ
 //
 //  Created by Ярослав on 03.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YazykNavigationController: UINavigationController {
+class MainNavigationController: UINavigationController {
     let largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)]
     let titleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline)]
     
