@@ -1,5 +1,5 @@
 //
-//  YazykTabBarController.swift
+//  MainTabBarController.swift
 //  ЯзыкЪ
 //
 //  Created by Ярослав on 02.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YazykTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController {
     // MARK: - Overrides
     override var selectedViewController: UIViewController? {
         didSet {

@@ -12,7 +12,7 @@
 		CA6AFD822827A77F0098718E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD812827A77F0098718E /* Configuration.swift */; };
 		CA6AFD862827A7C70098718E /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* Temp.swift */; };
 		CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */; };
-		CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */; };
+		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
 		CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD922827AA8C0098718E /* EmptyCardView.swift */; };
 		CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD962827AA8D0098718E /* CardView.swift */; };
@@ -62,7 +62,7 @@
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
 		CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykNavigationController.swift; sourceTree = "<group>"; };
-		CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykTabBarController.swift; sourceTree = "<group>"; };
+		CA6AFD952827AA8C0098718E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CA6AFD962827AA8D0098718E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CA6AFD9D2827AAAF0098718E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CA6AFD9E2827AAAF0098718E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
 				CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */,
-				CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */,
+				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -390,7 +390,7 @@
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
 				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
-				CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */,
+				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,

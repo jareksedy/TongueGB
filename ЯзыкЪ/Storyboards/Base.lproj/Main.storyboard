@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Yazyk Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="eXM-uV-bXW">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="Y3N-JU-NPw" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="Y3N-JU-NPw" customClass="MainTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="gwK-Sg-pVh">
                         <barButtonItem key="rightBarButtonItem" id="Mbp-OC-zJI">
                             <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
