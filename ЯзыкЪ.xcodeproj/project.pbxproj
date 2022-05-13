@@ -29,6 +29,7 @@
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
 		CA6AFDBD282828490098718E /* YazykButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* YazykButton.swift */; };
+		CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E14282ECB480074C543 /* MainScene.storyboard */; };
 		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
 		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
 		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
@@ -72,6 +73,7 @@
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		CA6AFDBC282828490098718E /* YazykButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykButton.swift; sourceTree = "<group>"; };
+		CA703E15282ECB480074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/MainScene.storyboard"; sourceTree = "<group>"; };
 		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
 		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
 		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
 				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
+				CA703E14282ECB480074C543 /* MainScene.storyboard */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			files = (
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
+				CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
 			);
@@ -388,6 +392,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CA703E14282ECB480074C543 /* MainScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA703E15282ECB480074C543 /* Base */,
+			);
+			name = MainScene.storyboard;
+			sourceTree = "<group>";
+		};
 		CA8B608E2818D78300D7769B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
