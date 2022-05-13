@@ -16,7 +16,8 @@ protocol LoginSceneViewDelegate: NSObjectProtocol {
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
     func proceedToMainScene() {
-        let mainTabBarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         self.navigationController?.pushViewController(mainTabBarController, animated: true)
     }
 }
