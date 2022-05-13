@@ -34,6 +34,7 @@
 		CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E19282ECC010074C543 /* SearchScene.storyboard */; };
 		CA703E1D282ECC450074C543 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E1C282ECC450074C543 /* ProfileScene.storyboard */; };
 		CA703E20282ECCF40074C543 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E1E282ECCF40074C543 /* LoginScene.storyboard */; };
+		CA703E22282ECF7B0074C543 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E21282ECF7B0074C543 /* ProfileScene.storyboard */; };
 		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
 		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
 		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
@@ -82,6 +83,7 @@
 		CA703E1A282ECC010074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/SearchScene.storyboard"; sourceTree = "<group>"; };
 		CA703E1C282ECC450074C543 /* ProfileScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileScene.storyboard; sourceTree = "<group>"; };
 		CA703E1F282ECCF40074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
+		CA703E21282ECF7B0074C543 /* ProfileScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileScene.storyboard; path = ../../../ProfileScene.storyboard; sourceTree = "<group>"; };
 		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
 		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
 		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
 				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
+				CA703E21282ECF7B0074C543 /* ProfileScene.storyboard */,
 				CA703E1C282ECC450074C543 /* ProfileScene.storyboard */,
 			);
 			path = ProfileScene;
@@ -360,6 +363,7 @@
 				CA703E1D282ECC450074C543 /* ProfileScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
+				CA703E22282ECF7B0074C543 /* ProfileScene.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
