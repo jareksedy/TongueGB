@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nNV-Ni-7eA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,19 +39,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
-                                <rect key="frame" x="17" y="103" width="380" height="20.5"/>
+                                <rect key="frame" x="17" y="59" width="380" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-6w-dIm">
-                                <rect key="frame" x="17" y="138.5" width="380" height="17"/>
+                                <rect key="frame" x="17" y="94.5" width="380" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать! Войдите в приложение..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-lM-mr3">
-                                <rect key="frame" x="17" y="190.5" width="380" height="17"/>
+                                <rect key="frame" x="17" y="146.5" width="380" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -91,97 +90,8 @@
             </objects>
             <point key="canvasLocation" x="673.91304347826087" y="196.875"/>
         </scene>
-        <!--Yazyk Tab Bar Controller-->
-        <scene sceneID="eXM-uV-bXW">
-            <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" modalTransitionStyle="flipHorizontal" id="Y3N-JU-NPw" customClass="YazykTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="gwK-Sg-pVh">
-                        <barButtonItem key="rightBarButtonItem" id="Mbp-OC-zJI">
-                            <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                            <connections>
-                                <action selector="categoriesBarButtonItemTapped:" destination="Y3N-JU-NPw" id="Hx0-CZ-17n"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q19-ad-ikI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <outlet property="categoriesBarButtonItem" destination="Mbp-OC-zJI" id="mhc-YS-BKO"/>
-                        <segue destination="foB-84-kYo" kind="relationship" relationship="viewControllers" id="T15-Ee-gn3"/>
-                        <segue destination="VaG-kP-HH6" kind="relationship" relationship="viewControllers" id="rix-0F-5fK"/>
-                        <segue destination="UMy-Lg-xdZ" kind="relationship" relationship="viewControllers" id="rJg-Nb-FZE"/>
-                        <segue destination="dbh-Ar-fEs" kind="relationship" relationship="viewControllers" id="pSg-WU-OrW"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vFy-KL-6Jw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1484" y="197"/>
-        </scene>
-        <!--Yazyk Navigation Controller-->
-        <scene sceneID="Mxi-Fa-ZnF">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNV-Ni-7eA" customClass="YazykNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXA-YZ-qIg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Wfr-tf-ua3" kind="relationship" relationship="rootViewController" id="RON-qF-gJI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z7w-SN-gGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-128" y="197"/>
-        </scene>
-        <!--MainScene-->
-        <scene sceneID="frM-SK-ajf">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="MainScene" storyboardName="MainScene" referencedIdentifier="MainScene" id="foB-84-kYo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sib-f9-PX3"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DQI-EG-ZH7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2196" y="117"/>
-        </scene>
-        <!--AddCardScene-->
-        <scene sceneID="UqP-pg-Kgz">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="AddCardScene" storyboardName="AddCardScene" referencedIdentifier="AddCardScene" id="VaG-kP-HH6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yJp-G8-n7h"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a82-3j-qOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2214" y="171"/>
-        </scene>
-        <!--SearchScene-->
-        <scene sceneID="epK-TK-QK7">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SearchScene" storyboardName="SearchScene" referencedIdentifier="SearchScene" id="UMy-Lg-xdZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lqL-2H-NQ7"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0r2-V2-KQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2206" y="226"/>
-        </scene>
-        <!--ProfileScene-->
-        <scene sceneID="OFS-Z3-yUr">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ProfileScene" storyboardName="ProfileScene" referencedIdentifier="ProfileScene" id="dbh-Ar-fEs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gBu-A4-QVh"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dj0-96-hEP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2204" y="277"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
