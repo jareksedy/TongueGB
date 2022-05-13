@@ -91,25 +91,6 @@
             </objects>
             <point key="canvasLocation" x="673.91304347826087" y="196.875"/>
         </scene>
-        <!--Add Card Scene View Controller-->
-        <scene sceneID="17d-tc-oCR">
-            <objects>
-                <viewController storyboardIdentifier="AddCardScene" id="FTD-gO-1QJ" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="F2e-6u-EcH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="4ie-dh-hG4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" id="GGG-uy-pHA">
-                        <imageReference key="image" image="plus.rectangle.portrait" catalog="system" symbolScale="large"/>
-                        <imageReference key="selectedImage" image="plus.rectangle.portrait.fill" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aAN-RM-rja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3572" y="-163"/>
-        </scene>
         <!--Yazyk Tab Bar Controller-->
         <scene sceneID="eXM-uV-bXW">
             <objects>
@@ -131,34 +112,14 @@
                     <connections>
                         <outlet property="categoriesBarButtonItem" destination="Mbp-OC-zJI" id="mhc-YS-BKO"/>
                         <segue destination="foB-84-kYo" kind="relationship" relationship="viewControllers" id="T15-Ee-gn3"/>
-                        <segue destination="FTD-gO-1QJ" kind="relationship" relationship="viewControllers" id="rix-0F-5fK"/>
-                        <segue destination="bJB-a6-ma7" kind="relationship" relationship="viewControllers" id="rJg-Nb-FZE"/>
+                        <segue destination="VaG-kP-HH6" kind="relationship" relationship="viewControllers" id="rix-0F-5fK"/>
+                        <segue destination="UMy-Lg-xdZ" kind="relationship" relationship="viewControllers" id="rJg-Nb-FZE"/>
                         <segue destination="pr5-ye-Uyg" kind="relationship" relationship="viewControllers" id="pSg-WU-OrW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vFy-KL-6Jw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1484" y="197"/>
-        </scene>
-        <!--Search Scene View Controller-->
-        <scene sceneID="yIf-XD-P9h">
-            <objects>
-                <viewController storyboardIdentifier="SearchScene" id="bJB-a6-ma7" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l2e-5f-yNp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="lgY-eC-3DA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" id="I8V-Yr-X43">
-                        <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="small"/>
-                        <imageReference key="selectedImage" image="magnifyingglass" catalog="system" symbolScale="small"/>
-                    </tabBarItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hZ-r3-gYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3572" y="557"/>
         </scene>
         <!--Profile Scene View Controller-->
         <scene sceneID="UqO-lH-CHN">
@@ -360,13 +321,30 @@
             </objects>
             <point key="canvasLocation" x="2648" y="-163"/>
         </scene>
+        <!--AddCardScene-->
+        <scene sceneID="UqP-pg-Kgz">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddCardScene" storyboardName="AddCardScene" referencedIdentifier="AddCardScene" id="VaG-kP-HH6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="yJp-G8-n7h"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a82-3j-qOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572" y="-163"/>
+        </scene>
+        <!--SearchScene-->
+        <scene sceneID="epK-TK-QK7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchScene" storyboardName="SearchScene" referencedIdentifier="SearchScene" id="UMy-Lg-xdZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lqL-2H-NQ7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0r2-V2-KQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572" y="557"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus.rectangle.portrait" catalog="system" width="115" height="128"/>
-        <image name="plus.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
