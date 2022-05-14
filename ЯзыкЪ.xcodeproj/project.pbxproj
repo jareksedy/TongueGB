@@ -201,12 +201,12 @@
 			path = SearchScene;
 			sourceTree = "<group>";
 		};
-		CA6AFDB62827AB3F0098718E /* Storyboards */ = {
+		CA6AFDB62827AB3F0098718E /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
 			);
-			path = Storyboards;
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
@@ -288,7 +288,7 @@
 				CA6AFD9C2827AA9F0098718E /* UIComponents */,
 				CA6AFDA12827AAB60098718E /* Extensions */,
 				CA06A837281CF0FE0086BD0B /* Scenes */,
-				CA6AFDB62827AB3F0098718E /* Storyboards */,
+				CA6AFDB62827AB3F0098718E /* LaunchScreen */,
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
 			);
 			path = "ЯзыкЪ";
