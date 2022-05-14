@@ -13,23 +13,23 @@ class CardView: UIControl {
     var screenWidthMultiplier: CGFloat = 0.80
     
     var word: String? {
-        get { return wordLabel?.text }
-        set { wordLabel?.text = newValue?.capitalizeFirstLetter() }
+        get { return wordLabel.text }
+        set { wordLabel.text = newValue?.capitalizeFirstLetter() }
     }
     
     var translation: String? {
-        get { return translationLabel?.text }
-        set { translationLabel?.text = newValue?.capitalizeFirstLetter() }
+        get { return translationLabel.text }
+        set { translationLabel.text = newValue?.capitalizeFirstLetter() }
     }
     
     var transcription: String? {
-        get { return descriptionLabel?.text }
-        set { if let newValue = newValue { descriptionLabel?.text = "[ \(newValue) ]" } }
+        get { return descriptionLabel.text }
+        set { if let newValue = newValue { descriptionLabel.text = "[ \(newValue) ]" } }
     }
     
     var category: String? {
-        get { return categoryLabel?.text }
-        set { categoryLabel?.text = newValue; categoryLabelBack?.text = newValue }
+        get { return categoryLabel.text }
+        set { categoryLabel.text = newValue; categoryLabelBack.text = newValue }
     }
     
     var isFront = true
@@ -48,12 +48,12 @@ class CardView: UIControl {
     var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut, .allowUserInteraction]
     
     // MARK: - Private properties
-    private var speakButton: UIButton?
-    private var wordLabel: UILabel?
-    private var descriptionLabel: UILabel?
-    private var categoryLabel: UILabel?
-    private var categoryLabelBack: UILabel?
-    private var translationLabel: UILabel?
+    private var speakButton: UIButton!
+    private var wordLabel: UILabel!
+    private var descriptionLabel: UILabel!
+    private var categoryLabel: UILabel!
+    private var categoryLabelBack: UILabel!
+    private var translationLabel: UILabel!
     
     // MARK: - Front and back Views
     lazy var frontView = makeCardFrontView()
@@ -76,7 +76,7 @@ class CardView: UIControl {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
-
+        
         frontView.backgroundColor = traitCollection.userInterfaceStyle == .dark ? frontViewBackgroundColorDark : frontViewBackgroundColorLight
     }
     
@@ -101,7 +101,7 @@ class CardView: UIControl {
     @objc func speakButtonTapped() {
         guard let wordToSpeak = word else { return }
         
-        speakButton?.setImage(UIImage(systemName: "speaker.wave.3")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        speakButton.setImage(UIImage(systemName: "speaker.wave.3")!.withRenderingMode(.alwaysTemplate), for: .normal)
         
         let utterance = AVSpeechUtterance(string: wordToSpeak)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
@@ -111,7 +111,7 @@ class CardView: UIControl {
         synthesizer.speak(utterance)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            self.speakButton.setImage(UIImage(systemName: "speaker.wave.1")!.withRenderingMode(.alwaysTemplate), for: .normal)
         }
     }
     
@@ -154,31 +154,31 @@ class CardView: UIControl {
         frontView.layer.cornerRadius = cornerRadius
         
         wordLabel = UILabel()
-        wordLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        wordLabel?.numberOfLines = 0
-        wordLabel?.textAlignment = .center
-        frontView.addSubview(wordLabel!)
+        wordLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        wordLabel.numberOfLines = 0
+        wordLabel.textAlignment = .center
+        frontView.addSubview(wordLabel)
         
         descriptionLabel = UILabel()
-        descriptionLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
-        descriptionLabel?.alpha = 0.5
-        descriptionLabel?.numberOfLines = 0
-        descriptionLabel?.textAlignment = .center
-        frontView.addSubview(descriptionLabel!)
+        descriptionLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        descriptionLabel.alpha = 0.5
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.textAlignment = .center
+        frontView.addSubview(descriptionLabel)
         
         categoryLabel = UILabel()
-        categoryLabel?.font = UIFont.preferredFont(forTextStyle: .caption2)
-        categoryLabel?.numberOfLines = 0
-        categoryLabel?.textAlignment = .center
-        frontView.addSubview(categoryLabel!)
+        categoryLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+        categoryLabel.numberOfLines = 0
+        categoryLabel.textAlignment = .center
+        frontView.addSubview(categoryLabel)
         
         speakButton = UIButton()
-        speakButton?.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        speakButton?.tintColor = .label
-        speakButton?.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
-        speakButton?.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        speakButton?.adjustsImageWhenHighlighted = false
-        frontView.addSubview(speakButton!)
+        speakButton.setImage(UIImage(systemName: "speaker.wave.1")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        speakButton.tintColor = .label
+        speakButton.addTarget(self, action: #selector(speakButtonTapped), for: .touchUpInside)
+        speakButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        speakButton.adjustsImageWhenHighlighted = false
+        frontView.addSubview(speakButton)
         
         frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
         frontView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
@@ -196,16 +196,16 @@ class CardView: UIControl {
         backView.layer.cornerRadius = cornerRadius
         
         translationLabel = UILabel()
-        translationLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        translationLabel?.numberOfLines = 0
-        translationLabel?.textAlignment = .center
-        backView.addSubview(translationLabel!)
+        translationLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        translationLabel.numberOfLines = 0
+        translationLabel.textAlignment = .center
+        backView.addSubview(translationLabel)
         
         categoryLabelBack = UILabel()
-        categoryLabelBack?.font = UIFont.preferredFont(forTextStyle: .caption2)
-        categoryLabelBack?.numberOfLines = 0
-        categoryLabelBack?.textAlignment = .center
-        backView.addSubview(categoryLabelBack!)
+        categoryLabelBack.font = UIFont.preferredFont(forTextStyle: .caption2)
+        categoryLabelBack.numberOfLines = 0
+        categoryLabelBack.textAlignment = .center
+        backView.addSubview(categoryLabelBack)
         
         backView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
         backView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
@@ -241,35 +241,41 @@ class CardView: UIControl {
     }
     
     private func setupFrontViewConstraints() {
-        wordLabel?.translatesAutoresizingMaskIntoConstraints = false
-        wordLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        wordLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-        wordLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
+        wordLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        speakButton.translatesAutoresizingMaskIntoConstraints = false
         
-        descriptionLabel?.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        descriptionLabel?.centerYAnchor.constraint(equalTo: self.wordLabel!.bottomAnchor, constant: 20).isActive = true
-        descriptionLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
-        
-        categoryLabel?.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabel?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
-        categoryLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
-        
-        speakButton?.translatesAutoresizingMaskIntoConstraints = false
-        speakButton?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        speakButton?.topAnchor.constraint(equalTo: self.topAnchor, constant: 40).isActive = true
+        NSLayoutConstraint.activate([
+            wordLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            wordLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            wordLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            
+            descriptionLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            descriptionLabel.centerYAnchor.constraint(equalTo: self.wordLabel.bottomAnchor, constant: 20),
+            descriptionLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            
+            categoryLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            categoryLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+            categoryLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            
+            speakButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            speakButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
+        ])
     }
     
     private func setupBackViewConstraints() {
-        translationLabel?.translatesAutoresizingMaskIntoConstraints = false
-        translationLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        translationLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-        translationLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
+        translationLabel.translatesAutoresizingMaskIntoConstraints = false
+        categoryLabelBack.translatesAutoresizingMaskIntoConstraints = false
         
-        categoryLabelBack?.translatesAutoresizingMaskIntoConstraints = false
-        categoryLabelBack?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        categoryLabelBack?.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
-        categoryLabelBack?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50).isActive = true
+        NSLayoutConstraint.activate([
+            translationLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            translationLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0),
+            translationLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            
+            categoryLabelBack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            categoryLabelBack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+            categoryLabelBack.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50)
+        ])
     }
 }
