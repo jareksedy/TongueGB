@@ -120,9 +120,9 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
-				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 				CA703E27282ED0C30074C543 /* LoginScene.storyboard */,
+				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
+				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
@@ -164,9 +164,9 @@
 		CA6AFDA62827AAF30098718E /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
-				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
 				CA703E14282ECB480074C543 /* MainScene.storyboard */,
+				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
+				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -174,9 +174,9 @@
 		CA6AFDAB2827AB060098718E /* AddCardScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
-				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
 				CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */,
+				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
+				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
 			);
 			path = AddCardScene;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 		CA6AFDB02827AB170098718E /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
-				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
 				CA703E29282ED1350074C543 /* ProfileScene.storyboard */,
+				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
+				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
 			);
 			path = ProfileScene;
 			sourceTree = "<group>";
@@ -194,9 +194,9 @@
 		CA6AFDB52827AB260098718E /* SearchScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
-				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
 				CA703E19282ECC010074C543 /* SearchScene.storyboard */,
+				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
+				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
 			path = SearchScene;
 			sourceTree = "<group>";
@@ -212,8 +212,8 @@
 		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
 				CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */,
+				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
 			);
 			path = MainTabBarController;
 			sourceTree = "<group>";
@@ -297,8 +297,8 @@
 		CAA118EE282F4CAB0056013D /* MainNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
 				CA8B608E2818D78300D7769B /* Main.storyboard */,
+				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
 			);
 			path = MainNavigationController;
 			sourceTree = "<group>";
