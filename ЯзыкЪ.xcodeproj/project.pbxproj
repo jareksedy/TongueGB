@@ -127,21 +127,7 @@
 			path = LoginScene;
 			sourceTree = "<group>";
 		};
-		CA06A837281CF0FE0086BD0B /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				CAA118EE282F4CAB0056013D /* MainNavigationController */,
-				CA06A836281CF0F60086BD0B /* LoginScene */,
-				CA703E2B282ED4760074C543 /* MainTabBarController */,
-				CA6AFDA62827AAF30098718E /* MainScene */,
-				CA6AFDAB2827AB060098718E /* AddCardScene */,
-				CA6AFDB52827AB260098718E /* SearchScene */,
-				CA6AFDB02827AB170098718E /* ProfileScene */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		CA6AFD9C2827AA9F0098718E /* UIComponents */ = {
+		CA6AFD9C2827AA9F0098718E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				CA6AFD962827AA8D0098718E /* CardView.swift */,
@@ -149,16 +135,16 @@
 				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
 			);
-			path = UIComponents;
+			path = Elements;
 			sourceTree = "<group>";
 		};
-		CA6AFDA12827AAB60098718E /* Extensions */ = {
+		CA6AFDA12827AAB60098718E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
 			);
-			path = Extensions;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CA6AFDA62827AAF30098718E /* MainScene */ = {
@@ -201,14 +187,6 @@
 			path = SearchScene;
 			sourceTree = "<group>";
 		};
-		CA6AFDB62827AB3F0098718E /* LaunchScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
-			);
-			path = LaunchScreen;
-			sourceTree = "<group>";
-		};
 		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,29 +202,6 @@
 				CA862F5C28225840002AFB6A /* Firebasable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		CA862F5E28225878002AFB6A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CA862F5F28225884002AFB6A /* User.swift */,
-				CA847190282B97A8008861E5 /* UserFirebase.swift */,
-				CA6AFDBA2828150F0098718E /* Greeting.swift */,
-				CA862F61282258BF002AFB6A /* Card.swift */,
-				CA847192282B97BC008861E5 /* CardFirebase.swift */,
-				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
-				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CA862F6528225969002AFB6A /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				CA8B60962818D78500D7769B /* Info.plist */,
-				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		CA862F6828225AEB002AFB6A /* API */ = {
@@ -281,19 +236,8 @@
 				CAA118F0282F5A090056013D /* Core */,
 				CAA118F1282F5A150056013D /* Resources */,
 				CAA118F2282F5A1C0056013D /* Environments */,
-				CA8B60882818D78300D7769B /* AppDelegate.swift */,
-				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 				CA6AFD812827A77F0098718E /* Configuration.swift */,
 				CA6AFD852827A7C70098718E /* Temp.swift */,
-				CA862F6828225AEB002AFB6A /* API */,
-				CA862F6528225969002AFB6A /* Configuration */,
-				CA862F5E28225878002AFB6A /* Models */,
-				CA862F5B28225827002AFB6A /* Protocols */,
-				CA6AFD9C2827AA9F0098718E /* UIComponents */,
-				CA6AFDA12827AAB60098718E /* Extensions */,
-				CA06A837281CF0FE0086BD0B /* Scenes */,
-				CA6AFDB62827AB3F0098718E /* LaunchScreen */,
-				CA8B60912818D78500D7769B /* Assets.xcassets */,
 			);
 			path = "ЯзыкЪ";
 			sourceTree = "<group>";
@@ -311,8 +255,10 @@
 			isa = PBXGroup;
 			children = (
 				CAA118F3282F5A530056013D /* BusinessLogic */,
-				CAA118F4282F5A5E0056013D /* Entity */,
+				CAA118F4282F5A5E0056013D /* Entities */,
 				CAA118F5282F5A770056013D /* Flows */,
+				CA8B60882818D78300D7769B /* AppDelegate.swift */,
+				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -320,6 +266,8 @@
 		CAA118F0282F5A090056013D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CA862F5B28225827002AFB6A /* Protocols */,
+				CA6AFDA12827AAB60098718E /* Helpers */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -327,6 +275,8 @@
 		CAA118F1282F5A150056013D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
+				CA8B60912818D78500D7769B /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -334,6 +284,8 @@
 		CAA118F2282F5A1C0056013D /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				CA8B60962818D78500D7769B /* Info.plist */,
+				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -341,20 +293,36 @@
 		CAA118F3282F5A530056013D /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				CA862F6828225AEB002AFB6A /* API */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
-		CAA118F4282F5A5E0056013D /* Entity */ = {
+		CAA118F4282F5A5E0056013D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CA862F5F28225884002AFB6A /* User.swift */,
+				CA847190282B97A8008861E5 /* UserFirebase.swift */,
+				CA6AFDBA2828150F0098718E /* Greeting.swift */,
+				CA862F61282258BF002AFB6A /* Card.swift */,
+				CA847192282B97BC008861E5 /* CardFirebase.swift */,
+				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
+				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		CAA118F5282F5A770056013D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				CA6AFD9C2827AA9F0098718E /* Elements */,
+				CAA118EE282F4CAB0056013D /* MainNavigationController */,
+				CA06A836281CF0F60086BD0B /* LoginScene */,
+				CA703E2B282ED4760074C543 /* MainTabBarController */,
+				CA6AFDA62827AAF30098718E /* MainScene */,
+				CA6AFDAB2827AB060098718E /* AddCardScene */,
+				CA6AFDB52827AB260098718E /* SearchScene */,
+				CA6AFDB02827AB170098718E /* ProfileScene */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -642,7 +610,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -673,7 +641,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
