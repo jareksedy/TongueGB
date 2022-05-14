@@ -45,7 +45,7 @@
 		CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
-		CA8B60902818D78300D7769B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* Main.storyboard */; };
+		CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */; };
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -95,7 +95,7 @@
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA8B608F2818D78300D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA8B608F2818D78300D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainNavigationController.storyboard; sourceTree = "<group>"; };
 		CA8B60912818D78500D7769B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 		CAA118EE282F4CAB0056013D /* MainNavigationController */ = {
 			isa = PBXGroup;
 			children = (
-				CA8B608E2818D78300D7769B /* Main.storyboard */,
+				CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */,
 				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
 			);
 			path = MainNavigationController;
@@ -377,7 +377,7 @@
 				CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */,
 				CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
-				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
+				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
 				CA703E2A282ED1350074C543 /* ProfileScene.storyboard in Resources */,
 				CA703E2D282ED4BC0074C543 /* MainTabBarController.storyboard in Resources */,
 			);
@@ -444,12 +444,12 @@
 			name = SearchScene.storyboard;
 			sourceTree = "<group>";
 		};
-		CA8B608E2818D78300D7769B /* Main.storyboard */ = {
+		CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CA8B608F2818D78300D7769B /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainNavigationController.storyboard;
 			sourceTree = "<group>";
 		};
 		CA8B60932818D78500D7769B /* LaunchScreen.storyboard */ = {
@@ -590,7 +590,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainNavigationController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -621,7 +621,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainNavigationController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
