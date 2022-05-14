@@ -13,56 +13,10 @@ protocol LoginSceneViewDelegate: NSObjectProtocol {
     func proceedToMainScene()
 }
 
-// MARK: - Implementation
-extension LoginSceneViewController: LoginSceneViewDelegate {
-    func proceedToMainScene() {
-        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-        self.navigationController?.pushViewController(mainTabBarController, animated: true)
-    }
-}
-
-// MARK: - Additional extensions
 // MARK: - View controller
 class LoginSceneViewController: UIViewController {
     lazy var presenter = LoginScenePresenter()
     
-    // MARK: - Services
-    let greetingGenerator = GreetingGenerator()
-    
-    // MARK: - Properties
-    var randomGreeting: Greeting?
-    let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
-    let welcomeLabelText = "Добро пожаловать! Войдите в приложение с помощью своего Apple ID."
-    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
-    let appVersionLabelText = "Разработано Like-Minded People. Версия"
-    let loginButtonTitle = "Войти с Apple ID"
-    
-    // MARK: - Methods
-    private func setupUI() {
-        randomGreeting = greetingGenerator.randomGreeting()
-        
-        transcriptionLabel.text = randomGreeting?.transcription
-        transcriptionLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        transcriptionLabel.alpha = 0.5
-        
-        greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
-        greetingLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        
-        welcomeLabel.text = welcomeLabelText
-        welcomeLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        welcomeLabel.textColor = .secondaryLabel
-        
-        appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")."
-        appVersionLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
-        
-        loginButton.setTitle(loginButtonTitle, for: .normal)
-    }
-    
-    private func setupNavigationOptions() {
-        self.title = "\(randomGreeting?.hello ?? "Привет")!"
-    }
-
     // MARK: - Outlets
     @IBOutlet weak var transcriptionLabel: UILabel!
     @IBOutlet weak var greetingLabel: UILabel!
@@ -70,12 +24,14 @@ class LoginSceneViewController: UIViewController {
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
-    // MARK: - Actions
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        proceedToMainScene()
-    }
+    // MARK: - Services
+    let greetingGenerator = GreetingGenerator()
     
-    // MARK: - Selectors
+    // MARK: - Properties
+    var randomGreeting: Greeting!
+    let greetingLabelText = "Теперь вы знаете как поприветствовать кого-нибудь"
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    let appVersionLabelText = "Разработано Like-Minded People. Версия"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -87,5 +43,32 @@ class LoginSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+    }
+    
+    // MARK: - Actions
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        proceedToMainScene()
+    }
+    
+    // MARK: - Private methods
+    private func setupUI() {
+        randomGreeting = greetingGenerator.randomGreeting()
+        
+        transcriptionLabel.text = randomGreeting.transcription
+        greetingLabel.text = "\(greetingLabelText) \(randomGreeting.language)."
+        appVersionLabel.text = "\(appVersionLabelText) \(appVersion ?? "0.0.0")."
+    }
+    
+    private func setupNavigationOptions() {
+        self.title = "\(randomGreeting.hello)!"
+    }
+}
+
+// MARK: - Implementation
+extension LoginSceneViewController: LoginSceneViewDelegate {
+    func proceedToMainScene() {
+        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+        self.navigationController?.pushViewController(mainTabBarController, animated: true)
     }
 }

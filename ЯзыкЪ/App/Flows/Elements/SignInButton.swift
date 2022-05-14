@@ -20,10 +20,9 @@ class SignInButton: UIButton {
         setupButton()
     }
     
-    // MARK: - Overrides
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
+    // MARK: - Private methods
+    private func setupButton() {
+        self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.25)
         self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
         self.titleLabel?.adjustsFontForContentSizeCategory = true
         self.layer.cornerRadius = 4.0
@@ -31,18 +30,14 @@ class SignInButton: UIButton {
         addTarget(self, action: #selector(touchDown), for: [.touchDown, .touchDragEnter])
         addTarget(self, action: #selector(touchUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
     }
-    
-    // MARK: - Selectors
-    @objc private func touchDown(sender: UIButton) {
+}
+
+@objc extension SignInButton {
+    private func touchDown(sender: UIButton) {
         self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.15)
     }
     
-    @objc private func touchUp(sender: UIButton) {
-        self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.25)
-    }
-    
-    // MARK: - Private methods
-    private func setupButton() {
+    private func touchUp(sender: UIButton) {
         self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.25)
     }
 }
