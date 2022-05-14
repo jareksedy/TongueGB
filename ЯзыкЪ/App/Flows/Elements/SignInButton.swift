@@ -10,11 +10,6 @@ import UIKit
 class SignInButton: UIButton {
     
     // MARK: - Initializers
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupButton()
-    }
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupButton()
