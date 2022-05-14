@@ -41,7 +41,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGR-96-c8N">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="1"/>
-                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="KY8-g7-RW8"/>
                                                         </constraints>
@@ -113,7 +113,7 @@
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Op8-su-UuM">
                                                         <rect key="frame" x="0.0" y="196.5" width="380" height="1"/>
-                                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="tfy-Mc-BHG"/>
                                                         </constraints>
