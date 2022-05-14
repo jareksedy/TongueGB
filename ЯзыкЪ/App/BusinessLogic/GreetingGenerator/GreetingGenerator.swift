@@ -15,11 +15,11 @@ class GreetingGenerator {
     Greeting(hello: "Salut", transcription: "[ zaˈluːt ]", language: "по-немецки"),
     Greeting(hello: "Cześć", transcription: "[ tʂɛɕʨ ]", language: "по-польски"),
     Greeting(hello: "Ciao", transcription: "[ ˈʧao ]", language: "по-итальянски"),
-    Greeting(hello: "Cәлем", transcription: "[ sälem ]", language: "по-казахски"),
+    Greeting(hello: "Cәлем", transcription: "[ säːlem ]", language: "по-казахски"),
     Greeting(hello: "你好", transcription: "[ nǐ hǎo ]", language: "по-китайски"),
     Greeting(hello: "Здраво", transcription: "[ zdravo ]", language: "по-сербски"),
     Greeting(hello: "Bonjour", transcription: "[ bɔ̃ʒuʁ ]", language: "по-французски"),
-    Greeting(hello: "Сайн уу", transcription: "[ sain uu ]", language: "по-монгольски"),
+    Greeting(hello: "Сайн уу", transcription: "[ saɪn uuː ]", language: "по-монгольски"),
     ]
     
     func randomGreeting() -> Greeting {
