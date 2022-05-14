@@ -91,59 +91,6 @@ class CardView: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
-        setupView()
-        setupFrontViewConstraints()
-        setupBackViewConstraints()
-    }
-    
-    // MARK: - Selectors
-    @objc func speakButtonTapped() {
-        guard let wordToSpeak = word else { return }
-        
-        speakButton.setImage(UIImage(systemName: "speaker.wave.3")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        
-        let utterance = AVSpeechUtterance(string: wordToSpeak)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-        
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.speakButton.setImage(UIImage(systemName: "speaker.wave.1")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        }
-    }
-    
-    @objc func tapDown() {
-        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
-    }
-    
-    @objc func flip() {
-        let tapUpAnimationFront = {
-            self.transform = .identity
-            self.frontView.alpha = self.isFront ? 0 : 1
-        }
-        
-        let tapUpAnimationBack = {
-            self.transform = .identity
-            self.backView.alpha = self.isFront ? 1 : 0
-        }
-        
-        isFront ? backView.removeFromSuperview() : frontView.removeFromSuperview()
-        addSubview(isFront ? backView : frontView)
-        tieConstraintsToSuperView(isFront ? backView : frontView)
-        setupFrontViewConstraints()
-        setupBackViewConstraints()
-        
-        UIView.transition(with: frontView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationFront)
-        UIView.transition(with: backView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationBack)
-        
-        isFront.toggle()
-    }
-    
-    @objc func tapUpCancelled() {
-        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
     
     // MARK: - Private methods
@@ -277,5 +224,55 @@ class CardView: UIControl {
             categoryLabelBack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
             categoryLabelBack.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50)
         ])
+    }
+}
+
+@objc extension CardView {
+    func speakButtonTapped() {
+        guard let wordToSpeak = word else { return }
+        
+        speakButton.setImage(UIImage(systemName: "speaker.wave.3")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        
+        let utterance = AVSpeechUtterance(string: wordToSpeak)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.speakButton.setImage(UIImage(systemName: "speaker.wave.1")!.withRenderingMode(.alwaysTemplate), for: .normal)
+        }
+    }
+    
+    func tapDown() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
+    }
+    
+    func flip() {
+        let tapUpAnimationFront = {
+            self.transform = .identity
+            self.frontView.alpha = self.isFront ? 0 : 1
+        }
+        
+        let tapUpAnimationBack = {
+            self.transform = .identity
+            self.backView.alpha = self.isFront ? 1 : 0
+        }
+        
+        isFront ? backView.removeFromSuperview() : frontView.removeFromSuperview()
+        addSubview(isFront ? backView : frontView)
+        tieConstraintsToSuperView(isFront ? backView : frontView)
+        setupFrontViewConstraints()
+        setupBackViewConstraints()
+        
+        UIView.transition(with: frontView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationFront)
+        UIView.transition(with: backView, duration: flipTransitionDuration, options: transitionOptions, animations: tapUpAnimationBack)
+        
+        isFront.toggle()
+    }
+    
+    func tapUpCancelled() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
 }
