@@ -130,6 +130,7 @@
 		CA06A837281CF0FE0086BD0B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CAA118EE282F4CAB0056013D /* MainNavigationController */,
 				CA06A836281CF0F60086BD0B /* LoginScene */,
 				CA703E2B282ED4760074C543 /* MainTabBarController */,
 				CA6AFDA62827AAF30098718E /* MainScene */,
@@ -147,7 +148,6 @@
 				CA6AFDBC282828490098718E /* YazykButton.swift */,
 				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
-				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -204,7 +204,6 @@
 		CA6AFDB62827AB3F0098718E /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CA8B608E2818D78300D7769B /* Main.storyboard */,
 				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -293,6 +292,15 @@
 				CA8B60912818D78500D7769B /* Assets.xcassets */,
 			);
 			path = "ЯзыкЪ";
+			sourceTree = "<group>";
+		};
+		CAA118EE282F4CAB0056013D /* MainNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
+				CA8B608E2818D78300D7769B /* Main.storyboard */,
+			);
+			path = MainNavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
