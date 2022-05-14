@@ -1,5 +1,5 @@
 //
-//  YazykButton.swift
+//  SignInButton.swift
 //  ЯзыкЪ
 //
 //  Created by Ярослав on 08.05.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YazykButton: UIButton {
+class SignInButton: UIButton {
     
     // MARK: - Initializers
     override init(frame: CGRect) {
