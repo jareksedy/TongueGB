@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
-		CA6AFD822827A77F0098718E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD812827A77F0098718E /* Configuration.swift */; };
 		CA6AFD862827A7C70098718E /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* Temp.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -48,6 +47,7 @@
 		CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */; };
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
+		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
 		CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */; };
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
@@ -58,7 +58,6 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
-		CA6AFD812827A77F0098718E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		CA8B60912818D78500D7769B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +143,7 @@
 			children = (
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
+				CAA118F6282F60CF0056013D /* CGFloat.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,7 +237,6 @@
 				CAA118F0282F5A090056013D /* Core */,
 				CAA118F1282F5A150056013D /* Resources */,
 				CAA118F2282F5A1C0056013D /* Environments */,
-				CA6AFD812827A77F0098718E /* Configuration.swift */,
 				CA6AFD852827A7C70098718E /* Temp.swift */,
 			);
 			path = "ЯзыкЪ";
@@ -438,7 +438,7 @@
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
-				CA6AFD822827A77F0098718E /* Configuration.swift in Sources */,
+				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
 				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,

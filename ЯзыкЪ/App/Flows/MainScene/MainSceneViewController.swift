@@ -38,9 +38,9 @@ class MainSceneViewController: UIViewController {
     private func setupUI() {
         cardsScrollOverlay.referenceView = cardsScrollView
         
-        cardsStackView.spacing = cardStackSpacing
-        cardsStackView.layoutMargins.left = cardStackSpacing / 2
-        cardsStackView.layoutMargins.right = cardStackSpacing / 2
+        cardsStackView.spacing = CGFloat.cardStackSpacing
+        cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
+        cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
         fetchCards()
         
@@ -53,14 +53,14 @@ class MainSceneViewController: UIViewController {
                 cardView.transcription = card.description
                 cardView.category = card.category.categoryKey
                 
-                cardView.screenWidthMultiplier = cardScreenWidthMultiplier
+                cardView.screenWidthMultiplier = CGFloat.cardScreenWidthMultiplier
                 
                 cardsStackView.addArrangedSubview(cardView)
             }
         } else {
             let emptyCardView = EmptyCardView()
             
-            emptyCardView.screenWidthMultiplier = cardScreenWidthMultiplier
+            emptyCardView.screenWidthMultiplier = CGFloat.cardScreenWidthMultiplier
             emptyCardView.viewDelegate = self
             
             cardsStackView.addArrangedSubview(emptyCardView)
@@ -72,7 +72,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        let gap = ((screenWidth - (screenWidth * cardScreenWidthMultiplier)) / 2) - (cardStackSpacing / 2)
+        let gap = ((CGFloat.screenWidth - (CGFloat.screenWidth * CGFloat.cardScreenWidthMultiplier)) / 2) - (CGFloat.cardStackSpacing / 2)
         
         cardsScrollViewLeading.constant = gap
         cardsScrollViewTrailing.constant = gap

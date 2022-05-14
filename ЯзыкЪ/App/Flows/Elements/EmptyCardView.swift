@@ -10,8 +10,6 @@ import UIKit
 class EmptyCardView: UIControl {
     weak var viewDelegate: MainSceneViewDelegate?
     
-    let screenWidth = UIScreen.main.bounds.size.width
-    
     // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.85
     
@@ -44,7 +42,7 @@ class EmptyCardView: UIControl {
     
     // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: screenWidth * screenWidthMultiplier, height: 100.0)
+        return CGSize(width: CGFloat.screenWidth * screenWidthMultiplier, height: 100.0)
     }
     
     // MARK: - Initializers
@@ -120,8 +118,8 @@ class EmptyCardView: UIControl {
     }
     
     private func setupView() {
-        let gap = ((screenWidth - (screenWidth * cardScreenWidthMultiplier)) / 2) - (cardStackSpacing / 2)
-        let effectiveWidth = screenWidth - (gap * 2 + cardStackSpacing)
+        let gap = ((CGFloat.screenWidth - (CGFloat.screenWidth * CGFloat.cardScreenWidthMultiplier)) / 2) - (CGFloat.cardStackSpacing / 2)
+        let effectiveWidth = CGFloat.screenWidth - (gap * 2 + CGFloat.cardStackSpacing)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: effectiveWidth).isActive = true
