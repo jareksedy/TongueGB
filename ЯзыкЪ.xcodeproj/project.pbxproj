@@ -196,21 +196,21 @@
 			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
-		CA862F5B28225827002AFB6A /* Protocols */ = {
+		CA862F5B28225827002AFB6A /* FirebaseAPI */ = {
 			isa = PBXGroup;
 			children = (
 				CA862F5C28225840002AFB6A /* Firebasable.swift */,
+				CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */,
 			);
-			path = Protocols;
+			path = FirebaseAPI;
 			sourceTree = "<group>";
 		};
-		CA862F6828225AEB002AFB6A /* API */ = {
+		CA862F6828225AEB002AFB6A /* GreetingGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */,
 				CA6AFDB8282804E70098718E /* GreetingGenerator.swift */,
 			);
-			path = API;
+			path = GreetingGenerator;
 			sourceTree = "<group>";
 		};
 		CA8B607C2818D78300D7769B = {
@@ -266,7 +266,6 @@
 		CAA118F0282F5A090056013D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				CA862F5B28225827002AFB6A /* Protocols */,
 				CA6AFDA12827AAB60098718E /* Helpers */,
 			);
 			path = Core;
@@ -293,7 +292,8 @@
 		CAA118F3282F5A530056013D /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				CA862F6828225AEB002AFB6A /* API */,
+				CA862F5B28225827002AFB6A /* FirebaseAPI */,
+				CA862F6828225AEB002AFB6A /* GreetingGenerator */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";

@@ -23,6 +23,6 @@ class GreetingGenerator {
     ]
     
     func randomGreeting() -> Greeting {
-        return greetings.randomElement() ?? greetings[0]
+        return greetings.randomElement()!
     }
 }
