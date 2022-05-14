@@ -15,7 +15,7 @@ class EmptyCardView: UIControl {
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
-    var frontViewBackgroundColor: UIColor = .clear //.systemGray5.withAlphaComponent(0.5)
+    var frontViewBackgroundColor: UIColor = .clear
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
@@ -24,9 +24,9 @@ class EmptyCardView: UIControl {
     var transitionOptions: AnimationOptions = [.transitionFlipFromRight, .curveEaseInOut, .allowUserInteraction]
     
     // MARK: - Private properties
-    private var headingLabel: UILabel?
-    private var subHeadingLabel: UILabel?
-    private var addIcon: UIImageView?
+    private var headingLabel: UILabel!
+    private var subHeadingLabel: UILabel!
+    private var addIcon: UIImageView!
     
     // MARK: - Front and back Views
     lazy var frontView = makeCardFrontView()
@@ -55,23 +55,6 @@ class EmptyCardView: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
-        setupView()
-        setupFrontViewConstraints()
-    }
-    
-    // MARK: - Selectors
-    @objc func tapUp() {
-        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
-        viewDelegate?.addCardTapped()
-    }
-    
-    @objc func tapDown() {
-        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
-    }
-    
-    @objc func tapUpCancelled() {
-        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
     
     // MARK: - Private methods
@@ -84,26 +67,26 @@ class EmptyCardView: UIControl {
         let addIconConfig = UIImage.SymbolConfiguration(pointSize: 36, weight: .light, scale: .large)
         
         addIcon = UIImageView()
-        addIcon?.image = UIImage(systemName: "plus.rectangle.portrait")?
+        addIcon.image = UIImage(systemName: "plus.rectangle.portrait")?
             .withRenderingMode(.alwaysTemplate)
             .withConfiguration(addIconConfig)
         
-        frontView.addSubview(addIcon!)
+        frontView.addSubview(addIcon)
         
         headingLabel = UILabel()
-        headingLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        headingLabel?.text = "Сейчас здесь совершенно пусто"
-        headingLabel?.numberOfLines = 0
-        headingLabel?.textAlignment = .center
-        frontView.addSubview(headingLabel!)
+        headingLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        headingLabel.text = "Сейчас здесь совершенно пусто"
+        headingLabel.numberOfLines = 0
+        headingLabel.textAlignment = .center
+        frontView.addSubview(headingLabel)
         
         subHeadingLabel = UILabel()
-        subHeadingLabel?.font = UIFont.preferredFont(forTextStyle: .footnote)
-        subHeadingLabel?.alpha = 0.5
-        subHeadingLabel?.text = "Нажмите чтобы добавить вашу первую карточку"
-        subHeadingLabel?.numberOfLines = 0
-        subHeadingLabel?.textAlignment = .center
-        frontView.addSubview(subHeadingLabel!)
+        subHeadingLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        subHeadingLabel.alpha = 0.5
+        subHeadingLabel.text = "Нажмите чтобы добавить вашу первую карточку"
+        subHeadingLabel.numberOfLines = 0
+        subHeadingLabel.textAlignment = .center
+        frontView.addSubview(subHeadingLabel)
         
         frontView.layer.borderColor = UIColor.systemGray5.cgColor
         frontView.layer.borderWidth = 2.0
@@ -122,25 +105,48 @@ class EmptyCardView: UIControl {
         let effectiveWidth = CGFloat.screenWidth - (gap * 2 + CGFloat.cardStackSpacing)
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: effectiveWidth).isActive = true
+        
+        NSLayoutConstraint.activate([
+            self.widthAnchor.constraint(equalToConstant: effectiveWidth)
+        ])
         
         addSubview(frontView)
         tieConstraintsToSuperView(frontView)
     }
     
     private func setupFrontViewConstraints() {
-        addIcon?.translatesAutoresizingMaskIntoConstraints = false
-        addIcon?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        addIcon?.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 100).isActive = true
+        addIcon.translatesAutoresizingMaskIntoConstraints = false
+        headingLabel.translatesAutoresizingMaskIntoConstraints = false
+        subHeadingLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        headingLabel?.translatesAutoresizingMaskIntoConstraints = false
-        headingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        headingLabel?.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        headingLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
-        
-        subHeadingLabel?.translatesAutoresizingMaskIntoConstraints = false
-        subHeadingLabel?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        subHeadingLabel?.centerYAnchor.constraint(equalTo: self.headingLabel!.bottomAnchor, constant: 40).isActive = true
-        subHeadingLabel?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100).isActive = true
+        NSLayoutConstraint.activate([
+            addIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            addIcon.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            
+            headingLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            headingLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            headingLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100),
+            
+            subHeadingLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            subHeadingLabel.centerYAnchor.constraint(equalTo: self.headingLabel.bottomAnchor, constant: 40),
+            subHeadingLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100)
+        ])
+    }
+}
+
+@objc extension EmptyCardView {
+    
+    // MARK: - Selectors
+    @objc func tapUp() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
+        viewDelegate?.addCardTapped()
+    }
+    
+    @objc func tapDown() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
+    }
+    
+    @objc func tapUpCancelled() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
 }

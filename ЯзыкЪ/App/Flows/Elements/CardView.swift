@@ -170,7 +170,10 @@ class CardView: UIControl {
         let effectiveWidth = CGFloat.screenWidth - (gap * 2 + CGFloat.cardStackSpacing)
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: effectiveWidth).isActive = true
+        
+        NSLayoutConstraint.activate([
+            self.widthAnchor.constraint(equalToConstant: effectiveWidth)
+        ])
         
         addSubview(frontView)
         addSubview(backView)
