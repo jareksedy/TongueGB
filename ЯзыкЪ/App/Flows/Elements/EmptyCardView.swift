@@ -11,7 +11,7 @@ class EmptyCardView: UIControl {
     weak var viewDelegate: MainSceneViewDelegate?
     
     // MARK: - Public properties
-    var screenWidthMultiplier: CGFloat = 0.85
+    var screenWidthMultiplier: CGFloat = 0.80
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0

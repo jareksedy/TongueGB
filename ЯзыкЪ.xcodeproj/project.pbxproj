@@ -130,10 +130,10 @@
 		CA6AFD9C2827AA9F0098718E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFD962827AA8D0098718E /* CardView.swift */,
 				CA6AFDBC282828490098718E /* SignInButton.swift */,
-				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
+				CA6AFD962827AA8D0098718E /* CardView.swift */,
+				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";

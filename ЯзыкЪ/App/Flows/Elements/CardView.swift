@@ -10,7 +10,7 @@ import AVFoundation
 
 class CardView: UIControl {
     // MARK: - Public properties
-    var screenWidthMultiplier: CGFloat = 0.85
+    var screenWidthMultiplier: CGFloat = 0.80
     
     var word: String? {
         get { return wordLabel?.text }
