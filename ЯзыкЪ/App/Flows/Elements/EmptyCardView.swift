@@ -128,15 +128,6 @@ class EmptyCardView: UIControl {
         tieConstraintsToSuperView(frontView)
     }
     
-    private func tieConstraintsToSuperView(_ view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    }
-    
     private func setupFrontViewConstraints() {
         addIcon?.translatesAutoresizingMaskIntoConstraints = false
         addIcon?.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

@@ -25,7 +25,7 @@ class CardView: UIControl {
     
     var transcription: String? {
         get { return descriptionLabel.text }
-        set { if let newValue = newValue { descriptionLabel.text = "[ \(newValue) ]" } }
+        set { if let newValue = newValue, newValue != "" { descriptionLabel.text = "[ \(newValue) ]" } else { descriptionLabel.text = "" } }
     }
     
     var category: String? {
@@ -179,15 +179,6 @@ class CardView: UIControl {
         tieConstraintsToSuperView(backView)
     }
     
-    private func tieConstraintsToSuperView(_ view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    }
-    
     private func setupFrontViewConstraints() {
         wordLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -229,6 +220,8 @@ class CardView: UIControl {
 }
 
 @objc extension CardView {
+    
+    // MARK: - Selectors
     func speakButtonTapped() {
         guard let wordToSpeak = word else { return }
         
