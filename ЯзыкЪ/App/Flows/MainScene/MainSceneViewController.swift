@@ -24,7 +24,7 @@ class MainSceneViewController: UIViewController {
     lazy var presenter = MainScenePresenter()
     
     // MARK: - Services
-    let tempUICardMockProvider = TempUICardMockProvider()
+    let mockCardsProvider = MockCardsProvider()
     
     // MARK: - Properties
     var cards: [Card]?
@@ -32,7 +32,7 @@ class MainSceneViewController: UIViewController {
     
     // MARK: - Methods
     private func fetchCards() {
-        cards = tempUICardMockProvider.createMockCards()
+        cards = mockCardsProvider.createMockCards()
     }
     
     private func setupUI() {

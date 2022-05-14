@@ -7,23 +7,7 @@
 
 import UIKit
 
-// -- remove this later --
-//struct Card {
-//    let word: String
-//    let translation: String
-//    let description: String?
-//    let category: Category
-//    let userEmail: String
-//}
-//
-//struct Category {
-//    let categoryKey: String
-//    let categoryColor: String?
-//    let categoryImage: String?
-//}
-// -- remove his later --
-
-class TempUICardMockProvider {
+class MockCardsProvider {
     func createMockCards() -> [Card] {
         //return []
         
