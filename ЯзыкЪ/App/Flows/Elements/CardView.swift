@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 
 class CardView: UIControl {
+    
     // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.80
     
