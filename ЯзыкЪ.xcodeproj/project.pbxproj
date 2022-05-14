@@ -277,6 +277,10 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
+				CAA118EF282F5A020056013D /* App */,
+				CAA118F0282F5A090056013D /* Core */,
+				CAA118F1282F5A150056013D /* Resources */,
+				CAA118F2282F5A1C0056013D /* Environments */,
 				CA8B60882818D78300D7769B /* AppDelegate.swift */,
 				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
 				CA6AFD812827A77F0098718E /* Configuration.swift */,
@@ -301,6 +305,58 @@
 				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
 			);
 			path = MainNavigationController;
+			sourceTree = "<group>";
+		};
+		CAA118EF282F5A020056013D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CAA118F3282F5A530056013D /* BusinessLogic */,
+				CAA118F4282F5A5E0056013D /* Entity */,
+				CAA118F5282F5A770056013D /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CAA118F0282F5A090056013D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CAA118F1282F5A150056013D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAA118F2282F5A1C0056013D /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		CAA118F3282F5A530056013D /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		CAA118F4282F5A5E0056013D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		CAA118F5282F5A770056013D /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
