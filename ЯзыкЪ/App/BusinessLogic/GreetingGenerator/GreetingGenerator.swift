@@ -17,7 +17,7 @@ class GreetingGenerator {
     Greeting(hello: "Ciao", transcription: "[ ˈʧao ]", language: "по-итальянски"),
     Greeting(hello: "Cәлем", transcription: "[ säːlem ]", language: "по-казахски"),
     Greeting(hello: "你好", transcription: "[ nǐ hǎo ]", language: "по-китайски"),
-    Greeting(hello: "Здраво", transcription: "[ zdravo ]", language: "по-сербски"),
+    Greeting(hello: "Здраво", transcription: "[ zdraˈvo ]", language: "по-сербски"),
     Greeting(hello: "Bonjour", transcription: "[ bɔ̃ʒuʁ ]", language: "по-французски"),
     Greeting(hello: "Сайн уу", transcription: "[ saɪn uuː ]", language: "по-монгольски"),
     ]
