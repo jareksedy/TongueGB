@@ -24,6 +24,6 @@ class CategoryTableViewCell: UITableViewCell {
     // MARK: - Configuration
     func configure(_ category: CardsCategory?) {
         categoryTitleLabel.text = category?.categoryKey
-        cardsInCategoryLabel.text = "\(Int.random(in: 2...18))"
+        cardsInCategoryLabel.text = "\(Int.random(in: 2...12))"
     }
 }

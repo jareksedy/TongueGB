@@ -37,7 +37,6 @@ class SearchSceneViewController: UIViewController {
         setupNavigationOptions()
     }
     
-    // MARK: - Private methods
     private func setupNavigationOptions() {
         self.tabBarController?.title = "Поиск и категории"
     }
