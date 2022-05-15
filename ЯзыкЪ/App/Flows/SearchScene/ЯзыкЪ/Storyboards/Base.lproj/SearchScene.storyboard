@@ -17,18 +17,33 @@
                     <view key="view" contentMode="scaleToFill" id="l2e-5f-yNp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VYm-Ho-ik6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lgY-eC-3DA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VYm-Ho-ik6" firstAttribute="bottom" secondItem="lgY-eC-3DA" secondAttribute="bottom" id="3Oa-gE-cOe"/>
+                            <constraint firstItem="VYm-Ho-ik6" firstAttribute="top" secondItem="lgY-eC-3DA" secondAttribute="top" id="Kcs-iS-UdQ"/>
+                            <constraint firstItem="VYm-Ho-ik6" firstAttribute="trailing" secondItem="lgY-eC-3DA" secondAttribute="trailing" id="OfE-wQ-H0A"/>
+                            <constraint firstItem="VYm-Ho-ik6" firstAttribute="leading" secondItem="lgY-eC-3DA" secondAttribute="leading" id="xC9-cu-ICS"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="I8V-Yr-X43">
                         <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="small"/>
                         <imageReference key="selectedImage" image="magnifyingglass" catalog="system" symbolScale="small"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="VYm-Ho-ik6" id="225-g7-swD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hZ-r3-gYZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3572" y="557"/>
+            <point key="canvasLocation" x="3571.0144927536235" y="555.80357142857144"/>
         </scene>
     </scenes>
     <resources>
