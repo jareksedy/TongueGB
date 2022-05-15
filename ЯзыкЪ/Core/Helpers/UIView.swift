@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension UIView {
     func tieConstraintsToSuperView(_ view: UIView) {
@@ -17,5 +18,16 @@ extension UIView {
             view.topAnchor.constraint(equalTo: self.topAnchor),
             view.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
+    }
+}
+
+extension UIView {
+    func speak(_ textToSpeak: String) {
+        let utterance = AVSpeechUtterance(string: textToSpeak)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        
+        let synthesizer = AVSpeechSynthesizer()
+        synthesizer.speak(utterance)
     }
 }

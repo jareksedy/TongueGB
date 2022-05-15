@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import AVFoundation
 
 class CardView: UIControl {
     
@@ -229,13 +228,7 @@ class CardView: UIControl {
         guard let wordToSpeak = word else { return }
         
         speakButton.setImage(UIImage(systemName: "speaker.wave.3")!.withRenderingMode(.alwaysTemplate), for: .normal)
-        
-        let utterance = AVSpeechUtterance(string: wordToSpeak)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-        
-        let synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
+        speak(wordToSpeak)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.speakButton.setImage(UIImage(systemName: "speaker.wave.1")!.withRenderingMode(.alwaysTemplate), for: .normal)
