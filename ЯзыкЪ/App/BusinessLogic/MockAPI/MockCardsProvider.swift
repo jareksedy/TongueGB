@@ -5,7 +5,7 @@
 //  Created by Ярослав on 05.05.2022.
 //
 
-import UIKit
+import Foundation
 
 class MockCardsProvider {
     func createMockCards() -> [Card] {
