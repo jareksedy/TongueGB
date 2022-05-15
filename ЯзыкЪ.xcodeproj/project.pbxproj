@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
+		CA683C192831573800EB9224 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA683C182831573800EB9224 /* CategoryTableViewCell.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -60,6 +61,7 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
+		CA683C182831573800EB9224 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				CA703E19282ECC010074C543 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
+				CA683C182831573800EB9224 /* CategoryTableViewCell.swift */,
 				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
 			path = SearchScene;
@@ -453,6 +456,7 @@
 				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
+				CA683C192831573800EB9224 /* CategoryTableViewCell.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
 				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,

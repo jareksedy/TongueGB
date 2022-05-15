@@ -52,13 +52,15 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { categories?.count ?? 0 }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = categories?[indexPath.row].categoryKey
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! CategoryTableViewCell
+        cell.configure(categories?[indexPath.row])
+        
+        let selectedBackgroundView = UIView()
+        selectedBackgroundView.backgroundColor = .systemGray6.withAlphaComponent(0.5)
+        cell.selectedBackgroundView = selectedBackgroundView
         
         return cell
     }
-    
-    
 }
 
 // MARK: - Implementation
