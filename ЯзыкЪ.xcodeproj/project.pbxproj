@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
-		CA6AFD822827A77F0098718E /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD812827A77F0098718E /* Configuration.swift */; };
-		CA6AFD862827A7C70098718E /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* Temp.swift */; };
-		CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */; };
-		CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */; };
+		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
+		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
+		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
 		CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD922827AA8C0098718E /* EmptyCardView.swift */; };
 		CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD962827AA8D0098718E /* CardView.swift */; };
@@ -28,7 +27,13 @@
 		CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */; };
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
-		CA6AFDBD282828490098718E /* YazykButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* YazykButton.swift */; };
+		CA6AFDBD282828490098718E /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* SignInButton.swift */; };
+		CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E14282ECB480074C543 /* MainScene.storyboard */; };
+		CA703E18282ECBAF0074C543 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */; };
+		CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E19282ECC010074C543 /* SearchScene.storyboard */; };
+		CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E27282ED0C30074C543 /* LoginScene.storyboard */; };
+		CA703E2A282ED1350074C543 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E29282ED1350074C543 /* ProfileScene.storyboard */; };
+		CA703E2D282ED4BC0074C543 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */; };
 		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
 		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
 		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
@@ -39,9 +44,11 @@
 		CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */; };
 		CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B60882818D78300D7769B /* AppDelegate.swift */; };
 		CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B608A2818D78300D7769B /* SceneDelegate.swift */; };
-		CA8B60902818D78300D7769B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* Main.storyboard */; };
+		CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */; };
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
+		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
+		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
 		CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */; };
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
@@ -52,12 +59,11 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
-		CA6AFD812827A77F0098718E /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		CA6AFD852827A7C70098718E /* Temp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
-		CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykNavigationController.swift; sourceTree = "<group>"; };
-		CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykTabBarController.swift; sourceTree = "<group>"; };
+		CA6AFD942827AA8C0098718E /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		CA6AFD952827AA8C0098718E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CA6AFD962827AA8D0098718E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CA6AFD9D2827AAAF0098718E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CA6AFD9E2827AAAF0098718E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -71,7 +77,13 @@
 		CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
-		CA6AFDBC282828490098718E /* YazykButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YazykButton.swift; sourceTree = "<group>"; };
+		CA6AFDBC282828490098718E /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		CA703E15282ECB480074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/MainScene.storyboard"; sourceTree = "<group>"; };
+		CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCardScene.storyboard; sourceTree = "<group>"; };
+		CA703E1A282ECC010074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/SearchScene.storyboard"; sourceTree = "<group>"; };
+		CA703E27282ED0C30074C543 /* LoginScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScene.storyboard; sourceTree = "<group>"; };
+		CA703E29282ED1350074C543 /* ProfileScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileScene.storyboard; sourceTree = "<group>"; };
+		CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
 		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
 		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
@@ -83,10 +95,12 @@
 		CA8B60852818D78300D7769B /* ЯзыкЪ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ЯзыкЪ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B60882818D78300D7769B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B608A2818D78300D7769B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA8B608F2818D78300D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA8B608F2818D78300D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainNavigationController.storyboard; sourceTree = "<group>"; };
 		CA8B60912818D78500D7769B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,51 +122,41 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
+				CA703E27282ED0C30074C543 /* LoginScene.storyboard */,
 				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
+				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
 			);
 			path = LoginScene;
 			sourceTree = "<group>";
 		};
-		CA06A837281CF0FE0086BD0B /* Scenes */ = {
+		CA6AFD9C2827AA9F0098718E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
-				CA06A836281CF0F60086BD0B /* LoginScene */,
-				CA6AFDA62827AAF30098718E /* MainScene */,
-				CA6AFDAB2827AB060098718E /* AddCardScene */,
-				CA6AFDB52827AB260098718E /* SearchScene */,
-				CA6AFDB02827AB170098718E /* ProfileScene */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		CA6AFD9C2827AA9F0098718E /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				CA6AFD962827AA8D0098718E /* CardView.swift */,
-				CA6AFDBC282828490098718E /* YazykButton.swift */,
-				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
+				CA6AFDBC282828490098718E /* SignInButton.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
-				CA6AFD942827AA8C0098718E /* YazykNavigationController.swift */,
-				CA6AFD952827AA8C0098718E /* YazykTabBarController.swift */,
+				CA6AFD962827AA8D0098718E /* CardView.swift */,
+				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
 			);
-			path = UIComponents;
+			path = Elements;
 			sourceTree = "<group>";
 		};
-		CA6AFDA12827AAB60098718E /* Extensions */ = {
+		CA6AFDA12827AAB60098718E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CAA118F92830295E0056013D /* UIView.swift */,
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
+				CAA118F6282F60CF0056013D /* CGFloat.swift */,
 			);
-			path = Extensions;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CA6AFDA62827AAF30098718E /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
+				CA703E14282ECB480074C543 /* MainScene.storyboard */,
 				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
+				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
@@ -160,8 +164,9 @@
 		CA6AFDAB2827AB060098718E /* AddCardScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
+				CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */,
 				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
+				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
 			);
 			path = AddCardScene;
 			sourceTree = "<group>";
@@ -169,8 +174,9 @@
 		CA6AFDB02827AB170098718E /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
+				CA703E29282ED1350074C543 /* ProfileScene.storyboard */,
 				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
+				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
 			);
 			path = ProfileScene;
 			sourceTree = "<group>";
@@ -178,59 +184,37 @@
 		CA6AFDB52827AB260098718E /* SearchScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
+				CA703E19282ECC010074C543 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
+				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
 			path = SearchScene;
 			sourceTree = "<group>";
 		};
-		CA6AFDB62827AB3F0098718E /* Storyboards */ = {
+		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				CA8B608E2818D78300D7769B /* Main.storyboard */,
-				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
+				CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */,
+				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
 			);
-			path = Storyboards;
+			path = MainTabBarController;
 			sourceTree = "<group>";
 		};
-		CA862F5B28225827002AFB6A /* Protocols */ = {
+		CA862F5B28225827002AFB6A /* FirebaseAPI */ = {
 			isa = PBXGroup;
 			children = (
 				CA862F5C28225840002AFB6A /* Firebasable.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		CA862F5E28225878002AFB6A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CA862F5F28225884002AFB6A /* User.swift */,
-				CA847190282B97A8008861E5 /* UserFirebase.swift */,
-				CA6AFDBA2828150F0098718E /* Greeting.swift */,
-				CA862F61282258BF002AFB6A /* Card.swift */,
-				CA847192282B97BC008861E5 /* CardFirebase.swift */,
-				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
-				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		CA862F6528225969002AFB6A /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				CA8B60962818D78500D7769B /* Info.plist */,
-				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		CA862F6828225AEB002AFB6A /* API */ = {
-			isa = PBXGroup;
-			children = (
 				CA862F6928225AFB002AFB6A /* FirebaseAPI.swift */,
+			);
+			path = FirebaseAPI;
+			sourceTree = "<group>";
+		};
+		CA862F6828225AEB002AFB6A /* GreetingGenerator */ = {
+			isa = PBXGroup;
+			children = (
 				CA6AFDB8282804E70098718E /* GreetingGenerator.swift */,
 			);
-			path = API;
+			path = GreetingGenerator;
 			sourceTree = "<group>";
 		};
 		CA8B607C2818D78300D7769B = {
@@ -252,21 +236,106 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
-				CA8B60882818D78300D7769B /* AppDelegate.swift */,
-				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
-				CA6AFD812827A77F0098718E /* Configuration.swift */,
-				CA6AFD852827A7C70098718E /* Temp.swift */,
-				CA862F6828225AEB002AFB6A /* API */,
-				CA862F6528225969002AFB6A /* Configuration */,
-				CA862F5E28225878002AFB6A /* Models */,
-				CA862F5B28225827002AFB6A /* Protocols */,
-				CA6AFD9C2827AA9F0098718E /* UIComponents */,
-				CA6AFDA12827AAB60098718E /* Extensions */,
-				CA06A837281CF0FE0086BD0B /* Scenes */,
-				CA6AFDB62827AB3F0098718E /* Storyboards */,
-				CA8B60912818D78500D7769B /* Assets.xcassets */,
+				CAA118EF282F5A020056013D /* App */,
+				CAA118F0282F5A090056013D /* Core */,
+				CAA118F1282F5A150056013D /* Resources */,
+				CAA118F2282F5A1C0056013D /* Environments */,
 			);
 			path = "ЯзыкЪ";
+			sourceTree = "<group>";
+		};
+		CAA118EE282F4CAB0056013D /* MainNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */,
+				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
+			);
+			path = MainNavigationController;
+			sourceTree = "<group>";
+		};
+		CAA118EF282F5A020056013D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CAA118F3282F5A530056013D /* BusinessLogic */,
+				CAA118F4282F5A5E0056013D /* Entities */,
+				CAA118F5282F5A770056013D /* Flows */,
+				CA8B60882818D78300D7769B /* AppDelegate.swift */,
+				CA8B608A2818D78300D7769B /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CAA118F0282F5A090056013D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFDA12827AAB60098718E /* Helpers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CAA118F1282F5A150056013D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B60932818D78500D7769B /* LaunchScreen.storyboard */,
+				CA8B60912818D78500D7769B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CAA118F2282F5A1C0056013D /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B60962818D78500D7769B /* Info.plist */,
+				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		CAA118F3282F5A530056013D /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				CAA118F8282F63620056013D /* MockAPI */,
+				CA862F5B28225827002AFB6A /* FirebaseAPI */,
+				CA862F6828225AEB002AFB6A /* GreetingGenerator */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		CAA118F4282F5A5E0056013D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				CA862F5F28225884002AFB6A /* User.swift */,
+				CA847190282B97A8008861E5 /* UserFirebase.swift */,
+				CA6AFDBA2828150F0098718E /* Greeting.swift */,
+				CA862F61282258BF002AFB6A /* Card.swift */,
+				CA847192282B97BC008861E5 /* CardFirebase.swift */,
+				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
+				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		CAA118F5282F5A770056013D /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFD9C2827AA9F0098718E /* Elements */,
+				CAA118EE282F4CAB0056013D /* MainNavigationController */,
+				CA06A836281CF0F60086BD0B /* LoginScene */,
+				CA703E2B282ED4760074C543 /* MainTabBarController */,
+				CA6AFDA62827AAF30098718E /* MainScene */,
+				CA6AFDAB2827AB060098718E /* AddCardScene */,
+				CA6AFDB52827AB260098718E /* SearchScene */,
+				CA6AFDB02827AB170098718E /* ProfileScene */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		CAA118F8282F63620056013D /* MockAPI */ = {
+			isa = PBXGroup;
+			children = (
+				CA6AFD852827A7C70098718E /* MockCardsProvider.swift */,
+			);
+			path = MockAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,9 +406,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
+				CA703E18282ECBAF0074C543 /* AddCardScene.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
+				CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */,
+				CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */,
+				CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
-				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
+				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
+				CA703E2A282ED1350074C543 /* ProfileScene.storyboard in Resources */,
+				CA703E2D282ED4BC0074C543 /* MainTabBarController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,14 +430,15 @@
 				CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
-				CA6AFD972827AA8D0098718E /* YazykNavigationController.swift in Sources */,
+				CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
 				CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */,
 				CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */,
 				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
 				CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */,
-				CA6AFDBD282828490098718E /* YazykButton.swift in Sources */,
+				CA6AFDBD282828490098718E /* SignInButton.swift in Sources */,
+				CAA118FA2830295E0056013D /* UIView.swift in Sources */,
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
 				CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */,
@@ -370,16 +446,16 @@
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
 				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
-				CA6AFD982827AA8D0098718E /* YazykTabBarController.swift in Sources */,
+				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
-				CA6AFD822827A77F0098718E /* Configuration.swift in Sources */,
+				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
 				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
 				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
-				CA6AFD862827A7C70098718E /* Temp.swift in Sources */,
+				CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */,
 				CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */,
 				CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */,
 			);
@@ -388,12 +464,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA8B608E2818D78300D7769B /* Main.storyboard */ = {
+		CA703E14282ECB480074C543 /* MainScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA703E15282ECB480074C543 /* Base */,
+			);
+			name = MainScene.storyboard;
+			sourceTree = "<group>";
+		};
+		CA703E19282ECC010074C543 /* SearchScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA703E1A282ECC010074C543 /* Base */,
+			);
+			name = SearchScene.storyboard;
+			sourceTree = "<group>";
+		};
+		CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CA8B608F2818D78300D7769B /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainNavigationController.storyboard;
 			sourceTree = "<group>";
 		};
 		CA8B60932818D78500D7769B /* LaunchScreen.storyboard */ = {
@@ -530,11 +622,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainNavigationController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -543,7 +635,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jareksedy.tongueGB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -561,11 +653,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "ЯзыкЪ/Configuration/Info.plist";
+				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = MainNavigationController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
@@ -574,7 +666,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jareksedy.tongueGB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

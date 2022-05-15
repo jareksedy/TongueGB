@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Scene View Controller-->
+        <scene sceneID="It0-Mh-7pW">
+            <objects>
+                <viewController storyboardIdentifier="LoginScene" id="Wfr-tf-ua3" customClass="LoginSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6r6-Rh-X18">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fq0-Zx-ejn" customClass="SignInButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="17" y="723.5" width="380" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Gw6-tC-4uz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Войти с Apple ID">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Wfr-tf-ua3" eventType="touchUpInside" id="F1u-kw-I8f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 0.0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxA-Xu-LOa">
+                                <rect key="frame" x="17" y="823.5" width="380" height="13.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-Mq-AnJ">
+                                <rect key="frame" x="17" y="59" width="380" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUZ-6w-dIm">
+                                <rect key="frame" x="17" y="88.5" width="380" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать! Войдите в приложение с помощью своего Apple ID." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwF-lM-mr3">
+                                <rect key="frame" x="17" y="138" width="380" height="30.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zhn-PT-4Ay"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0CJ-sK-08e"/>
+                            <constraint firstItem="Fq0-Zx-ejn" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="0wj-a0-l5Z"/>
+                            <constraint firstItem="zUZ-6w-dIm" firstAttribute="top" secondItem="Sy7-Mq-AnJ" secondAttribute="bottom" constant="15" id="B9C-Da-ouh"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="E6e-BO-qks"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Lht-up-6Ld"/>
+                            <constraint firstItem="IwF-lM-mr3" firstAttribute="top" secondItem="zUZ-6w-dIm" secondAttribute="bottom" constant="35" id="MfD-Qj-g66"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="leading" secondItem="zhn-PT-4Ay" secondAttribute="leading" constant="17" id="Nhc-oi-BoW"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="QxA-Xu-LOa" secondAttribute="trailing" constant="17" id="T8r-25-4UH"/>
+                            <constraint firstItem="QxA-Xu-LOa" firstAttribute="top" secondItem="Fq0-Zx-ejn" secondAttribute="bottom" constant="35" id="TYQ-2a-ivO"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Sy7-Mq-AnJ" secondAttribute="trailing" constant="17" id="foG-JM-KCC"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="bottom" secondItem="QxA-Xu-LOa" secondAttribute="bottom" constant="25" id="hGK-R0-zjn"/>
+                            <constraint firstItem="Sy7-Mq-AnJ" firstAttribute="top" secondItem="zhn-PT-4Ay" secondAttribute="top" constant="15" id="mo2-DX-iUb"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="zUZ-6w-dIm" secondAttribute="trailing" constant="17" id="qF1-do-5UD"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="Fq0-Zx-ejn" secondAttribute="trailing" constant="17" id="rZ7-tI-ffY"/>
+                            <constraint firstItem="zhn-PT-4Ay" firstAttribute="trailing" secondItem="IwF-lM-mr3" secondAttribute="trailing" constant="17" id="tQP-Ir-zqk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HQ3-5Z-W8X"/>
+                    <connections>
+                        <outlet property="appVersionLabel" destination="QxA-Xu-LOa" id="bph-k7-IaC"/>
+                        <outlet property="greetingLabel" destination="zUZ-6w-dIm" id="7gz-de-duk"/>
+                        <outlet property="loginButton" destination="Fq0-Zx-ejn" id="KCZ-AT-Qvr"/>
+                        <outlet property="transcriptionLabel" destination="Sy7-Mq-AnJ" id="SDK-Gg-YUc"/>
+                        <outlet property="welcomeLabel" destination="IwF-lM-mr3" id="EqC-4H-x1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcu-nE-vMP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="673.91304347826087" y="196.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
