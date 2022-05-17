@@ -16,7 +16,6 @@
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
-		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
 		CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD922827AA8C0098718E /* EmptyCardView.swift */; };
 		CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD962827AA8D0098718E /* CardView.swift */; };
@@ -68,7 +67,6 @@
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
 		CA6AFD942827AA8C0098718E /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		CA6AFD952827AA8C0098718E /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CA6AFD962827AA8D0098718E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CA6AFD9D2827AAAF0098718E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CA6AFD9E2827AAAF0098718E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -206,14 +204,6 @@
 			path = SearchScene;
 			sourceTree = "<group>";
 		};
-		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
-			);
-			path = MainTabBarController;
-			sourceTree = "<group>";
-		};
 		CA862F5B28225827002AFB6A /* FirebaseAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +325,6 @@
 				CA6AFD9C2827AA9F0098718E /* Elements */,
 				CAA118EE282F4CAB0056013D /* MainNavigationController */,
 				CA06A836281CF0F60086BD0B /* LoginScene */,
-				CA703E2B282ED4760074C543 /* MainTabBarController */,
 				CA6AFDA62827AAF30098718E /* MainScene */,
 				CA6AFDAB2827AB060098718E /* AddCardScene */,
 				CA6AFDB52827AB260098718E /* SearchScene */,
@@ -461,7 +450,6 @@
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
 				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
 				CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */,
-				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
