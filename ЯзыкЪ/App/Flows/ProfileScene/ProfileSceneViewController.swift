@@ -19,18 +19,18 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var transcriptionLabel: UILabel!
     @IBOutlet weak var greetingLabel: UILabel!
-    @IBOutlet weak var captionCardsNumberLabel: UILabel!
-    @IBOutlet weak var cardsNumberLabel: UILabel!
-    @IBOutlet weak var captionCategoriesNumberLabel: UILabel!
-    @IBOutlet weak var categoriesNumberLabel: UILabel!
-    @IBOutlet weak var captionRegistrationDateLabel: UILabel!
-    @IBOutlet weak var registrationDateLabel: UILabel!
     @IBOutlet weak var aboutAppHeadingLabel: UILabel!
     @IBOutlet weak var aboutAppTextLabel: UILabel!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var quickStatsTableView: UITableView!
+    
+    // MARK: - Properties
+    var quickStatsData: [[String]] = []
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
+    lazy var categoriesCount = MockCategoriesProvider().createMockCategories().count
+    lazy var cardsCount = MockCardsProvider().createMockCards().count
     
     // MARK: - Properties
     var randomGreeting: Greeting!
@@ -40,8 +40,13 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter.viewDelegate = self
+        quickStatsTableView.dataSource = self
+        quickStatsTableView.registerCell(type: QuickStatsTableViewCell.self)
+        
         setupUI()
+        generateData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,15 +66,42 @@ class ProfileSceneViewController: UIViewController {
         transcriptionLabel.text = randomGreeting?.transcription
         greetingLabel.text = "\(greetingLabelText) \(randomGreeting?.language ?? "")."
         
-        cardsNumberLabel.text = "36"
-        categoriesNumberLabel.text = "4"
-        registrationDateLabel.text = "9 мая 2022"
-        
         aboutAppTextLabel.text = "Разработано Like-Minded People. Версия \(appVersion ?? "0.0.0"). Распространяется по лицензии MIT."
     }
     
     private func setupNavigationOptions() {
         self.navigationItem.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
+    }
+    
+    private func generateData() {
+        quickStatsData = [["Количество категорий", "\(categoriesCount)"],
+                          ["Количество карточек", "\(cardsCount)"],
+                          ["Дата регистрации", "9 мая 2022"]]
+    }
+}
+
+// MARK: - TableView
+extension ProfileSceneViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return quickStatsData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueCell(withType: QuickStatsTableViewCell.self, for: indexPath) as? QuickStatsTableViewCell
+        else { return UITableViewCell() }
+        
+        cell.configure(caption: quickStatsData[indexPath.row][0], value: quickStatsData[indexPath.row][1])
+        
+        // Remove last cell's separator in TableView
+        if indexPath.row == quickStatsData.count - 1 {
+            cell.separatorInset = UIEdgeInsets.init(top: 0, left: quickStatsTableView.bounds.width + 1, bottom: 0, right: 0)
+        }
+        
+        return cell
     }
 }
 

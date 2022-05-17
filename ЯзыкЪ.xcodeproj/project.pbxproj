@@ -45,6 +45,8 @@
 		CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */; };
 		CA8B60922818D78500D7769B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60912818D78500D7769B /* Assets.xcassets */; };
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
+		CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */; };
+		CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -96,6 +98,8 @@
 		CA8B60912818D78500D7769B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B60942818D78500D7769B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTableViewCell.swift; sourceTree = "<group>"; };
+		CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTableViewCell.xib; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		CA6AFDB02827AB170098718E /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA8C7E6228341FF30039E5E4 /* QuickStatsTableViewCell */,
 				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
 				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
 			);
@@ -246,6 +251,15 @@
 				CAA118F2282F5A1C0056013D /* Environments */,
 			);
 			path = "ЯзыкЪ";
+			sourceTree = "<group>";
+		};
+		CA8C7E6228341FF30039E5E4 /* QuickStatsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */,
+				CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */,
+			);
+			path = QuickStatsTableViewCell;
 			sourceTree = "<group>";
 		};
 		CAA118EE282F4CAB0056013D /* MainNavigationController */ = {
@@ -413,6 +427,7 @@
 				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
+				CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
 			);
@@ -460,6 +475,7 @@
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
 				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
 				CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */,
+				CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */,
 				CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */,
 				CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */,
 			);
