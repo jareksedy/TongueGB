@@ -70,7 +70,25 @@ class MockCardsProvider {
                  translation: "цапля",
                  description: "ˈherən",
                  category: CardsCategory(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
-                 userEmail: "")
+                 userEmail: ""),
+            
+            Card(word: "hamster",
+                 translation: "хомячок",
+                 description: "ˈhæmstə",
+                 category: CardsCategory(categoryKey: "Животные", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "custard",
+                 translation: "заварной крем",
+                 description: "ˈkʌstəd",
+                 category: CardsCategory(categoryKey: "Еда", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
+            
+            Card(word: "heather",
+                 translation: "вереск",
+                 description: "ˈheðə",
+                 category: CardsCategory(categoryKey: "Растения", categoryColor: nil, categoryImage: nil),
+                 userEmail: ""),
         ].shuffled()
     }
 }
