@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */; };
 		CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */; };
-		CA683C192831573800EB9224 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA683C182831573800EB9224 /* CategoryTableViewCell.swift */; };
+		CA0955FC2833607700F35D64 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FB2833607600F35D64 /* UITableView.swift */; };
+		CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */; };
+		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -61,7 +63,9 @@
 /* Begin PBXFileReference section */
 		CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSceneViewController.swift; sourceTree = "<group>"; };
 		CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScenePresenter.swift; sourceTree = "<group>"; };
-		CA683C182831573800EB9224 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CA0955FB2833607600F35D64 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -133,6 +137,15 @@
 			path = LoginScene;
 			sourceTree = "<group>";
 		};
+		CA095601283367BD00F35D64 /* CategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */,
+				CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */,
+			);
+			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
 		CA6AFD9C2827AA9F0098718E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CAA118F92830295E0056013D /* UIView.swift */,
+				CA0955FB2833607600F35D64 /* UITableView.swift */,
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
 				CAA118F6282F60CF0056013D /* CGFloat.swift */,
@@ -188,9 +202,9 @@
 		CA6AFDB52827AB260098718E /* SearchScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA095601283367BD00F35D64 /* CategoryTableViewCell */,
 				CA703E19282ECC010074C543 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
-				CA683C182831573800EB9224 /* CategoryTableViewCell.swift */,
 				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
 			path = SearchScene;
@@ -411,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CA703E18282ECBAF0074C543 /* AddCardScene.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
@@ -436,6 +451,7 @@
 				CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */,
 				CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
+				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
 				CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
@@ -456,9 +472,9 @@
 				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
-				CA683C192831573800EB9224 /* CategoryTableViewCell.swift in Sources */,
 				CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */,
 				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
+				CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
 				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,

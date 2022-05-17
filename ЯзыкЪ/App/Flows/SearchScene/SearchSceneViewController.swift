@@ -30,6 +30,7 @@ class SearchSceneViewController: UIViewController {
         fetchCategories()
         presenter.viewDelegate = self
         categoriesTableView.dataSource = self
+        categoriesTableView.registerCell(type: CategoryTableViewCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,11 +57,13 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as! CategoryTableViewCell
+        guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell
+        else { return UITableViewCell() }
+        
         cell.configure(categories?[indexPath.row])
         
         let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .systemGray6.withAlphaComponent(0.5)
+        selectedBackgroundView.backgroundColor = .systemGray6.withAlphaComponent(0.75)
         cell.selectedBackgroundView = selectedBackgroundView
         
         // Remove last cell's separator in TableView

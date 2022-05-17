@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 extension UIView {
-    func tieConstraintsToSuperView(_ view: UIView) {
+    public func tieConstraintsToSuperView(_ view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -22,7 +22,7 @@ extension UIView {
 }
 
 extension UIView {
-    func speak(_ textToSpeak: String) {
+    public func speak(_ textToSpeak: String) {
         let utterance = AVSpeechUtterance(string: textToSpeak)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate
