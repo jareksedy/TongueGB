@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ase-k8-Xn2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nNV-Ni-7eA">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main Navigation Controller-->
         <scene sceneID="Mxi-Fa-ZnF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z7w-SN-gGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nNV-Ni-7eA" customClass="MainNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXA-YZ-qIg">
@@ -24,6 +21,7 @@
                         <segue destination="7ou-hr-QVv" kind="relationship" relationship="rootViewController" id="RON-qF-gJI"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z7w-SN-gGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-128" y="197"/>
         </scene>
@@ -93,96 +91,5 @@
             </objects>
             <point key="canvasLocation" x="996" y="309"/>
         </scene>
-        <!--Login Scene View Controller-->
-        <scene sceneID="7aq-tA-0MG">
-            <objects>
-                <viewController storyboardIdentifier="LoginScene" id="ase-k8-Xn2" customClass="LoginSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vLa-0p-KHn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-Nk-dLZ" customClass="SignInButton" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="17" y="723.5" width="380" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="TQb-he-Jwn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Войти с Apple ID">
-                                    <color key="titleColor" systemColor="linkColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonTapped:" destination="ase-k8-Xn2" eventType="touchUpInside" id="HPG-Se-db5"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Версия 0.0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTo-wZ-Hlz">
-                                <rect key="frame" x="17" y="823.5" width="380" height="13.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[ həˈləʊ ]" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4k-98-Q2U">
-                                <rect key="frame" x="17" y="59" width="380" height="14.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Теперь вы знаете как поприветствовать кого-нибудь..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFF-Ia-rQW">
-                                <rect key="frame" x="17" y="88.5" width="380" height="14.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать! Войдите в приложение с помощью своего Apple ID." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-U0-TSL">
-                                <rect key="frame" x="17" y="138" width="380" height="30.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <color key="textColor" systemColor="secondaryLabelColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ZGP-FH-m3R"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="trailing" secondItem="KTo-wZ-Hlz" secondAttribute="trailing" constant="17" id="2ES-Nw-ISc"/>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="trailing" secondItem="HFF-Ia-rQW" secondAttribute="trailing" constant="17" id="6Gf-ks-gfm"/>
-                            <constraint firstItem="wvq-U0-TSL" firstAttribute="leading" secondItem="ZGP-FH-m3R" secondAttribute="leading" constant="17" id="DZU-Cc-xZZ"/>
-                            <constraint firstItem="KTo-wZ-Hlz" firstAttribute="top" secondItem="rgb-Nk-dLZ" secondAttribute="bottom" constant="35" id="FFp-vT-YLu"/>
-                            <constraint firstItem="v4k-98-Q2U" firstAttribute="leading" secondItem="ZGP-FH-m3R" secondAttribute="leading" constant="17" id="KKO-dD-p9l"/>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="trailing" secondItem="v4k-98-Q2U" secondAttribute="trailing" constant="17" id="Khf-0f-8sr"/>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="bottom" secondItem="KTo-wZ-Hlz" secondAttribute="bottom" constant="25" id="Mhn-tG-Mt5"/>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="trailing" secondItem="wvq-U0-TSL" secondAttribute="trailing" constant="17" id="PGR-jz-kih"/>
-                            <constraint firstItem="HFF-Ia-rQW" firstAttribute="top" secondItem="v4k-98-Q2U" secondAttribute="bottom" constant="15" id="Svq-CJ-2fR"/>
-                            <constraint firstItem="v4k-98-Q2U" firstAttribute="top" secondItem="ZGP-FH-m3R" secondAttribute="top" constant="15" id="T6v-Uo-de6"/>
-                            <constraint firstItem="wvq-U0-TSL" firstAttribute="top" secondItem="HFF-Ia-rQW" secondAttribute="bottom" constant="35" id="jho-wc-s1l"/>
-                            <constraint firstItem="KTo-wZ-Hlz" firstAttribute="leading" secondItem="ZGP-FH-m3R" secondAttribute="leading" constant="17" id="nzN-Tg-zVf"/>
-                            <constraint firstItem="ZGP-FH-m3R" firstAttribute="trailing" secondItem="rgb-Nk-dLZ" secondAttribute="trailing" constant="17" id="pzh-jj-FXe"/>
-                            <constraint firstItem="rgb-Nk-dLZ" firstAttribute="leading" secondItem="ZGP-FH-m3R" secondAttribute="leading" constant="17" id="ru4-Xa-lSm"/>
-                            <constraint firstItem="HFF-Ia-rQW" firstAttribute="leading" secondItem="ZGP-FH-m3R" secondAttribute="leading" constant="17" id="wPK-wf-JeT"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cmb-Nd-yuz"/>
-                    <connections>
-                        <outlet property="appVersionLabel" destination="KTo-wZ-Hlz" id="2Nx-Am-oXi"/>
-                        <outlet property="greetingLabel" destination="HFF-Ia-rQW" id="1gU-RA-9CM"/>
-                        <outlet property="loginButton" destination="rgb-Nk-dLZ" id="8V7-Bq-Ejh"/>
-                        <outlet property="transcriptionLabel" destination="v4k-98-Q2U" id="xLc-zI-Pdx"/>
-                        <outlet property="welcomeLabel" destination="wvq-U0-TSL" id="Bkv-Js-cP3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="amS-8Y-zFE" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="694" y="-315"/>
-        </scene>
     </scenes>
-    <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
