@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabBarController: UITabBarController {
     
@@ -31,6 +32,12 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - Actions
     @IBAction func categoriesBarButtonItemTapped(_ sender: Any) {
+        
+        //MARK: - For testing funcs of FirebaseAPI
+       let api = FirebaseAPI(controller: self)
+        api.storeWordCard(Card(word: "Test", translation: "Тест", description: "Тестовая модель карточки", category: CardsCategory(categoryKey: "Test Category", categoryColor: "TestColor", categoryImage: "TestImage", userEmail: "test@test.ru"), userEmail: "test@test.ru"))
+        api.storeWordCard(Card(word: "Test One", translation: "Тест Один", description: "Тестовая модель карточки Один", category: CardsCategory(categoryKey: "Test Category One", categoryColor: "TestColorOne", categoryImage: "TestImageOne", userEmail: "test@test.ru"), userEmail: "test@test.ru"))
+        api.storeWordCard(Card(word: "Test Two", translation: "Тест Два", description: "Тестовая модель карточки Два", category: CardsCategory(categoryKey: "Test Category Two", categoryColor: "TestColorTwo", categoryImage: "TestImageTwo", userEmail: "testOne@test.com"), userEmail: "testOne@test.com"))
     }
     
     // MARK: - Private methods

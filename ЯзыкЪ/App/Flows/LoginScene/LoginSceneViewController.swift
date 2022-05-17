@@ -7,6 +7,7 @@
 
 import UIKit
 import AuthenticationServices
+import Firebase
 
 // MARK: - Protocol
 protocol LoginSceneViewDelegate: NSObjectProtocol {
@@ -70,5 +71,10 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         self.navigationController?.pushViewController(mainTabBarController, animated: true)
+        
+        
+        //MARK: - For testing Auth for Firebase
+        let api = FirebaseAPI(controller: self)
+        api.authUser(User(userEmail: "test@test.ru", userId: 123456))
     }
 }

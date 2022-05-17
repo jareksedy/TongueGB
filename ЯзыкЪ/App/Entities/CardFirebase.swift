@@ -12,15 +12,15 @@ class CardFirebase {
     let word: String
     let translation: String
     let description: String?
-    let category: CardsCategory
+    let category: String
     let userEmail: String
     let ref: DatabaseReference?
     
-    init(word: String, translation: String, description: String?, category: CardsCategory, userEmail: String) {
+    init(word: String, translation: String, description: String?, category: String, userEmail: String) {
         self.word = word
         self.translation = translation
         self.description = description
-        self.category = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
+        self.category = category
         self.userEmail = userEmail
         self.ref = nil
     }
@@ -31,7 +31,7 @@ class CardFirebase {
             let word = value["word"] as? String,
             let translation = value["translation"] as? String,
             let description = value["description"] as? String,
-            let category = value["category"] as? CardsCategory,
+            let category = value["category"] as? String,
             let userEmail = value["user_email"] as? String else {
             return nil
         }
@@ -45,11 +45,11 @@ class CardFirebase {
     
     func toAnyObject() -> [String: Any] {
         return [
-            "word": word,
-            "translation": translation,
+            "word": word as Any,
+            "translation": translation as Any,
             "description": description as Any,
-            "category": CardsCategory.self,
-            "user_email": userEmail
+            "category": category as Any,
+            "user_email": userEmail.replacingOccurrences(of: "[@.]", with: "_") as Any
         ] as [String: Any]
     }
 }

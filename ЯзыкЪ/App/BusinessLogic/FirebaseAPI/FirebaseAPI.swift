@@ -15,8 +15,8 @@ class FirebaseAPI: Firebasable {
     //MARK: - Properties
     let controller: UIViewController
     let authService = Auth.auth()
-    let cardsDatabaseReference = Database.database().reference(withPath: "cards")
-    let categoriesDatabaseReference = Database.database().reference(withPath: "categories")
+    //let cardsDatabaseReference = Database.database().reference(withPath: "cards")
+    //let categoriesDatabaseReference = Database.database().reference(withPath: "categories")
     var token: AuthStateDidChangeListenerHandle? = nil
     
     init(controller: UIViewController) {
@@ -70,14 +70,17 @@ class FirebaseAPI: Firebasable {
         return nil //TODO: Correct return
     }
     
-    func storeWordCard(_ card: Card, _ userEmail: String) {
-        let cardModel = CardFirebase(word: card.word, translation: card.translation, description: card.description, category: card.category, userEmail: card.userEmail)
-        let cardRef = self.cardsDatabaseReference.child(cardModel.word.lowercased())
-        cardRef.setValue(cardModel.toAnyObject)
+    func storeWordCard(_ card: Card) {
+        let cardModel = CardFirebase(word: card.word, translation: card.translation, description: card.description, category: card.category.categoryKey, userEmail: card.userEmail)
+        let cardRef = Database.database().reference(withPath: cardModel.userEmail.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)).child("cards").child(cardModel.word)
+        let value = cardModel.toAnyObject()
+        cardRef.setValue(value)
+        storeCategory(CardsCategory(categoryKey: card.category.categoryKey, categoryColor: card.category.categoryColor, categoryImage: card.category.categoryImage, userEmail: card.category.userEmail))
     }
     
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
-        let cardRef = self.cardsDatabaseReference.child("cards").child("\(keyWord)")
+        let cardRef = Database.database().reference(withPath: userEmail.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)).child("cards").child(keyWord)
+        
         var card: Card? = nil
         cardRef.getData { error, dataSnapshot in
             guard error == nil else {
@@ -86,7 +89,9 @@ class FirebaseAPI: Firebasable {
             }
             guard let cardFirebase = dataSnapshot.value as? CardFirebase else { return }
             
-            card = Card(word: cardFirebase.word, translation: cardFirebase.translation, description: cardFirebase.description, category: cardFirebase.category, userEmail: cardFirebase.userEmail)
+            //TODO: - Дополнить получение цвета и картинки из категории (пока nil стоит)
+            
+            card = Card(word: cardFirebase.word, translation: cardFirebase.translation, description: cardFirebase.description, category: CardsCategory(categoryKey: cardFirebase.category, categoryColor: nil, categoryImage: nil, userEmail: cardFirebase.userEmail), userEmail: cardFirebase.userEmail)
         }
         return card
     }
@@ -97,21 +102,23 @@ class FirebaseAPI: Firebasable {
     }
     
     func storeCategory(_ category: CardsCategory) {
-        let categoryModel = CardsCategoryFirebase(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
-        let categoryRef = self.categoriesDatabaseReference.child(categoryModel.categoryKey.lowercased())
-        categoryRef.setValue(categoryModel.toAnyObject)
+        let categoryModel = CardsCategoryFirebase(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage, userEmail: category.userEmail)
+        let categoryRef = Database.database().reference(withPath: categoryModel.userEmail.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)).child("categories").child(category.categoryKey)
+        let value = categoryModel.toAnyObject()
+        categoryRef.setValue(value)
     }
     
-    func fetchCategoryList() -> [CardsCategory]? {
+    func fetchCategoryList(_ userEmail: String) -> [CardsCategory]? {
+        let categoriesRef = Database.database().reference(withPath: userEmail.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)).child("categories")
         var categories: [CardsCategory]? = nil
-        categoriesDatabaseReference.getData { error, dataSnapshot in
+        categoriesRef.getData { error, dataSnapshot in
             guard error == nil else {
                 print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
             guard let categoriesFirebase = dataSnapshot.value as? [CardsCategoryFirebase] else { return }
             for category in categoriesFirebase {
-                let cardCategory = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage)
+                let cardCategory = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage, userEmail: category.userEmail)
                 categories?.append(cardCategory)
             }
         }
