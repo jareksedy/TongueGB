@@ -12,6 +12,9 @@
 		CA0955FC2833607700F35D64 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FB2833607600F35D64 /* UITableView.swift */; };
 		CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */; };
 		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
+		CA095605283388E400F35D64 /* SearchResultScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA095603283388E400F35D64 /* SearchResultScene.storyboard */; };
+		CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */; };
+		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -66,6 +69,9 @@
 		CA0955FB2833607600F35D64 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		CA095604283388E400F35D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/App/Flows/SearchScene/ЯзыкЪ/Storyboards/Base.lproj/SearchResultScene.storyboard"; sourceTree = "<group>"; };
+		CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSceneViewController.swift; sourceTree = "<group>"; };
+		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -144,6 +150,16 @@
 				CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */,
 			);
 			path = CategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		CA0956022833867700F35D64 /* SearchResultScene */ = {
+			isa = PBXGroup;
+			children = (
+				CA095603283388E400F35D64 /* SearchResultScene.storyboard */,
+				CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */,
+				CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */,
+			);
+			path = SearchResultScene;
 			sourceTree = "<group>";
 		};
 		CA6AFD9C2827AA9F0098718E /* Elements */ = {
@@ -344,6 +360,7 @@
 				CA6AFDA62827AAF30098718E /* MainScene */,
 				CA6AFDAB2827AB060098718E /* AddCardScene */,
 				CA6AFDB52827AB260098718E /* SearchScene */,
+				CA0956022833867700F35D64 /* SearchResultScene */,
 				CA6AFDB02827AB170098718E /* ProfileScene */,
 			);
 			path = Flows;
@@ -431,6 +448,7 @@
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
 				CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */,
 				CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */,
+				CA095605283388E400F35D64 /* SearchResultScene.storyboard in Resources */,
 				CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
@@ -458,6 +476,7 @@
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
 				CA6AFDA52827AAEB0098718E /* MainSceneViewController.swift in Sources */,
 				CA6AFD9F2827AAAF0098718E /* UIColor.swift in Sources */,
+				CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */,
 				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
 				CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */,
 				CA6AFDBD282828490098718E /* SignInButton.swift in Sources */,
@@ -469,6 +488,7 @@
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
 				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
+				CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */,
 				CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */,
 				CA6AFDA02827AAAF0098718E /* String.swift in Sources */,
 				CA862F62282258BF002AFB6A /* Card.swift in Sources */,
@@ -488,6 +508,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CA095603283388E400F35D64 /* SearchResultScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA095604283388E400F35D64 /* Base */,
+			);
+			name = SearchResultScene.storyboard;
+			sourceTree = "<group>";
+		};
 		CA703E14282ECB480074C543 /* MainScene.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
