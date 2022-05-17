@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Scene View Controller-->
+        <scene sceneID="oHX-OY-tn1">
+            <objects>
+                <viewController storyboardIdentifier="SearchScene" id="OdD-pi-lc5" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qtt-rJ-ZcM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-ch-8Zf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="separatorColor" systemColor="separatorColor"/>
+                                <inset key="separatorInset" minX="17" minY="0.0" maxX="17" maxY="0.0"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="jn3-OY-hHR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zfr-Kx-MWf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="trailing" secondItem="zfr-Kx-MWf" secondAttribute="trailing" id="0V5-0T-fQv"/>
+                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="bottom" secondItem="zfr-Kx-MWf" secondAttribute="bottom" id="2Pr-em-M9g"/>
+                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="leading" secondItem="zfr-Kx-MWf" secondAttribute="leading" id="YMY-09-Ehw"/>
+                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="top" secondItem="zfr-Kx-MWf" secondAttribute="top" id="tAW-jR-YmQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8bJ-tC-aJA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="categoriesTableView" destination="jjE-ch-8Zf" id="eIC-rB-x1h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVQ-pq-1ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.1014492753625" y="768.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -88,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0D-Iu-SRI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597.10144927536237" y="196.875"/>
+            <point key="canvasLocation" x="606" y="197"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="D4z-H8-EEe">
@@ -110,44 +110,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klH-Nm-8IU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="196.875"/>
-        </scene>
-        <!--Search Scene View Controller-->
-        <scene sceneID="oHX-OY-tn1">
-            <objects>
-                <viewController storyboardIdentifier="SearchScene" id="OdD-pi-lc5" customClass="SearchSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qtt-rJ-ZcM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-ch-8Zf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="separatorColor" systemColor="separatorColor"/>
-                                <inset key="separatorInset" minX="17" minY="0.0" maxX="17" maxY="0.0"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="jn3-OY-hHR">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="zfr-Kx-MWf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="trailing" secondItem="zfr-Kx-MWf" secondAttribute="trailing" id="0V5-0T-fQv"/>
-                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="bottom" secondItem="zfr-Kx-MWf" secondAttribute="bottom" id="2Pr-em-M9g"/>
-                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="leading" secondItem="zfr-Kx-MWf" secondAttribute="leading" id="YMY-09-Ehw"/>
-                            <constraint firstItem="jjE-ch-8Zf" firstAttribute="top" secondItem="zfr-Kx-MWf" secondAttribute="top" id="tAW-jR-YmQ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="8bJ-tC-aJA"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="categoriesTableView" destination="jjE-ch-8Zf" id="eIC-rB-x1h"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tVQ-pq-1ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3597.1014492753625" y="768.75"/>
         </scene>
         <!--Search Result Scene View Controller-->
         <scene sceneID="Vnk-kr-LeN">
@@ -383,7 +345,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OdD-pi-lc5" kind="relationship" relationship="rootViewController" id="5tx-jm-gdv"/>
+                        <segue destination="J9e-Nc-19u" kind="relationship" relationship="rootViewController" id="5tx-jm-gdv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIx-vN-Sts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -450,6 +412,16 @@
             </objects>
             <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
         </scene>
+        <!--SearchScene-->
+        <scene sceneID="iJo-hr-rqJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchScene" storyboardName="SearchScene" referencedIdentifier="SearchScene" id="J9e-Nc-19u" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RAe-kT-26l"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diu-2X-cWm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.1014492753625" y="768.75"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
@@ -464,9 +436,6 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
