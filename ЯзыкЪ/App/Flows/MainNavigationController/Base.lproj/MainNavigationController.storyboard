@@ -83,5 +83,13 @@
             </objects>
             <point key="canvasLocation" x="712" y="197"/>
         </scene>
+        <!--SearchResultScene-->
+        <scene sceneID="c0Y-2U-4hV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchResultScene" storyboardName="SearchResultScene" referencedIdentifier="SearchResultScene" id="Zhv-jX-rS8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1lT-F7-QaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="309"/>
+        </scene>
     </scenes>
 </document>

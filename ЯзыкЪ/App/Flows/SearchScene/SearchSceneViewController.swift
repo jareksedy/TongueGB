@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - Protocol
 protocol SearchSceneViewDelegate: NSObjectProtocol {
+    func proceedToSearchResult(with categoryKey: String)
 }
 
 // MARK: - View controller
@@ -33,6 +34,7 @@ class SearchSceneViewController: UIViewController {
         presenter.viewDelegate = self
         
         categoriesTableView.dataSource = self
+        categoriesTableView.delegate = self
         categoriesTableView.registerCell(type: CategoryTableViewCell.self)
     }
     
@@ -50,7 +52,7 @@ class SearchSceneViewController: UIViewController {
     }
 }
 // MARK: - TableView
-extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource {
+extension SearchSceneViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -84,6 +86,18 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource 
     }
 }
 
+extension SearchSceneViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let category = categories?[indexPath.row] else { return }
+        proceedToSearchResult(with: category.categoryKey)
+    }
+}
+
 // MARK: - Implementation
 extension SearchSceneViewController: SearchSceneViewDelegate {
+    func proceedToSearchResult(with categoryKey: String) {
+        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
+        let searchResultSceneViewController = storyboard.instantiateViewController(withIdentifier: "SearchResultScene") as! SearchResultSceneViewController
+        self.navigationController?.pushViewController(searchResultSceneViewController, animated: true)
+    }
 }

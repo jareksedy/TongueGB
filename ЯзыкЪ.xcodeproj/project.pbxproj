@@ -12,9 +12,9 @@
 		CA0955FC2833607700F35D64 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FB2833607600F35D64 /* UITableView.swift */; };
 		CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */; };
 		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
-		CA095605283388E400F35D64 /* SearchResultScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA095603283388E400F35D64 /* SearchResultScene.storyboard */; };
 		CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */; };
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
+		CA09560C2833934A00F35D64 /* SearchResultScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -69,9 +69,9 @@
 		CA0955FB2833607600F35D64 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
-		CA095604283388E400F35D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/App/Flows/SearchScene/ЯзыкЪ/Storyboards/Base.lproj/SearchResultScene.storyboard"; sourceTree = "<group>"; };
 		CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSceneViewController.swift; sourceTree = "<group>"; };
 		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
+		CA09560B2833934A00F35D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/App/Flows/MainNavigationController/Base.lproj/SearchResultScene.storyboard"; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		CA095601283367BD00F35D64 /* CategoryTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */,
 				CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */,
+				CA0955FD283367B200F35D64 /* CategoryTableViewCell.swift */,
 			);
 			path = CategoryTableViewCell;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 		CA0956022833867700F35D64 /* SearchResultScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA095603283388E400F35D64 /* SearchResultScene.storyboard */,
+				CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */,
 				CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */,
 				CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */,
 			);
@@ -448,7 +448,7 @@
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
 				CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */,
 				CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */,
-				CA095605283388E400F35D64 /* SearchResultScene.storyboard in Resources */,
+				CA09560C2833934A00F35D64 /* SearchResultScene.storyboard in Resources */,
 				CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
@@ -508,10 +508,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA095603283388E400F35D64 /* SearchResultScene.storyboard */ = {
+		CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CA095604283388E400F35D64 /* Base */,
+				CA09560B2833934A00F35D64 /* Base */,
 			);
 			name = SearchResultScene.storyboard;
 			sourceTree = "<group>";

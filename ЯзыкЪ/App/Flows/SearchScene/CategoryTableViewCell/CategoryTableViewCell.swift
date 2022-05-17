@@ -24,10 +24,6 @@ class CategoryTableViewCell: UITableViewCell {
         
         self.accessoryView = UIImageView(image: accessoryImage)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
     // MARK: - Configuration
     func configure(category: CardsCategory?, cardsInCategory: Int) {

@@ -67,7 +67,8 @@ class SearchResultSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Категории"
+        self.tabBarController?.title = "Жывотныя"
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     private func setupConstraints() {

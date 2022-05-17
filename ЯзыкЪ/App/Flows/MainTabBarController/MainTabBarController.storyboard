@@ -78,6 +78,17 @@
             </objects>
             <point key="canvasLocation" x="1757" y="263"/>
         </scene>
+        <!--SearchResultScene-->
+        <scene sceneID="lm2-wm-JZe">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchResultScene" storyboardName="SearchResultScene" referencedIdentifier="SearchResultScene" id="epq-Bg-H9y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UY4-ck-RFM"/>
+                    <navigationItem key="navigationItem" id="6i9-PL-M9H"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lor-p8-v1m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="461"/>
+        </scene>
     </scenes>
     <resources>
         <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
