@@ -63,6 +63,11 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource 
         selectedBackgroundView.backgroundColor = .systemGray6.withAlphaComponent(0.5)
         cell.selectedBackgroundView = selectedBackgroundView
         
+        // Remove last cell's separator in TableView
+        if indexPath.row == categories!.count - 1 {
+            cell.separatorInset = UIEdgeInsets.init(top: 0, left: categoriesTableView.bounds.width + 1, bottom: 0, right: 0)
+        }
+        
         return cell
     }
 }
