@@ -47,6 +47,7 @@ class SearchResultSceneViewController: UIViewController {
     // MARK: - Private methods
     private func setupUI() {
         cardsScrollOverlay.referenceView = cardsScrollView
+        cardsScrollOverlay.clipsToBounds = true
         
         cardsStackView.spacing = CGFloat.cardStackSpacing
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
@@ -71,6 +72,15 @@ class SearchResultSceneViewController: UIViewController {
         if let categoryKey = categoryKey {
             self.navigationItem.title = categoryKey
         }
+        
+        let backButtonImageConfiguration = UIImage.SymbolConfiguration(pointSize: 18, weight: .regular)
+        let backButtonImage = UIImage(systemName: "chevron.compact.left")?
+            .withRenderingMode(.alwaysOriginal)
+            .withConfiguration(backButtonImageConfiguration)
+            .withTintColor(.link)
+        
+        self.navigationController?.navigationBar.backIndicatorImage = backButtonImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
     }
     
     private func setupConstraints() {

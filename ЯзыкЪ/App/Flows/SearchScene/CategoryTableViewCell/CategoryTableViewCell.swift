@@ -16,11 +16,11 @@ class CategoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let acessoryImageConfiguration = UIImage.SymbolConfiguration(pointSize: 8, weight: .regular)
-        let accessoryImage = UIImage(systemName: "arrow.right")?
+        let acessoryImageConfiguration = UIImage.SymbolConfiguration(pointSize: 14, weight: .regular)
+        let accessoryImage = UIImage(systemName: "chevron.compact.right")?
             .withRenderingMode(.alwaysOriginal)
             .withConfiguration(acessoryImageConfiguration)
-            .withTintColor(.secondaryLabel)
+            .withTintColor(.separator)
         
         self.accessoryView = UIImageView(image: accessoryImage)
     }
