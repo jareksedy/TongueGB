@@ -67,9 +67,8 @@ class LoginSceneViewController: UIViewController {
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
     func proceedToMainScene() {
-        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-
         present(mainTabBarController, animated: true)
     }
 }

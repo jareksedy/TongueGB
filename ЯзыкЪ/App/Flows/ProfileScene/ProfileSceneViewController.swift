@@ -108,9 +108,8 @@ extension ProfileSceneViewController: UITableViewDataSource {
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
     func logOut() {
-        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
-
         present(entryPoint, animated: true)
     }
 }
