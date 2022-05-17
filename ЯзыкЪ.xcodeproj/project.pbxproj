@@ -57,8 +57,8 @@
 		CAA76AC0283432C200322E0C /* SearchScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA76ABE283432C200322E0C /* SearchScene.storyboard */; };
 		CAA76AC22834332600322E0C /* SearchResultScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA76AC12834332600322E0C /* SearchResultScene.storyboard */; };
 		CAA76AC52834336A00322E0C /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA76AC32834336A00322E0C /* ProfileScene.storyboard */; };
+		CAA76AC72834349600322E0C /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAA76AC62834349600322E0C /* LoginScene.storyboard */; };
 		CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */; };
-		CAE984A1283430BE001CB249 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE9849F283430BE001CB249 /* LoginScene.storyboard */; };
 		CAE984A6283431EB001CB249 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE984A4283431EB001CB249 /* MainScene.storyboard */; };
 		CAE984A82834322E001CB249 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAE984A72834322E001CB249 /* AddCardScene.storyboard */; };
 /* End PBXBuildFile section */
@@ -112,8 +112,8 @@
 		CAA76ABF283432C200322E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/SearchScene.storyboard"; sourceTree = "<group>"; };
 		CAA76AC12834332600322E0C /* SearchResultScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchResultScene.storyboard; sourceTree = "<group>"; };
 		CAA76AC42834336A00322E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/ProfileScene.storyboard"; sourceTree = "<group>"; };
+		CAA76AC62834349600322E0C /* LoginScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScene.storyboard; sourceTree = "<group>"; };
 		CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesProvider.swift; sourceTree = "<group>"; };
-		CAE984A0283430BE001CB249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
 		CAE984A5283431EB001CB249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/MainScene.storyboard"; sourceTree = "<group>"; };
 		CAE984A72834322E001CB249 /* AddCardScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCardScene.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
-				CAE9849F283430BE001CB249 /* LoginScene.storyboard */,
+				CAA76AC62834349600322E0C /* LoginScene.storyboard */,
 				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
 			);
@@ -438,9 +438,9 @@
 				CAE984A82834322E001CB249 /* AddCardScene.storyboard in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
-				CAE984A1283430BE001CB249 /* LoginScene.storyboard in Resources */,
 				CAA76AC0283432C200322E0C /* SearchScene.storyboard in Resources */,
 				CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */,
+				CAA76AC72834349600322E0C /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CAE984A6283431EB001CB249 /* MainScene.storyboard in Resources */,
 				CAA76AC52834336A00322E0C /* ProfileScene.storyboard in Resources */,
@@ -530,14 +530,6 @@
 				CAA76AC42834336A00322E0C /* Base */,
 			);
 			name = ProfileScene.storyboard;
-			sourceTree = "<group>";
-		};
-		CAE9849F283430BE001CB249 /* LoginScene.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CAE984A0283430BE001CB249 /* Base */,
-			);
-			name = LoginScene.storyboard;
 			sourceTree = "<group>";
 		};
 		CAE984A4283431EB001CB249 /* MainScene.storyboard */ = {
