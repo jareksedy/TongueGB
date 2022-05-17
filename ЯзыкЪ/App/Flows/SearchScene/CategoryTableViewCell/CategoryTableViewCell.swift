@@ -30,8 +30,8 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configuration
-    func configure(_ category: CardsCategory?) {
+    func configure(category: CardsCategory?, cardsInCategory: Int) {
         categoryTitleLabel.text = category?.categoryKey
-        cardsInCategoryLabel.text = "\(Int.random(in: 2...12))"
+        cardsInCategoryLabel.text = "\(cardsInCategory)"
     }
 }

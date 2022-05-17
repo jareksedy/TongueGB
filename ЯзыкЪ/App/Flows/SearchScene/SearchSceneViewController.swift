@@ -19,6 +19,7 @@ class SearchSceneViewController: UIViewController {
     @IBOutlet weak var categoriesTableView: UITableView!
     
     // MARK: - Services
+    let mockCardsProvider = MockCardsProvider()
     let mockCategoriesProvider = MockCategoriesProvider()
     
     // MARK: - Properties
@@ -27,8 +28,10 @@ class SearchSceneViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchCategories()
         presenter.viewDelegate = self
+        
         categoriesTableView.dataSource = self
         categoriesTableView.registerCell(type: CategoryTableViewCell.self)
     }
@@ -57,11 +60,17 @@ extension SearchSceneViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell
-        else { return UITableViewCell() }
+        guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
+              let category = categories?[indexPath.row]
+        else {
+            return UITableViewCell()
+        }
         
-        cell.configure(categories?[indexPath.row])
+        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category.categoryKey == category.categoryKey }.count
         
+        cell.configure(category: category, cardsInCategory: cardsInCategory)
+        
+        // Set custom selection color
         let selectedBackgroundView = UIView()
         selectedBackgroundView.backgroundColor = .systemGray6.withAlphaComponent(0.75)
         cell.selectedBackgroundView = selectedBackgroundView

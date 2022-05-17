@@ -24,7 +24,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPo-Ft-O8k">
-                        <rect key="frame" x="253.5" y="25" width="32" height="50"/>
+                        <rect key="frame" x="258.5" y="25" width="32" height="50"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="tPo-Ft-O8k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="F2H-Vo-8hN"/>
-                    <constraint firstAttribute="trailing" secondItem="tPo-Ft-O8k" secondAttribute="trailing" constant="10" id="FmB-ZI-fvG"/>
+                    <constraint firstAttribute="trailing" secondItem="tPo-Ft-O8k" secondAttribute="trailing" constant="5" id="FmB-ZI-fvG"/>
                     <constraint firstItem="cyv-VL-AWQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="XkP-uP-PMS"/>
                     <constraint firstAttribute="bottom" secondItem="tPo-Ft-O8k" secondAttribute="bottom" constant="25" id="fzA-9L-znN"/>
                     <constraint firstItem="cyv-VL-AWQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="gkE-sU-Sj5"/>
