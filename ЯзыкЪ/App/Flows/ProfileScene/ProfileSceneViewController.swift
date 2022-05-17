@@ -62,7 +62,7 @@ class ProfileSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
+        self.navigationItem.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
     }
 }
 

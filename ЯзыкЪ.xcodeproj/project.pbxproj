@@ -14,7 +14,6 @@
 		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
 		CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */; };
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
-		CA09560C2833934A00F35D64 /* SearchResultScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD982827AA8D0098718E /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD952827AA8C0098718E /* MainTabBarController.swift */; };
@@ -34,12 +33,6 @@
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
 		CA6AFDBD282828490098718E /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* SignInButton.swift */; };
-		CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E14282ECB480074C543 /* MainScene.storyboard */; };
-		CA703E18282ECBAF0074C543 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */; };
-		CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E19282ECC010074C543 /* SearchScene.storyboard */; };
-		CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E27282ED0C30074C543 /* LoginScene.storyboard */; };
-		CA703E2A282ED1350074C543 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E29282ED1350074C543 /* ProfileScene.storyboard */; };
-		CA703E2D282ED4BC0074C543 /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */; };
 		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
 		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
 		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
@@ -71,7 +64,6 @@
 		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSceneViewController.swift; sourceTree = "<group>"; };
 		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
-		CA09560B2833934A00F35D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/App/Flows/MainNavigationController/Base.lproj/SearchResultScene.storyboard"; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -91,12 +83,6 @@
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
 		CA6AFDBC282828490098718E /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
-		CA703E15282ECB480074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/MainScene.storyboard"; sourceTree = "<group>"; };
-		CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddCardScene.storyboard; sourceTree = "<group>"; };
-		CA703E1A282ECC010074C543 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Storyboards/Base.lproj/SearchScene.storyboard"; sourceTree = "<group>"; };
-		CA703E27282ED0C30074C543 /* LoginScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScene.storyboard; sourceTree = "<group>"; };
-		CA703E29282ED1350074C543 /* ProfileScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProfileScene.storyboard; sourceTree = "<group>"; };
-		CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
 		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
 		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
@@ -136,7 +122,6 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA703E27282ED0C30074C543 /* LoginScene.storyboard */,
 				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
 			);
@@ -155,7 +140,6 @@
 		CA0956022833867700F35D64 /* SearchResultScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */,
 				CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */,
 				CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */,
 			);
@@ -188,7 +172,6 @@
 		CA6AFDA62827AAF30098718E /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA703E14282ECB480074C543 /* MainScene.storyboard */,
 				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
 				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
 			);
@@ -198,7 +181,6 @@
 		CA6AFDAB2827AB060098718E /* AddCardScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA703E17282ECBAF0074C543 /* AddCardScene.storyboard */,
 				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
 				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
 			);
@@ -208,7 +190,6 @@
 		CA6AFDB02827AB170098718E /* ProfileScene */ = {
 			isa = PBXGroup;
 			children = (
-				CA703E29282ED1350074C543 /* ProfileScene.storyboard */,
 				CA6AFDAC2827AB100098718E /* ProfileSceneViewController.swift */,
 				CA6AFDAD2827AB100098718E /* ProfileScenePresenter.swift */,
 			);
@@ -219,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				CA095601283367BD00F35D64 /* CategoryTableViewCell */,
-				CA703E19282ECC010074C543 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
 				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
@@ -229,7 +209,6 @@
 		CA703E2B282ED4760074C543 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				CA703E2C282ED4BC0074C543 /* MainTabBarController.storyboard */,
 				CA6AFD952827AA8C0098718E /* MainTabBarController.swift */,
 			);
 			path = MainTabBarController;
@@ -444,16 +423,9 @@
 			files = (
 				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
-				CA703E18282ECBAF0074C543 /* AddCardScene.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
-				CA703E16282ECB480074C543 /* MainScene.storyboard in Resources */,
-				CA703E1B282ECC010074C543 /* SearchScene.storyboard in Resources */,
-				CA09560C2833934A00F35D64 /* SearchResultScene.storyboard in Resources */,
-				CA703E28282ED0C30074C543 /* LoginScene.storyboard in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* MainNavigationController.storyboard in Resources */,
-				CA703E2A282ED1350074C543 /* ProfileScene.storyboard in Resources */,
-				CA703E2D282ED4BC0074C543 /* MainTabBarController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,30 +480,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CA09560A2833934A00F35D64 /* SearchResultScene.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA09560B2833934A00F35D64 /* Base */,
-			);
-			name = SearchResultScene.storyboard;
-			sourceTree = "<group>";
-		};
-		CA703E14282ECB480074C543 /* MainScene.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA703E15282ECB480074C543 /* Base */,
-			);
-			name = MainScene.storyboard;
-			sourceTree = "<group>";
-		};
-		CA703E19282ECC010074C543 /* SearchScene.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA703E1A282ECC010074C543 /* Base */,
-			);
-			name = SearchScene.storyboard;
-			sourceTree = "<group>";
-		};
 		CA8B608E2818D78300D7769B /* MainNavigationController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

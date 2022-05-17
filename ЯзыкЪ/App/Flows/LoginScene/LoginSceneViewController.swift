@@ -60,7 +60,7 @@ class LoginSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.title = "\(randomGreeting.hello)!"
+        self.navigationItem.title = "\(randomGreeting.hello)!"
     }
 }
 
@@ -69,6 +69,7 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
     func proceedToMainScene() {
         let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
-        self.navigationController?.pushViewController(mainTabBarController, animated: true)
+
+        present(mainTabBarController, animated: true)
     }
 }

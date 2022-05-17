@@ -44,7 +44,7 @@ class SearchSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Категории"
+        self.navigationItem.title = "Категории"
     }
     
     private func fetchCategories() {

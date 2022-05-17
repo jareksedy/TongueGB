@@ -28,7 +28,7 @@ class AddCardSceneViewController: UIViewController {
     
     // MARK: - Private methods
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Добавить"
+        self.navigationItem.title = "Добавить"
     }
 }
 

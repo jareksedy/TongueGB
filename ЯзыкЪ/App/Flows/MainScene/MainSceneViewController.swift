@@ -73,7 +73,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.tabBarController?.title = "Мои карточки"
+        self.navigationItem.title = "Мои карточки"
     }
     
     private func setupConstraints() {
