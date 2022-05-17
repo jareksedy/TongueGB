@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - Protocol
 protocol ProfileSceneViewDelegate: NSObjectProtocol {
+    func logOut()
 }
 
 // MARK: - View controller
@@ -26,6 +27,7 @@ class ProfileSceneViewController: UIViewController {
     @IBOutlet weak var registrationDateLabel: UILabel!
     @IBOutlet weak var aboutAppHeadingLabel: UILabel!
     @IBOutlet weak var aboutAppTextLabel: UILabel!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
@@ -45,6 +47,11 @@ class ProfileSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+    }
+    
+    // MARK: - Actions
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        logOut()
     }
     
     // MARK: - Private methods
@@ -68,4 +75,10 @@ class ProfileSceneViewController: UIViewController {
 
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
+    func logOut() {
+        let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
+        let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
+
+        present(entryPoint, animated: true)
+    }
 }
