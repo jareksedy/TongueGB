@@ -111,89 +111,6 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="196.875"/>
         </scene>
-        <!--Main Scene View Controller-->
-        <scene sceneID="pOE-3p-5Ak">
-            <objects>
-                <viewController storyboardIdentifier="MainScene" id="uWY-im-Ypg" customClass="MainSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ovn-hT-IHX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HCE-0F-mOX" customClass="ScrollOverlayView" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
-                                <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cl7-ye-0GF">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="5my-73-eRq">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="676"/>
-                                                <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="5my-73-eRq" secondAttribute="bottom" id="FIx-3b-TiJ"/>
-                                            <constraint firstItem="5my-73-eRq" firstAttribute="leading" secondItem="Cl7-ye-0GF" secondAttribute="leading" id="Jhb-nr-v8T"/>
-                                            <constraint firstItem="5my-73-eRq" firstAttribute="top" secondItem="Cl7-ye-0GF" secondAttribute="top" id="N8a-ui-wQu"/>
-                                            <constraint firstItem="5my-73-eRq" firstAttribute="height" secondItem="Cl7-ye-0GF" secondAttribute="height" id="UDP-7d-9RQ"/>
-                                            <constraint firstAttribute="trailing" secondItem="5my-73-eRq" secondAttribute="trailing" id="eZx-PR-C1v"/>
-                                            <constraint firstItem="5my-73-eRq" firstAttribute="width" secondItem="Cl7-ye-0GF" secondAttribute="width" priority="250" id="fU6-3X-2Su"/>
-                                        </constraints>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Cl7-ye-0GF" secondAttribute="trailing" id="8xo-QP-OcF"/>
-                                    <constraint firstItem="Cl7-ye-0GF" firstAttribute="top" secondItem="HCE-0F-mOX" secondAttribute="top" id="B7Y-Gx-QcE"/>
-                                    <constraint firstAttribute="bottom" secondItem="Cl7-ye-0GF" secondAttribute="bottom" id="Svg-ig-4ao"/>
-                                    <constraint firstItem="Cl7-ye-0GF" firstAttribute="leading" secondItem="HCE-0F-mOX" secondAttribute="leading" id="oU9-Cj-ahJ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="HNG-fg-Qye"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="HCE-0F-mOX" firstAttribute="top" secondItem="HNG-fg-Qye" secondAttribute="top" id="Kp5-AL-Swq"/>
-                            <constraint firstItem="HCE-0F-mOX" firstAttribute="leading" secondItem="HNG-fg-Qye" secondAttribute="leading" id="ZvM-Xz-HNb"/>
-                            <constraint firstItem="HNG-fg-Qye" firstAttribute="bottom" secondItem="HCE-0F-mOX" secondAttribute="bottom" id="iht-AP-BSE"/>
-                            <constraint firstItem="HNG-fg-Qye" firstAttribute="trailing" secondItem="HCE-0F-mOX" secondAttribute="trailing" id="pEm-PR-h5f"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="irK-su-2tj">
-                        <barButtonItem key="rightBarButtonItem" id="uSH-OI-22H">
-                            <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
-                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="cardsScrollOverlay" destination="HCE-0F-mOX" id="EKq-0b-mHC"/>
-                        <outlet property="cardsScrollView" destination="Cl7-ye-0GF" id="PIC-ep-JXt"/>
-                        <outlet property="cardsScrollViewLeading" destination="oU9-Cj-ahJ" id="nBi-KK-F1J"/>
-                        <outlet property="cardsScrollViewTrailing" destination="8xo-QP-OcF" id="bza-Mk-y8Z"/>
-                        <outlet property="cardsStackView" destination="5my-73-eRq" id="5Kc-pc-Xqg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ctx-s9-Swr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="-749.33035714285711"/>
-        </scene>
-        <!--Add Card Scene View Controller-->
-        <scene sceneID="5vi-XW-dgT">
-            <objects>
-                <viewController storyboardIdentifier="AddCardScene" id="DoI-dM-UPF" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R0D-Wk-40k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="FkL-Bu-pf8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Xmh-kV-C4G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTd-oe-aOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
-        </scene>
         <!--Search Scene View Controller-->
         <scene sceneID="oHX-OY-tn1">
             <objects>
@@ -422,7 +339,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uWY-im-Ypg" kind="relationship" relationship="rootViewController" id="QI0-zG-qL4"/>
+                        <segue destination="W3K-jb-cBz" kind="relationship" relationship="rootViewController" id="QI0-zG-qL4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CS-Sc-npd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -444,7 +361,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DoI-dM-UPF" kind="relationship" relationship="rootViewController" id="5xm-nE-yPc"/>
+                        <segue destination="tcX-r1-Ob4" kind="relationship" relationship="rootViewController" id="5xm-nE-yPc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyo-w0-7qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -513,6 +430,26 @@
             </objects>
             <point key="canvasLocation" x="-184" y="197"/>
         </scene>
+        <!--MainScene-->
+        <scene sceneID="E23-Rp-ISh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainScene" storyboardName="MainScene" referencedIdentifier="MainScene" id="W3K-jb-cBz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Bpu-P5-2TS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N77-zW-CaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2686.9565217391305" y="-749.33035714285711"/>
+        </scene>
+        <!--AddCardScene-->
+        <scene sceneID="QDe-Nv-BpM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddCardScene" storyboardName="AddCardScene" referencedIdentifier="AddCardScene" id="tcX-r1-Ob4" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8En-oF-Zwv"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xa7-tp-1Io" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
@@ -520,7 +457,6 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="plus.rectangle.portrait.fill" catalog="system" width="115" height="128"/>
-        <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
         <image name="rectangle.portrait" catalog="system" width="115" height="128"/>
         <image name="rectangle.portrait.fill" catalog="system" width="115" height="128"/>
         <systemColor name="linkColor">
