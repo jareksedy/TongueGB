@@ -98,6 +98,7 @@ extension SearchSceneViewController: SearchSceneViewDelegate {
     func proceedToSearchResult(with categoryKey: String) {
         let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
         let searchResultSceneViewController = storyboard.instantiateViewController(withIdentifier: "SearchResultScene") as! SearchResultSceneViewController
+        searchResultSceneViewController.categoryKey = categoryKey
         self.navigationController?.pushViewController(searchResultSceneViewController, animated: true)
     }
 }

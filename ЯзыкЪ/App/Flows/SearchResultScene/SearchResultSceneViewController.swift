@@ -28,6 +28,7 @@ class SearchResultSceneViewController: UIViewController {
     let mockCardsProvider = MockCardsProvider()
     
     // MARK: - Properties
+    var categoryKey: String?
     var cards: [Card]?
     
     // MARK: - Lifecycle
@@ -67,7 +68,9 @@ class SearchResultSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.navigationItem.title = "Жывотныя"
+        if let categoryKey = categoryKey {
+            self.navigationItem.title = categoryKey
+        }
     }
     
     private func setupConstraints() {
@@ -80,7 +83,11 @@ class SearchResultSceneViewController: UIViewController {
     }
     
     private func fetchCards() {
-        cards = mockCardsProvider.createMockCards()
+        if let categoryKey = categoryKey {
+            cards = mockCardsProvider.createMockCards().filter { $0.category.categoryKey == categoryKey }
+        } else {
+            cards = mockCardsProvider.createMockCards()
+        }
     }
 }
 
