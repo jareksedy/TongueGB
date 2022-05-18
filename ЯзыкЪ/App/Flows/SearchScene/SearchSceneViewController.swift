@@ -74,7 +74,7 @@ extension SearchSceneViewController: UITableViewDataSource {
         
         // Set custom selection color
         let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .systemGray5.withAlphaComponent(0.25)
+        selectedBackgroundView.backgroundColor = .systemGray6
         cell.selectedBackgroundView = selectedBackgroundView
         
         // Remove last cell's separator in TableView
