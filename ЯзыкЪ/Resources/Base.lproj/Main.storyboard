@@ -31,22 +31,6 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="196.875"/>
         </scene>
-        <!--Add Card Scene View Controller-->
-        <scene sceneID="5vi-XW-dgT">
-            <objects>
-                <viewController storyboardIdentifier="AddCardScene" id="DoI-dM-UPF" customClass="AddCardSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R0D-Wk-40k">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="FkL-Bu-pf8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Xmh-kV-C4G"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTd-oe-aOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
-        </scene>
         <!--Search Scene View Controller-->
         <scene sceneID="oHX-OY-tn1">
             <objects>
@@ -297,7 +281,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="DoI-dM-UPF" kind="relationship" relationship="rootViewController" id="5xm-nE-yPc"/>
+                        <segue destination="b8d-iM-Fkf" kind="relationship" relationship="rootViewController" id="5xm-nE-yPc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyo-w0-7qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -385,6 +369,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ3-bo-tPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2686.9565217391305" y="-749.33035714285711"/>
+        </scene>
+        <!--AddCardScene-->
+        <scene sceneID="QTe-lu-A6B">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddCardScene" storyboardName="AddCardScene" referencedIdentifier="AddCardScene" id="b8d-iM-Fkf" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="h8T-j5-g6F"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZf-64-s3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
         </scene>
     </scenes>
     <resources>
