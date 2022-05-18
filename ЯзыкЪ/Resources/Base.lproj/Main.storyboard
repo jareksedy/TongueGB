@@ -31,71 +31,6 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="196.875"/>
         </scene>
-        <!--Search Result Scene View Controller-->
-        <scene sceneID="Vnk-kr-LeN">
-            <objects>
-                <viewController storyboardIdentifier="SearchResultScene" id="fV5-sR-dv8" customClass="SearchResultSceneViewController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="59y-ko-kAj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFx-7e-Zfw" customClass="ScrollOverlayView" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <subviews>
-                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J48-CW-L02">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xou-1A-EWi">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
-                                                <edgeInsets key="layoutMargins" top="35" left="0.0" bottom="35" right="0.0"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="xou-1A-EWi" firstAttribute="width" secondItem="J48-CW-L02" secondAttribute="width" priority="250" id="0kw-KU-5yo"/>
-                                            <constraint firstAttribute="bottom" secondItem="xou-1A-EWi" secondAttribute="bottom" id="0lc-Iu-le6"/>
-                                            <constraint firstAttribute="trailing" secondItem="xou-1A-EWi" secondAttribute="trailing" id="7MB-ap-JNE"/>
-                                            <constraint firstItem="xou-1A-EWi" firstAttribute="leading" secondItem="J48-CW-L02" secondAttribute="leading" id="WRQ-gn-iv0"/>
-                                            <constraint firstItem="xou-1A-EWi" firstAttribute="top" secondItem="J48-CW-L02" secondAttribute="top" id="uEL-9c-dig"/>
-                                            <constraint firstItem="xou-1A-EWi" firstAttribute="height" secondItem="J48-CW-L02" secondAttribute="height" id="z3O-Py-L0K"/>
-                                        </constraints>
-                                    </scrollView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="J48-CW-L02" firstAttribute="top" secondItem="qFx-7e-Zfw" secondAttribute="top" id="lTa-sx-BE5"/>
-                                    <constraint firstItem="J48-CW-L02" firstAttribute="leading" secondItem="qFx-7e-Zfw" secondAttribute="leading" id="mMi-Rv-egK"/>
-                                    <constraint firstAttribute="bottom" secondItem="J48-CW-L02" secondAttribute="bottom" id="s2H-O3-v58"/>
-                                    <constraint firstAttribute="trailing" secondItem="J48-CW-L02" secondAttribute="trailing" id="yVe-Qs-PVv"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="8y5-ul-ywb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="8y5-ul-ywb" firstAttribute="trailing" secondItem="qFx-7e-Zfw" secondAttribute="trailing" id="M97-5y-fjh"/>
-                            <constraint firstItem="qFx-7e-Zfw" firstAttribute="top" secondItem="8y5-ul-ywb" secondAttribute="top" id="RxM-lS-hgz"/>
-                            <constraint firstItem="8y5-ul-ywb" firstAttribute="bottom" secondItem="qFx-7e-Zfw" secondAttribute="bottom" id="Y1w-R3-TVK"/>
-                            <constraint firstItem="qFx-7e-Zfw" firstAttribute="leading" secondItem="8y5-ul-ywb" secondAttribute="leading" id="y99-6k-qbr"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" id="mUw-IJ-ggp">
-                        <imageReference key="image" image="rectangle.portrait" catalog="system" symbolScale="small"/>
-                        <imageReference key="selectedImage" image="rectangle.portrait.fill" catalog="system" symbolScale="small"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="cardsScrollOverlay" destination="qFx-7e-Zfw" id="y5S-i3-nyX"/>
-                        <outlet property="cardsScrollView" destination="J48-CW-L02" id="oRf-4w-mPu"/>
-                        <outlet property="cardsScrollViewLeading" destination="mMi-Rv-egK" id="oV7-6e-vaa"/>
-                        <outlet property="cardsScrollViewTrailing" destination="yVe-Qs-PVv" id="3TK-I3-CJi"/>
-                        <outlet property="cardsStackView" destination="xou-1A-EWi" id="DJS-Hb-wxX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="59a-9k-tDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4608.695652173913" y="768.75"/>
-        </scene>
         <!--Profile Scene View Controller-->
         <scene sceneID="8eG-fF-1Gc">
             <objects>
@@ -351,6 +286,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfv-RV-OmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3597.1014492753625" y="768.75"/>
+        </scene>
+        <!--SearchResultScene-->
+        <scene sceneID="N95-JL-X9F">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="SearchResultScene" storyboardName="SearchResultScene" referencedIdentifier="SearchResultScene" id="Onr-gl-045" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoj-Px-GRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4608.695652173913" y="768.75"/>
         </scene>
     </scenes>
     <resources>
