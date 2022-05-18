@@ -24,5 +24,6 @@ protocol Firebasable {
     //MARK: - CategoryLists funcs
     
     func storeCategory(_ category: CardsCategory)
+    func fetchCategory(_ categoryKey: String, _ userEmail: String) -> CardsCategory?
     func fetchCategoryList(_ userEmail: String) -> [CardsCategory]?
 }
