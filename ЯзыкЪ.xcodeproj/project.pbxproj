@@ -49,6 +49,7 @@
 		CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */; };
 		CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */; };
 		CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED12283569DB006BD7C7 /* MainScene.storyboard */; };
+		CA97ED1628356A44006BD7C7 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1428356A44006BD7C7 /* AddCardScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -104,6 +105,7 @@
 		CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTableViewCell.xib; sourceTree = "<group>"; };
 		CA97ED1028356977006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
 		CA97ED12283569DB006BD7C7 /* MainScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScene.storyboard; sourceTree = "<group>"; };
+		CA97ED1528356A44006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/AddCardScene.storyboard"; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 		CA6AFDAB2827AB060098718E /* AddCardScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA97ED1428356A44006BD7C7 /* AddCardScene.storyboard */,
 				CA6AFDA82827AAFF0098718E /* AddCardSceneViewController.swift */,
 				CA6AFDA72827AAFE0098718E /* AddCardScenePresenter.swift */,
 			);
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
+				CA97ED1628356A44006BD7C7 /* AddCardScene.storyboard in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
 				CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */,
@@ -506,6 +510,14 @@
 				CA97ED1028356977006BD7C7 /* Base */,
 			);
 			name = LoginScene.storyboard;
+			sourceTree = "<group>";
+		};
+		CA97ED1428356A44006BD7C7 /* AddCardScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA97ED1528356A44006BD7C7 /* Base */,
+			);
+			name = AddCardScene.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
