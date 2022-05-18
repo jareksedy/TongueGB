@@ -49,7 +49,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5CS-Sc-npd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="-749.33035714285711"/>
+            <point key="canvasLocation" x="2687" y="-749"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="4Me-pa-Tbg">
@@ -71,7 +71,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyo-w0-7qu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="3.3482142857142856"/>
+            <point key="canvasLocation" x="2687" y="3"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="RkC-Gc-gII">
@@ -93,7 +93,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIx-vN-Sts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="768.75"/>
+            <point key="canvasLocation" x="2687" y="769"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="1qL-DO-LaR">
@@ -115,7 +115,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYT-5r-mTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="1544.8660714285713"/>
+            <point key="canvasLocation" x="2687" y="1545"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="mcW-Z6-AWH">
@@ -133,7 +133,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFz-nv-r9K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-184" y="197"/>
+            <point key="canvasLocation" x="-33" y="197"/>
         </scene>
         <!--LoginScene-->
         <scene sceneID="I9D-Xd-vnL">
@@ -153,7 +153,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ3-bo-tPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="-749.33035714285711"/>
+            <point key="canvasLocation" x="4360" y="-749"/>
         </scene>
         <!--AddCardScene-->
         <scene sceneID="QTe-lu-A6B">
@@ -163,7 +163,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZf-64-s3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3597.1014492753625" y="3.3482142857142856"/>
+            <point key="canvasLocation" x="4378" y="3"/>
         </scene>
         <!--SearchScene-->
         <scene sceneID="RpE-O5-396">
@@ -173,7 +173,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfv-RV-OmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3597.1014492753625" y="768.75"/>
+            <point key="canvasLocation" x="4370" y="769"/>
         </scene>
         <!--SearchResultScene-->
         <scene sceneID="N95-JL-X9F">
@@ -181,7 +181,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="SearchResultScene" storyboardName="SearchResultScene" referencedIdentifier="SearchResultScene" id="Onr-gl-045" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zoj-Px-GRR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4608.695652173913" y="768.75"/>
+            <point key="canvasLocation" x="4836" y="769"/>
         </scene>
         <!--ProfileScene-->
         <scene sceneID="Zet-jx-nGW">
@@ -191,7 +191,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYl-kP-tdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686.9565217391305" y="1544.8660714285713"/>
+            <point key="canvasLocation" x="4388" y="1545"/>
         </scene>
     </scenes>
     <resources>
