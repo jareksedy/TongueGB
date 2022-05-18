@@ -47,6 +47,7 @@
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
 		CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */; };
 		CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */; };
+		CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -100,6 +101,7 @@
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTableViewCell.swift; sourceTree = "<group>"; };
 		CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTableViewCell.xib; sourceTree = "<group>"; };
+		CA97ED1028356977006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		CA06A836281CF0F60086BD0B /* LoginScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */,
 				CA06A832281CF0E50086BD0B /* LoginSceneViewController.swift */,
 				CA06A834281CF0F10086BD0B /* LoginScenePresenter.swift */,
 			);
@@ -419,6 +422,7 @@
 				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
+				CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */,
 				CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
@@ -490,6 +494,14 @@
 				CA8B60942818D78500D7769B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA97ED1028356977006BD7C7 /* Base */,
+			);
+			name = LoginScene.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
