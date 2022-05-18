@@ -37,6 +37,14 @@ class MainSceneViewController: UIViewController {
         presenter.viewDelegate = self
         setupConstraints()
         setupUI()
+        
+        //MARK: - For testing funcs of FirebaseAPI
+       let api = FirebaseAPI(controller: self)
+//        api.storeWordCard(Card(word: "Test", translation: "Тест", description: "Тестовая модель карточки", category: CardsCategory(categoryKey: "Test Category", categoryColor: "TestColor", categoryImage: "TestImage", userEmail: "test@test.ru"), userEmail: "test@test.ru"))
+//        api.storeWordCard(Card(word: "Test One", translation: "Тест Один", description: "Тестовая модель карточки Один", category: CardsCategory(categoryKey: "Test Category One", categoryColor: "TestColorOne", categoryImage: "TestImageOne", userEmail: "test@test.ru"), userEmail: "test@test.ru"))
+//        api.storeWordCard(Card(word: "Test Three", translation: "Тест Три", description: "Тестовая модель карточки Три", category: CardsCategory(categoryKey: "Test Category Three", categoryColor: "TestColorThree", categoryImage: "TestImageThree", userEmail: "testOne@test.com"), userEmail: "testOne@test.com"))
+        let card = api.fetchWordCard("Test", "test@test.ru")
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {

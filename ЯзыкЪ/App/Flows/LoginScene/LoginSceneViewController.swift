@@ -39,6 +39,10 @@ class LoginSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+        
+        //MARK: - For testing Auth for Firebase
+        let api = FirebaseAPI(controller: self)
+        api.authUser(User(userEmail: "test@test.ru", userId: 123456))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,10 +75,5 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let storyboard = UIStoryboard(name: "MainNavigationController", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         self.navigationController?.pushViewController(mainTabBarController, animated: true)
-        
-        
-        //MARK: - For testing Auth for Firebase
-        let api = FirebaseAPI(controller: self)
-        api.authUser(User(userEmail: "test@test.ru", userId: 123456))
     }
 }
