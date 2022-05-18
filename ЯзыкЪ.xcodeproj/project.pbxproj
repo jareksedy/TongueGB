@@ -50,6 +50,7 @@
 		CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */; };
 		CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED12283569DB006BD7C7 /* MainScene.storyboard */; };
 		CA97ED1628356A44006BD7C7 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1428356A44006BD7C7 /* AddCardScene.storyboard */; };
+		CA97ED1928356ADA006BD7C7 /* SearchScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1728356ADA006BD7C7 /* SearchScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -106,6 +107,7 @@
 		CA97ED1028356977006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
 		CA97ED12283569DB006BD7C7 /* MainScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScene.storyboard; sourceTree = "<group>"; };
 		CA97ED1528356A44006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/AddCardScene.storyboard"; sourceTree = "<group>"; };
+		CA97ED1828356ADA006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/SearchScene.storyboard"; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				CA095601283367BD00F35D64 /* CategoryTableViewCell */,
+				CA97ED1728356ADA006BD7C7 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
 				CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */,
 			);
@@ -430,6 +433,7 @@
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
 				CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */,
+				CA97ED1928356ADA006BD7C7 /* SearchScene.storyboard in Resources */,
 				CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
 				CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */,
@@ -518,6 +522,14 @@
 				CA97ED1528356A44006BD7C7 /* Base */,
 			);
 			name = AddCardScene.storyboard;
+			sourceTree = "<group>";
+		};
+		CA97ED1728356ADA006BD7C7 /* SearchScene.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA97ED1828356ADA006BD7C7 /* Base */,
+			);
+			name = SearchScene.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
