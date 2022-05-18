@@ -48,6 +48,7 @@
 		CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */; };
 		CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */; };
 		CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */; };
+		CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED12283569DB006BD7C7 /* MainScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
@@ -102,6 +103,7 @@
 		CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTableViewCell.swift; sourceTree = "<group>"; };
 		CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTableViewCell.xib; sourceTree = "<group>"; };
 		CA97ED1028356977006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
+		CA97ED12283569DB006BD7C7 /* MainScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScene.storyboard; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		CA6AFDA62827AAF30098718E /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA97ED12283569DB006BD7C7 /* MainScene.storyboard */,
 				CA6AFDA22827AAEB0098718E /* MainSceneViewController.swift */,
 				CA6AFDA32827AAEB0098718E /* MainScenePresenter.swift */,
 			);
@@ -425,6 +428,7 @@
 				CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */,
 				CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */,
 				CA8B60922818D78500D7769B /* Assets.xcassets in Resources */,
+				CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */,
 				CA8B60902818D78300D7769B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
