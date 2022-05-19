@@ -62,6 +62,9 @@
                         <barButtonItem key="rightBarButtonItem" id="uSH-OI-22H">
                             <imageReference key="image" image="rectangle.grid.3x2" catalog="system" symbolScale="medium"/>
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="5" maxY="0.0"/>
+                            <connections>
+                                <action selector="barButtonTapped:" destination="uWY-im-Ypg" id="ybg-7I-Rgf"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

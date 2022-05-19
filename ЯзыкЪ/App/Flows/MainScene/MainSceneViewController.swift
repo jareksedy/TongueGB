@@ -44,6 +44,10 @@ class MainSceneViewController: UIViewController {
         setupNavigationOptions()
     }
     
+    @IBAction func barButtonTapped(_ sender: Any) {
+        print("adding card")
+    }
+    
     // MARK: - Private methods
     private func setupUI() {
         cardsScrollOverlay.referenceView = cardsScrollView
