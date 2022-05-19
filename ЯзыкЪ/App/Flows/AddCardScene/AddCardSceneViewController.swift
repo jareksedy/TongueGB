@@ -16,7 +16,13 @@ class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter()
     
     // MARK: - Outlets
+    @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     @IBOutlet var wordTextField: UITextField!
+    @IBOutlet weak var translationStackView: UIStackView!
+    @IBOutlet weak var translationTextField: UITextField!
+    @IBOutlet weak var transcriptionTextField: UITextField!
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var translationActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -29,6 +35,12 @@ class AddCardSceneViewController: UIViewController {
         setupNavigationOptions()
         setupUI()
     }
+    
+    // MARK: - Actions
+    @IBAction func addBarButtonItemTapped(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     
     // MARK: - Overrides
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
