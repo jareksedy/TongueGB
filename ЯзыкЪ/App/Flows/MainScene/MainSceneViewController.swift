@@ -45,7 +45,29 @@ class MainSceneViewController: UIViewController {
     }
     
     @IBAction func barButtonTapped(_ sender: Any) {
-        print("adding card")
+        let cardToAdd = Card(
+            word: "refurbished",
+            translation: "переоборудованный",
+            description: "riːˈfɜːbɪʃt",
+            category: CardsCategory(categoryKey: "Разное", categoryColor: nil, categoryImage: nil, userEmail: ""),
+            userEmail: ""
+        )
+        
+        cards?.append(cardToAdd)
+        
+        let cardView = CardView()
+        
+        cardView.word = cardToAdd.word
+        cardView.translation = cardToAdd.translation
+        cardView.transcription = cardToAdd.description
+        cardView.category = cardToAdd.category.categoryKey
+        
+        cardsScrollView.setContentOffset(.zero, animated: true)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.cardsStackView.insertArrangedSubview(cardView, at: 0)
+            self.cardsStackView.layoutIfNeeded()
+        })
     }
     
     // MARK: - Private methods
