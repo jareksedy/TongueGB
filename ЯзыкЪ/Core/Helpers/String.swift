@@ -11,4 +11,8 @@ extension String {
     public func capitalizeFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
+    
+    public func modifyEmailAddress() -> String {
+        return self.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)
+    }
 }

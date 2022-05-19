@@ -17,12 +17,14 @@ protocol Firebasable {
     
     //MARK: - WordCards funcs
     
-    func storeWordCard(_ card: Card, _ userEmail: String)
+    func storeWordCard(_ card: Card)
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card?
     func fetchWordCardsByCategory(_ category: CardsCategory, _ userEmail: String) -> [Card]?
     
     //MARK: - CategoryLists funcs
     
     func storeCategory(_ category: CardsCategory)
-    func fetchCategoryList() -> [CardsCategory]?
+    func fetchCategory(_ categoryKey: String, _ userEmail: String) -> CardsCategory?
+    func fetchCategoryList(_ userEmail: String) -> [CardsCategory]?
 }
+
