@@ -12,12 +12,14 @@ class CardsCategoryFirebase {
     let categoryKey: String
     let categoryColor: String?
     let categoryImage: String?
+    let userEmail: String
     let ref: DatabaseReference?
     
-    init(categoryKey: String, categoryColor: String?, categoryImage: String?) {
+    init(categoryKey: String, categoryColor: String?, categoryImage: String?, userEmail: String) {
         self.categoryKey = categoryKey
         self.categoryColor = categoryColor
         self.categoryImage = categoryImage
+        self.userEmail = userEmail
         self.ref = nil
     }
     
@@ -26,21 +28,25 @@ class CardsCategoryFirebase {
             let value = snapshot.value as? [String: Any],
             let categoryKey = value["category_key"] as? String,
             let categoryColor = value["category_color"] as? String,
-            let categoryImage = value["category_image"] as? String else {
+            let categoryImage = value["category_image"] as? String,
+            let userEmail = value["user_email"] as? String
+        else {
             return nil
         }
         
         self.categoryKey = categoryKey
         self.categoryColor = categoryColor
         self.categoryImage = categoryImage
+        self.userEmail = userEmail
         self.ref = snapshot.ref
     }
     
     func toAnyObject() -> [String: Any] {
         return [
-            "category_key": categoryKey,
+            "category_key": categoryKey as Any,
             "category_color": categoryColor as Any,
-            "category_image": categoryImage as Any
+            "category_image": categoryImage as Any,
+            "user_email": userEmail.replacingOccurrences(of: "[@.]", with: "_") as Any
         ] as [String: Any]
     }
 }

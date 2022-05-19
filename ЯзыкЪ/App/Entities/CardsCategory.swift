@@ -11,4 +11,5 @@ struct CardsCategory {
     let categoryKey: String
     let categoryColor: String?
     let categoryImage: String?
+    let userEmail: String
 }
