@@ -37,6 +37,11 @@ class MainSceneViewController: UIViewController {
         presenter.viewDelegate = self
         setupConstraints()
         setupUI()
+        
+        //MARK: -- For testing API funcs only:
+        let api = FirebaseAPI(controller: self)
+        let card = api.fetchWordCard("Test", "test@test.ru")
+        print(card ?? "No fetched card")
     }
     
     override func viewWillAppear(_ animated: Bool) {
