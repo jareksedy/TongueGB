@@ -63,11 +63,7 @@ class MainSceneViewController: UIViewController {
         cardView.category = cardToAdd.category.categoryKey
         
         cardsScrollView.setContentOffset(.zero, animated: true)
-        
-        UIView.animate(withDuration: 0.25, animations: {
-            self.cardsStackView.insertArrangedSubview(cardView, at: 0)
-            self.cardsStackView.layoutIfNeeded()
-        })
+        cardsStackView.insertArrangedSubviewAnimated(cardView, at: 0)
     }
     
     // MARK: - Private methods
