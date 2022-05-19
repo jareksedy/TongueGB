@@ -92,10 +92,9 @@ class FirebaseAPI: Firebasable {
     }
     
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
-        let ref = databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(keyWord)
-        print(ref)
-        var fetchedCard: Card?
-       
+        let fetchedCard: Card? = nil
+       //TODO: Need code
+        print("Function Fetch Word Card Started Successfully")
         return fetchedCard
     }
     
@@ -105,24 +104,13 @@ class FirebaseAPI: Firebasable {
     }
     
     func fetchCategory(_ categoryKey: String, _ userEmail: String) -> CardsCategory? {
-        let categoryRef = Database.database().reference(withPath: userEmail.modifyEmailAddress()).child("categories").child(categoryKey)
-        var category: CardsCategory? = nil
-        categoryRef.getData { error, dataSnapshot in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-            guard let dataSnapshot = dataSnapshot else {
-                print("Error: No data found")
-                return
-            }
-            print(dataSnapshot)
-        }
+        let category: CardsCategory? = nil
+        //TODO: Need code
         return category
     }
     
     func fetchCategoryList(_ userEmail: String) -> [CardsCategory]? {
-        var categories: [CardsCategory]?
+        let categories: [CardsCategory]? = nil
         // TODO: Need code
         return categories
     }
