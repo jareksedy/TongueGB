@@ -8,13 +8,12 @@
 import UIKit
 
 extension UIStackView {
-    public func insertArrangedSubviewAnimated(_ view: UIView, at stackIndex: Int) {
-        
+    public func insertArrangedSubviewAnimated(_ view: UIView, at stackIndex: Int, completion: ((Bool) -> Void)?) {
         view.alpha = 0
         self.insertArrangedSubview(view, at: stackIndex)
         
         UIView.animate(withDuration: 0.225,
                        animations: { view.alpha = 1; self.layoutIfNeeded() },
-                       completion: nil)
+                       completion: completion)
     }
 }

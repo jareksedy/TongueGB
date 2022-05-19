@@ -44,28 +44,6 @@ class MainSceneViewController: UIViewController {
         setupNavigationOptions()
     }
     
-    @IBAction func barButtonTapped(_ sender: Any) {
-        let cardToAdd = Card(
-            word: "refurbished",
-            translation: "переоборудованный",
-            description: "riːˈfɜːbɪʃt",
-            category: CardsCategory(categoryKey: "Разное", categoryColor: nil, categoryImage: nil, userEmail: ""),
-            userEmail: ""
-        )
-        
-        cards?.append(cardToAdd)
-        
-        let cardView = CardView()
-        
-        cardView.word = cardToAdd.word
-        cardView.translation = cardToAdd.translation
-        cardView.transcription = cardToAdd.description
-        cardView.category = cardToAdd.category.categoryKey
-        
-        cardsScrollView.setContentOffset(.zero, animated: true)
-        cardsStackView.insertArrangedSubviewAnimated(cardView, at: 0)
-    }
-    
     // MARK: - Private methods
     private func setupUI() {
         cardsScrollOverlay.referenceView = cardsScrollView
