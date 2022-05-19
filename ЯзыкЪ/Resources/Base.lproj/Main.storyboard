@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="D4z-H8-EEe">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBar" modalPresentationStyle="fullScreen" id="InD-4C-7tg" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" modalPresentationStyle="fullScreen" id="InD-4C-7tg" customClass="MainTabBarController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="njc-Hf-2eW"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BsN-AM-sx9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -54,7 +54,7 @@
         <!--Main Navigation Controller-->
         <scene sceneID="4Me-pa-Tbg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8n-bg-kxY" customClass="MainNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AddCardNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Z8n-bg-kxY" customClass="MainNavigationController" customModule="ЯзыкЪ" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="JEY-cg-kfM">
                         <imageReference key="image" image="plus.rectangle.portrait" catalog="system" symbolScale="large"/>
                         <imageReference key="selectedImage" image="plus.rectangle.portrait.fill" catalog="system" symbolScale="large"/>
