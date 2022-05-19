@@ -8,6 +8,7 @@
 import UIKit
 
 class MainNavigationController: UINavigationController {
+    
     // MARK: - Properties
     let largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)]
     let titleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .subheadline)]

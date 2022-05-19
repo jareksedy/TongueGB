@@ -8,6 +8,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,16 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") {
                 
                 let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
+                
+                navigationController.navigationBar.prefersLargeTitles = true
+                navigationController.navigationItem.largeTitleDisplayMode = .automatic
+                navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)]
+                
                 navigationController.modalPresentationStyle = .pageSheet
                 
                 if #available(iOS 15.0, *) {
                     if let sheet = navigationController.sheetPresentationController {
-                        sheet.detents = [.medium()]
-                        //sheet.prefersScrollingExpandsWhenScrolledToEdge = true
+                        sheet.detents = [.medium(), .large()]
                         sheet.preferredCornerRadius = 24.0
                     }
                 }

@@ -34,7 +34,9 @@
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="yf5-Yr-fdR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xmh-kV-C4G"/>
+                    <navigationItem key="navigationItem" id="Xmh-kV-C4G">
+                        <barButtonItem key="rightBarButtonItem" title="Добавить " id="wjh-Sl-8Vx"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="wordTextField" destination="SBy-Cd-Egw" id="zqt-9g-Vaf"/>
                     </connections>
