@@ -16,10 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="R0D-Wk-40k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Английское слово" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-Cd-Egw">
+                                <rect key="frame" x="17" y="59" width="380" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XFi-K7-aVP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FkL-Bu-pf8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="SBy-Cd-Egw" secondAttribute="trailing" constant="17" id="2mf-zm-8QT"/>
+                            <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="15" id="vkd-n9-MaJ"/>
+                            <constraint firstItem="SBy-Cd-Egw" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="yf5-Yr-fdR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xmh-kV-C4G"/>
+                    <connections>
+                        <outlet property="wordTextField" destination="SBy-Cd-Egw" id="zqt-9g-Vaf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTd-oe-aOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

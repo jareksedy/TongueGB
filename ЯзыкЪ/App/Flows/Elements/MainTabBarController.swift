@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 if #available(iOS 15.0, *) {
                     if let sheet = navigationController.sheetPresentationController {
                         sheet.detents = [.medium()]
+                        //sheet.prefersScrollingExpandsWhenScrolledToEdge = true
                         sheet.preferredCornerRadius = 24.0
                     }
                 }

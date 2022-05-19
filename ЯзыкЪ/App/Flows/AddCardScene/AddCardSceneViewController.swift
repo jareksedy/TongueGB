@@ -15,6 +15,9 @@ protocol AddCardSceneViewDelegate: NSObjectProtocol {
 class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter()
     
+    // MARK: - Outlets
+    @IBOutlet var wordTextField: UITextField!
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +27,17 @@ class AddCardSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        setupUI()
     }
     
     // MARK: - Private methods
     private func setupNavigationOptions() {
-        self.navigationItem.title = "Добавить"
+        //self.navigationItem.title = "Добавить"
+    }
+    
+    private func setupUI() {
+        //self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
+        wordTextField.becomeFirstResponder()
     }
 }
 
