@@ -30,13 +30,22 @@ class AddCardSceneViewController: UIViewController {
         setupUI()
     }
     
+    // MARK: - Overrides
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
+        
+        self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
+    }
+    
     // MARK: - Private methods
     private func setupNavigationOptions() {
         //self.navigationItem.title = "Добавить"
     }
     
     private func setupUI() {
-        //self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .randomDark : .randomLight
+        self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
+        
         wordTextField.becomeFirstResponder()
     }
 }
