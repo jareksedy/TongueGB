@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 
                 if #available(iOS 15.0, *) {
                     if let sheet = navigationController.sheetPresentationController {
-                        sheet.detents = [.medium(), .large()]
+                        sheet.detents = [.medium()]
                         sheet.preferredCornerRadius = 24.0
                     }
                 }

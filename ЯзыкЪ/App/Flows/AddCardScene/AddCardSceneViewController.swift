@@ -34,6 +34,7 @@ class AddCardSceneViewController: UIViewController {
         super.viewWillAppear(animated)
         setupNavigationOptions()
         setupUI()
+        setupGestures()
     }
     
     // MARK: - Actions
@@ -41,12 +42,11 @@ class AddCardSceneViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    
     // MARK: - Overrides
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
-
+        
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
     }
     
@@ -60,8 +60,20 @@ class AddCardSceneViewController: UIViewController {
         
         wordTextField.becomeFirstResponder()
     }
+    
+    private func setupGestures() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
 }
 
 // MARK: - Implementation
 extension AddCardSceneViewController: AddCardSceneViewDelegate {
+}
+
+// MARK: - Additional extensions
+@objc extension AddCardSceneViewController {
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
