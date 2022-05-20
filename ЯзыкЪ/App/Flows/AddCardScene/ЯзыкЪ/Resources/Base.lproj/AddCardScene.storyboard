@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Английское слово" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-Cd-Egw">
-                                <rect key="frame" x="17" y="69" width="380" height="22"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите слово" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-Cd-Egw">
+                                <rect key="frame" x="17" y="99" width="380" height="31.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="continue"/>
                             </textField>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
-                                <rect key="frame" x="0.0" y="116" width="414" height="130"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
+                                <rect key="frame" x="0.0" y="160.5" width="414" height="142"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Sm-toc">
                                         <rect key="frame" x="17" y="0.0" width="380" height="1"/>
@@ -39,48 +39,72 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фонетическая транскрипция" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-IC-ivN">
-                                        <rect key="frame" x="17" y="73" width="380" height="16"/>
+                                        <rect key="frame" x="17" y="73" width="380" height="22"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Категория" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yFc-8c-Bga">
-                                        <rect key="frame" x="17" y="114" width="380" height="16"/>
+                                        <rect key="frame" x="17" y="120" width="380" height="22"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                 </subviews>
                                 <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="BXW-zo-cxx">
-                                <rect key="frame" x="188.5" y="179.5" width="37" height="37"/>
+                                <rect key="frame" x="188.5" y="230" width="37" height="37"/>
                                 <color key="color" systemColor="opaqueSeparatorColor"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maE-0K-prw">
+                                <rect key="frame" x="125" y="64" width="164" height="5"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="9rC-32-te1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="2.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-3Y-ki7" customClass="SignInButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="17" y="790" width="380" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="7pH-6S-vB3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Добавить">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FkL-Bu-pf8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="SBy-Cd-Egw" secondAttribute="trailing" constant="17" id="2mf-zm-8QT"/>
+                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="bottom" secondItem="Rdi-3Y-ki7" secondAttribute="bottom" constant="17" id="3gN-ki-Nfg"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerX" secondItem="R0D-Wk-40k" secondAttribute="centerX" id="6B8-pM-QDg"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerY" secondItem="pVG-mZ-ZKi" secondAttribute="centerY" constant="17" id="Hjr-Ci-dlq"/>
-                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="25" id="OuI-U8-SbJ"/>
+                            <constraint firstItem="maE-0K-prw" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="125" id="M5j-ay-NVY"/>
+                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="30" id="OuI-U8-SbJ"/>
                             <constraint firstItem="pVG-mZ-ZKi" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" id="VxM-ET-EZg"/>
+                            <constraint firstItem="Rdi-3Y-ki7" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="ZBc-bj-luf"/>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="pVG-mZ-ZKi" secondAttribute="trailing" id="aSj-4K-VzH"/>
-                            <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="25" id="vkd-n9-MaJ"/>
+                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="maE-0K-prw" secondAttribute="trailing" constant="125" id="cqv-6H-RaC"/>
+                            <constraint firstItem="maE-0K-prw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="20" id="d07-cH-1gk"/>
+                            <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="maE-0K-prw" secondAttribute="bottom" constant="30" id="vkd-n9-MaJ"/>
+                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="Rdi-3Y-ki7" secondAttribute="trailing" constant="17" id="xF9-Qw-lbO"/>
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="yf5-Yr-fdR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xmh-kV-C4G">
-                        <barButtonItem key="rightBarButtonItem" title="Добавить " id="wjh-Sl-8Vx">
-                            <connections>
-                                <action selector="addBarButtonItemTapped:" destination="DoI-dM-UPF" id="QHp-bG-9kT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
-                        <outlet property="addBarButtonItem" destination="wjh-Sl-8Vx" id="Owj-Er-acV"/>
                         <outlet property="categoryTextField" destination="yFc-8c-Bga" id="8cr-E4-s61"/>
+                        <outlet property="grabberView" destination="maE-0K-prw" id="bDD-qz-MIz"/>
+                        <outlet property="grabberViewLeadingConstraint" destination="M5j-ay-NVY" id="Aqy-XN-TCh"/>
+                        <outlet property="grabberViewTrailingConstraint" destination="cqv-6H-RaC" id="gTR-YR-zit"/>
                         <outlet property="transcriptionTextField" destination="fdF-IC-ivN" id="xaU-ui-SJW"/>
                         <outlet property="translationActivityIndicator" destination="BXW-zo-cxx" id="yVU-Rk-FAc"/>
                         <outlet property="translationStackView" destination="pVG-mZ-ZKi" id="Pwz-3s-Qxq"/>
@@ -94,8 +118,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

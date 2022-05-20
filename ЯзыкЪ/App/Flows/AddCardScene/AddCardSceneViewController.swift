@@ -16,13 +16,18 @@ class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter()
     
     // MARK: - Outlets
-    @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     @IBOutlet var wordTextField: UITextField!
     @IBOutlet weak var translationStackView: UIStackView!
     @IBOutlet weak var translationTextField: UITextField!
     @IBOutlet weak var transcriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var translationActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var grabberView: UIView!
+    
+    // MARK: - Constraint outlets
+    @IBOutlet weak var grabberViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var grabberViewTrailingConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,12 +40,15 @@ class AddCardSceneViewController: UIViewController {
         setupNavigationOptions()
         setupUI()
         setupGestures()
+        animateGrabberTo(125)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        animateGrabberTo(150)
     }
     
     // MARK: - Actions
-    @IBAction func addBarButtonItemTapped(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
     
     // MARK: - Overrides
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -52,18 +60,29 @@ class AddCardSceneViewController: UIViewController {
     
     // MARK: - Private methods
     private func setupNavigationOptions() {
-        self.navigationItem.title = "Новая карточка"
+        //self.navigationItem.title = "Новая карточка"
     }
     
     private func setupUI() {
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
         
-        wordTextField.becomeFirstResponder()
+        if wordTextField.text == "" {
+            wordTextField.becomeFirstResponder()
+        }
     }
     
     private func setupGestures() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+    }
+    
+    private func animateGrabberTo(_ constraintConstant: CGFloat) {
+        grabberViewLeadingConstraint.constant = constraintConstant
+        grabberViewTrailingConstraint.constant = constraintConstant
+        
+        UIView.animate(withDuration: 0.15) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
 

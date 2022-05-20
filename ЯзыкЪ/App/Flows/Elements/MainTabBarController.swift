@@ -21,11 +21,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 
                 let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
                 
-                navigationController.navigationBar.prefersLargeTitles = true
-                navigationController.navigationItem.largeTitleDisplayMode = .automatic
-                navigationController.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title1)]
-                
+                navigationController.navigationBar.prefersLargeTitles = false
                 navigationController.modalPresentationStyle = .pageSheet
+                navigationController.setNavigationBarHidden(true, animated: false)
                 
                 if #available(iOS 15.0, *) {
                     if let sheet = navigationController.sheetPresentationController {
