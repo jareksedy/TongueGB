@@ -1,5 +1,5 @@
 //
-//  Dictionary.swift
+//  DictionaryResponse.swift
 //  ЯзыкЪ
 //
 //  Created by Ярослав on 21.05.2022.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Dictionary record
-struct DictionaryRecord: Codable {
+// MARK: - Dictionary response
+struct DictionaryResponse: Codable {
     let def: [Definition]
 }
 
