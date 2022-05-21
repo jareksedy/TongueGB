@@ -16,6 +16,7 @@
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
 		CA152AB228363C0B00564AA5 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB128363C0A00564AA5 /* UIStackView.swift */; };
 		CA152AB428364FDB00564AA5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB328364FDB00564AA5 /* MainTabBarController.swift */; };
+		CA1848E82838CB5000E66F2B /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848E72838CB5000E66F2B /* Dictionary.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
@@ -75,6 +76,7 @@
 		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
 		CA152AB128363C0A00564AA5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		CA152AB328364FDB00564AA5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CA1848E72838CB5000E66F2B /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				CA847192282B97BC008861E5 /* CardFirebase.swift */,
 				CA862F63282258EF002AFB6A /* CardsCategory.swift */,
 				CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */,
+				CA1848E72838CB5000E66F2B /* Dictionary.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
+				CA1848E82838CB5000E66F2B /* Dictionary.swift in Sources */,
 				CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
