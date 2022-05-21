@@ -73,7 +73,7 @@ class AddCardSceneViewController: UIViewController {
     private func animateIn() {
         translationActivityIndicator.isHidden = true
         
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             self.translationStackView.alpha = 1
         }
     }
@@ -81,7 +81,7 @@ class AddCardSceneViewController: UIViewController {
     private func animateOut() {
         translationActivityIndicator.isHidden = false
         
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: 0.5) {
             self.translationStackView.alpha = 0
         }
     }
@@ -105,6 +105,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
 // MARK: - Additional extensions
 @objc extension AddCardSceneViewController {
     func dismissKeyboard() {
+        translationActivityIndicator.isHidden = true
         view.endEditing(true)
     }
 }
@@ -116,12 +117,14 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let text = textField.text else { return }
+        guard let text = textField.text, text.trimmingCharacters(in: .whitespaces) != "" else { return }
+        
         textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
         
         guard textField == wordTextField else { return }
-        translationActivityIndicator.isHidden = false
+        
         presenter.fetchDictionaryRecord(for: text)
+        translationActivityIndicator.isHidden = false
     }
     
     // MARK: - Actions
