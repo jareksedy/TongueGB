@@ -24,6 +24,8 @@
 		CA1848F42838CDF200E66F2B /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F32838CDF100E66F2B /* AbstractRequestFactory.swift */; };
 		CA1848F62838CE3800E66F2B /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F52838CE3800E66F2B /* RequestRouter.swift */; };
 		CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */; };
+		CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FA2838CF8500E66F2B /* RequestFactory.swift */; };
+		CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
@@ -90,6 +92,8 @@
 		CA1848F32838CDF100E66F2B /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
 		CA1848F52838CE3800E66F2B /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
+		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,15 @@
 			children = (
 				CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */,
 				CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CA1848FC2838CF8A00E66F2B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1848FA2838CF8500E66F2B /* RequestFactory.swift */,
+				CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -370,6 +383,7 @@
 				CAA118F8282F63620056013D /* MockAPI */,
 				CA862F5B28225827002AFB6A /* FirebaseAPI */,
 				CA862F6828225AEB002AFB6A /* GreetingGenerator */,
+				CA1848FC2838CF8A00E66F2B /* Network */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -503,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */,
 				CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
 				CA152AB428364FDB00564AA5 /* MainTabBarController.swift in Sources */,
@@ -511,6 +526,7 @@
 				CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
+				CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
 				CA1848E82838CB5000E66F2B /* DictionaryResponse.swift in Sources */,
 				CA1848F42838CDF200E66F2B /* AbstractRequestFactory.swift in Sources */,
