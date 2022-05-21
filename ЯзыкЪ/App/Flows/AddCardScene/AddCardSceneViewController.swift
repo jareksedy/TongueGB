@@ -20,6 +20,9 @@ class AddCardSceneViewController: UIViewController {
     // MARK: - Services
     let requestFactory = RequestFactory()
     
+    // MARK: - Properties
+    let categorySuggestions = MockCategoriesProvider().createMockCategories().map { $0.categoryKey }
+    
     // MARK: - Outlets
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     @IBOutlet var wordTextField: UITextField!
