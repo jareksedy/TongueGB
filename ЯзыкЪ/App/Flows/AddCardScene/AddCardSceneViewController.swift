@@ -145,5 +145,6 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     // MARK: - Actions
     @IBAction func wordTextFieldEditingChanged(_ sender: Any) {
         animateOut()
+        translationActivityIndicator.isHidden = true
     }
 }
