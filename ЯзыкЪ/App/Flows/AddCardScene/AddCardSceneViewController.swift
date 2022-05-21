@@ -77,9 +77,24 @@ class AddCardSceneViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    private func fetchTranslation() {
-        guard wordTextField.text != "" else { return }
+    private func animateIn() {
+        translationActivityIndicator.isHidden = true
+        translationStackView.isHidden = false
+        translationStackView.spacing = 25.0
+        
+        UIView.animate(withDuration: 0.5) {
+            self.translationStackView.layoutIfNeeded()
+        }
+    }
+    
+    private func animateOut() {
         translationActivityIndicator.isHidden = false
+        translationStackView.isHidden = true
+        translationStackView.spacing = 5.0
+        
+        UIView.animate(withDuration: 0.5) {
+            self.translationStackView.layoutIfNeeded()
+        }
     }
 }
 
@@ -88,6 +103,8 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
     func displayDictionaryRecord(translation: String, transcription: String, category: String) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
+            
+            self.animateIn()
             
             self.translationActivityIndicator.isHidden = true
             self.translationStackView.isHidden = false
@@ -122,6 +139,7 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
         
         if textField == wordTextField {
+            animateOut()
             presenter.fetchDictionaryRecord(for: text)
         }
     }
