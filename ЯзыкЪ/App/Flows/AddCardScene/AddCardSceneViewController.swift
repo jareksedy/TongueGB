@@ -31,17 +31,11 @@ class AddCardSceneViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter.viewDelegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         setupUI()
         setupGestures()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
     }
     
     // MARK: - Actions
@@ -61,15 +55,14 @@ class AddCardSceneViewController: UIViewController {
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
         
         addBarButtonItem.isEnabled = false
+        translationStackView.alpha = 0
         
         wordTextField.delegate = self
         translationTextField.delegate = self
         transcriptionTextField.delegate = self
         categoryTextField.delegate = self
         
-        if wordTextField.text == "" {
-            wordTextField.becomeFirstResponder()
-        }
+        if wordTextField.text == "" { wordTextField.becomeFirstResponder() }
     }
     
     private func setupGestures() {
@@ -79,21 +72,17 @@ class AddCardSceneViewController: UIViewController {
     
     private func animateIn() {
         translationActivityIndicator.isHidden = true
-        translationStackView.isHidden = false
-        translationStackView.spacing = 25.0
         
-        UIView.animate(withDuration: 0.5) {
-            self.translationStackView.layoutIfNeeded()
+        UIView.animate(withDuration: 1.0) {
+            self.translationStackView.alpha = 1
         }
     }
     
     private func animateOut() {
         translationActivityIndicator.isHidden = false
-        translationStackView.isHidden = true
-        translationStackView.spacing = 5.0
         
-        UIView.animate(withDuration: 0.5) {
-            self.translationStackView.layoutIfNeeded()
+        UIView.animate(withDuration: 1.0) {
+            self.translationStackView.alpha = 0
         }
     }
 }
@@ -105,10 +94,6 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
             guard let self = self else { return }
             
             self.animateIn()
-            
-            self.translationActivityIndicator.isHidden = true
-            self.translationStackView.isHidden = false
-            
             self.translationTextField.text = translation
             self.transcriptionTextField.text = transcription
             self.categoryTextField.text = category
@@ -130,17 +115,17 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        translationActivityIndicator.isHidden = true
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else { return }
         textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
         
-        if textField == wordTextField {
-            animateOut()
-            presenter.fetchDictionaryRecord(for: text)
-        }
+        guard textField == wordTextField else { return }
+        translationActivityIndicator.isHidden = false
+        presenter.fetchDictionaryRecord(for: text)
+    }
+    
+    // MARK: - Actions
+    @IBAction func wordTextFieldEditingChanged(_ sender: Any) {
+        animateOut()
     }
 }

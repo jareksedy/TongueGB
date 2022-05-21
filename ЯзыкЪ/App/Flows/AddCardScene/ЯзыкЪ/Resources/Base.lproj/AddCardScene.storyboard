@@ -22,10 +22,11 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <textInputTraits key="textInputTraits" keyboardType="alphabet" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
+                                    <action selector="wordTextFieldEditingChanged:" destination="DoI-dM-UPF" eventType="editingChanged" id="2uY-rW-fRc"/>
                                     <outlet property="delegate" destination="DoI-dM-UPF" id="xBH-yX-sIi"/>
                                 </connections>
                             </textField>
-                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
                                 <rect key="frame" x="0.0" y="125.5" width="414" height="142"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Sm-toc">
