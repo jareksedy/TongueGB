@@ -15,6 +15,9 @@ protocol AddCardSceneViewDelegate: NSObjectProtocol {
 class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter()
     
+    // MARK: - Services
+    let requestFactory = RequestFactory()
+    
     // MARK: - Outlets
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     @IBOutlet var wordTextField: UITextField!
@@ -41,11 +44,18 @@ class AddCardSceneViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func keyboardReturnTapped(_ sender: Any) {
-        view.endEditing(true)
-    }
-    
     @IBAction func addBarButtonItemTapped(_ sender: Any) {
+        guard let text = wordTextField.text, text != "" else { return }
+        
+        let factory = requestFactory.makeDictionaryRequestFactory()
+        let request = DictionaryRequest(key: yandexDictionaryAPIKey, lang: "en-ru", text: text)
+        
+        factory.dictionaryRequest(request: request) { response in
+            switch response.result {
+            case .success(let result): print(result.def[0].tr)
+            case .failure(let error): print(error.localizedDescription)
+            }
+        }
     }
     
     // MARK: - Overrides
@@ -60,7 +70,7 @@ class AddCardSceneViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
         
-        addBarButtonItem.isEnabled = false
+        //addBarButtonItem.isEnabled = false
         
         wordTextField.delegate = self
         translationTextField.delegate = self

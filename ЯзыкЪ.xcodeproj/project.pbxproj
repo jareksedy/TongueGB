@@ -26,6 +26,7 @@
 		CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */; };
 		CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FA2838CF8500E66F2B /* RequestFactory.swift */; };
 		CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */; };
+		CA1849022838D7CA00E66F2B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1849012838D7CA00E66F2B /* APIKeys.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
@@ -94,6 +95,7 @@
 		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
 		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
+		CA1849012838D7CA00E66F2B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 		CAA118F2282F5A1C0056013D /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				CA1849012838D7CA00E66F2B /* APIKeys.swift */,
 				CA8B60962818D78500D7769B /* Info.plist */,
 				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
 			);
@@ -543,6 +546,7 @@
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
 				CA1848EF2838CD4300E66F2B /* ResponseCodable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
+				CA1849022838D7CA00E66F2B /* APIKeys.swift in Sources */,
 				CA1848F62838CE3800E66F2B /* RequestRouter.swift in Sources */,
 				CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */,
 				CA1848ED2838CD2700E66F2B /* ErrorParser.swift in Sources */,
