@@ -107,7 +107,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
     func displayEmptyDictionaryRecord() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            
+            self.translationTextField.becomeFirstResponder()
             self.animateIn()
         }
     }
@@ -136,6 +136,10 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         
         presenter.fetchDictionaryRecord(for: text)
         translationActivityIndicator.isHidden = false
+        
+        translationTextField.text = ""
+        transcriptionTextField.text = ""
+        categoryTextField.text = ""
     }
     
     // MARK: - Actions

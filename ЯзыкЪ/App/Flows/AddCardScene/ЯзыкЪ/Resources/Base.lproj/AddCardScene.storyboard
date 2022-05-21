@@ -27,7 +27,7 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
-                                <rect key="frame" x="0.0" y="125.5" width="414" height="142"/>
+                                <rect key="frame" x="0.0" y="127.5" width="414" height="142"/>
                                 <subviews>
                                     <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Sm-toc">
                                         <rect key="frame" x="17" y="0.0" width="380" height="1"/>
@@ -70,7 +70,7 @@
                         <constraints>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="SBy-Cd-Egw" secondAttribute="trailing" constant="17" id="2mf-zm-8QT"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerX" secondItem="R0D-Wk-40k" secondAttribute="centerX" id="6B8-pM-QDg"/>
-                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="25" id="OuI-U8-SbJ"/>
+                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="27" id="OuI-U8-SbJ"/>
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="25" id="S6H-MC-MIi"/>
                             <constraint firstItem="pVG-mZ-ZKi" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" id="VxM-ET-EZg"/>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="pVG-mZ-ZKi" secondAttribute="trailing" id="aSj-4K-VzH"/>

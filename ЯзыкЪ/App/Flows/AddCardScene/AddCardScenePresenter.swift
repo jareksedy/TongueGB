@@ -21,6 +21,7 @@ final class AddCardScenePresenter {
     
     // MARK: - Public methods
     func fetchDictionaryRecord(for text: String) {
+        print("--- presenter -- fetch -- record -- fired ---")
         guard text != "" else { return }
         
         let factory = requestFactory.makeDictionaryRequestFactory()
