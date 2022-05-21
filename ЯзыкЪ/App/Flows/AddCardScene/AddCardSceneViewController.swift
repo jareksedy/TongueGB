@@ -9,11 +9,12 @@ import UIKit
 
 // MARK: - Protocol
 protocol AddCardSceneViewDelegate: NSObjectProtocol {
+    func displayDictionaryRecord(translation: String, transcription: String, category: String)
 }
 
 // MARK: - View controller
 class AddCardSceneViewController: UIViewController {
-    lazy var presenter = AddCardScenePresenter()
+    lazy var presenter = AddCardScenePresenter(requestFactory: requestFactory)
     
     // MARK: - Services
     let requestFactory = RequestFactory()
@@ -45,17 +46,6 @@ class AddCardSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func addBarButtonItemTapped(_ sender: Any) {
-        guard let text = wordTextField.text, text != "" else { return }
-        
-        let factory = requestFactory.makeDictionaryRequestFactory()
-        let request = DictionaryRequest(key: yandexDictionaryAPIKey, lang: "en-ru", text: text)
-        
-        factory.dictionaryRequest(request: request) { response in
-            switch response.result {
-            case .success(let result): print(result.def[0].tr)
-            case .failure(let error): print(error.localizedDescription)
-            }
-        }
     }
     
     // MARK: - Overrides
@@ -70,7 +60,7 @@ class AddCardSceneViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
         
-        //addBarButtonItem.isEnabled = false
+        addBarButtonItem.isEnabled = false
         
         wordTextField.delegate = self
         translationTextField.delegate = self
@@ -89,13 +79,25 @@ class AddCardSceneViewController: UIViewController {
     
     private func fetchTranslation() {
         guard wordTextField.text != "" else { return }
-        
         translationActivityIndicator.isHidden = false
     }
 }
 
 // MARK: - Implementation
 extension AddCardSceneViewController: AddCardSceneViewDelegate {
+    func displayDictionaryRecord(translation: String, transcription: String, category: String) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.translationActivityIndicator.isHidden = true
+            self.translationStackView.isHidden = false
+            
+            self.translationTextField.text = translation
+            self.transcriptionTextField.text = transcription
+            self.categoryTextField.text = category
+        }
+    }
+    
 }
 
 // MARK: - Additional extensions
@@ -119,6 +121,8 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         guard let text = textField.text else { return }
         textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
         
-        fetchTranslation()
+        if textField == wordTextField {
+            presenter.fetchDictionaryRecord(for: text)
+        }
     }
 }
