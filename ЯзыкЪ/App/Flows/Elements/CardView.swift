@@ -38,8 +38,8 @@ class CardView: UIControl {
     var cornerRadius = 24.0
     var frontViewBackgroundColorLight: UIColor = .randomLight
     var frontViewBackgroundColorDark: UIColor = .randomDark
-    var backViewBackgroundColorDark: UIColor = .systemGray5
-    var backViewBackgroundColorLight: UIColor = .systemGray5
+    var backViewBackgroundColorDark: UIColor = .cardBackgroundDark
+    var backViewBackgroundColorLight: UIColor = .cardBackgroundLight
     
     var tapAnimationDuration = 0.15
     var tapScaleFactor = 0.975
