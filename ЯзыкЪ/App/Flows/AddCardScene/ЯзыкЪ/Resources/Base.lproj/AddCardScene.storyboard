@@ -20,7 +20,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Введите слово" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SBy-Cd-Egw">
                                 <rect key="frame" x="17" y="69" width="380" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="continue"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
                                 <rect key="frame" x="0.0" y="125.5" width="414" height="142"/>
@@ -57,17 +57,6 @@
                                 <rect key="frame" x="188.5" y="195" width="37" height="37"/>
                                 <color key="color" systemColor="opaqueSeparatorColor"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdi-3Y-ki7" customClass="StandardButton" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="17" y="777" width="380" height="65"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Nvs-PK-74d"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Добавить">
-                                    <color key="titleColor" systemColor="linkColor"/>
-                                </state>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FkL-Bu-pf8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,17 +64,24 @@
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="SBy-Cd-Egw" secondAttribute="trailing" constant="17" id="2mf-zm-8QT"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerX" secondItem="R0D-Wk-40k" secondAttribute="centerX" id="6B8-pM-QDg"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerY" secondItem="pVG-mZ-ZKi" secondAttribute="centerY" constant="17" id="Hjr-Ci-dlq"/>
-                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="Rdi-3Y-ki7" secondAttribute="trailing" constant="17" id="LBn-ff-Ldk"/>
                             <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="25" id="OuI-U8-SbJ"/>
-                            <constraint firstItem="Rdi-3Y-ki7" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="RB4-F3-O5z"/>
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="25" id="S6H-MC-MIi"/>
                             <constraint firstItem="pVG-mZ-ZKi" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" id="VxM-ET-EZg"/>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="pVG-mZ-ZKi" secondAttribute="trailing" id="aSj-4K-VzH"/>
-                            <constraint firstItem="FkL-Bu-pf8" firstAttribute="bottom" secondItem="Rdi-3Y-ki7" secondAttribute="bottom" constant="20" id="kZH-Hh-thF"/>
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" constant="17" id="yf5-Yr-fdR"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="jVJ-So-SwS">
+                        <barButtonItem key="rightBarButtonItem" title="Добавить " id="Zrt-ss-5fh">
+                            <connections>
+                                <action selector="addBarButtonItemTapped:" destination="DoI-dM-UPF" id="aps-KT-Xpb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addBarButtonItem" destination="Zrt-ss-5fh" id="Fco-Zo-viA"/>
                         <outlet property="categoryTextField" destination="yFc-8c-Bga" id="8cr-E4-s61"/>
                         <outlet property="transcriptionTextField" destination="fdF-IC-ivN" id="xaU-ui-SJW"/>
                         <outlet property="translationActivityIndicator" destination="BXW-zo-cxx" id="yVU-Rk-FAc"/>
@@ -100,9 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

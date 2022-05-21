@@ -25,8 +25,8 @@ class StandardButton: UIButton {
         self.titleEdgeInsets.top = -1.0
         self.titleEdgeInsets.left = -1.0
         
-        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        self.layer.cornerRadius = 4.0
+        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
+        self.layer.cornerRadius = 6.0
         
         addTarget(self, action: #selector(touchDown), for: [.touchDown, .touchDragEnter])
         addTarget(self, action: #selector(touchUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])

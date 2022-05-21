@@ -23,7 +23,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 
                 navigationController.navigationBar.prefersLargeTitles = false
                 navigationController.modalPresentationStyle = .pageSheet
-                navigationController.setNavigationBarHidden(true, animated: false)
                 
                 if #available(iOS 15.0, *) {
                     if let sheet = navigationController.sheetPresentationController {

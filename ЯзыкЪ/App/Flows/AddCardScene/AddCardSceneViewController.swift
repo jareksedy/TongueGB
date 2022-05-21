@@ -16,6 +16,7 @@ class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter()
     
     // MARK: - Outlets
+    @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
     @IBOutlet var wordTextField: UITextField!
     @IBOutlet weak var translationStackView: UIStackView!
     @IBOutlet weak var translationTextField: UITextField!
@@ -41,6 +42,8 @@ class AddCardSceneViewController: UIViewController {
     }
     
     // MARK: - Actions
+    @IBAction func addBarButtonItemTapped(_ sender: Any) {
+    }
     
     // MARK: - Overrides
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -56,6 +59,7 @@ class AddCardSceneViewController: UIViewController {
     
     private func setupUI() {
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
+        addBarButtonItem.isEnabled = false
         
         if wordTextField.text == "" {
             wordTextField.becomeFirstResponder()
