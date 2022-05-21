@@ -141,6 +141,10 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        setAddBarButtonEnabled()
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         setAddBarButtonEnabled()
         
