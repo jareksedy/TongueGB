@@ -42,6 +42,7 @@ class AddCardSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func addBarButtonItemTapped(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     // MARK: - Overrides
@@ -72,6 +73,17 @@ class AddCardSceneViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    private func checkNeededTextFieldsFilled() -> Bool {
+        let word = wordTextField.text?.trimmingCharacters(in: .whitespaces)
+        let translation = translationTextField.text?.trimmingCharacters(in: .whitespaces)
+        let category = categoryTextField.text?.trimmingCharacters(in: .whitespaces)
+        return word != "" && translation != "" && category != ""
+    }
+    
+    private func setAddBarButtonEnabled() {
+        addBarButtonItem.isEnabled = checkNeededTextFieldsFilled()
+    }
+    
     private func animateIn() {
         translationActivityIndicator.isHidden = true
         
@@ -97,6 +109,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
             self.translationTextField.text = translation
             self.transcriptionTextField.text = transcription
             self.categoryTextField.text = category
+            self.setAddBarButtonEnabled()
         }
     }
     
@@ -104,9 +117,10 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.animateIn()
+            self.addBarButtonItem.isEnabled = false
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [weak self] in
             guard let self = self else { return }
             self.translationTextField.becomeFirstResponder()
         }
@@ -128,6 +142,8 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        setAddBarButtonEnabled()
+        
         guard let text = textField.text, text.trimmingCharacters(in: .whitespaces) != "" else { return }
         
         textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
@@ -145,5 +161,14 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     // MARK: - Actions
     @IBAction func wordTextFieldEditingChanged(_ sender: Any) {
         animateOut()
+        addBarButtonItem.isEnabled = false
+    }
+    
+    @IBAction func translationTextFieldEditingChanged(_ sender: Any) {
+        setAddBarButtonEnabled()
+    }
+    
+    @IBAction func categoryTextFieldEditingChanged(_ sender: Any) {
+        setAddBarButtonEnabled()
     }
 }
