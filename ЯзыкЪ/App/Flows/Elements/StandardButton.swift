@@ -7,7 +7,9 @@
 
 import UIKit
 
-class SignInButton: UIButton {
+class StandardButton: UIButton {
+    // MARK: - Properties
+    let buttonBackgroundColor = UIColor.link
     
     // MARK: - Initializers
     required init?(coder: NSCoder) {
@@ -17,22 +19,26 @@ class SignInButton: UIButton {
     
     // MARK: - Private methods
     private func setupButton() {
-        self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.25)
-        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        self.titleLabel?.adjustsFontForContentSizeCategory = true
-        self.layer.cornerRadius = 4.0
+        self.backgroundColor = buttonBackgroundColor
+        self.setTitleColor(.white.withAlphaComponent(0.85), for: .normal)
+        
+        self.titleEdgeInsets.top = -1.5
+        self.titleEdgeInsets.left = -0.5
+        
+        self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
+        self.layer.cornerRadius = 6.0
         
         addTarget(self, action: #selector(touchDown), for: [.touchDown, .touchDragEnter])
         addTarget(self, action: #selector(touchUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
     }
 }
 
-@objc extension SignInButton {
+@objc extension StandardButton {
     private func touchDown(sender: UIButton) {
-        self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.15)
+        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(0.5)
     }
     
     private func touchUp(sender: UIButton) {
-        self.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.25)
+        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(1.0)
     }
 }

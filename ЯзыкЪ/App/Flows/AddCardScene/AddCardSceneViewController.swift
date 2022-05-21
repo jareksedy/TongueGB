@@ -22,12 +22,6 @@ class AddCardSceneViewController: UIViewController {
     @IBOutlet weak var transcriptionTextField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var translationActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var grabberView: UIView!
-    
-    // MARK: - Constraint outlets
-    @IBOutlet weak var grabberViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var grabberViewTrailingConstraint: NSLayoutConstraint!
-    
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -40,12 +34,10 @@ class AddCardSceneViewController: UIViewController {
         setupNavigationOptions()
         setupUI()
         setupGestures()
-        animateGrabberTo(125)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        animateGrabberTo(150)
     }
     
     // MARK: - Actions
@@ -54,7 +46,6 @@ class AddCardSceneViewController: UIViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         guard traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) else { return }
-        
         self.view.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
     }
     
@@ -74,15 +65,6 @@ class AddCardSceneViewController: UIViewController {
     private func setupGestures() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-    }
-    
-    private func animateGrabberTo(_ constraintConstant: CGFloat) {
-        grabberViewLeadingConstraint.constant = constraintConstant
-        grabberViewTrailingConstraint.constant = constraintConstant
-        
-        UIView.animate(withDuration: 0.15) {
-            self.view.layoutIfNeeded()
-        }
     }
 }
 

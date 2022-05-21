@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ums-67-cYI" customClass="SignInButton" customModule="ЯзыкЪ" customModuleProvider="target">
-                                <rect key="frame" x="17" y="723.5" width="380" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ums-67-cYI" customClass="StandardButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                                <rect key="frame" x="17" y="733.5" width="380" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="LVO-xd-8Lm"/>
+                                    <constraint firstAttribute="height" constant="55" id="LVO-xd-8Lm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
