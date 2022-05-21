@@ -28,16 +28,20 @@ final class AddCardScenePresenter {
         
         factory.dictionaryRequest(request: request) { response in
             switch response.result {
+                
             case .success(let result):
                 if result.def.count > 0 {
                     let translation = result.def[0].tr[0].text.capitalizeFirstLetter()
                     let transcription = result.def[0].ts
-                    let category = "Разное"
-                    
+                    let category = ""
                     self.viewDelegate?.displayDictionaryRecord(translation: translation, transcription: transcription, category: category)
+                } else {
+                    self.viewDelegate?.displayEmptyDictionaryRecord()
                 }
 
-            case .failure(let error): print(error.localizedDescription)
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.viewDelegate?.displayEmptyDictionaryRecord()
             }
         }
     }

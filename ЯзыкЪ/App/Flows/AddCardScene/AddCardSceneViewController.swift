@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Protocol
 protocol AddCardSceneViewDelegate: NSObjectProtocol {
     func displayDictionaryRecord(translation: String, transcription: String, category: String)
+    func displayEmptyDictionaryRecord()
 }
 
 // MARK: - View controller
@@ -100,6 +101,13 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         }
     }
     
+    func displayEmptyDictionaryRecord() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            self.animateIn()
+        }
+    }
 }
 
 // MARK: - Additional extensions
