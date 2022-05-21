@@ -14,7 +14,7 @@ protocol AddCardSceneViewDelegate: NSObjectProtocol {
 }
 
 // MARK: - View controller
-class AddCardSceneViewController: UIViewController {
+class AddCardSceneViewController: UIViewController, UITabBarControllerDelegate {
     lazy var presenter = AddCardScenePresenter(requestFactory: requestFactory)
     
     // MARK: - Services
@@ -120,7 +120,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
             self.addBarButtonItem.isEnabled = false
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
             guard let self = self else { return }
             self.translationTextField.becomeFirstResponder()
         }
