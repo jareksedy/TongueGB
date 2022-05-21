@@ -19,14 +19,14 @@ class StandardButton: UIButton {
     
     // MARK: - Private methods
     private func setupButton() {
-        self.backgroundColor = buttonBackgroundColor
+        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(0.85)
         self.setTitleColor(.white.withAlphaComponent(0.85), for: .normal)
         
-        self.titleEdgeInsets.top = -1.5
-        self.titleEdgeInsets.left = -0.5
+        self.titleEdgeInsets.top = -1.0
+        self.titleEdgeInsets.left = -1.0
         
         self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3)
-        self.layer.cornerRadius = 6.0
+        self.layer.cornerRadius = 4.0
         
         addTarget(self, action: #selector(touchDown), for: [.touchDown, .touchDragEnter])
         addTarget(self, action: #selector(touchUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
@@ -35,10 +35,10 @@ class StandardButton: UIButton {
 
 @objc extension StandardButton {
     private func touchDown(sender: UIButton) {
-        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(0.5)
+        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(0.65)
     }
     
     private func touchUp(sender: UIButton) {
-        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(1.0)
+        self.backgroundColor = buttonBackgroundColor.withAlphaComponent(0.85)
     }
 }
