@@ -35,9 +35,7 @@ class AddCardSceneViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         presenter.viewDelegate = self
-        
         setupUI()
         setupGestures()
     }
@@ -83,8 +81,6 @@ class AddCardSceneViewController: UIViewController {
     }
     
     private func animateOut() {
-        translationActivityIndicator.isHidden = false
-        
         UIView.animate(withDuration: 0.5) {
             self.translationStackView.alpha = 0
         }
@@ -107,8 +103,12 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
     func displayEmptyDictionaryRecord() {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.translationTextField.becomeFirstResponder()
             self.animateIn()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) { [weak self] in
+            guard let self = self else { return }
+            self.translationTextField.becomeFirstResponder()
         }
     }
 }
@@ -145,6 +145,5 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     // MARK: - Actions
     @IBAction func wordTextFieldEditingChanged(_ sender: Any) {
         animateOut()
-        translationActivityIndicator.isHidden = true
     }
 }
