@@ -16,6 +16,7 @@ protocol AddCardSceneViewDelegate: NSObjectProtocol {
 // MARK: - View controller
 class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter(requestFactory: requestFactory)
+    weak var delegate: AddCardSceneDelegate?
     
     // MARK: - Services
     let requestFactory = RequestFactory()
@@ -46,11 +47,13 @@ class AddCardSceneViewController: UIViewController {
         
         guard let word = wordTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter(),
               let translation = translationTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter(),
-              let transcription = transcriptionTextField.text?.trimmingCharacters(in: .whitespaces).dropFirst(2).dropLast(2),
+              var transcription = transcriptionTextField.text?.trimmingCharacters(in: .whitespaces),
               let category = categoryTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter() else { return }
         
+        transcription.contains("[") ? transcription = "\(transcription.dropFirst(2))" : nil
+        transcription.contains("]") ? transcription = "\(transcription.dropLast(2))" : nil
         
-        dismiss(animated: true, completion: { print(word, translation, transcription, category) })
+        dismiss(animated: true, completion: { self.delegate?.didTapAddCard(word: word, translation: translation, transcription: transcription, category: category) })
     }
     
     // MARK: - Overrides

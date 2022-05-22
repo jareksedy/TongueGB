@@ -10,11 +10,12 @@ import UIKit
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCardTapped()
+    func addCard(word: String, translation: String, transcription: String, category: String)
 }
 
 // MARK: - View controller
 class MainSceneViewController: UIViewController {
-    lazy var presenter = MainScenePresenter()
+    let presenter = MainScenePresenter()
     
     // MARK: - Outlets
     @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
@@ -93,4 +94,23 @@ class MainSceneViewController: UIViewController {
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
     func addCardTapped() {}
+    
+    func addCard(word: String, translation: String, transcription: String, category: String) {
+        
+        let cardView = CardView()
+        cardView.word = word
+        cardView.translation = translation
+        cardView.transcription = transcription
+        cardView.category = category
+        cardView.isFront = true
+        
+        cardView.alpha = 0
+        cardsStackView.insertArrangedSubview(cardView, at: 0)
+        
+        UIView.animate(withDuration: 0.35) {
+            self.cardsScrollView.setContentOffset(.zero, animated: false)
+            self.cardsStackView.layoutIfNeeded()
+            cardView.alpha = 1
+        }
+    }
 }

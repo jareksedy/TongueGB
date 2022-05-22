@@ -12,7 +12,7 @@ extension UIStackView {
         view.alpha = 0
         self.insertArrangedSubview(view, at: stackIndex)
         
-        UIView.animate(withDuration: 0.225,
+        UIView.animate(withDuration: 0.10,
                        animations: { view.alpha = 1; self.layoutIfNeeded() },
                        completion: completion)
     }

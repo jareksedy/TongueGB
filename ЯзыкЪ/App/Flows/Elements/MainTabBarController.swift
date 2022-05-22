@@ -7,8 +7,12 @@
 
 import UIKit
 
+// MARK: - Protocols
+protocol AddCardSceneDelegate: AnyObject {
+    func didTapAddCard(word: String, translation: String, transcription: String, category: String)
+}
+
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +21,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.children[0] is AddCardSceneViewController {
-            if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") {
+            if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
                 
+                addCardSceneViewController.delegate = self
                 let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
                 
                 navigationController.navigationBar.prefersLargeTitles = false
@@ -36,5 +41,17 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             }
         }
         return true
+    }
+}
+
+// MARK: - Implementation
+extension MainTabBarController: AddCardSceneDelegate {
+    func didTapAddCard(word: String, translation: String, transcription: String, category: String) {
+        
+        let navigationController = self.viewControllers![0] as! MainNavigationController
+        let mainSceneViewController = navigationController.topViewController as! MainSceneViewController
+        
+        mainSceneViewController.addCard(word: word, translation: translation, transcription: transcription, category: category)
+        selectedIndex = 0
     }
 }
