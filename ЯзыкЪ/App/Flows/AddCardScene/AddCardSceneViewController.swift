@@ -14,7 +14,7 @@ protocol AddCardSceneViewDelegate: NSObjectProtocol {
 }
 
 // MARK: - View controller
-class AddCardSceneViewController: UIViewController, UITabBarControllerDelegate {
+class AddCardSceneViewController: UIViewController {
     lazy var presenter = AddCardScenePresenter(requestFactory: requestFactory)
     
     // MARK: - Services
@@ -43,7 +43,14 @@ class AddCardSceneViewController: UIViewController, UITabBarControllerDelegate {
     // MARK: - Actions
     @IBAction func addBarButtonItemTapped(_ sender: Any) {
         AppDefaults.shared.lastCategory = categoryTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
-        dismiss(animated: true)
+        
+        guard let word = wordTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter(),
+              let translation = translationTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter(),
+              let transcription = transcriptionTextField.text?.trimmingCharacters(in: .whitespaces).dropFirst(2).dropLast(2),
+              let category = categoryTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter() else { return }
+        
+        
+        dismiss(animated: true, completion: { print(word, translation, transcription, category) })
     }
     
     // MARK: - Overrides
@@ -208,4 +215,7 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     @IBAction func categoryTextFieldEditingChanged(_ sender: Any) {
         setAddBarButtonEnabled()
     }
+}
+
+extension AddCardSceneViewController {
 }
