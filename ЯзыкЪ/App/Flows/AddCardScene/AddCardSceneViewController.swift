@@ -42,6 +42,7 @@ class AddCardSceneViewController: UIViewController, UITabBarControllerDelegate {
     
     // MARK: - Actions
     @IBAction func addBarButtonItemTapped(_ sender: Any) {
+        AppDefaults.shared.lastCategory = categoryTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
         dismiss(animated: true)
     }
     
@@ -130,6 +131,14 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
             self.translationTextField.text = translation
             self.transcriptionTextField.text = transcription
             self.categoryTextField.text = category
+            
+            if category == "" {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
+                    guard let self = self else { return }
+                    self.categoryTextField.becomeFirstResponder()
+                }
+            }
+            
             self.setAddBarButtonEnabled()
         }
     }

@@ -33,7 +33,8 @@ final class AddCardScenePresenter {
                 if result.def.count > 0 {
                     let translation = result.def[0].tr[0].text.capitalizeFirstLetter()
                     let transcription = "[ \(result.def[0].ts) ]"
-                    let category = "Разное"
+                    let category = AppDefaults.shared.lastCategory ?? ""
+    
                     self.viewDelegate?.displayDictionaryRecord(translation: translation, transcription: transcription, category: category)
                 } else {
                     self.viewDelegate?.displayEmptyDictionaryRecord()
