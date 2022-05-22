@@ -69,6 +69,7 @@
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
 		CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */ = {isa = PBXBuildFile; productRef = CAA5B77D2839FFB400EC00D5 /* Foil */; };
+		CAA5B780283A031300EC00D5 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5B77F283A031300EC00D5 /* AppDefaults.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
 		CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */; };
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
@@ -140,6 +141,7 @@
 		CA97ED1D28356B9B006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/ProfileScene.storyboard"; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CAA5B77F283A031300EC00D5 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,6 +358,7 @@
 		CAA118F0282F5A090056013D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CAA5B781283A034400EC00D5 /* AppDefaults */,
 				CA6AFDA12827AAB60098718E /* Helpers */,
 				CA1848EB2838CD0C00E66F2B /* Network */,
 			);
@@ -429,6 +432,14 @@
 				CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */,
 			);
 			path = MockAPI;
+			sourceTree = "<group>";
+		};
+		CAA5B781283A034400EC00D5 /* AppDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5B77F283A031300EC00D5 /* AppDefaults.swift */,
+			);
+			path = AppDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +576,7 @@
 				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
 				CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
+				CAA5B780283A031300EC00D5 /* AppDefaults.swift in Sources */,
 				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
 				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
