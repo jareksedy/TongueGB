@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ums-67-cYI" customClass="SignInButton" customModule="ЯзыкЪ" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ums-67-cYI" customClass="StandardButton" customModule="ЯзыкЪ" customModuleProvider="target">
                                 <rect key="frame" x="17" y="723.5" width="380" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="LVO-xd-8Lm"/>

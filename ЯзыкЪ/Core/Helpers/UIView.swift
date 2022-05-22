@@ -19,9 +19,7 @@ extension UIView {
             view.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-}
-
-extension UIView {
+    
     public func speak(_ textToSpeak: String) {
         let utterance = AVSpeechUtterance(string: textToSpeak)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")

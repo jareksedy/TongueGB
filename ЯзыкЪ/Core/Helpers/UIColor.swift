@@ -34,4 +34,20 @@ extension UIColor {
             alpha: 1.0
         )
     }
+    
+    static var presentationLight: UIColor {
+        return UIColor(red: 0.96, green: 0.93, blue: 0.88, alpha: 1.00)
+    }
+    
+    static var presentationDark: UIColor {
+        return UIColor(red: 0.13, green: 0.14, blue: 0.15, alpha: 1.00)
+    }
+    
+    static var cardBackgroundLight: UIColor {
+        return UIColor(red: 0.96, green: 0.93, blue: 0.88, alpha: 1.00)
+    }
+    
+    static var cardBackgroundDark: UIColor {
+        return UIColor(red: 0.13, green: 0.14, blue: 0.15, alpha: 1.00)
+    }
 }

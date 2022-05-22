@@ -139,7 +139,7 @@ class EmptyCardView: UIControl {
     // MARK: - Selectors
     @objc func tapUp() {
         UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
-        viewDelegate?.addCardTapped()
+        // tap action here
     }
     
     @objc func tapDown() {

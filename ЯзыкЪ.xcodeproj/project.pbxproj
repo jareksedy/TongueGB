@@ -14,6 +14,19 @@
 		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
 		CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */; };
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
+		CA152AB228363C0B00564AA5 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB128363C0A00564AA5 /* UIStackView.swift */; };
+		CA152AB428364FDB00564AA5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB328364FDB00564AA5 /* MainTabBarController.swift */; };
+		CA1848E82838CB5000E66F2B /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */; };
+		CA1848EA2838CD0000E66F2B /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848E92838CD0000E66F2B /* AbstractErrorParser.swift */; };
+		CA1848ED2838CD2700E66F2B /* ErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848EC2838CD2700E66F2B /* ErrorParser.swift */; };
+		CA1848EF2838CD4300E66F2B /* ResponseCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848EE2838CD4300E66F2B /* ResponseCodable.swift */; };
+		CA1848F22838CDB900E66F2B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CA1848F12838CDB900E66F2B /* Alamofire */; };
+		CA1848F42838CDF200E66F2B /* AbstractRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F32838CDF100E66F2B /* AbstractRequestFactory.swift */; };
+		CA1848F62838CE3800E66F2B /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F52838CE3800E66F2B /* RequestRouter.swift */; };
+		CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */; };
+		CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FA2838CF8500E66F2B /* RequestFactory.swift */; };
+		CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */; };
+		CA1849022838D7CA00E66F2B /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1849012838D7CA00E66F2B /* APIKeys.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
@@ -31,7 +44,7 @@
 		CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB12827AB1F0098718E /* SearchScenePresenter.swift */; };
 		CA6AFDB9282804E70098718E /* GreetingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDB8282804E70098718E /* GreetingGenerator.swift */; };
 		CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBA2828150F0098718E /* Greeting.swift */; };
-		CA6AFDBD282828490098718E /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* SignInButton.swift */; };
+		CA6AFDBD282828490098718E /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFDBC282828490098718E /* StandardButton.swift */; };
 		CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847190282B97A8008861E5 /* UserFirebase.swift */; };
 		CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847192282B97BC008861E5 /* CardFirebase.swift */; };
 		CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */; };
@@ -55,6 +68,8 @@
 		CA97ED1E28356B9B006BD7C7 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1C28356B9B006BD7C7 /* ProfileScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
+		CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */ = {isa = PBXBuildFile; productRef = CAA5B77D2839FFB400EC00D5 /* Foil */; };
+		CAA5B780283A031300EC00D5 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5B77F283A031300EC00D5 /* AppDefaults.swift */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
 		CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */; };
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
@@ -71,6 +86,18 @@
 		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSceneViewController.swift; sourceTree = "<group>"; };
 		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
+		CA152AB128363C0A00564AA5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		CA152AB328364FDB00564AA5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
+		CA1848E92838CD0000E66F2B /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
+		CA1848EC2838CD2700E66F2B /* ErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorParser.swift; sourceTree = "<group>"; };
+		CA1848EE2838CD4300E66F2B /* ResponseCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseCodable.swift; sourceTree = "<group>"; };
+		CA1848F32838CDF100E66F2B /* AbstractRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequestFactory.swift; sourceTree = "<group>"; };
+		CA1848F52838CE3800E66F2B /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
+		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
+		CA1849012838D7CA00E66F2B /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -88,7 +115,7 @@
 		CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSceneViewController.swift; sourceTree = "<group>"; };
 		CA6AFDB8282804E70098718E /* GreetingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingGenerator.swift; sourceTree = "<group>"; };
 		CA6AFDBA2828150F0098718E /* Greeting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greeting.swift; sourceTree = "<group>"; };
-		CA6AFDBC282828490098718E /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		CA6AFDBC282828490098718E /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 		CA847190282B97A8008861E5 /* UserFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFirebase.swift; sourceTree = "<group>"; };
 		CA847192282B97BC008861E5 /* CardFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardFirebase.swift; sourceTree = "<group>"; };
 		CA847194282B97CB008861E5 /* CardsCategoryFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsCategoryFirebase.swift; sourceTree = "<group>"; };
@@ -114,6 +141,7 @@
 		CA97ED1D28356B9B006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/ProfileScene.storyboard"; sourceTree = "<group>"; };
 		CAA118F6282F60CF0056013D /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		CAA118F92830295E0056013D /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CAA5B77F283A031300EC00D5 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,9 +151,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1848F22838CDB900E66F2B /* Alamofire in Frameworks */,
 				CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */,
 				CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */,
 				CAA663EA282BD4E900BC975E /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */,
 				CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,11 +192,42 @@
 			path = SearchResultScene;
 			sourceTree = "<group>";
 		};
+		CA1848EB2838CD0C00E66F2B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1848E92838CD0000E66F2B /* AbstractErrorParser.swift */,
+				CA1848EC2838CD2700E66F2B /* ErrorParser.swift */,
+				CA1848EE2838CD4300E66F2B /* ResponseCodable.swift */,
+				CA1848F32838CDF100E66F2B /* AbstractRequestFactory.swift */,
+				CA1848F52838CE3800E66F2B /* RequestRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CA1848F72838CE7200E66F2B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */,
+				CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CA1848FC2838CF8A00E66F2B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CA1848FA2838CF8500E66F2B /* RequestFactory.swift */,
+				CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		CA6AFD9C2827AA9F0098718E /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				CA6AFD942827AA8C0098718E /* MainNavigationController.swift */,
-				CA6AFDBC282828490098718E /* SignInButton.swift */,
+				CA152AB328364FDB00564AA5 /* MainTabBarController.swift */,
+				CA6AFDBC282828490098718E /* StandardButton.swift */,
 				CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */,
 				CA6AFD962827AA8D0098718E /* CardView.swift */,
 				CA6AFD922827AA8C0098718E /* EmptyCardView.swift */,
@@ -179,6 +240,7 @@
 			children = (
 				CAA118F92830295E0056013D /* UIView.swift */,
 				CA0955FB2833607600F35D64 /* UITableView.swift */,
+				CA152AB128363C0A00564AA5 /* UIStackView.swift */,
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
 				CAA118F6282F60CF0056013D /* CGFloat.swift */,
@@ -296,7 +358,9 @@
 		CAA118F0282F5A090056013D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				CAA5B781283A034400EC00D5 /* AppDefaults */,
 				CA6AFDA12827AAB60098718E /* Helpers */,
+				CA1848EB2838CD0C00E66F2B /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -314,6 +378,7 @@
 		CAA118F2282F5A1C0056013D /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				CA1849012838D7CA00E66F2B /* APIKeys.swift */,
 				CA8B60962818D78500D7769B /* Info.plist */,
 				CAA663ED282BD81800BC975E /* GoogleService-Info.plist */,
 			);
@@ -326,6 +391,7 @@
 				CAA118F8282F63620056013D /* MockAPI */,
 				CA862F5B28225827002AFB6A /* FirebaseAPI */,
 				CA862F6828225AEB002AFB6A /* GreetingGenerator */,
+				CA1848FC2838CF8A00E66F2B /* Network */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -333,6 +399,7 @@
 		CAA118F4282F5A5E0056013D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CA1848F72838CE7200E66F2B /* Network */,
 				CA862F5F28225884002AFB6A /* User.swift */,
 				CA847190282B97A8008861E5 /* UserFirebase.swift */,
 				CA6AFDBA2828150F0098718E /* Greeting.swift */,
@@ -367,6 +434,14 @@
 			path = MockAPI;
 			sourceTree = "<group>";
 		};
+		CAA5B781283A034400EC00D5 /* AppDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5B77F283A031300EC00D5 /* AppDefaults.swift */,
+			);
+			path = AppDefaults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -388,6 +463,8 @@
 				CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */,
 				CAA663E7282BD4E900BC975E /* FirebaseDatabase */,
 				CAA663E9282BD4E900BC975E /* FirebaseDatabaseSwift-Beta */,
+				CA1848F12838CDB900E66F2B /* Alamofire */,
+				CAA5B77D2839FFB400EC00D5 /* Foil */,
 			);
 			productName = "ЯзыкЪ";
 			productReference = CA8B60852818D78300D7769B /* ЯзыкЪ.app */;
@@ -419,6 +496,8 @@
 			mainGroup = CA8B607C2818D78300D7769B;
 			packageReferences = (
 				CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */,
 			);
 			productRefGroup = CA8B60862818D78300D7769B /* Products */;
 			projectDirPath = "";
@@ -456,13 +535,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */,
 				CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */,
 				CA8B60892818D78300D7769B /* AppDelegate.swift in Sources */,
+				CA152AB428364FDB00564AA5 /* MainTabBarController.swift in Sources */,
+				CA1848EA2838CD0000E66F2B /* AbstractErrorParser.swift in Sources */,
 				CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */,
 				CA847195282B97CB008861E5 /* CardsCategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
+				CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
+				CA1848E82838CB5000E66F2B /* DictionaryResponse.swift in Sources */,
+				CA1848F42838CDF200E66F2B /* AbstractRequestFactory.swift in Sources */,
 				CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */,
 				CA862F6A28225AFB002AFB6A /* FirebaseAPI.swift in Sources */,
 				CA8B608B2818D78300D7769B /* SceneDelegate.swift in Sources */,
@@ -471,11 +556,15 @@
 				CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */,
 				CA6AFDAA2827AAFF0098718E /* AddCardSceneViewController.swift in Sources */,
 				CA847193282B97BC008861E5 /* CardFirebase.swift in Sources */,
-				CA6AFDBD282828490098718E /* SignInButton.swift in Sources */,
+				CA6AFDBD282828490098718E /* StandardButton.swift in Sources */,
 				CAA118FA2830295E0056013D /* UIView.swift in Sources */,
 				CA862F5D28225840002AFB6A /* Firebasable.swift in Sources */,
+				CA1848EF2838CD4300E66F2B /* ResponseCodable.swift in Sources */,
 				CA862F64282258EF002AFB6A /* CardsCategory.swift in Sources */,
+				CA1849022838D7CA00E66F2B /* APIKeys.swift in Sources */,
+				CA1848F62838CE3800E66F2B /* RequestRouter.swift in Sources */,
 				CA6AFDA42827AAEB0098718E /* MainScenePresenter.swift in Sources */,
+				CA1848ED2838CD2700E66F2B /* ErrorParser.swift in Sources */,
 				CA6AFDAE2827AB100098718E /* ProfileSceneViewController.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
 				CA862F6028225884002AFB6A /* User.swift in Sources */,
@@ -487,12 +576,15 @@
 				CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */,
 				CA0955FF283367B200F35D64 /* CategoryTableViewCell.swift in Sources */,
 				CA6AFD9A2827AA8D0098718E /* EmptyCardView.swift in Sources */,
+				CAA5B780283A031300EC00D5 /* AppDefaults.swift in Sources */,
 				CA6AFDBB2828150F0098718E /* Greeting.swift in Sources */,
 				CA6AFD9B2827AA8D0098718E /* CardView.swift in Sources */,
 				CA6AFDAF2827AB100098718E /* ProfileScenePresenter.swift in Sources */,
 				CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */,
 				CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */,
 				CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */,
+				CA152AB228363C0B00564AA5 /* UIStackView.swift in Sources */,
+				CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */,
 				CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,7 +779,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jareksedy.tongueGB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -718,7 +810,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.2;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jareksedy.tongueGB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -751,6 +843,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jessesquires/Foil.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -762,6 +870,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CA1848F12838CDB900E66F2B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CAA5B77D2839FFB400EC00D5 /* Foil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */;
+			productName = Foil;
+		};
 		CAA663E3282BD4E900BC975E /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
