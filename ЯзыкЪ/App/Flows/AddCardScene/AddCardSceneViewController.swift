@@ -150,7 +150,8 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         
         guard let text = textField.text, text.trimmingCharacters(in: .whitespaces) != "" else { return }
         
-        textField.text = text.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter()
+        textField.text = text.trimmingCharacters(in: .whitespaces)
+        if textField != transcriptionTextField { textField.text = textField.text?.capitalizeFirstLetter() }
         
         guard textField == wordTextField else { return }
         

@@ -27,17 +27,10 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-mZ-ZKi">
-                                <rect key="frame" x="0.0" y="123.5" width="414" height="142"/>
+                                <rect key="frame" x="0.0" y="125.5" width="414" height="130"/>
                                 <subviews>
-                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Sm-toc">
-                                        <rect key="frame" x="17" y="0.0" width="380" height="1"/>
-                                        <color key="backgroundColor" systemColor="separatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="0TX-Kr-oXX"/>
-                                        </constraints>
-                                    </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Перевод" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OPY-KC-svw">
-                                        <rect key="frame" x="17" y="26" width="380" height="22"/>
+                                        <rect key="frame" x="17" y="0.0" width="380" height="22"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -45,16 +38,23 @@
                                             <action selector="translationTextFieldEditingChanged:" destination="DoI-dM-UPF" eventType="editingChanged" id="nAC-Fb-GGe"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фонетическая транскрипция" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-IC-ivN">
-                                        <rect key="frame" x="17" y="73" width="380" height="22"/>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8P-Sm-toc">
+                                        <rect key="frame" x="17" y="47" width="380" height="1"/>
+                                        <color key="backgroundColor" systemColor="separatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="0TX-Kr-oXX"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фонетическая транскрипция" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-IC-ivN">
+                                        <rect key="frame" x="17" y="73" width="380" height="16"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Категория" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yFc-8c-Bga">
-                                        <rect key="frame" x="17" y="120" width="380" height="22"/>
+                                        <rect key="frame" x="17" y="114" width="380" height="16"/>
                                         <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <action selector="categoryTextFieldEditingChanged:" destination="DoI-dM-UPF" eventType="editingChanged" id="foJ-b7-dqS"/>
@@ -74,7 +74,7 @@
                         <constraints>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="SBy-Cd-Egw" secondAttribute="trailing" constant="17" id="2mf-zm-8QT"/>
                             <constraint firstItem="BXW-zo-cxx" firstAttribute="centerX" secondItem="R0D-Wk-40k" secondAttribute="centerX" id="6B8-pM-QDg"/>
-                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="23" id="OuI-U8-SbJ"/>
+                            <constraint firstItem="pVG-mZ-ZKi" firstAttribute="top" secondItem="SBy-Cd-Egw" secondAttribute="bottom" constant="25" id="OuI-U8-SbJ"/>
                             <constraint firstItem="SBy-Cd-Egw" firstAttribute="top" secondItem="FkL-Bu-pf8" secondAttribute="top" constant="25" id="S6H-MC-MIi"/>
                             <constraint firstItem="pVG-mZ-ZKi" firstAttribute="leading" secondItem="FkL-Bu-pf8" secondAttribute="leading" id="VxM-ET-EZg"/>
                             <constraint firstItem="FkL-Bu-pf8" firstAttribute="trailing" secondItem="pVG-mZ-ZKi" secondAttribute="trailing" id="aSj-4K-VzH"/>
