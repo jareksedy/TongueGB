@@ -97,6 +97,27 @@ class AddCardSceneViewController: UIViewController, UITabBarControllerDelegate {
             self.translationStackView.alpha = 0
         }
     }
+    
+    private func stripTranscriptionBrackets(_ textField: UITextField) {
+        guard textField == transcriptionTextField,
+              let text = textField.text,
+              text.trimmingCharacters(in: .whitespaces) != "",
+              text.contains("["),
+              text.contains("]") else { return }
+        
+        textField.text = "\(textField.text!.dropFirst(2))"
+        textField.text = "\(textField.text!.dropLast(2))"
+    }
+    
+    private func addTranscriptionBrackets(_ textField: UITextField) {
+        guard textField == transcriptionTextField,
+              let text = textField.text?.trimmingCharacters(in: .whitespaces),
+              text != "",
+              !text.contains("["),
+              !text.contains("]") else { return }
+        
+        textField.text = "[ \(text) ]"
+    }
 }
 
 // MARK: - Implementation
@@ -143,10 +164,12 @@ extension AddCardSceneViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         setAddBarButtonEnabled()
+        stripTranscriptionBrackets(textField)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         setAddBarButtonEnabled()
+        addTranscriptionBrackets(textField)
         
         guard let text = textField.text, text.trimmingCharacters(in: .whitespaces) != "" else { return }
         
