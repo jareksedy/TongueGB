@@ -9,7 +9,6 @@ import UIKit
 
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
-    func addCardTapped()
     func addCard(word: String, translation: String, transcription: String, category: String)
 }
 
@@ -93,8 +92,6 @@ class MainSceneViewController: UIViewController {
 
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
-    func addCardTapped() {}
-    
     func addCard(word: String, translation: String, transcription: String, category: String) {
         
         let cardView = CardView()
