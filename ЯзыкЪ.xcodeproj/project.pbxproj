@@ -68,6 +68,7 @@
 		CA97ED1E28356B9B006BD7C7 /* ProfileScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1C28356B9B006BD7C7 /* ProfileScene.storyboard */; };
 		CAA118F7282F60CF0056013D /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F6282F60CF0056013D /* CGFloat.swift */; };
 		CAA118FA2830295E0056013D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA118F92830295E0056013D /* UIView.swift */; };
+		CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */ = {isa = PBXBuildFile; productRef = CAA5B77D2839FFB400EC00D5 /* Foil */; };
 		CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E3282BD4E900BC975E /* FirebaseAuth */; };
 		CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E5282BD4E900BC975E /* FirebaseAuthCombine-Community */; };
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
@@ -152,6 +153,7 @@
 				CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */,
 				CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */,
 				CAA663EA282BD4E900BC975E /* FirebaseDatabaseSwift-Beta in Frameworks */,
+				CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */,
 				CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +453,7 @@
 				CAA663E7282BD4E900BC975E /* FirebaseDatabase */,
 				CAA663E9282BD4E900BC975E /* FirebaseDatabaseSwift-Beta */,
 				CA1848F12838CDB900E66F2B /* Alamofire */,
+				CAA5B77D2839FFB400EC00D5 /* Foil */,
 			);
 			productName = "ЯзыкЪ";
 			productReference = CA8B60852818D78300D7769B /* ЯзыкЪ.app */;
@@ -483,6 +486,7 @@
 			packageReferences = (
 				CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */,
 			);
 			productRefGroup = CA8B60862818D78300D7769B /* Products */;
 			projectDirPath = "";
@@ -835,6 +839,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jessesquires/Foil.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -850,6 +862,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		CAA5B77D2839FFB400EC00D5 /* Foil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */;
+			productName = Foil;
 		};
 		CAA663E3282BD4E900BC975E /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
