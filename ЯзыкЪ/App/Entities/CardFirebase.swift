@@ -49,7 +49,7 @@ class CardFirebase {
             "translation": translation as Any,
             "description": description as Any,
             "category": category as Any,
-            "user_email": userEmail.replacingOccurrences(of: "[@.]", with: "_") as Any
+            "user_email": userEmail.modifyEmailAddress() as Any
         ] as [String: Any]
     }
 }
