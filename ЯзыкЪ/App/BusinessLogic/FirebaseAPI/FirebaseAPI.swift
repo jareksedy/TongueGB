@@ -17,9 +17,9 @@ class FirebaseAPI: Firebasable {
     let controller: UIViewController
     let authService = Auth.auth()
     let databaseService = Database.database()
-    var token: AuthStateDidChangeListenerHandle? = nil
+    var firebaseUser: FirebaseAuth.User?
     
-    init(controller: UIViewController) {
+    init(_ controller: UIViewController) {
         self.controller = controller
     }
     
@@ -31,10 +31,26 @@ class FirebaseAPI: Firebasable {
         self.controller.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - Service funcs
-    func addListener() {
+    private func signInUser(_ user: User) {
+        authService.signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
+            guard error == nil else {
+                self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                return
+            }
+        }
+        firebaseUser = authService.currentUser
+    }
+    
+    //MARK: - State func
+    func authState() {
         authService.addStateDidChangeListener { auth, user in
-            guard user != nil else { return }
+            guard user != nil else {
+               // print("No user after state check")
+                return
+            }
+            print("Have user: \(String(describing: user?.email))")
+            self.firebaseUser = user
+           // print("FirebaseUser: \(String(describing: self.firebaseUser))")
         }
     }
     
@@ -53,18 +69,17 @@ class FirebaseAPI: Firebasable {
                     self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                     return
                 }
-                //TODO: Навигация на следующий экран + добавление listener
             }
         }
     }
     
     func authUser(_ user: User) {
-        authService.signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
-            guard error == nil else {
-                self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
-                return
-            }
-            //TODO: Навигация на следующий экран + добавление listener
+        authState()
+        print("SignedIn User: \(String(describing: authService.currentUser))")
+        if authService.currentUser == nil {
+            createUser(user)
+        } else {
+            signInUser(user)
         }
     }
     
@@ -86,15 +101,30 @@ class FirebaseAPI: Firebasable {
     //MARK: -- Fetch funcs
     
     func fetchUserByEmail(_ userEmail: String) -> User? {
-        //TODO: Need code
-        
-        return nil //TODO: Correct return
+        guard authService.currentUser != nil, authService.currentUser?.email != nil else { return nil}
+        let user = User(userEmail: (authService.currentUser?.email!)!, userId: authService.currentUser!.uid)
+        guard userEmail.lowercased() == user.userEmail else { return nil}
+        return user
     }
     
     func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
-        let fetchedCard: Card? = nil
-       //TODO: Need code
         print("Function Fetch Word Card Started Successfully")
+        var fetchedCard: Card? = nil
+        
+        //TODO: Need code
+        let ref = databaseService.reference().child("\(userEmail.modifyEmailAddress())/cards/\(keyWord)")
+        print(ref)
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let firebaseCard = CardFirebase(snapshot: snapshot) else { return }
+            print("FIREBASE CARD: \(firebaseCard)")
+            fetchedCard = Card(word: firebaseCard.word, translation: firebaseCard.translation, description: firebaseCard.description, category: CardsCategory(categoryKey: firebaseCard.category, categoryColor: nil, categoryImage: nil, userEmail: firebaseCard.userEmail), userEmail: firebaseCard.userEmail)
+        }
+        
+        print("FUNC FETCHED CARD: \(String(describing: fetchedCard))")
         return fetchedCard
     }
     

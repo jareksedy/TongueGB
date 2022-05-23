@@ -9,6 +9,10 @@ import Foundation
 
 protocol Firebasable {
     
+    //MARK: - State func
+    
+    func authState()
+    
     //MARK: - UserData funcs
     
     func createUser(_ user: User)

@@ -70,5 +70,22 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         present(mainTabBarController, animated: true)
+        
+        //MARK: -- Testing API
+        let api = FirebaseAPI(self)
+        api.authState()
+        //api.authUser(User(userEmail: "testTen@test.com", userId: "12345678"))
+        //api.createUser(User(userEmail: "testTwo@testTwo.vn", userId: 12345678))
+        //api.storeWordCard(Card(word: "Test", translation: "Тест", description: "Модель теста 4", category: CardsCategory(categoryKey: "Category Four", categoryColor: nil, categoryImage: nil, userEmail: "testten@test.com"), userEmail: "testten@test.com"))
+        //api.storeCategory(CardsCategory(categoryKey: "Category Five", categoryColor: nil, categoryImage: nil, userEmail: "testten@test.com"))
+        //api.authUser(User(userEmail: "test@test.ru", userId: 123456))
+       // api.fetchUserByEmail("test@test.ru")
+       // api.fetchWordCard("Test", "test@test.ru")
+        print ("User by EMAIL: \(String(describing: api.fetchUserByEmail("testTen@test.com")))")
+        var card: Card?
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            card = api.fetchWordCard("Test", "testten@test.com")
+            print("FETCHED CARD: \(String(describing: card))")
+        }
     }
 }

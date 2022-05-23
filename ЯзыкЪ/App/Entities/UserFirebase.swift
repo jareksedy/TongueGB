@@ -10,10 +10,10 @@ import Firebase
 
 class UserFirebase {
     let userEmail: String
-    let userId: Int
+    let userId: String
     let ref: DatabaseReference?
     
-    init(userEmail: String, userId: Int) {
+    init(userEmail: String, userId: String) {
         self.userEmail = userEmail
         self.userId = userId
         self.ref = nil
@@ -22,7 +22,7 @@ class UserFirebase {
     init?(snapshot: DataSnapshot) {
         guard let value = snapshot.value as? [String: Any],
               let email = value["user_email"] as? String,
-              let id = value["user_id"] as? Int else {
+              let id = value["user_id"] as? String else {
             return nil
         }
         

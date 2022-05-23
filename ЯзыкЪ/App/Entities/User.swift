@@ -9,5 +9,5 @@ import Foundation
 
 struct User {
     let userEmail: String
-    let userId: Int
+    let userId: String
 }

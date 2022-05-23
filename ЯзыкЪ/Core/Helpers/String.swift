@@ -13,6 +13,6 @@ extension String {
     }
     
     public func modifyEmailAddress() -> String {
-        return self.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil)
+        return self.replacingOccurrences(of: "[@.]", with: "_", options: .regularExpression, range: nil).lowercased()
     }
 }
