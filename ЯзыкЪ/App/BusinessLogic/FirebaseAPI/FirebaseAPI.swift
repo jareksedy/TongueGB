@@ -112,7 +112,8 @@ class FirebaseAPI: Firebasable {
         }
     }
     
-    func fetchWordCardsByCategory(_ category: CategoryFirebase, completion: @escaping ([CardFirebase]?) -> Void) {
+    func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) {
+        var cards: [CardFirebase] = []
         guard let currentUserEmail = authService.currentUser?.email else { return }
         let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards")
         ref.getData { error, snapshot in
@@ -120,10 +121,18 @@ class FirebaseAPI: Firebasable {
                 print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
-            guard let value = snapshot.value else { return }
-            
+            for child in snapshot.children {
+                guard let childSnapshot = child as? DataSnapshot, let card = CardFirebase(snapshot: childSnapshot) else { return }
+                if card.category == category {
+                    cards.append(card)
+                }
+            }
+            if cards.isEmpty {
+                completion(nil)
+            } else {
+                completion(cards)
+            }
         }
-        
     }
     
     func fetchCategory(_ category: String, completion: @escaping (CategoryFirebase?) -> Void ) {
@@ -144,7 +153,24 @@ class FirebaseAPI: Firebasable {
         
     }
     
-    func fetchCategoryList(_ userEmail: String, completion: @escaping([CategoryFirebase]?) -> Void) {
-        
+    func fetchCategoryList(completion: @escaping([CategoryFirebase]?) -> Void) {
+        var categories: [CategoryFirebase] = []
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("categories")
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            for child in snapshot.children {
+                guard let childSnapshot = child as? DataSnapshot, let category = CategoryFirebase(snapshot: childSnapshot) else { return}
+                categories.append(category)
+            }
+            if categories.isEmpty {
+                completion(nil)
+            } else {
+                completion(categories)
+            }
+        }
     }
 }
