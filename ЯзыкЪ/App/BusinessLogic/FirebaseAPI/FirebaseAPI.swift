@@ -75,57 +75,41 @@ class FirebaseAPI: Firebasable {
     //MARK: -- Store Funcs
     
     func storeWordCard(_ card: CardFirebase) {
-        authService.addStateDidChangeListener { [weak self] _, user in
-            guard let self = self, let userEmail = user?.email, card.userEmail == userEmail else { return }
-            let ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(card.word)
-            let value = card.toAnyObject()
-            ref.setValue(value)
-            self.storeCategory(CategoryFirebase(categoryName: card.category.categoryName))
-        }
+        guard let signedUserEmail = authService.currentUser?.email, signedUserEmail == card.userEmail else { return }
+        let ref = self.databaseService.reference(withPath: signedUserEmail.modifyEmailAddress()).child("cards").child(card.word)
+        let value = card.toAnyObject()
+        ref.setValue(value)
+        self.storeCategory(CategoryFirebase(categoryName: card.category))
         
     }
     
     func storeCategory(_ category: CategoryFirebase) {
-        authService.addStateDidChangeListener { [weak self] _, user in
-            guard let self = self, let userEmail = user?.email else { return }
-            let ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("categories").child(category.categoryName)
-            let value = category.toAnyObject()
-            ref.setValue(value)
-        }
+        guard let signedUserEmail = authService.currentUser?.email else { return }
+        let ref = self.databaseService.reference(withPath: signedUserEmail.modifyEmailAddress()).child("categories").child(category.categoryName)
+        let value = category.toAnyObject()
+        ref.setValue(value)
+        
     }
     
     //MARK: -- Fetch funcs
     
     func fetchWordCard(_ keyWord: String) -> CardFirebase? {
-        var ref = DatabaseReference()
-        var dataSnapshot = DataSnapshot()
-        authService.addStateDidChangeListener { [weak self] _, user in
-            guard let self = self, let userEmail = user?.email else { return }
-            ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(keyWord)
-        }
-        ref.getData { error, snapshot in
-                guard error == nil else {
-                    print("Error: \(String(describing: error?.localizedDescription))")
-                    return
-                }
-                dataSnapshot = snapshot
-        }
-        let fetchedCard = CardFirebase(snapshot: dataSnapshot)
-        return fetchedCard
+       
+        return nil
     }
     
     func fetchWordCardsByCategory(_ category: CategoryFirebase) -> [CardFirebase]? {
         
         return nil
     }
-
+    
     func fetchCategory(_ category: String) -> CategoryFirebase? {
         
         return nil
     }
     
     func fetchCategoryList(_ userEmail: String) -> [CategoryFirebase]? {
-       
+        
         return nil
     }
 }

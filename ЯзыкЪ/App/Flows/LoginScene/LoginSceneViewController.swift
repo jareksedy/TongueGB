@@ -80,7 +80,9 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let api = FirebaseAPI(controller: self)
         api.authUser(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
         api.storeCategory(CategoryFirebase(categoryName: "Самолеты"))
-        api.storeWordCard(CardFirebase(word: "Airplane", translation: "Самолет", description: "Летательный аппарат", category: CategoryFirebase(categoryName: "Самолеты"), userEmail: "test@test.ru"))
+        //api.storeWordCard(CardFirebase(word: "Airplane", translation: "Самолет", description: "Летательный аппарат", category: "Самолеты", userEmail: "test@test.ru"))
+        print(api.fetchWordCard("Airplane") as Any)
+        
     }
     
 }

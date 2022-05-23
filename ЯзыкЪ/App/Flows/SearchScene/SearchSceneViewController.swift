@@ -69,7 +69,7 @@ extension SearchSceneViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category.categoryName == category.categoryName }.count
+        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category == category.categoryName }.count
         cell.configure(category: category, cardsInCategory: cardsInCategory)
         
         // Set custom selection color

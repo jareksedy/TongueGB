@@ -20,7 +20,7 @@ class CategoryFirebase {
     init?(snapshot: DataSnapshot) {
         guard
             let value = snapshot.value as? [String: Any],
-            let categoryName = value["category"] as? String
+            let categoryName = value["category_name"] as? String
         else {
             return nil
         }
@@ -30,7 +30,7 @@ class CategoryFirebase {
     
     func toAnyObject() -> [String: Any] {
         return [
-            "category": categoryName as Any
+            "category_name": categoryName as Any
         ] as [String: Any]
     }
 }

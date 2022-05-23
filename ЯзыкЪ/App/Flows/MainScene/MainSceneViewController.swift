@@ -61,7 +61,7 @@ class MainSceneViewController: UIViewController {
                 cardView.word = card.word
                 cardView.translation = card.translation
                 cardView.transcription = card.description
-                cardView.category = card.category.categoryName
+                cardView.category = card.category
                 cardsStackView.addArrangedSubview(cardView)
             }
         } else {

@@ -12,11 +12,11 @@ class CardFirebase {
     let word: String
     let translation: String
     let description: String?
-    let category: CategoryFirebase
+    let category: String
     let userEmail: String
     let ref: DatabaseReference?
     
-    init(word: String, translation: String, description: String?, category: CategoryFirebase, userEmail: String) {
+    init(word: String, translation: String, description: String?, category: String, userEmail: String) {
         self.word = word
         self.translation = translation
         self.description = description
@@ -38,7 +38,7 @@ class CardFirebase {
         self.word = word
         self.translation = translation
         self.description = description
-        self.category = CategoryFirebase(categoryName: category)
+        self.category = category
         self.userEmail = userEmail
         self.ref = snapshot.ref
     }
