@@ -13,6 +13,8 @@ import UIKit
 
 class FirebaseAPI: Firebasable {
     
+    
+    
     //MARK: - Properties
     let controller: UIViewController
     let authService = Auth.auth()
@@ -48,6 +50,8 @@ class FirebaseAPI: Firebasable {
             }
         }
     }
+    
+    
     
     //MARK: - Protocol funcs
     //MARK: --  UserData funcs
@@ -93,23 +97,54 @@ class FirebaseAPI: Firebasable {
     
     //MARK: -- Fetch funcs
     
-    func fetchWordCard(_ keyWord: String) -> CardFirebase? {
-       
-        return nil
+    func fetchWordCard(_ keyWord: String, completion: @escaping (CardFirebase?) -> Void) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards").child(keyWord)
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return }
+            let card = CardFirebase(snapshot: snapshot)
+            if card == nil {
+                completion(nil)
+            } else {
+                completion(card)}
+        }
     }
     
-    func fetchWordCardsByCategory(_ category: CategoryFirebase) -> [CardFirebase]? {
+    func fetchWordCardsByCategory(_ category: CategoryFirebase, completion: @escaping ([CardFirebase]?) -> Void) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards")
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            guard let value = snapshot.value else { return }
+            
+        }
         
-        return nil
     }
     
-    func fetchCategory(_ category: String) -> CategoryFirebase? {
+    func fetchCategory(_ category: String, completion: @escaping (CategoryFirebase?) -> Void ) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("categories").child(category)
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            let category = CategoryFirebase(snapshot: snapshot)
+            if category == nil {
+                completion(nil)
+            } else {
+                completion(category)
+            }
+        }
         
-        return nil
     }
     
-    func fetchCategoryList(_ userEmail: String) -> [CategoryFirebase]? {
+    func fetchCategoryList(_ userEmail: String, completion: @escaping([CategoryFirebase]?) -> Void) {
         
-        return nil
     }
 }
