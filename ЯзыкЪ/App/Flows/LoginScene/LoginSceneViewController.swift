@@ -48,6 +48,9 @@ class LoginSceneViewController: UIViewController {
     // MARK: - Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         proceedToMainScene()
+        
+        //MARK: -  Test API
+        testAPI()
     }
     
     // MARK: - Private methods
@@ -71,4 +74,13 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         present(mainTabBarController, animated: true)
     }
+    
+    
+    func testAPI() {
+        let api = FirebaseAPI(controller: self)
+        api.authUser(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
+        api.storeCategory(CategoryFirebase(categoryName: "Самолеты"))
+        api.storeWordCard(CardFirebase(word: "Airplane", translation: "Самолет", description: "Летательный аппарат", category: CategoryFirebase(categoryName: "Самолеты"), userEmail: "test@test.ru"))
+    }
+    
 }

@@ -26,8 +26,8 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configuration
-    func configure(category: CardsCategory?, cardsInCategory: Int) {
-        categoryTitleLabel.text = category?.categoryKey
+    func configure(category: CategoryFirebase?, cardsInCategory: Int) {
+        categoryTitleLabel.text = category?.categoryName
         cardsInCategoryLabel.text = "\(cardsInCategory)"
     }
 }

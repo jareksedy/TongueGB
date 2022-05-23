@@ -10,21 +10,21 @@ import Foundation
 protocol Firebasable {
     
     //MARK: - UserData funcs
+    func authUser(_ user: UserFirebase)
+    func fetchUser(_ userEmail: String) -> UserFirebase?
     
-    func createUser(_ user: User)
-    func authUser(_ user: User)
-    func fetchUserByEmail(_ userEmail: String) -> User?
+    //MARK: - Store Funcs
+    //MARK: -- Store word card
+    func storeWordCard(_ card: CardFirebase)
+    //MARK: -- Store category
+    func storeCategory(_ category: CategoryFirebase)
     
-    //MARK: - WordCards funcs
-    
-    func storeWordCard(_ card: Card)
-    func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card?
-    func fetchWordCardsByCategory(_ category: CardsCategory, _ userEmail: String) -> [Card]?
-    
-    //MARK: - CategoryLists funcs
-    
-    func storeCategory(_ category: CardsCategory)
-    func fetchCategory(_ categoryKey: String, _ userEmail: String) -> CardsCategory?
-    func fetchCategoryList(_ userEmail: String) -> [CardsCategory]?
+    //MARK: - Fetch Funcs
+    //MARK: -- Fetch word cards
+    func fetchWordCard(_ keyWord: String) -> CardFirebase?
+    func fetchWordCardsByCategory(_ category: CategoryFirebase) -> [CardFirebase]?
+    //MARK: -- Fetch category
+    func fetchCategory(_ category: String) -> CategoryFirebase?
+    func fetchCategoryList(_ userEmail: String) -> [CategoryFirebase]?
 }
 

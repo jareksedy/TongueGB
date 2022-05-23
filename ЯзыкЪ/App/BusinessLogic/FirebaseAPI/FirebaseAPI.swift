@@ -17,7 +17,7 @@ class FirebaseAPI: Firebasable {
     let controller: UIViewController
     let authService = Auth.auth()
     let databaseService = Database.database()
-    var token: AuthStateDidChangeListenerHandle? = nil
+    var state: AuthStateDidChangeListenerHandle?
     
     init(controller: UIViewController) {
         self.controller = controller
@@ -31,107 +31,101 @@ class FirebaseAPI: Firebasable {
         self.controller.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: - Service funcs
-    func addListener() {
-        authService.addStateDidChangeListener { auth, user in
-            guard user != nil else { return }
-        }
-    }
-    
-    //MARK: - Protocol funcs
-    func createUser(_ user: User) {
-        authService.createUser(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
+    private func createUser(_ user: UserFirebase) {
+        authService.createUser(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
             guard error == nil else {
                 self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                 return
             }
-            self?.authService.signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
-                guard error == nil else {
-                    self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
-                    return
-                }
-                //TODO: Навигация на следующий экран + добавление listener
-            }
         }
     }
     
-    func authUser(_ user: User) {
-        authService.signIn(withEmail: user.userEmail, password: String(user.userId)) { [weak self] _, error in
+    private func signInUser(_ user: UserFirebase) {
+        authService.signIn(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
             guard error == nil else {
                 self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
                 return
             }
-            //TODO: Навигация на следующий экран + добавление listener
         }
     }
     
-    func fetchUserByEmail(_ userEmail: String) -> User? {
-        //TODO: Need code
+    //MARK: - Protocol funcs
+    //MARK: --  UserData funcs
+    func authUser(_ user: UserFirebase) {
         
-        return nil //TODO: Correct return
+        guard authService.currentUser != nil else {
+            createUser(user)
+            return }
+        if user.userEmail.lowercased() == authService.currentUser?.email {
+            signInUser(user)
+        } else {
+            createUser(user)
+        }
     }
     
-    func storeWordCard(_ card: Card) {
-        let cardModel = CardFirebase(word: card.word, translation: card.translation, description: card.description, category: card.category.categoryKey, userEmail: card.userEmail)
-        let cardRef = databaseService.reference(withPath: cardModel.userEmail.modifyEmailAddress()).child("cards").child(cardModel.word)
-        let value = cardModel.toAnyObject()
-        cardRef.setValue(value)
-        storeCategory(CardsCategory(categoryKey: card.category.categoryKey, categoryColor: card.category.categoryColor, categoryImage: card.category.categoryImage, userEmail: card.category.userEmail))
+    func fetchUser(_ userEmail: String) -> UserFirebase? {
+        guard let firebaseUser = authService.currentUser else { return nil}
+        if userEmail == firebaseUser.email {
+            return UserFirebase(userEmail: firebaseUser.email!, userId: firebaseUser.uid)
+        } else {
+            return nil
+        }
     }
     
-    func fetchWordCard(_ keyWord: String, _ userEmail: String) -> Card? {
-        let ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(keyWord)
-        //print(ref)
-        var fetchedCard: Card?
-           ref.observe(.value) { dataSnapshot in
-                //print(dataSnapshot)
-                guard let cardFirebase = CardFirebase(snapshot: dataSnapshot) else { return }
-                fetchedCard = Card(word: cardFirebase.word, translation: cardFirebase.translation, description: cardFirebase.description, category: CardsCategory(categoryKey: cardFirebase.category, categoryColor: nil, categoryImage: nil, userEmail: cardFirebase.userEmail), userEmail: cardFirebase.userEmail)
-            }
+    //MARK: -- Store Funcs
+    
+    func storeWordCard(_ card: CardFirebase) {
+        authService.addStateDidChangeListener { [weak self] _, user in
+            guard let self = self, let userEmail = user?.email, card.userEmail == userEmail else { return }
+            let ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(card.word)
+            let value = card.toAnyObject()
+            ref.setValue(value)
+            self.storeCategory(CategoryFirebase(categoryName: card.category.categoryName))
+        }
+        
+    }
+    
+    func storeCategory(_ category: CategoryFirebase) {
+        authService.addStateDidChangeListener { [weak self] _, user in
+            guard let self = self, let userEmail = user?.email else { return }
+            let ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("categories").child(category.categoryName)
+            let value = category.toAnyObject()
+            ref.setValue(value)
+        }
+    }
+    
+    //MARK: -- Fetch funcs
+    
+    func fetchWordCard(_ keyWord: String) -> CardFirebase? {
+        var ref = DatabaseReference()
+        var dataSnapshot = DataSnapshot()
+        authService.addStateDidChangeListener { [weak self] _, user in
+            guard let self = self, let userEmail = user?.email else { return }
+            ref = self.databaseService.reference(withPath: userEmail.modifyEmailAddress()).child("cards").child(keyWord)
+        }
+        ref.getData { error, snapshot in
+                guard error == nil else {
+                    print("Error: \(String(describing: error?.localizedDescription))")
+                    return
+                }
+                dataSnapshot = snapshot
+        }
+        let fetchedCard = CardFirebase(snapshot: dataSnapshot)
         return fetchedCard
     }
     
-    func fetchWordCardsByCategory(_ category: CardsCategory, _ userEmail: String) -> [Card]? {
-        //TODO: Need code. Через for в массиве карточек)))
-        return nil //TODO: Correct return
+    func fetchWordCardsByCategory(_ category: CategoryFirebase) -> [CardFirebase]? {
+        
+        return nil
+    }
+
+    func fetchCategory(_ category: String) -> CategoryFirebase? {
+        
+        return nil
     }
     
-    func storeCategory(_ category: CardsCategory) {
-        let categoryModel = CardsCategoryFirebase(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage, userEmail: category.userEmail)
-        let categoryRef = databaseService.reference(withPath: categoryModel.userEmail.modifyEmailAddress()).child("categories").child(category.categoryKey)
-        let value = categoryModel.toAnyObject()
-        categoryRef.setValue(value)
-    }
-    
-    func fetchCategory(_ categoryKey: String, _ userEmail: String) -> CardsCategory? {
-        let categoryRef = Database.database().reference(withPath: userEmail.modifyEmailAddress()).child("categories").child(categoryKey)
-        var category: CardsCategory? = nil
-        categoryRef.getData { error, dataSnapshot in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-            guard let categoryFirebase = CardsCategoryFirebase(snapshot: dataSnapshot) else { return }
-            category = CardsCategory(categoryKey: categoryFirebase.categoryKey, categoryColor: categoryFirebase.categoryColor, categoryImage: categoryFirebase.categoryImage, userEmail: categoryFirebase.userEmail)
-        }
-        return category
-    }
-    
-    func fetchCategoryList(_ userEmail: String) -> [CardsCategory]? {
-        let categoriesRef = Database.database().reference(withPath: userEmail.modifyEmailAddress()).child("categories")
-        var categories: [CardsCategory]? = nil
-        categoriesRef.getData { error, dataSnapshot in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-            //TODO: Переделать метод. Он неправильный. Надо через for по всему массиву.
-            guard let categoriesFirebase = dataSnapshot.value as? [CardsCategoryFirebase] else { return }
-            for category in categoriesFirebase {
-                let cardCategory = CardsCategory(categoryKey: category.categoryKey, categoryColor: category.categoryColor, categoryImage: category.categoryImage, userEmail: category.userEmail)
-                categories?.append(cardCategory)
-            }
-        }
-        return categories
+    func fetchCategoryList(_ userEmail: String) -> [CategoryFirebase]? {
+       
+        return nil
     }
 }

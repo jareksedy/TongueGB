@@ -8,17 +8,17 @@
 import Foundation
 
 class MockCategoriesProvider {
-    func createMockCategories() -> [CardsCategory] {
+    func createMockCategories() -> [CategoryFirebase] {
         return [
-            CardsCategory(categoryKey: "Растения", categoryColor: nil, categoryImage: nil, userEmail: ""),
-            CardsCategory(categoryKey: "Животные", categoryColor: nil, categoryImage: nil, userEmail: ""),
-            CardsCategory(categoryKey: "Путешествия", categoryColor: nil, categoryImage: nil, userEmail: ""),
-            CardsCategory(categoryKey: "Еда", categoryColor: nil, categoryImage: nil, userEmail: ""),
-            CardsCategory(categoryKey: "Разное", categoryColor: nil, categoryImage: nil, userEmail: "")
-//            CardsCategory(categoryKey: "Работа", categoryColor: nil, categoryImage: nil),
-//            CardsCategory(categoryKey: "Офис", categoryColor: nil, categoryImage: nil),
-//            CardsCategory(categoryKey: "Финансы", categoryColor: nil, categoryImage: nil),
-//            CardsCategory(categoryKey: "Компьютеры", categoryColor: nil, categoryImage: nil),
+            CategoryFirebase(categoryName: "Растения"),
+            CategoryFirebase(categoryName: "Животные"),
+            CategoryFirebase(categoryName: "Путешествия"),
+            CategoryFirebase(categoryName: "Еда"),
+            CategoryFirebase(categoryName: "Разное")
+//            CategoryFirebase(categoryName: "Работа"),
+//            CategoryFirebase(categoryName: "Офис"),
+//            CategoryFirebase(categoryName: "Финансы"),
+//            CategoryFirebase(categoryName: "Компьютеры"),
         ]
     }
 }

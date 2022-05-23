@@ -29,7 +29,7 @@ class MainSceneViewController: UIViewController {
     let mockCardsProvider = MockCardsProvider()
     
     // MARK: - Properties
-    var cards: [Card]?
+    var cards: [CardFirebase]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -61,7 +61,7 @@ class MainSceneViewController: UIViewController {
                 cardView.word = card.word
                 cardView.translation = card.translation
                 cardView.transcription = card.description
-                cardView.category = card.category.categoryKey
+                cardView.category = card.category.categoryName
                 cardsStackView.addArrangedSubview(cardView)
             }
         } else {

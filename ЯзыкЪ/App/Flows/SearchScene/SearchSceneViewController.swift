@@ -24,7 +24,7 @@ class SearchSceneViewController: UIViewController {
     let mockCategoriesProvider = MockCategoriesProvider()
     
     // MARK: - Properties
-    var categories: [CardsCategory]?
+    var categories: [CategoryFirebase]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -69,7 +69,7 @@ extension SearchSceneViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category.categoryKey == category.categoryKey }.count
+        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category.categoryName == category.categoryName }.count
         cell.configure(category: category, cardsInCategory: cardsInCategory)
         
         // Set custom selection color
@@ -90,7 +90,7 @@ extension SearchSceneViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = categories?[indexPath.row] else { return }
         categoriesTableView.deselectRow(at: indexPath, animated: true)
-        proceedToSearchResult(with: category.categoryKey)
+        proceedToSearchResult(with: category.categoryName)
     }
 }
 

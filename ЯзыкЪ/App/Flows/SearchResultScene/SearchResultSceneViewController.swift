@@ -29,7 +29,7 @@ class SearchResultSceneViewController: UIViewController {
     
     // MARK: - Properties
     var categoryKey: String?
-    var cards: [Card]?
+    var cards: [CardFirebase]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class SearchResultSceneViewController: UIViewController {
                 cardView.word = card.word
                 cardView.translation = card.translation
                 cardView.transcription = card.description
-                cardView.category = card.category.categoryKey
+                cardView.category = card.category.categoryName
                 cardsStackView.addArrangedSubview(cardView)
             }
         }
@@ -94,7 +94,7 @@ class SearchResultSceneViewController: UIViewController {
     
     private func fetchCards() {
         if let categoryKey = categoryKey {
-            cards = mockCardsProvider.createMockCards().filter { $0.category.categoryKey == categoryKey }
+            cards = mockCardsProvider.createMockCards().filter { $0.category.categoryName == categoryKey }
         } else {
             cards = mockCardsProvider.createMockCards()
         }

@@ -12,11 +12,11 @@ class CardFirebase {
     let word: String
     let translation: String
     let description: String?
-    let category: String
+    let category: CategoryFirebase
     let userEmail: String
     let ref: DatabaseReference?
     
-    init(word: String, translation: String, description: String?, category: String, userEmail: String) {
+    init(word: String, translation: String, description: String?, category: CategoryFirebase, userEmail: String) {
         self.word = word
         self.translation = translation
         self.description = description
@@ -38,7 +38,7 @@ class CardFirebase {
         self.word = word
         self.translation = translation
         self.description = description
-        self.category = category
+        self.category = CategoryFirebase(categoryName: category)
         self.userEmail = userEmail
         self.ref = snapshot.ref
     }
@@ -49,7 +49,7 @@ class CardFirebase {
             "translation": translation as Any,
             "description": description as Any,
             "category": category as Any,
-            "user_email": userEmail.replacingOccurrences(of: "[@.]", with: "_") as Any
+            "user_email": userEmail.modifyEmailAddress() as Any
         ] as [String: Any]
     }
 }

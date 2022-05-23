@@ -22,7 +22,7 @@ class AddCardSceneViewController: UIViewController {
     let requestFactory = RequestFactory()
     
     // MARK: - Properties
-    let categorySuggestions = MockCategoriesProvider().createMockCategories().map { $0.categoryKey }
+    let categorySuggestions = MockCategoriesProvider().createMockCategories().map { $0.categoryName }
     
     // MARK: - Outlets
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
