@@ -77,7 +77,7 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
     
     
     func testAPI() {
-        let api = FirebaseAPI(controller: self)
+        let api = FirebaseAPI()
         api.authUser(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
     }
 }

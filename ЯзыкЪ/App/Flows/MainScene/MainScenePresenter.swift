@@ -15,14 +15,14 @@ final class MainScenePresenter {
     
     // MARK: - Public methods
     func storeAddedWordCardToFirebase(_ controller: UIViewController, word: String, translation: String, transcription: String, category: String) {
-        let api = FirebaseAPI(controller: controller)
+        let api = FirebaseAPI()
         guard let userEmail = api.authService.currentUser?.email else { return }
         let card = CardFirebase(word: word, translation: translation, transcription: transcription, category: category, userEmail: userEmail)
         api.storeWordCard(card)
     }
     
     func fetchCardsFromFirebase(_ controller: UIViewController, completion: @escaping ([CardFirebase]?) -> Void) {
-        let api = FirebaseAPI(controller: controller)
+        let api = FirebaseAPI()
         var cards: [CardFirebase] = []
         api.fetchWordCardsArray { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }

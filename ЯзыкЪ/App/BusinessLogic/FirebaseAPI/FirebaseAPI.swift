@@ -16,36 +16,25 @@ class FirebaseAPI: Firebasable {
     
     
     //MARK: - Properties
-    let controller: UIViewController
     let authService = Auth.auth()
     let databaseService = Database.database()
     var state: AuthStateDidChangeListenerHandle?
     
-    init(controller: UIViewController) {
-        self.controller = controller
-    }
-    
     //MARK: - Private funcs
-    private func showAlert(_ title: String, _ message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Хорошо", style: .cancel, handler: nil)
-        alert.addAction(okAction)
-        self.controller.present(alert, animated: true, completion: nil)
-    }
     
     private func createUser(_ user: UserFirebase) {
-        authService.createUser(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
+        authService.createUser(withEmail: user.userEmail, password: user.userId) { _, error in
             guard error == nil else {
-                self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
         }
     }
     
     private func signInUser(_ user: UserFirebase) {
-        authService.signIn(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
+        authService.signIn(withEmail: user.userEmail, password: user.userId) { _, error in
             guard error == nil else {
-                self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
+                print("Error: \(String(describing: error?.localizedDescription))")
                 return
             }
         }
