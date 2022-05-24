@@ -13,68 +13,28 @@ import UIKit
 
 class FirebaseAPI: Firebasable {
     
-    
-    
     //MARK: - Properties
-    let controller: UIViewController
     let authService = Auth.auth()
     let databaseService = Database.database()
     var state: AuthStateDidChangeListenerHandle?
     
-    init(controller: UIViewController) {
-        self.controller = controller
-    }
-    
     //MARK: - Private funcs
-    private func showAlert(_ title: String, _ message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Хорошо", style: .cancel, handler: nil)
-        alert.addAction(okAction)
-        self.controller.present(alert, animated: true, completion: nil)
-    }
-    
-    private func createUser(_ user: UserFirebase) {
-        authService.createUser(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
-            guard error == nil else {
-                self?.showAlert("Ошибка регистрации", "Ошибка записи нового пользователя в базу данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
-                return
-            }
-        }
-    }
-    
-    private func signInUser(_ user: UserFirebase) {
-        authService.signIn(withEmail: user.userEmail, password: user.userId) { [weak self] _, error in
-            guard error == nil else {
-                self?.showAlert("Ошибка авторизации", "Ошибка авторизации пользователя в базе данных: \(error?.localizedDescription ?? "неизвестная ошибка")")
-                return
-            }
-        }
-    }
     
     
+    
+   
     
     //MARK: - Protocol funcs
     //MARK: --  UserData funcs
-    func authUser(_ user: UserFirebase) {
-        
-        guard authService.currentUser != nil else {
-            createUser(user)
-            return }
-        if user.userEmail.lowercased() == authService.currentUser?.email {
-            signInUser(user)
-        } else {
-            createUser(user)
-        }
-    }
-    
-    func fetchUser(_ userEmail: String) -> UserFirebase? {
-        guard let firebaseUser = authService.currentUser else { return nil}
-        if userEmail == firebaseUser.email {
-            return UserFirebase(userEmail: firebaseUser.email!, userId: firebaseUser.uid)
-        } else {
-            return nil
-        }
-    }
+    func signInUser(_ user: UserFirebase, completion: @escaping () -> Void ) {
+         authService.signIn(withEmail: user.userEmail, password: user.userId) { auth, error in
+             guard error == nil else {
+                 print("Error: \(String(describing: error?.localizedDescription))")
+                 return
+             }
+             completion()
+         }
+     }
     
     //MARK: -- Store Funcs
     
@@ -128,7 +88,7 @@ class FirebaseAPI: Firebasable {
             if cards.isEmpty {
                 completion(nil)
             } else {
-                completion(cards)
+                completion(cards.reversed())
             }
         }
     }

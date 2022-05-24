@@ -15,7 +15,7 @@ protocol LoginSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class LoginSceneViewController: UIViewController {
-    lazy var presenter = LoginScenePresenter()
+    lazy var presenter = LoginScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var transcriptionLabel: UILabel!
@@ -26,6 +26,7 @@ class LoginSceneViewController: UIViewController {
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
     var randomGreeting: Greeting!
@@ -47,10 +48,7 @@ class LoginSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
-        proceedToMainScene()
-        
-        //MARK: -  Test API
-        testAPI()
+        presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
     }
     
     // MARK: - Private methods
@@ -73,11 +71,5 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         present(mainTabBarController, animated: true)
-    }
-    
-    
-    func testAPI() {
-        let api = FirebaseAPI(controller: self)
-        api.authUser(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
     }
 }

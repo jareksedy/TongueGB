@@ -10,8 +10,7 @@ import Foundation
 protocol Firebasable {
     
     //MARK: - UserData funcs
-    func authUser(_ user: UserFirebase)
-    func fetchUser(_ userEmail: String) -> UserFirebase?
+    func signInUser(_ user: UserFirebase, completion: @escaping () -> Void )
     
     //MARK: - Store Funcs
     //MARK: -- Store word card
