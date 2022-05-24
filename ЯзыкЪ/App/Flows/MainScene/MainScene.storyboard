@@ -46,20 +46,27 @@
                                     <constraint firstItem="Cl7-ye-0GF" firstAttribute="leading" secondItem="HCE-0F-mOX" secondAttribute="leading" id="oU9-Cj-ahJ"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yeP-0E-qYA">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" systemColor="systemFillColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HNG-fg-Qye"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="HCE-0F-mOX" firstAttribute="top" secondItem="HNG-fg-Qye" secondAttribute="top" id="Kp5-AL-Swq"/>
                             <constraint firstItem="HCE-0F-mOX" firstAttribute="leading" secondItem="HNG-fg-Qye" secondAttribute="leading" id="ZvM-Xz-HNb"/>
+                            <constraint firstItem="yeP-0E-qYA" firstAttribute="centerY" secondItem="HCE-0F-mOX" secondAttribute="centerY" constant="19.5" id="iMJ-9l-62V"/>
                             <constraint firstItem="HNG-fg-Qye" firstAttribute="bottom" secondItem="HCE-0F-mOX" secondAttribute="bottom" id="iht-AP-BSE"/>
                             <constraint firstItem="HNG-fg-Qye" firstAttribute="trailing" secondItem="HCE-0F-mOX" secondAttribute="trailing" id="pEm-PR-h5f"/>
+                            <constraint firstItem="yeP-0E-qYA" firstAttribute="centerX" secondItem="HCE-0F-mOX" secondAttribute="centerX" id="ssl-cs-sD6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="irK-su-2tj"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cardsActivityIndicator" destination="yeP-0E-qYA" id="aE5-VT-BVk"/>
                         <outlet property="cardsScrollOverlay" destination="HCE-0F-mOX" id="EKq-0b-mHC"/>
                         <outlet property="cardsScrollView" destination="Cl7-ye-0GF" id="PIC-ep-JXt"/>
                         <outlet property="cardsScrollViewLeading" destination="oU9-Cj-ahJ" id="nBi-KK-F1J"/>
@@ -75,6 +82,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

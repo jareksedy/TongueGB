@@ -20,6 +20,7 @@ class MainSceneViewController: UIViewController {
     @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
     @IBOutlet var cardsScrollView: UIScrollView!
     @IBOutlet var cardsStackView: UIStackView!
+    @IBOutlet weak var cardsActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Constraint outlets
     @IBOutlet weak var cardsScrollViewLeading: NSLayoutConstraint!
@@ -52,9 +53,13 @@ class MainSceneViewController: UIViewController {
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
-        //fetchCards()
+        cardsActivityIndicator.isHidden = false
+        
         presenter.fetchCardsFromFirebase(self) { cards in
+            
+            self.cardsActivityIndicator.isHidden = true
             self.cards = cards
+            
             if let cards = cards, cards.count > 0 {
                        for card in cards {
                            let cardView = CardView()
@@ -67,7 +72,6 @@ class MainSceneViewController: UIViewController {
                        }
                    } else {
                        let emptyCardView = EmptyCardView()
-                       
                        emptyCardView.viewDelegate = self
                        self.cardsStackView.addArrangedSubview(emptyCardView)
                    }
