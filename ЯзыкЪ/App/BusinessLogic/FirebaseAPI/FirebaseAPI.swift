@@ -13,6 +13,8 @@ import UIKit
 
 class FirebaseAPI: Firebasable {
     
+    
+    
     //MARK: - Properties
     let controller: UIViewController
     let authService = Auth.auth()
@@ -48,6 +50,8 @@ class FirebaseAPI: Firebasable {
             }
         }
     }
+    
+    
     
     //MARK: - Protocol funcs
     //MARK: --  UserData funcs
@@ -93,23 +97,80 @@ class FirebaseAPI: Firebasable {
     
     //MARK: -- Fetch funcs
     
-    func fetchWordCard(_ keyWord: String) -> CardFirebase? {
-       
-        return nil
+    func fetchWordCard(_ keyWord: String, completion: @escaping (CardFirebase?) -> Void) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards").child(keyWord)
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return }
+            let card = CardFirebase(snapshot: snapshot)
+            if card == nil {
+                completion(nil)
+            } else {
+                completion(card)}
+        }
     }
     
-    func fetchWordCardsByCategory(_ category: CategoryFirebase) -> [CardFirebase]? {
-        
-        return nil
+    func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) {
+        var cards: [CardFirebase] = []
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards")
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            for child in snapshot.children {
+                guard let childSnapshot = child as? DataSnapshot, let card = CardFirebase(snapshot: childSnapshot) else { return }
+                if card.category == category {
+                    cards.append(card)
+                }
+            }
+            if cards.isEmpty {
+                completion(nil)
+            } else {
+                completion(cards)
+            }
+        }
     }
     
-    func fetchCategory(_ category: String) -> CategoryFirebase? {
+    func fetchCategory(_ category: String, completion: @escaping (CategoryFirebase?) -> Void ) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("categories").child(category)
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            let category = CategoryFirebase(snapshot: snapshot)
+            if category == nil {
+                completion(nil)
+            } else {
+                completion(category)
+            }
+        }
         
-        return nil
     }
     
-    func fetchCategoryList(_ userEmail: String) -> [CategoryFirebase]? {
-        
-        return nil
+    func fetchCategoryList(completion: @escaping([CategoryFirebase]?) -> Void) {
+        var categories: [CategoryFirebase] = []
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("categories")
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            for child in snapshot.children {
+                guard let childSnapshot = child as? DataSnapshot, let category = CategoryFirebase(snapshot: childSnapshot) else { return}
+                categories.append(category)
+            }
+            if categories.isEmpty {
+                completion(nil)
+            } else {
+                completion(categories)
+            }
+        }
     }
 }
