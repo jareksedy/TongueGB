@@ -93,6 +93,8 @@ class MainSceneViewController: UIViewController {
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
     func addCard(word: String, translation: String, transcription: String, category: String) {
+       
+        presenter.storeAddedWordCardToFirebase(self, word: word, translation: translation, transcription: transcription, category: category)
         
         let cardView = CardView()
         cardView.word = word
@@ -109,5 +111,6 @@ extension MainSceneViewController: MainSceneViewDelegate {
             self.cardsStackView.layoutIfNeeded()
             cardView.alpha = 1
         }
+       
     }
 }
