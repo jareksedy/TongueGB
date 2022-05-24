@@ -52,24 +52,28 @@ class MainSceneViewController: UIViewController {
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
-        fetchCards()
-        
-        if let cards = cards, cards.count > 0 {
-            for card in cards {
-                let cardView = CardView()
-                
-                cardView.word = card.word
-                cardView.translation = card.translation
-                cardView.transcription = card.transcription
-                cardView.category = card.category
-                cardsStackView.addArrangedSubview(cardView)
-            }
-        } else {
-            let emptyCardView = EmptyCardView()
-            
-            emptyCardView.viewDelegate = self
-            cardsStackView.addArrangedSubview(emptyCardView)
+        //fetchCards()
+        presenter.fetchCardsFromFirebase(self) { cards in
+            self.cards = cards
+            if let cards = cards, cards.count > 0 {
+                       for card in cards {
+                           let cardView = CardView()
+                           
+                           cardView.word = card.word
+                           cardView.translation = card.translation
+                           cardView.transcription = card.transcription
+                           cardView.category = card.category
+                           self.cardsStackView.addArrangedSubview(cardView)
+                       }
+                   } else {
+                       let emptyCardView = EmptyCardView()
+                       
+                       emptyCardView.viewDelegate = self
+                       self.cardsStackView.addArrangedSubview(emptyCardView)
+                   }
         }
+        
+       
     }
     
     private func setupNavigationOptions() {

@@ -20,4 +20,18 @@ final class MainScenePresenter {
         let card = CardFirebase(word: word, translation: translation, transcription: transcription, category: category, userEmail: userEmail)
         api.storeWordCard(card)
     }
+    
+    func fetchCardsFromFirebase(_ controller: UIViewController, completion: @escaping ([CardFirebase]?) -> Void) {
+        let api = FirebaseAPI(controller: controller)
+        var cards: [CardFirebase] = []
+        api.fetchWordCardsArray { cardsFirebase in
+            guard let cardsFirebase = cardsFirebase else { return }
+            cards = cardsFirebase
+            if cards.isEmpty {
+                completion(nil)
+            } else {
+                completion(cards)
+            }
+        }
+    }
 }
