@@ -79,33 +79,5 @@ extension LoginSceneViewController: LoginSceneViewDelegate {
     func testAPI() {
         let api = FirebaseAPI(controller: self)
         api.authUser(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
-        // api.storeCategory(CategoryFirebase(categoryName: "Корабли"))
-        //        api.storeWordCard(CardFirebase(word: "Airbus", translation: "Эйрбас", transcription: "Европейский самолет", category: "Самолеты", userEmail: "test@test.ru"))
-        //        api.storeWordCard(CardFirebase(word: "Boeing", translation: "Боинг", transcription: "Американский самолет", category: "Самолеты", userEmail: "test@test.ru"))
-        //        api.storeWordCard(CardFirebase(word: "Airplane", translation: "Самолет", transcription: "Летательный аппарат", category: "Самолеты", userEmail: "test@test.ru"))
-        //        api.storeWordCard(CardFirebase(word: "Ship", translation: "Корабль", transcription: "Плавательный аппарат", category: "Корабли", userEmail: "test@test.ru"))
-        //        api.storeWordCard(CardFirebase(word: "Spaceship", translation: "Космический корабль", transcription: "Космический аппарат", category: "Космические корабли", userEmail: "test@test.ru"))
-        // api.fetchWordCard("Airplane") { card in
-        //    print(card?.translation as Any)
-        //}
-        // api.fetchCategory("Самолеты") { category in
-        //    print(category?.categoryName as Any)
-        //}
-        //        api.fetchWordCardsByCategory("Самолеты") { cards in
-        //            cards?.forEach({ card in
-        //                print(card.word)
-        //            })
-        //        }
-        //        api.fetchCategoryList() { categories in
-        //            categories?.forEach({ category in
-        //                print(category.categoryName)
-        //            })
-        //        }
-        
-        api.fetchWordCardsArray() { cards in
-            cards?.forEach({ card in
-                print(card.word)
-            })
-        }
     }
 }
