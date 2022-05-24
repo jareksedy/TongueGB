@@ -23,6 +23,7 @@ class LoginSceneViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
@@ -49,6 +50,9 @@ class LoginSceneViewController: UIViewController {
     // MARK: - Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
+        loginActivityIndicator.isHidden = false
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
     }
     
     // MARK: - Private methods
@@ -68,6 +72,7 @@ class LoginSceneViewController: UIViewController {
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
     func proceedToMainScene() {
+        loginActivityIndicator.isHidden = true
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
         present(mainTabBarController, animated: true)

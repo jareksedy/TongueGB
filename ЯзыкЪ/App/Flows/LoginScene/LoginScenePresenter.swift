@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Presenter
 final class LoginScenePresenter {
     weak var viewDelegate: LoginSceneViewDelegate?
-    let firebaseAPI: FirebaseAPI?
+    let firebaseAPI: FirebaseAPI
     
     init(_ firebaseAPI: FirebaseAPI) {
         self.firebaseAPI = firebaseAPI
@@ -18,7 +18,7 @@ final class LoginScenePresenter {
     
     // MARK: - Public methods
     func authUserFromFirebase(_ user: UserFirebase) {
-        firebaseAPI?.signInUser(user, completion: {
+        firebaseAPI.signInUser(user, completion: {
             self.viewDelegate?.proceedToMainScene()
         })
         

@@ -14,12 +14,13 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class MainSceneViewController: UIViewController {
-    let presenter = MainScenePresenter()
+    lazy var presenter = MainScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
     @IBOutlet var cardsScrollView: UIScrollView!
     @IBOutlet var cardsStackView: UIStackView!
+    @IBOutlet weak var cardsActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Constraint outlets
     @IBOutlet weak var cardsScrollViewLeading: NSLayoutConstraint!
@@ -27,6 +28,7 @@ class MainSceneViewController: UIViewController {
     
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
     var cards: [CardFirebase]?
@@ -52,9 +54,13 @@ class MainSceneViewController: UIViewController {
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
-        //fetchCards()
+        cardsActivityIndicator.isHidden = false
+        
         presenter.fetchCardsFromFirebase(self) { cards in
+            
+            self.cardsActivityIndicator.isHidden = true
             self.cards = cards
+            
             if let cards = cards, cards.count > 0 {
                        for card in cards {
                            let cardView = CardView()
@@ -67,7 +73,6 @@ class MainSceneViewController: UIViewController {
                        }
                    } else {
                        let emptyCardView = EmptyCardView()
-                       
                        emptyCardView.viewDelegate = self
                        self.cardsStackView.addArrangedSubview(emptyCardView)
                    }
@@ -98,9 +103,10 @@ class MainSceneViewController: UIViewController {
 extension MainSceneViewController: MainSceneViewDelegate {
     func addCard(word: String, translation: String, transcription: String, category: String) {
        
-        presenter.storeAddedWordCardToFirebase(self, word: word, translation: translation, transcription: transcription, category: category)
+        presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
         
         let cardView = CardView()
+        
         cardView.word = word
         cardView.translation = translation
         cardView.transcription = transcription

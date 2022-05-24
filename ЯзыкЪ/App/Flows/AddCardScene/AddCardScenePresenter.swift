@@ -12,12 +12,12 @@ final class AddCardScenePresenter {
     weak var viewDelegate: AddCardSceneViewDelegate?
     
     // MARK: - Services
-      private let requestFactory: RequestFactory
-      
-      // MARK: - Initializers
-      init(requestFactory: RequestFactory) {
-          self.requestFactory = requestFactory
-      }
+    private let requestFactory: RequestFactory
+    
+    // MARK: - Initializers
+    init(requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+    }
     
     // MARK: - Public methods
     func fetchDictionaryRecord(for text: String) {
@@ -34,12 +34,12 @@ final class AddCardScenePresenter {
                     let translation = result.def[0].tr[0].text.capitalizeFirstLetter()
                     let transcription = "[ \(result.def[0].ts) ]"
                     let category = AppDefaults.shared.lastCategory ?? ""
-    
+                    
                     self.viewDelegate?.displayDictionaryRecord(translation: translation, transcription: transcription, category: category)
                 } else {
                     self.viewDelegate?.displayEmptyDictionaryRecord()
                 }
-
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 self.viewDelegate?.displayEmptyDictionaryRecord()
