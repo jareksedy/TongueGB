@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Protocol
 protocol AddCardSceneViewDelegate: NSObjectProtocol {
     func displayDictionaryRecord(translation: String, transcription: String, category: String)
-    func displayEmptyDictionaryRecord()
+    func displayEmptyDictionaryRecord(setFocusOnTranslation: Bool)
 }
 
 // MARK: - View controller
@@ -153,7 +153,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         }
     }
     
-    func displayEmptyDictionaryRecord() {
+    func displayEmptyDictionaryRecord(setFocusOnTranslation: Bool) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.animateIn()
@@ -162,7 +162,12 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
             guard let self = self else { return }
-            self.translationTextField.becomeFirstResponder()
+            
+            if setFocusOnTranslation {
+                self.translationTextField.becomeFirstResponder()
+            } else {
+                self.wordTextField.becomeFirstResponder()
+            }
         }
     }
 }
