@@ -14,7 +14,7 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class MainSceneViewController: UIViewController {
-    let presenter = MainScenePresenter()
+    lazy var presenter = MainScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
@@ -28,6 +28,7 @@ class MainSceneViewController: UIViewController {
     
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
     var cards: [CardFirebase]?
@@ -102,9 +103,10 @@ class MainSceneViewController: UIViewController {
 extension MainSceneViewController: MainSceneViewDelegate {
     func addCard(word: String, translation: String, transcription: String, category: String) {
        
-        presenter.storeAddedWordCardToFirebase(self, word: word, translation: translation, transcription: transcription, category: category)
+        presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
         
         let cardView = CardView()
+        
         cardView.word = word
         cardView.translation = translation
         cardView.transcription = transcription

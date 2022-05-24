@@ -51,6 +51,8 @@ class LoginSceneViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
         loginActivityIndicator.isHidden = false
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = traitCollection.userInterfaceStyle == .dark ? .presentationDark : .presentationLight
     }
     
     // MARK: - Private methods

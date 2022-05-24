@@ -219,6 +219,3 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         setAddBarButtonEnabled()
     }
 }
-
-extension AddCardSceneViewController {
-}
