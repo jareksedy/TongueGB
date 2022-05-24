@@ -117,7 +117,7 @@ class FirebaseAPI: Firebasable {
             if cards.isEmpty {
                 completion(nil)
             } else {
-                completion(cards)
+                completion(cards.reversed())
             }
         }
     }
