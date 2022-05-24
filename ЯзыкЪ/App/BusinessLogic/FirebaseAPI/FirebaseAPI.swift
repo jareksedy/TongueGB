@@ -112,6 +112,27 @@ class FirebaseAPI: Firebasable {
         }
     }
     
+    func fetchWordCardsArray(completion: @escaping ([CardFirebase]?) -> Void) {
+        var cards: [CardFirebase] = []
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards")
+        ref.getData { error, snapshot in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            for child in snapshot.children {
+                guard let childSnapshot = child as? DataSnapshot, let card = CardFirebase(snapshot: childSnapshot) else { return}
+                cards.append(card)
+            }
+            if cards.isEmpty {
+                completion(nil)
+            } else {
+                completion(cards)
+            }
+        }
+    }
+    
     func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
         guard let currentUserEmail = authService.currentUser?.email else { return }
