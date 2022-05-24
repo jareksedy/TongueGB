@@ -6,15 +6,21 @@
 //
 
 import UIKit
-import AVFoundation
 
 // MARK: - Presenter
 final class LoginScenePresenter {
     weak var viewDelegate: LoginSceneViewDelegate?
-    weak var api: FirebaseAPI?
+    let firebaseAPI: FirebaseAPI?
+    
+    init(_ firebaseAPI: FirebaseAPI) {
+        self.firebaseAPI = firebaseAPI
+    }
     
     // MARK: - Public methods
-    func authUserFromFirebase(_ user: UserFirebase, completion: () -> Void ) {
+    func authUserFromFirebase(_ user: UserFirebase) {
+        firebaseAPI?.signInUser(user, completion: {
+            self.viewDelegate?.proceedToMainScene()
+        })
         
     }
 }

@@ -13,8 +13,6 @@ import UIKit
 
 class FirebaseAPI: Firebasable {
     
-    
-    
     //MARK: - Properties
     let authService = Auth.auth()
     let databaseService = Database.database()
@@ -22,48 +20,21 @@ class FirebaseAPI: Firebasable {
     
     //MARK: - Private funcs
     
-    private func createUser(_ user: UserFirebase) {
-        authService.createUser(withEmail: user.userEmail, password: user.userId) { _, error in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-        }
-    }
-    
-    private func signInUser(_ user: UserFirebase) {
-        authService.signIn(withEmail: user.userEmail, password: user.userId) { _, error in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
-            }
-        }
-    }
     
     
+   
     
     //MARK: - Protocol funcs
     //MARK: --  UserData funcs
-    func authUser(_ user: UserFirebase) {
-        
-        guard authService.currentUser != nil else {
-            createUser(user)
-            return }
-        if user.userEmail.lowercased() == authService.currentUser?.email {
-            signInUser(user)
-        } else {
-            createUser(user)
-        }
-    }
-    
-    func fetchUser(_ userEmail: String) -> UserFirebase? {
-        guard let firebaseUser = authService.currentUser else { return nil}
-        if userEmail == firebaseUser.email {
-            return UserFirebase(userEmail: firebaseUser.email!, userId: firebaseUser.uid)
-        } else {
-            return nil
-        }
-    }
+    func signInUser(_ user: UserFirebase, completion: @escaping () -> Void ) {
+         authService.signIn(withEmail: user.userEmail, password: user.userId) { auth, error in
+             guard error == nil else {
+                 print("Error: \(String(describing: error?.localizedDescription))")
+                 return
+             }
+             completion()
+         }
+     }
     
     //MARK: -- Store Funcs
     
