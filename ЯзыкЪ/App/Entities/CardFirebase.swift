@@ -11,15 +11,15 @@ import Firebase
 class CardFirebase {
     let word: String
     let translation: String
-    let description: String?
+    let transcription: String?
     let category: String
     let userEmail: String
     let ref: DatabaseReference?
     
-    init(word: String, translation: String, description: String?, category: String, userEmail: String) {
+    init(word: String, translation: String, transcription: String?, category: String, userEmail: String) {
         self.word = word
         self.translation = translation
-        self.description = description
+        self.transcription = transcription
         self.category = category
         self.userEmail = userEmail
         self.ref = nil
@@ -30,14 +30,14 @@ class CardFirebase {
             let value = snapshot.value as? [String: Any],
             let word = value["word"] as? String,
             let translation = value["translation"] as? String,
-            let description = value["description"] as? String,
+            let transcription = value["transcription"] as? String,
             let category = value["category"] as? String,
             let userEmail = value["user_email"] as? String else {
             return nil
         }
         self.word = word
         self.translation = translation
-        self.description = description
+        self.transcription = transcription
         self.category = category
         self.userEmail = userEmail
         self.ref = snapshot.ref
@@ -47,7 +47,7 @@ class CardFirebase {
         return [
             "word": word as Any,
             "translation": translation as Any,
-            "description": description as Any,
+            "transcription": transcription as Any,
             "category": category as Any,
             "user_email": userEmail.modifyEmailAddress() as Any
         ] as [String: Any]

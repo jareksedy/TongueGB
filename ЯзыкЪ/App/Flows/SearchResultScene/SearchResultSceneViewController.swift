@@ -61,7 +61,7 @@ class SearchResultSceneViewController: UIViewController {
                 
                 cardView.word = card.word
                 cardView.translation = card.translation
-                cardView.transcription = card.description
+                cardView.transcription = card.transcription
                 cardView.category = card.category
                 cardsStackView.addArrangedSubview(cardView)
             }
