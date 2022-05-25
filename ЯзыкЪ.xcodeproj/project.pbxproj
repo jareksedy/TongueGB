@@ -14,7 +14,6 @@
 		CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */; };
 		CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */; };
 		CA0956092833892A00F35D64 /* SearchResultScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */; };
-		CA152AB228363C0B00564AA5 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB128363C0A00564AA5 /* UIStackView.swift */; };
 		CA152AB428364FDB00564AA5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA152AB328364FDB00564AA5 /* MainTabBarController.swift */; };
 		CA1848E82838CB5000E66F2B /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */; };
 		CA1848EA2838CD0000E66F2B /* AbstractErrorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848E92838CD0000E66F2B /* AbstractErrorParser.swift */; };
@@ -83,7 +82,6 @@
 		CA0955FE283367B200F35D64 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		CA0956062833891D00F35D64 /* SearchResultSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSceneViewController.swift; sourceTree = "<group>"; };
 		CA0956082833892A00F35D64 /* SearchResultScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultScenePresenter.swift; sourceTree = "<group>"; };
-		CA152AB128363C0A00564AA5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		CA152AB328364FDB00564AA5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		CA1848E72838CB5000E66F2B /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
 		CA1848E92838CD0000E66F2B /* AbstractErrorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractErrorParser.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 			children = (
 				CAA118F92830295E0056013D /* UIView.swift */,
 				CA0955FB2833607600F35D64 /* UITableView.swift */,
-				CA152AB128363C0A00564AA5 /* UIStackView.swift */,
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
 				CAA118F6282F60CF0056013D /* CGFloat.swift */,
@@ -571,7 +568,6 @@
 				CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */,
 				CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */,
 				CA6AFDA92827AAFF0098718E /* AddCardScenePresenter.swift in Sources */,
-				CA152AB228363C0B00564AA5 /* UIStackView.swift in Sources */,
 				CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */,
 				CA6AFDB42827AB1F0098718E /* SearchScenePresenter.swift in Sources */,
 			);

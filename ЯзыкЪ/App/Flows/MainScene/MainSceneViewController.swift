@@ -102,16 +102,14 @@ extension MainSceneViewController: MainSceneViewDelegate {
         cardView.category = category
         cardView.isFront = true
         
-        scrollToStart(completion: { _ in
-            cardView.alpha = 0
-            self.cardsStackView.insertArrangedSubview(cardView, at: 0)
-            
-            UIView.animate(withDuration: 0.25) {
-                cardView.alpha = 1
-                self.cardsStackView.layoutSubviews()
-            }
-        })
+        cardView.alpha = 0
+        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
+        cardsScrollView.setContentOffset(.zero, animated: false)
         
+        UIView.animate(withDuration: 0.25) {
+            cardView.alpha = 1
+            self.cardsStackView.layoutSubviews()
+        }
     }
     
     func scrollToStart(completion: ((Bool) -> Void)?) {
