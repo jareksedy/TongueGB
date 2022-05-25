@@ -30,7 +30,6 @@ final class MainScenePresenter {
     
     func fetchCardsFromFirebase(_ controller: UIViewController, completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
-        
         firebaseAPI.fetchWordCardsArray { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }
             cards = cardsFirebase
