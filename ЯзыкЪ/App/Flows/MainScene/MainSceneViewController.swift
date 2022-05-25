@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCard(word: String, translation: String, transcription: String, category: String)
+    func scrollToStart()
 }
 
 // MARK: - View controller
@@ -109,5 +110,18 @@ extension MainSceneViewController: MainSceneViewDelegate {
             self.cardsStackView.layoutIfNeeded()
             cardView.alpha = 1
         }
+    }
+    
+    func scrollToStart() {
+        guard cardsScrollView.contentOffset.x > 0 else { return }
+        let offset = CGPoint(x: cardsScrollView.contentOffset.x + 30, y: 0)
+        
+        UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseInOut], animations: {
+            self.cardsScrollView.setContentOffset(offset, animated: false)
+        }, completion:  { _ in
+            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut]) {
+                self.cardsScrollView.setContentOffset(.zero, animated: false)
+            }
+        })
     }
 }
