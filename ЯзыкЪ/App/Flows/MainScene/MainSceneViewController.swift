@@ -106,7 +106,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
         self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         cardsScrollView.setContentOffset(.zero, animated: false)
         
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: 0.15) {
             cardView.alpha = 1
             self.cardsStackView.layoutSubviews()
         }
@@ -117,17 +117,17 @@ extension MainSceneViewController: MainSceneViewDelegate {
             completion?(true)
             return
         }
-        let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 35, y: 0)
-        let offsetLeft = CGPoint(x: -15, y: 0)
+        let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 25, y: 0)
+        let offsetLeft = CGPoint(x: -25, y: 0)
         let options: UIView.AnimationOptions = [.curveEaseInOut, .allowUserInteraction]
         
-        UIView.animate(withDuration: 0.10,
+        UIView.animate(withDuration: 0.15,
                        delay: 0,
                        options: options,
                        animations: { self.cardsScrollView.setContentOffset(offsetRight, animated: false) },
                        completion:  { _ in
             
-            UIView.animate(withDuration: 0.25,
+            UIView.animate(withDuration: 0.20,
                            delay: 0,
                            options: options,
                            animations: { self.cardsScrollView.setContentOffset(offsetLeft, animated: false) },
@@ -135,7 +135,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
                 
                 completion?(true)
                 
-                UIView.animate(withDuration: 0.10,
+                UIView.animate(withDuration: 0.15,
                                delay: 0,
                                options: options,
                                animations: { self.cardsScrollView.setContentOffset(.zero, animated: false) },
