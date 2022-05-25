@@ -58,7 +58,6 @@ class MainSceneViewController: UIViewController {
         cardsActivityIndicator.isHidden = false
         
         presenter.fetchCardsFromFirebase(self) { cards in
-            
             self.cardsActivityIndicator.isHidden = true
             self.cards = cards
             
@@ -118,7 +117,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
         self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         cardsScrollView.setContentOffset(.zero, animated: false)
         
-        UIView.animate(withDuration: 0.15) {
+        UIView.animate(withDuration: 0.18) {
             cardView.alpha = 1
             self.cardsStackView.layoutSubviews()
         }
@@ -131,7 +130,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
             return
         }
         let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 25, y: 0)
-        let offsetLeft = CGPoint(x: -25, y: 0)
+        let offsetLeft = CGPoint(x: -20, y: 0)
         let options: UIView.AnimationOptions = [.curveEaseInOut, .allowUserInteraction]
         
         UIView.animate(withDuration: 0.15,
