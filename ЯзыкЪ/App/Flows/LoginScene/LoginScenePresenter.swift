@@ -21,6 +21,5 @@ final class LoginScenePresenter {
         firebaseAPI.signInUser(user, completion: {
             self.viewDelegate?.proceedToMainScene()
         })
-        
     }
 }

@@ -14,7 +14,7 @@ protocol SearchSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class SearchSceneViewController: UIViewController {
-    lazy var presenter = SearchScenePresenter()
+    lazy var presenter = SearchScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var categoriesTableView: UITableView!
@@ -22,6 +22,7 @@ class SearchSceneViewController: UIViewController {
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
     let mockCategoriesProvider = MockCategoriesProvider()
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
     var categories: [CategoryFirebase]?
@@ -31,11 +32,12 @@ class SearchSceneViewController: UIViewController {
         super.viewDidLoad()
         
         fetchCategories()
-        presenter.viewDelegate = self
         
-        categoriesTableView.dataSource = self
-        categoriesTableView.delegate = self
-        categoriesTableView.registerCell(type: CategoryTableViewCell.self)
+        self.presenter.viewDelegate = self
+       
+        self.categoriesTableView.dataSource = self
+        self.categoriesTableView.delegate = self
+        self.categoriesTableView.registerCell(type: CategoryTableViewCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +50,18 @@ class SearchSceneViewController: UIViewController {
     }
     
     private func fetchCategories() {
-        categories = mockCategoriesProvider.createMockCategories()
+        presenter.fetchCategoriesFromFirebase(self) { categories in
+            guard let categories = categories else { return }
+            self.categories = categories
+            self.categoriesTableView.reloadData()
+        }
+        //categories = mockCategoriesProvider.createMockCategories()
     }
 }
 // MARK: - TableView
 extension SearchSceneViewController: UITableViewDataSource {
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -69,8 +78,11 @@ extension SearchSceneViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category == category.categoryName }.count
-        cell.configure(category: category, cardsInCategory: cardsInCategory)
+//        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category == category.categoryName }.count
+        
+        presenter.configureCellForCategory(category) { count in
+            cell.configure(category: category, cardsInCategory: count)
+        }
         
         // Set custom selection color
         let selectedBackgroundView = UIView()

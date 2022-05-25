@@ -134,7 +134,7 @@ class FirebaseAPI: Firebasable {
         
     }
     
-    func fetchCategoryList(completion: @escaping([CategoryFirebase]?) -> Void) {
+    func fetchCategoriesList(completion: @escaping([CategoryFirebase]?) -> Void) {
         var categories: [CategoryFirebase] = []
         guard let currentUserEmail = authService.currentUser?.email else { return }
         let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("categories")

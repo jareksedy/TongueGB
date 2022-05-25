@@ -11,5 +11,38 @@ import UIKit
 final class SearchScenePresenter {
     weak var viewDelegate: SearchSceneViewDelegate?
     
+    // MARK: - Services
+    private let firebaseAPI: FirebaseAPI
+    
+    // MARK: - Initializers
+    init(_ firebaseAPI: FirebaseAPI) {
+        self.firebaseAPI = firebaseAPI
+    }
+    
     // MARK: - Public methods
+    
+    func fetchCategoriesFromFirebase(_ controller: UIViewController, completion: @escaping ([CategoryFirebase]?) -> Void) {
+        var categories: [CategoryFirebase] = []
+        firebaseAPI.fetchCategoriesList { categoriesFirebase in
+            guard let categoriesFirebase = categoriesFirebase else { return }
+            categories = categoriesFirebase
+            
+            if categories.isEmpty {
+                completion(nil)
+            } else {
+                completion(categories)
+            }
+        }
+    }
+    
+    func configureCellForCategory(_ category: CategoryFirebase, completion: @escaping (Int) -> Void) {
+        firebaseAPI.fetchWordCardsByCategory(category.categoryName) { cardsFirebase in
+            guard let cardsFirebase = cardsFirebase else { return }
+            if cardsFirebase.isEmpty {
+                completion(0)
+            } else {
+                completion(cardsFirebase.count)
+            }
+        }
+    }
 }

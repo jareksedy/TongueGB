@@ -13,7 +13,7 @@ protocol SearchResultSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class SearchResultSceneViewController: UIViewController {
-    lazy var presenter = SearchResultScenePresenter()
+    lazy var presenter = SearchResultScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var cardsScrollOverlay: ScrollOverlayView!
@@ -26,6 +26,7 @@ class SearchResultSceneViewController: UIViewController {
     
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
     var categoryKey: String?
@@ -53,9 +54,8 @@ class SearchResultSceneViewController: UIViewController {
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
-        fetchCards()
-        
-        if let cards = cards, cards.count > 0 {
+        presenter.fetchCardsForCategoryFromFirebase(self, categoryKey) { cards in
+            guard let cards = cards, cards.count > 0 else { return }
             for card in cards {
                 let cardView = CardView()
                 
@@ -63,8 +63,9 @@ class SearchResultSceneViewController: UIViewController {
                 cardView.translation = card.translation
                 cardView.transcription = card.transcription
                 cardView.category = card.category
-                cardsStackView.addArrangedSubview(cardView)
+                self.cardsStackView.addArrangedSubview(cardView)
             }
+            
         }
     }
     
@@ -92,13 +93,13 @@ class SearchResultSceneViewController: UIViewController {
         self.view.layoutIfNeeded()
     }
     
-    private func fetchCards() {
-        if let categoryKey = categoryKey {
-            cards = mockCardsProvider.createMockCards().filter { $0.category == categoryKey }
-        } else {
-            cards = mockCardsProvider.createMockCards()
-        }
-    }
+//    private func fetchCards() {
+//        if let categoryKey = categoryKey {
+//            cards = mockCardsProvider.createMockCards().filter { $0.category == categoryKey }
+//        } else {
+//            cards = mockCardsProvider.createMockCards()
+//        }
+//    }
 }
 
 // MARK: - Implementation
