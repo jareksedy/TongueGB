@@ -10,7 +10,7 @@ import UIKit
 // MARK: - Protocol
 protocol AddCardSceneViewDelegate: NSObjectProtocol {
     func displayDictionaryRecord(translation: String, transcription: String, category: String)
-    func displayEmptyDictionaryRecord()
+    func displayEmptyDictionaryRecord(setFocusOnTranslation: Bool)
 }
 
 // MARK: - View controller
@@ -23,6 +23,9 @@ class AddCardSceneViewController: UIViewController {
     
     // MARK: - Properties
     let categorySuggestions = MockCategoriesProvider().createMockCategories().map { $0.categoryName }
+    let transcriptionLeftBracket = "[ "
+    let transcriptionRightBracket = " ]"
+    var wordTextFieldChanged = false
     
     // MARK: - Outlets
     @IBOutlet weak var addBarButtonItem: UIBarButtonItem!
@@ -50,8 +53,8 @@ class AddCardSceneViewController: UIViewController {
               var transcription = transcriptionTextField.text?.trimmingCharacters(in: .whitespaces),
               let category = categoryTextField.text?.trimmingCharacters(in: .whitespaces).capitalizeFirstLetter() else { return }
         
-        transcription.contains("[") ? transcription = "\(transcription.dropFirst(2))" : nil
-        transcription.contains("]") ? transcription = "\(transcription.dropLast(2))" : nil
+        transcription.contains(transcriptionLeftBracket) ? transcription = "\(transcription.dropFirst(2))" : nil
+        transcription.contains(transcriptionRightBracket) ? transcription = "\(transcription.dropLast(2))" : nil
         
         dismiss(animated: true, completion: { self.delegate?.didTapAddCard(word: word, translation: translation, transcription: transcription, category: category) })
     }
@@ -113,8 +116,8 @@ class AddCardSceneViewController: UIViewController {
         guard textField == transcriptionTextField,
               let text = textField.text,
               text.trimmingCharacters(in: .whitespaces) != "",
-              text.contains("["),
-              text.contains("]") else { return }
+              text.contains(transcriptionLeftBracket),
+              text.contains(transcriptionRightBracket) else { return }
         
         textField.text = "\(textField.text!.dropFirst(2))"
         textField.text = "\(textField.text!.dropLast(2))"
@@ -124,10 +127,10 @@ class AddCardSceneViewController: UIViewController {
         guard textField == transcriptionTextField,
               let text = textField.text?.trimmingCharacters(in: .whitespaces),
               text != "",
-              !text.contains("["),
-              !text.contains("]") else { return }
+              !text.contains(transcriptionLeftBracket),
+              !text.contains(transcriptionRightBracket) else { return }
         
-        textField.text = "[ \(text) ]"
+        textField.text = "\(transcriptionLeftBracket)\(text)\(transcriptionRightBracket)"
     }
 }
 
@@ -153,7 +156,7 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         }
     }
     
-    func displayEmptyDictionaryRecord() {
+    func displayEmptyDictionaryRecord(setFocusOnTranslation: Bool) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.animateIn()
@@ -162,7 +165,12 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
             guard let self = self else { return }
-            self.translationTextField.becomeFirstResponder()
+            
+            if setFocusOnTranslation {
+                self.translationTextField.becomeFirstResponder()
+            } else {
+                self.wordTextField.becomeFirstResponder()
+            }
         }
     }
 }
@@ -196,6 +204,7 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         if textField != transcriptionTextField { textField.text = textField.text?.capitalizeFirstLetter() }
         
         guard textField == wordTextField else { return }
+        guard wordTextFieldChanged else { return }
         
         presenter.fetchDictionaryRecord(for: text)
         translationActivityIndicator.isHidden = false
@@ -203,12 +212,15 @@ extension AddCardSceneViewController: UITextFieldDelegate {
         translationTextField.text = ""
         transcriptionTextField.text = ""
         categoryTextField.text = ""
+        
+        wordTextFieldChanged = false
     }
     
     // MARK: - Actions
     @IBAction func wordTextFieldEditingChanged(_ sender: Any) {
         animateOut()
         addBarButtonItem.isEnabled = false
+        wordTextFieldChanged = true
     }
     
     @IBAction func translationTextFieldEditingChanged(_ sender: Any) {

@@ -10,6 +10,7 @@ import UIKit
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCard(word: String, translation: String, transcription: String, category: String)
+    func scrollToStart(completion: ((Bool) -> Void)?)
 }
 
 // MARK: - View controller
@@ -114,13 +115,45 @@ extension MainSceneViewController: MainSceneViewDelegate {
         cardView.isFront = true
         
         cardView.alpha = 0
-        cardsStackView.insertArrangedSubview(cardView, at: 0)
+        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
+        cardsScrollView.setContentOffset(.zero, animated: false)
         
-        UIView.animate(withDuration: 0.35) {
-            self.cardsScrollView.setContentOffset(.zero, animated: false)
-            self.cardsStackView.layoutIfNeeded()
+        UIView.animate(withDuration: 0.15) {
             cardView.alpha = 1
+            self.cardsStackView.layoutSubviews()
         }
        
+    }
+    
+    func scrollToStart(completion: ((Bool) -> Void)?) {
+        guard cardsScrollView.contentOffset.x > 0 else {
+            completion?(true)
+            return
+        }
+        let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 25, y: 0)
+        let offsetLeft = CGPoint(x: -25, y: 0)
+        let options: UIView.AnimationOptions = [.curveEaseInOut, .allowUserInteraction]
+        
+        UIView.animate(withDuration: 0.15,
+                       delay: 0,
+                       options: options,
+                       animations: { self.cardsScrollView.setContentOffset(offsetRight, animated: false) },
+                       completion:  { _ in
+            
+            UIView.animate(withDuration: 0.20,
+                           delay: 0,
+                           options: options,
+                           animations: { self.cardsScrollView.setContentOffset(offsetLeft, animated: false) },
+                           completion: { _ in
+                
+                completion?(true)
+                
+                UIView.animate(withDuration: 0.15,
+                               delay: 0,
+                               options: options,
+                               animations: { self.cardsScrollView.setContentOffset(.zero, animated: false) },
+                               completion: nil)
+            })
+        })
     }
 }

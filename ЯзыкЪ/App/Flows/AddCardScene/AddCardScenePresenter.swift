@@ -37,12 +37,12 @@ final class AddCardScenePresenter {
                     
                     self.viewDelegate?.displayDictionaryRecord(translation: translation, transcription: transcription, category: category)
                 } else {
-                    self.viewDelegate?.displayEmptyDictionaryRecord()
+                    self.viewDelegate?.displayEmptyDictionaryRecord(setFocusOnTranslation: false)
                 }
                 
             case .failure(let error):
                 print(error.localizedDescription)
-                self.viewDelegate?.displayEmptyDictionaryRecord()
+                self.viewDelegate?.displayEmptyDictionaryRecord(setFocusOnTranslation: true)
             }
         }
     }

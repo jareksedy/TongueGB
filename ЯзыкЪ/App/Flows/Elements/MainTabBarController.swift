@@ -20,6 +20,15 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.children[0] is MainSceneViewController {
+            if selectedIndex == 0 {
+                let navigationController = self.viewControllers![0] as! MainNavigationController
+                let mainSceneViewController = navigationController.topViewController as! MainSceneViewController
+                
+                mainSceneViewController.scrollToStart(completion: nil)
+            }
+        }
+        
         if viewController.children[0] is AddCardSceneViewController {
             if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
                 
@@ -40,6 +49,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 return false
             }
         }
+        
         return true
     }
 }
@@ -47,7 +57,6 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 // MARK: - Implementation
 extension MainTabBarController: AddCardSceneDelegate {
     func didTapAddCard(word: String, translation: String, transcription: String, category: String) {
-        
         let navigationController = self.viewControllers![0] as! MainNavigationController
         let mainSceneViewController = navigationController.topViewController as! MainSceneViewController
         
