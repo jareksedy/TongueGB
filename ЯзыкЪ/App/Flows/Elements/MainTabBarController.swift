@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
                 let navigationController = self.viewControllers![0] as! MainNavigationController
                 let mainSceneViewController = navigationController.topViewController as! MainSceneViewController
                 
-                mainSceneViewController.scrollToStart()
+                mainSceneViewController.scrollToStart(completion: nil)
             }
         }
         
