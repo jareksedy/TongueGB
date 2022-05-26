@@ -34,3 +34,8 @@ class CategoryFirebase {
         ] as [String: Any]
     }
 }
+
+struct CategoryWithCount {
+    var name: String
+    var count: Int
+}

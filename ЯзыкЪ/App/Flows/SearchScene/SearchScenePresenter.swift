@@ -19,18 +19,24 @@ final class SearchScenePresenter {
         self.firebaseAPI = firebaseAPI
     }
     
+
+    
     // MARK: - Public methods
-    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?, [String: Int]?) -> Void) {
+    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?, [CategoryWithCount]?) -> Void) {
         var cards: [CardFirebase] = []
-        //var categories: [String] = []
         var counts: [String: Int] = [:]
+        var categories: [CategoryWithCount] = []
         
         firebaseAPI.fetchAllCards { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }
             cards = cardsFirebase
             counts = cardsFirebase.reduce(into: [:]) { counts, card in counts[card.category, default: 0] += 1 }
             
-            if cards.isEmpty { completion(nil, nil) } else { completion(cards, counts) }
+            counts.forEach { cardCount in
+                categories.append(CategoryWithCount(name: cardCount.key, count: cardCount.value))
+            }
+            
+            if cards.isEmpty { completion(nil, nil) } else { completion(cards, categories.sorted(by: {$0.name < $1.name})) }
         }
     }
     

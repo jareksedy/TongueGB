@@ -27,7 +27,7 @@ class SearchSceneViewController: UIViewController {
     
     // MARK: - Properties
     var cards: [CardFirebase]?
-    var categories: [String]?
+    var categories: [CategoryWithCount]?
     var cardsInCategory: [Int]?
     
     // MARK: - Lifecycle
@@ -53,14 +53,13 @@ class SearchSceneViewController: UIViewController {
     }
     
     private func fetchCardsAndCategories() {
-        presenter.fetchCardsFromFirebase { cards, counts in
+        presenter.fetchCardsFromFirebase { cards, categories in
             self.categoriesActivityIndicator.isHidden = true
             
-            guard let cards = cards, let counts = counts else { return }
+            guard let cards = cards, let categories = categories else { return }
 
             self.cards = cards
-            self.categories = Array(counts.keys)
-            self.cardsInCategory = Array(counts.values)
+            self.categories = categories
             
             self.categoriesTableView.reloadData()
         }
@@ -79,11 +78,10 @@ extension SearchSceneViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
-              let category = categories?[indexPath.row],
-              let cardsCount = cardsInCategory?[indexPath.row]
+              let category = categories?[indexPath.row]
         else { return UITableViewCell() }
         
-        cell.configure(category: category, cardsInCategory: cardsCount)
+        cell.configure(category: category.name, cardsInCategory: category.count)
         
         // Set custom selection color
         let selectedBackgroundView = UIView()
@@ -98,7 +96,7 @@ extension SearchSceneViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = categories?[indexPath.row] else { return }
         categoriesTableView.deselectRow(at: indexPath, animated: true)
-        proceedToSearchResult(with: category)
+        proceedToSearchResult(with: category.name)
     }
 }
 
