@@ -11,6 +11,7 @@ import UIKit
 protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCard(word: String, translation: String, transcription: String, category: String)
     func scrollToStart(completion: ((Bool) -> Void)?)
+    func emptyCardTapped()
 }
 
 // MARK: - View controller
@@ -33,6 +34,7 @@ class MainSceneViewController: UIViewController {
     
     // MARK: - Properties
     var cards: [CardFirebase]?
+    var isEmpty = false
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -60,25 +62,30 @@ class MainSceneViewController: UIViewController {
         presenter.fetchCardsFromFirebase { cards in
             self.cardsActivityIndicator.isHidden = true
             self.cards = cards
-            
-            if let cards = cards, cards.count > 0 {
-                       for card in cards {
-                           let cardView = CardView()
-                           
-                           cardView.word = card.word
-                           cardView.translation = card.translation
-                           cardView.transcription = card.transcription
-                           cardView.category = card.category
-                           self.cardsStackView.addArrangedSubview(cardView)
-                       }
-                   } else {
-                       let emptyCardView = EmptyCardView()
-                       emptyCardView.viewDelegate = self
-                       self.cardsStackView.addArrangedSubview(emptyCardView)
-                   }
+            self.reloadCardView()
         }
         
-       
+        
+    }
+    
+    private func reloadCardView() {
+        cardsStackView.removeAllArrangedSubviews()
+        
+        if let cards = cards, cards.count > 0 {
+            for card in cards {
+                let cardView = CardView()
+                
+                cardView.word = card.word
+                cardView.translation = card.translation
+                cardView.transcription = card.transcription
+                cardView.category = card.category
+                self.cardsStackView.addArrangedSubview(cardView)
+            }
+        } else {
+            let emptyCardView = EmptyCardView()
+            cardsStackView.addArrangedSubview(emptyCardView)
+            isEmpty = true
+        }
     }
     
     private func setupNavigationOptions() {
@@ -102,8 +109,13 @@ class MainSceneViewController: UIViewController {
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
     func addCard(word: String, translation: String, transcription: String, category: String) {
-       
+        
         presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
+        
+        if isEmpty {
+            cardsStackView.removeAllArrangedSubviews()
+            isEmpty = false
+        }
         
         let cardView = CardView()
         
@@ -121,7 +133,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
             cardView.alpha = 1
             self.cardsStackView.layoutSubviews()
         }
-       
+        
     }
     
     func scrollToStart(completion: ((Bool) -> Void)?) {
@@ -154,5 +166,8 @@ extension MainSceneViewController: MainSceneViewDelegate {
                                completion: nil)
             })
         })
+    }
+    
+    func emptyCardTapped() {
     }
 }

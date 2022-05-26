@@ -30,26 +30,31 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         
         if viewController.children[0] is AddCardSceneViewController {
-            if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
-                
-                addCardSceneViewController.delegate = self
-                let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
-                
-                navigationController.navigationBar.prefersLargeTitles = false
-                navigationController.modalPresentationStyle = .pageSheet
-                
-                if #available(iOS 15.0, *) {
-                    if let sheet = navigationController.sheetPresentationController {
-                        sheet.detents = [.medium()]
-                        sheet.preferredCornerRadius = 24.0
-                    }
-                }
-                
-                present(navigationController, animated: true)
-                return false
-            }
+            return presentAddCardScenePopover()
         }
         
+        return true
+    }
+    
+    private func presentAddCardScenePopover() -> Bool {
+        if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
+            
+            addCardSceneViewController.delegate = self
+            let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
+            
+            navigationController.navigationBar.prefersLargeTitles = false
+            navigationController.modalPresentationStyle = .pageSheet
+            
+            if #available(iOS 15.0, *) {
+                if let sheet = navigationController.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                    sheet.preferredCornerRadius = 24.0
+                }
+            }
+            
+            present(navigationController, animated: true)
+            return false
+        }
         return true
     }
 }
