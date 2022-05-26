@@ -31,11 +31,13 @@ final class MainScenePresenter {
     func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
         firebaseAPI.fetchAllCards { cardsFirebase in
-            guard let cardsFirebase = cardsFirebase else { return }
+            guard let cardsFirebase = cardsFirebase else {
+                completion(nil)
+                return }
             cards = cardsFirebase
             cards.sort(){$0.timeStamp > $1.timeStamp}
             
-            if cards.isEmpty { completion(nil) } else { completion(cards) }
+            completion(cards.isEmpty ? nil : cards)
         }
     }
 }
