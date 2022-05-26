@@ -72,27 +72,15 @@ extension SearchSceneViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
-              let category = categories?[indexPath.row],
-              let categoriesCount = categories?.count
-        else {
-            return UITableViewCell()
-        }
+              let category = categories?[indexPath.row]
+        else { return UITableViewCell() }
         
-//        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category == category.categoryName }.count
-        
-        presenter.configureCellForCategory(category) { count in
-            cell.configure(category: category, cardsInCategory: count)
-        }
+        cell.configure(category: category, cardsInCategory: 0)
         
         // Set custom selection color
         let selectedBackgroundView = UIView()
         selectedBackgroundView.backgroundColor = .systemGray6
         cell.selectedBackgroundView = selectedBackgroundView
-        
-        // Remove last cell's separator in TableView
-        if indexPath.row == categoriesCount - 1 {
-            cell.separatorInset = UIEdgeInsets.init(top: 0, left: categoriesTableView.bounds.width + 1, bottom: 0, right: 0)
-        }
         
         return cell
     }

@@ -34,15 +34,4 @@ final class SearchScenePresenter {
             }
         }
     }
-    
-    func configureCellForCategory(_ category: CategoryFirebase, completion: @escaping (Int) -> Void) {
-        firebaseAPI.fetchWordCardsByCategory(category.categoryName) { cardsFirebase in
-            guard let cardsFirebase = cardsFirebase else { return }
-            if cardsFirebase.isEmpty {
-                completion(0)
-            } else {
-                completion(cardsFirebase.count)
-            }
-        }
-    }
 }
