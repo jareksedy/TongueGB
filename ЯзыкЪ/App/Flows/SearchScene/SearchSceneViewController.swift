@@ -18,6 +18,7 @@ class SearchSceneViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var categoriesTableView: UITableView!
+    @IBOutlet var categoriesActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
@@ -53,6 +54,8 @@ class SearchSceneViewController: UIViewController {
     
     private func fetchCardsAndCategories() {
         presenter.fetchCardsFromFirebase { cards, counts in
+            self.categoriesActivityIndicator.isHidden = true
+            
             guard let cards = cards, let counts = counts else { return }
 
             self.cards = cards
@@ -65,7 +68,6 @@ class SearchSceneViewController: UIViewController {
 }
 // MARK: - TableView
 extension SearchSceneViewController: UITableViewDataSource {
-
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -27,12 +27,18 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bR6-JQ-cyv">
+                                <rect key="frame" x="188.5" y="410" width="37" height="37"/>
+                                <color key="color" systemColor="systemFillColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zfr-Kx-MWf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="jjE-ch-8Zf" firstAttribute="trailing" secondItem="zfr-Kx-MWf" secondAttribute="trailing" id="0V5-0T-fQv"/>
                             <constraint firstItem="jjE-ch-8Zf" firstAttribute="bottom" secondItem="zfr-Kx-MWf" secondAttribute="bottom" id="2Pr-em-M9g"/>
+                            <constraint firstItem="bR6-JQ-cyv" firstAttribute="centerX" secondItem="jjE-ch-8Zf" secondAttribute="centerX" id="Kpq-sb-3bc"/>
+                            <constraint firstItem="bR6-JQ-cyv" firstAttribute="centerY" secondItem="jjE-ch-8Zf" secondAttribute="centerY" id="M5Y-UY-HmL"/>
                             <constraint firstItem="jjE-ch-8Zf" firstAttribute="leading" secondItem="zfr-Kx-MWf" secondAttribute="leading" id="YMY-09-Ehw"/>
                             <constraint firstItem="jjE-ch-8Zf" firstAttribute="top" secondItem="zfr-Kx-MWf" secondAttribute="top" id="tAW-jR-YmQ"/>
                         </constraints>
@@ -40,6 +46,7 @@
                     <navigationItem key="navigationItem" id="8bJ-tC-aJA"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="categoriesActivityIndicator" destination="bR6-JQ-cyv" id="WiM-mS-gzj"/>
                         <outlet property="categoriesTableView" destination="jjE-ch-8Zf" id="eIC-rB-x1h"/>
                     </connections>
                 </viewController>
@@ -54,6 +61,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
