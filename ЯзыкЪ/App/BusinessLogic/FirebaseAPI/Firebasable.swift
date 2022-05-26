@@ -20,8 +20,9 @@ protocol Firebasable {
     
     //MARK: - Fetch Funcs
     //MARK: -- Fetch word cards
-    func fetchWordCardsArray(completion: @escaping ([CardFirebase]?) -> Void)
-    func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) 
+    func fetchAllCards(completion: @escaping ([CardFirebase]?) -> Void)
+    func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void)
+    
     //MARK: -- Fetch category
     func fetchCategoriesList(completion: @escaping([CategoryFirebase]?) -> Void)
 }

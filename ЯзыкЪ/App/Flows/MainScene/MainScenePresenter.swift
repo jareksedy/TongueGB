@@ -28,17 +28,13 @@ final class MainScenePresenter {
         firebaseAPI.storeWordCard(card)
     }
     
-    func fetchCardsFromFirebase(_ controller: UIViewController, completion: @escaping ([CardFirebase]?) -> Void) {
+    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
-        firebaseAPI.fetchWordCardsArray { cardsFirebase in
+        firebaseAPI.fetchAllCards { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }
             cards = cardsFirebase
             
-            if cards.isEmpty {
-                completion(nil)
-            } else {
-                completion(cards)
-            }
+            if cards.isEmpty { completion(nil) } else { completion(cards) }
         }
     }
 }

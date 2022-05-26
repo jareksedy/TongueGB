@@ -25,6 +25,7 @@ class SearchSceneViewController: UIViewController {
     let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
+    var cards: [CardFirebase]?
     var categories: [CategoryFirebase]?
     
     // MARK: - Lifecycle
@@ -49,13 +50,16 @@ class SearchSceneViewController: UIViewController {
         self.navigationItem.title = "Категории"
     }
     
+    private func fetchCardsAndCategories() {
+        
+    }
+    
     private func fetchCategories() {
         presenter.fetchCategoriesFromFirebase(self) { categories in
             guard let categories = categories else { return }
             self.categories = categories
             self.categoriesTableView.reloadData()
         }
-        //categories = mockCategoriesProvider.createMockCategories()
     }
 }
 // MARK: - TableView

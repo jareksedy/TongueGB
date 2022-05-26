@@ -54,7 +54,7 @@ class FirebaseAPI: Firebasable {
     }
     
     // MARK: -- Fetch funcs
-    func fetchWordCardsArray(completion: @escaping ([CardFirebase]?) -> Void) {
+    func fetchAllCards(completion: @escaping ([CardFirebase]?) -> Void) {
         guard let currentUserEmail = authService.currentUser?.email else { return }
         
         var cards: [CardFirebase] = []
