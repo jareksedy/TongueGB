@@ -18,6 +18,7 @@ class SearchSceneViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var categoriesTableView: UITableView!
+    @IBOutlet var categoriesActivityIndicator: UIActivityIndicatorView!
     
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
@@ -25,13 +26,13 @@ class SearchSceneViewController: UIViewController {
     let firebaseAPI = FirebaseAPI()
     
     // MARK: - Properties
-    var categories: [CategoryFirebase]?
+    var cards: [CardFirebase]?
+    var categories: [CategoryWithCount]?
+    var cardsInCategory: [Int]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchCategories()
         
         self.presenter.viewDelegate = self
        
@@ -43,24 +44,28 @@ class SearchSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        fetchCardsAndCategories()
     }
     
     private func setupNavigationOptions() {
         self.navigationItem.title = "Категории"
     }
     
-    private func fetchCategories() {
-        presenter.fetchCategoriesFromFirebase(self) { categories in
-            guard let categories = categories else { return }
-            self.categories = categories
+    private func fetchCardsAndCategories() {
+        presenter.fetchCardsFromFirebase { cards, categories in
+            self.categoriesActivityIndicator.isHidden = true
+            
+            guard let cards = cards, let categories = categories else { return }
+
+            self.cards = cards
+            self.categories = categories.sorted(by: {$0.name < $1.name})
+            
             self.categoriesTableView.reloadData()
         }
-        //categories = mockCategoriesProvider.createMockCategories()
     }
 }
 // MARK: - TableView
 extension SearchSceneViewController: UITableViewDataSource {
-
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,27 +77,15 @@ extension SearchSceneViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
-              let category = categories?[indexPath.row],
-              let categoriesCount = categories?.count
-        else {
-            return UITableViewCell()
-        }
+              let category = categories?[indexPath.row]
+        else { return UITableViewCell() }
         
-//        let cardsInCategory = mockCardsProvider.createMockCards().filter { $0.category == category.categoryName }.count
-        
-        presenter.configureCellForCategory(category) { count in
-            cell.configure(category: category, cardsInCategory: count)
-        }
+        cell.configure(category: category.name, cardsInCategory: category.count)
         
         // Set custom selection color
         let selectedBackgroundView = UIView()
         selectedBackgroundView.backgroundColor = .systemGray6
         cell.selectedBackgroundView = selectedBackgroundView
-        
-        // Remove last cell's separator in TableView
-        if indexPath.row == categoriesCount - 1 {
-            cell.separatorInset = UIEdgeInsets.init(top: 0, left: categoriesTableView.bounds.width + 1, bottom: 0, right: 0)
-        }
         
         return cell
     }
@@ -102,7 +95,7 @@ extension SearchSceneViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = categories?[indexPath.row] else { return }
         categoriesTableView.deselectRow(at: indexPath, animated: true)
-        proceedToSearchResult(with: category.categoryName)
+        proceedToSearchResult(with: category.name)
     }
 }
 
@@ -111,7 +104,10 @@ extension SearchSceneViewController: SearchSceneViewDelegate {
     func proceedToSearchResult(with categoryKey: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let searchResultSceneViewController = storyboard.instantiateViewController(withIdentifier: "SearchResultScene") as! SearchResultSceneViewController
+        
         searchResultSceneViewController.categoryKey = categoryKey
+        searchResultSceneViewController.cards = cards?.filter { $0.category == categoryKey }
+        
         self.navigationController?.pushViewController(searchResultSceneViewController, animated: true)
     }
 }

@@ -54,8 +54,7 @@ class SearchResultSceneViewController: UIViewController {
         cardsStackView.layoutMargins.left = CGFloat.cardStackSpacing / 2
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
-        presenter.fetchCardsForCategoryFromFirebase(self, categoryKey) { cards in
-            guard let cards = cards, cards.count > 0 else { return }
+        if let cards = cards, cards.count > 0 {
             for card in cards {
                 let cardView = CardView()
                 
@@ -63,9 +62,10 @@ class SearchResultSceneViewController: UIViewController {
                 cardView.translation = card.translation
                 cardView.transcription = card.transcription
                 cardView.category = card.category
+                cardView.isFront = true
+                
                 self.cardsStackView.addArrangedSubview(cardView)
             }
-            
         }
     }
     
@@ -92,14 +92,6 @@ class SearchResultSceneViewController: UIViewController {
         
         self.view.layoutIfNeeded()
     }
-    
-//    private func fetchCards() {
-//        if let categoryKey = categoryKey {
-//            cards = mockCardsProvider.createMockCards().filter { $0.category == categoryKey }
-//        } else {
-//            cards = mockCardsProvider.createMockCards()
-//        }
-//    }
 }
 
 // MARK: - Implementation

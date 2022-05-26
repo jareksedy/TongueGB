@@ -57,7 +57,7 @@ class MainSceneViewController: UIViewController {
         
         cardsActivityIndicator.isHidden = false
         
-        presenter.fetchCardsFromFirebase(self) { cards in
+        presenter.fetchCardsFromFirebase { cards in
             self.cardsActivityIndicator.isHidden = true
             self.cards = cards
             

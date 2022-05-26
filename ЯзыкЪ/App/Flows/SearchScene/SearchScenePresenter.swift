@@ -18,10 +18,27 @@ final class SearchScenePresenter {
     init(_ firebaseAPI: FirebaseAPI) {
         self.firebaseAPI = firebaseAPI
     }
-    
+        
     // MARK: - Public methods
+    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?, [CategoryWithCount]?) -> Void) {
+        var cards: [CardFirebase] = []
+        var counts: [String: Int] = [:]
+        var categories: [CategoryWithCount] = []
+        
+        firebaseAPI.fetchAllCards { cardsFirebase in
+            guard let cardsFirebase = cardsFirebase else { return }
+            cards = cardsFirebase
+            counts = cardsFirebase.reduce(into: [:]) { counts, card in counts[card.category, default: 0] += 1 }
+            
+            counts.forEach { cardCount in
+                categories.append(CategoryWithCount(name: cardCount.key, count: cardCount.value))
+            }
+            
+            if cards.isEmpty { completion(nil, nil) } else { completion(cards, categories) }
+        }
+    }
     
-    func fetchCategoriesFromFirebase(_ controller: UIViewController, completion: @escaping ([CategoryFirebase]?) -> Void) {
+    func fetchCategoriesFromFirebase(completion: @escaping ([CategoryFirebase]?) -> Void) {
         var categories: [CategoryFirebase] = []
         firebaseAPI.fetchCategoriesList { categoriesFirebase in
             guard let categoriesFirebase = categoriesFirebase else { return }
@@ -31,17 +48,6 @@ final class SearchScenePresenter {
                 completion(nil)
             } else {
                 completion(categories)
-            }
-        }
-    }
-    
-    func configureCellForCategory(_ category: CategoryFirebase, completion: @escaping (Int) -> Void) {
-        firebaseAPI.fetchWordCardsByCategory(category.categoryName) { cardsFirebase in
-            guard let cardsFirebase = cardsFirebase else { return }
-            if cardsFirebase.isEmpty {
-                completion(0)
-            } else {
-                completion(cardsFirebase.count)
             }
         }
     }
