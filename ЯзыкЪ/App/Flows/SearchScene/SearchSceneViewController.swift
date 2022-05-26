@@ -34,8 +34,6 @@ class SearchSceneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCardsAndCategories()
-        
         self.presenter.viewDelegate = self
        
         self.categoriesTableView.dataSource = self
@@ -46,6 +44,7 @@ class SearchSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        fetchCardsAndCategories()
     }
     
     private func setupNavigationOptions() {
@@ -59,7 +58,7 @@ class SearchSceneViewController: UIViewController {
             guard let cards = cards, let categories = categories else { return }
 
             self.cards = cards
-            self.categories = categories
+            self.categories = categories.sorted(by: {$0.name < $1.name})
             
             self.categoriesTableView.reloadData()
         }
