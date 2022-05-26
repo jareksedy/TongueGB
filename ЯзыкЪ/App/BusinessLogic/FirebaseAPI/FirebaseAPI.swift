@@ -154,4 +154,18 @@ class FirebaseAPI: Firebasable {
             }
         }
     }
+    
+    func fetchCardsCountInCategory(category: String, completion: @escaping(Int?) -> Void) {
+        guard let currentUserEmail = authService.currentUser?.email else { return }
+        
+        let ref = databaseService
+            .reference(withPath: currentUserEmail.modifyEmailAddress())
+            .child("cards")
+            .queryOrdered(byChild: "category")
+            .queryEqual(toValue: category)
+        
+        ref.observe(.value, with: { (snapshot) in
+            completion(Int(snapshot.childrenCount))
+        })
+    }
 }
