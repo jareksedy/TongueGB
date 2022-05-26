@@ -33,6 +33,7 @@ final class MainScenePresenter {
         firebaseAPI.fetchAllCards { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }
             cards = cardsFirebase
+            cards.sort(){$0.timeStamp > $1.timeStamp}
             
             if cards.isEmpty { completion(nil) } else { completion(cards) }
         }
