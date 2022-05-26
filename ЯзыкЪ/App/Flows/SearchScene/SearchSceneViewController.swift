@@ -27,6 +27,7 @@ class SearchSceneViewController: UIViewController {
     // MARK: - Properties
     var cards: [CardFirebase]?
     var categories: [String]?
+    var cardsInCategory: [Int]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -51,9 +52,12 @@ class SearchSceneViewController: UIViewController {
     }
     
     private func fetchCardsAndCategories() {
-        presenter.fetchCardsFromFirebase { cards, categories in
+        presenter.fetchCardsFromFirebase { cards, counts in
+            guard let cards = cards, let counts = counts else { return }
+
             self.cards = cards
-            self.categories = categories
+            self.categories = Array(counts.keys)
+            self.cardsInCategory = Array(counts.values)
             
             self.categoriesTableView.reloadData()
         }
@@ -73,10 +77,11 @@ extension SearchSceneViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
-              let category = categories?[indexPath.row]
+              let category = categories?[indexPath.row],
+              let cardsCount = cardsInCategory?[indexPath.row]
         else { return UITableViewCell() }
         
-        cell.configure(category: category, cardsInCategory: 0)
+        cell.configure(category: category, cardsInCategory: cardsCount)
         
         // Set custom selection color
         let selectedBackgroundView = UIView()
