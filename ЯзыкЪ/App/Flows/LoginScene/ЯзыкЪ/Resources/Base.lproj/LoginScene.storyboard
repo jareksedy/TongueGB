@@ -55,10 +55,6 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ohr-tT-TEa">
-                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
-                                <color key="color" systemColor="systemFillColor"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQ0-UY-t23"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,11 +70,9 @@
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="d4y-kF-i1q" secondAttribute="trailing" constant="17" id="WuX-m6-sFG"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="Xya-uU-EkU"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="bGS-2p-1NA"/>
-                            <constraint firstItem="ohr-tT-TEa" firstAttribute="centerX" secondItem="0xS-ee-wJd" secondAttribute="centerX" id="e2t-T6-t7U"/>
                             <constraint firstItem="d4y-kF-i1q" firstAttribute="top" secondItem="KCW-Yo-76Y" secondAttribute="bottom" constant="35" id="g4m-dO-nwy"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="Xsy-4t-CL2" secondAttribute="trailing" constant="17" id="qb2-ED-FJz"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="eUE-Fs-xF8" secondAttribute="trailing" constant="17" id="sEn-cb-ecV"/>
-                            <constraint firstItem="ohr-tT-TEa" firstAttribute="centerY" secondItem="0xS-ee-wJd" secondAttribute="centerY" id="x8l-lU-0rx"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="bottom" secondItem="Xsy-4t-CL2" secondAttribute="bottom" constant="25" id="z6l-ms-0Nv"/>
                         </constraints>
                     </view>
@@ -86,7 +80,6 @@
                     <connections>
                         <outlet property="appVersionLabel" destination="Xsy-4t-CL2" id="rBJ-GK-NEX"/>
                         <outlet property="greetingLabel" destination="KCW-Yo-76Y" id="mX6-QL-8IK"/>
-                        <outlet property="loginActivityIndicator" destination="ohr-tT-TEa" id="wfm-AZ-2K7"/>
                         <outlet property="loginButton" destination="ums-67-cYI" id="pZM-9m-LCW"/>
                         <outlet property="transcriptionLabel" destination="eUE-Fs-xF8" id="82m-V2-xNy"/>
                         <outlet property="welcomeLabel" destination="d4y-kF-i1q" id="G00-0V-j2m"/>
@@ -106,9 +99,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
