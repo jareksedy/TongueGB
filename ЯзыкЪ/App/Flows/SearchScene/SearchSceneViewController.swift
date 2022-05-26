@@ -26,13 +26,13 @@ class SearchSceneViewController: UIViewController {
     
     // MARK: - Properties
     var cards: [CardFirebase]?
-    var categories: [CategoryFirebase]?
+    var categories: [String]?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCategories()
+        fetchCardsAndCategories()
         
         self.presenter.viewDelegate = self
        
@@ -51,13 +51,10 @@ class SearchSceneViewController: UIViewController {
     }
     
     private func fetchCardsAndCategories() {
-        
-    }
-    
-    private func fetchCategories() {
-        presenter.fetchCategoriesFromFirebase(self) { categories in
-            guard let categories = categories else { return }
+        presenter.fetchCardsFromFirebase { cards, categories in
+            self.cards = cards
             self.categories = categories
+            
             self.categoriesTableView.reloadData()
         }
     }
@@ -94,7 +91,7 @@ extension SearchSceneViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let category = categories?[indexPath.row] else { return }
         categoriesTableView.deselectRow(at: indexPath, animated: true)
-        proceedToSearchResult(with: category.categoryName)
+        proceedToSearchResult(with: category)
     }
 }
 

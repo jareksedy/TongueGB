@@ -20,17 +20,19 @@ final class SearchScenePresenter {
     }
     
     // MARK: - Public methods
-    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?) -> Void) {
+    func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?, [String]?) -> Void) {
         var cards: [CardFirebase] = []
+        var categories: [String] = []
         firebaseAPI.fetchAllCards { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else { return }
             cards = cardsFirebase
+            categories = cardsFirebase.map { $0.category }.unique()
             
-            if cards.isEmpty { completion(nil) } else { completion(cards) }
+            if cards.isEmpty { completion(nil, nil) } else { completion(cards, categories) }
         }
     }
     
-    func fetchCategoriesFromFirebase(_ controller: UIViewController, completion: @escaping ([CategoryFirebase]?) -> Void) {
+    func fetchCategoriesFromFirebase(completion: @escaping ([CategoryFirebase]?) -> Void) {
         var categories: [CategoryFirebase] = []
         firebaseAPI.fetchCategoriesList { categoriesFirebase in
             guard let categoriesFirebase = categoriesFirebase else { return }
