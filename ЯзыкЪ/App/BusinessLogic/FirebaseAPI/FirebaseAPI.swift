@@ -94,26 +94,26 @@ class FirebaseAPI: Firebasable {
     }
     
     func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) {
-        var cards: [CardFirebase] = []
         guard let currentUserEmail = authService.currentUser?.email else { return }
-        let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress()).child("cards")
-        ref.getData { error, snapshot in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
+        
+        var cards: [CardFirebase] = []
+        
+        let ref = databaseService
+            .reference(withPath: currentUserEmail.modifyEmailAddress())
+            .child("cards")
+            .queryOrdered(byChild: "category")
+            .queryEqual(toValue: category)
+        
+        ref.observe(.value, with: { (snapshot) in
+            snapshot.children.forEach { child in
+                guard let childSnapshot = child as? DataSnapshot,
+                      let card = CardFirebase(snapshot: childSnapshot)
+                else { return }
+                
+                cards.append(card)
             }
-            for child in snapshot.children {
-                guard let childSnapshot = child as? DataSnapshot, let card = CardFirebase(snapshot: childSnapshot) else { return }
-                if card.category == category {
-                    cards.append(card)
-                }
-            }
-            if cards.isEmpty {
-                completion(nil)
-            } else {
-                completion(cards)
-            }
-        }
+            completion(cards.isEmpty ? nil : cards)
+        })
     }
     
     func fetchCategory(_ category: String, completion: @escaping (CategoryFirebase?) -> Void ) {
