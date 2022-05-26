@@ -34,8 +34,8 @@ class FirebaseAPI: Firebasable {
     // MARK: -- Store Funcs
     
     func storeWordCard(_ card: CardFirebase) {
-        
         guard let signedUserEmail = authService.currentUser?.email, signedUserEmail == card.userEmail else { return }
+        
         let ref = self.databaseService.reference(withPath: signedUserEmail.modifyEmailAddress()).child("cards").child(card.word)
         let value = card.toAnyObject()
         
@@ -62,16 +62,19 @@ class FirebaseAPI: Firebasable {
         let ref = databaseService.reference(withPath: currentUserEmail.modifyEmailAddress())
             .child("cards")
         
-        ref.observe(.value, with: { (snapshot) in
+        ref.getData { error, snapshot in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
             snapshot.children.forEach { child in
-                guard let childSnapshot = child as? DataSnapshot,
-                      let card = CardFirebase(snapshot: childSnapshot)
-                else { return }
-                
+                guard let childSnapshot = child as? DataSnapshot, let card = CardFirebase(snapshot: childSnapshot) else { return }
                 cards.append(card)
             }
+            
             completion(cards.isEmpty ? nil : cards)
-        })
+        }
     }
     
     func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void) {
@@ -106,7 +109,12 @@ class FirebaseAPI: Firebasable {
             .reference(withPath: currentUserEmail.modifyEmailAddress())
             .child("categories")
         
-        ref.observe(.value, with: { (snapshot) in
+        ref.getData { error, snapshot in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
             snapshot.children.forEach { child in
                 guard let childSnapshot = child as? DataSnapshot,
                       let category = CategoryFirebase(snapshot: childSnapshot)
@@ -115,21 +123,6 @@ class FirebaseAPI: Firebasable {
                 categories.append(category)
             }
             completion(categories.isEmpty ? nil : categories)
-        })
-    }
-    
-    // MARK: - Private methods
-    private func fetchCardsCountInCategory(category: String, completion: @escaping(Int?) -> Void) {
-        guard let currentUserEmail = authService.currentUser?.email else { return }
-        
-        let ref = databaseService
-            .reference(withPath: currentUserEmail.modifyEmailAddress())
-            .child("cards")
-            .queryOrdered(byChild: "category")
-            .queryEqual(toValue: category)
-        
-        ref.observe(.value, with: { (snapshot) in
-            completion(Int(snapshot.childrenCount))
-        })
+        }
     }
 }
