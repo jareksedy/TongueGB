@@ -33,6 +33,7 @@ class CardView: UIControl {
     }
     
     var isFront = true
+    var hasSelection = true
     
     // MARK: - Configurable properties
     var cornerRadius = 24.0
@@ -181,6 +182,9 @@ class CardView: UIControl {
         
         tieConstraintsToSuperView(frontView)
         tieConstraintsToSuperView(backView)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.addGestureRecognizer(longPressRecognizer)
     }
     
     private func setupFrontViewConstraints() {
@@ -226,6 +230,14 @@ class CardView: UIControl {
 @objc extension CardView {
     
     // MARK: - Selectors
+    func longPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
+            hasSelection.toggle()
+        } else if sender.state == .began {
+            self.alpha = hasSelection ? 0.5 : 1.0
+        }
+    }
+    
     func speakButtonTapped() {
         guard let wordToSpeak = word else { return }
         
