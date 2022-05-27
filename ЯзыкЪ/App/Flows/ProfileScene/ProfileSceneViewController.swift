@@ -53,9 +53,6 @@ class ProfileSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
-        presenter.fetchProfileInfo { profile in
-            print(profile as Any)
-        }
     }
     
     // MARK: - Actions
