@@ -8,6 +8,8 @@
 import UIKit
 
 class EmptyCardView: UIControl {
+    weak var viewDelegate: MainSceneViewDelegate?
+    
     // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.80
     
@@ -28,6 +30,15 @@ class EmptyCardView: UIControl {
     
     // MARK: - Front and back Views
     lazy var frontView = makeCardFrontView()
+    
+    // MARK: - Animations
+    lazy var tapDownAnimation = {
+        self.transform = CGAffineTransform(scaleX: self.tapScaleFactor, y: self.tapScaleFactor)
+    }
+    
+    lazy var tapUpAnimation = {
+        self.transform = .identity
+    }
     
     // MARK: - Overrides
     override var intrinsicContentSize: CGSize {
@@ -53,9 +64,18 @@ class EmptyCardView: UIControl {
         frontView.backgroundColor = self.frontViewBackgroundColor
         frontView.layer.cornerRadius = cornerRadius
         
+        let addIconConfig = UIImage.SymbolConfiguration(pointSize: 36, weight: .light, scale: .large)
+        
+        addIcon = UIImageView()
+        addIcon.image = UIImage(systemName: "plus.rectangle.portrait")?
+            .withRenderingMode(.alwaysTemplate)
+            .withConfiguration(addIconConfig)
+        
+        frontView.addSubview(addIcon)
+        
         headingLabel = UILabel()
         headingLabel.font = UIFont.preferredFont(forTextStyle: .title3)
-        headingLabel.text = "Здесь пусто"
+        headingLabel.text = "Здесь пусто..."
         headingLabel.numberOfLines = 0
         headingLabel.textAlignment = .center
         frontView.addSubview(headingLabel)
@@ -63,13 +83,17 @@ class EmptyCardView: UIControl {
         subHeadingLabel = UILabel()
         subHeadingLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         subHeadingLabel.alpha = 0.5
-        subHeadingLabel.text = "Добавьте вашу первую карточку"
+        subHeadingLabel.text = "Нажмите чтобы добавить вашу первую карточку."
         subHeadingLabel.numberOfLines = 0
         subHeadingLabel.textAlignment = .center
         frontView.addSubview(subHeadingLabel)
         
         frontView.layer.borderColor = UIColor.systemGray5.cgColor
-        frontView.layer.borderWidth = 1.0
+        frontView.layer.borderWidth = 2.0
+        
+        frontView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
+        frontView.addTarget(self, action: #selector(tapUp), for: [.touchUpInside])
+        frontView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
         
         frontView.clipsToBounds = true
         
@@ -91,10 +115,14 @@ class EmptyCardView: UIControl {
     }
     
     private func setupFrontViewConstraints() {
+        addIcon.translatesAutoresizingMaskIntoConstraints = false
         headingLabel.translatesAutoresizingMaskIntoConstraints = false
         subHeadingLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
+            addIcon.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            addIcon.centerYAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            
             headingLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             headingLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             headingLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100),
@@ -103,5 +131,22 @@ class EmptyCardView: UIControl {
             subHeadingLabel.centerYAnchor.constraint(equalTo: self.headingLabel.bottomAnchor, constant: 40),
             subHeadingLabel.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -100)
         ])
+    }
+}
+
+@objc extension EmptyCardView {
+    
+    // MARK: - Selectors
+    @objc func tapUp() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
+        viewDelegate?.emptyCardTapped()
+    }
+    
+    @objc func tapDown() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapDownAnimation)
+    }
+    
+    @objc func tapUpCancelled() {
+        UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
     }
 }

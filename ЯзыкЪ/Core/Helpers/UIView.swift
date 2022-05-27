@@ -28,4 +28,29 @@ extension UIView {
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }
+    
+    func presentAddCardScenePopover(delegate: AddCardSceneDelegate, viewController: UIViewController) -> Bool {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let addCardSceneViewController = storyboard.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
+            addCardSceneViewController.delegate = delegate
+            let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
+            
+            navigationController.navigationBar.prefersLargeTitles = false
+            navigationController.modalPresentationStyle = .pageSheet
+            
+            if #available(iOS 15.0, *) {
+                if let sheet = navigationController.sheetPresentationController {
+                    sheet.detents = [.medium()]
+                    sheet.preferredCornerRadius = 24.0
+                }
+            }
+            
+            viewController.present(navigationController, animated: true)
+            
+            return false
+        }
+        
+        return true
+    }
 }

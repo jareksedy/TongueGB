@@ -56,7 +56,8 @@ class AddCardSceneViewController: UIViewController {
         transcription.contains(transcriptionLeftBracket) ? transcription = "\(transcription.dropFirst(2))" : nil
         transcription.contains(transcriptionRightBracket) ? transcription = "\(transcription.dropLast(2))" : nil
         
-        dismiss(animated: true, completion: { self.delegate?.didTapAddCard(word: word, translation: translation, transcription: transcription, category: category) })
+        self.dismiss(animated: true,
+                     completion: { self.delegate?.didTapAddCard(word: word, translation: translation, transcription: transcription, category: category) })
     }
     
     // MARK: - Overrides
@@ -137,17 +138,14 @@ class AddCardSceneViewController: UIViewController {
 // MARK: - Implementation
 extension AddCardSceneViewController: AddCardSceneViewDelegate {
     func displayDictionaryRecord(translation: String, transcription: String, category: String) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            
+        DispatchQueue.main.async {
             self.animateIn()
             self.translationTextField.text = translation
             self.transcriptionTextField.text = transcription
             self.categoryTextField.text = category
             
             if category == "" {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
-                    guard let self = self else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
                     self.categoryTextField.becomeFirstResponder()
                 }
             }
@@ -157,15 +155,12 @@ extension AddCardSceneViewController: AddCardSceneViewDelegate {
     }
     
     func displayEmptyDictionaryRecord(setFocusOnTranslation: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
+        DispatchQueue.main.async {
             self.animateIn()
             self.addBarButtonItem.isEnabled = false
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) { [weak self] in
-            guard let self = self else { return }
-            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
             if setFocusOnTranslation {
                 self.translationTextField.becomeFirstResponder()
             } else {

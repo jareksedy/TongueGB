@@ -96,11 +96,6 @@ extension ProfileSceneViewController: UITableViewDataSource {
         
         cell.configure(caption: quickStatsData[indexPath.row][0], value: quickStatsData[indexPath.row][1])
         
-        // Remove last cell's separator in TableView
-        if indexPath.row == quickStatsData.count - 1 {
-            cell.separatorInset = UIEdgeInsets.init(top: 0, left: quickStatsTableView.bounds.width + 1, bottom: 0, right: 0)
-        }
-        
         return cell
     }
 }

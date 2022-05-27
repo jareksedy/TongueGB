@@ -83,6 +83,7 @@ class MainSceneViewController: UIViewController {
             }
         } else {
             let emptyCardView = EmptyCardView()
+            emptyCardView.viewDelegate = self
             cardsStackView.addArrangedSubview(emptyCardView)
             isEmpty = true
         }
@@ -169,5 +170,13 @@ extension MainSceneViewController: MainSceneViewDelegate {
     }
     
     func emptyCardTapped() {
+        _ = UIView().presentAddCardScenePopover(delegate: self, viewController: self)
+    }
+}
+
+// MARK: - Additional extensions
+extension MainSceneViewController: AddCardSceneDelegate {
+    func didTapAddCard(word: String, translation: String, transcription: String, category: String) {
+        addCard(word: word, translation: translation, transcription: transcription, category: category)
     }
 }

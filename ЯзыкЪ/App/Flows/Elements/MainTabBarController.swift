@@ -13,6 +13,7 @@ protocol AddCardSceneDelegate: AnyObject {
 }
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,33 +31,13 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
         
         if viewController.children[0] is AddCardSceneViewController {
-            return presentAddCardScenePopover()
+            return UIView().presentAddCardScenePopover(delegate: self, viewController: self)
         }
         
         return true
     }
     
-    private func presentAddCardScenePopover() -> Bool {
-        if let addCardSceneViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
-            
-            addCardSceneViewController.delegate = self
-            let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
-            
-            navigationController.navigationBar.prefersLargeTitles = false
-            navigationController.modalPresentationStyle = .pageSheet
-            
-            if #available(iOS 15.0, *) {
-                if let sheet = navigationController.sheetPresentationController {
-                    sheet.detents = [.medium()]
-                    sheet.preferredCornerRadius = 24.0
-                }
-            }
-            
-            present(navigationController, animated: true)
-            return false
-        }
-        return true
-    }
+
 }
 
 // MARK: - Implementation
