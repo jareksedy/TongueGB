@@ -14,7 +14,7 @@ protocol ProfileSceneViewDelegate: NSObjectProtocol {
 
 // MARK: - View controller
 class ProfileSceneViewController: UIViewController {
-    lazy var presenter = ProfileScenePresenter()
+    lazy var presenter = ProfileScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
     @IBOutlet weak var transcriptionLabel: UILabel!
@@ -26,6 +26,7 @@ class ProfileSceneViewController: UIViewController {
     
     // MARK: - Properties
     var quickStatsData: [[String]] = []
+    let firebaseAPI = FirebaseAPI()
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
@@ -52,6 +53,9 @@ class ProfileSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        presenter.fetchProfileInfo { profile in
+            print(profile as Any)
+        }
     }
     
     // MARK: - Actions

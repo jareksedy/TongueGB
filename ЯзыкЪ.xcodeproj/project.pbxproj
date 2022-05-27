@@ -25,6 +25,7 @@
 		CA1848F92838CE9200E66F2B /* DictionaryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */; };
 		CA1848FB2838CF8500E66F2B /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FA2838CF8500E66F2B /* RequestFactory.swift */; };
 		CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */; };
+		CA4982A72840BFF200BD2C33 /* ProfileFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4982A62840BFF200BD2C33 /* ProfileFirebase.swift */; };
 		CA6AFD862827A7C70098718E /* MockCardsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD852827A7C70098718E /* MockCardsProvider.swift */; };
 		CA6AFD972827AA8D0098718E /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD942827AA8C0098718E /* MainNavigationController.swift */; };
 		CA6AFD992827AA8D0098718E /* ScrollOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */; };
@@ -94,6 +95,7 @@
 		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
 		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
+		CA4982A62840BFF200BD2C33 /* ProfileFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFirebase.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
 		CA6AFD932827AA8C0098718E /* ScrollOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOverlayView.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				CA847190282B97A8008861E5 /* UserFirebase.swift */,
 				CA847192282B97BC008861E5 /* CardFirebase.swift */,
 				CA847194282B97CB008861E5 /* CategoryFirebase.swift */,
+				CA4982A62840BFF200BD2C33 /* ProfileFirebase.swift */,
 				CA6AFDBA2828150F0098718E /* Greeting.swift */,
 			);
 			path = Entities;
@@ -561,6 +564,7 @@
 				CA1848ED2838CD2700E66F2B /* ErrorParser.swift in Sources */,
 				CA6AFDAE2827AB100098718E /* ProfileSceneViewController.swift in Sources */,
 				CA06A833281CF0E50086BD0B /* LoginSceneViewController.swift in Sources */,
+				CA4982A72840BFF200BD2C33 /* ProfileFirebase.swift in Sources */,
 				CAA60DB9283CF220008C31AE /* APIKeys.swift in Sources */,
 				CA847191282B97A8008861E5 /* UserFirebase.swift in Sources */,
 				CA0956072833891D00F35D64 /* SearchResultSceneViewController.swift in Sources */,
