@@ -57,7 +57,7 @@ class SearchSceneViewController: UIViewController {
             
             guard let cards = cards, let categories = categories else { return }
 
-            self.cards = cards
+            self.cards = cards.sorted(by: { $0.timeStamp > $1.timeStamp })
             self.categories = categories.sorted(by: {$0.name < $1.name})
             
             self.categoriesTableView.reloadData()
@@ -107,7 +107,7 @@ extension SearchSceneViewController: SearchSceneViewDelegate {
         
         searchResultSceneViewController.categoryKey = categoryKey
         searchResultSceneViewController.cards = cards?.filter { $0.category == categoryKey }
-        
+
         self.navigationController?.pushViewController(searchResultSceneViewController, animated: true)
     }
 }

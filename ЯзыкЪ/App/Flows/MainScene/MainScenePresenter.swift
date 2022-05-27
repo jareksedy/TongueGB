@@ -35,7 +35,7 @@ final class MainScenePresenter {
                 completion(nil)
                 return }
             cards = cardsFirebase
-            cards.sort(){$0.timeStamp > $1.timeStamp}
+            cards.sort { $0.timeStamp > $1.timeStamp }
             
             completion(cards.isEmpty ? nil : cards)
         }
