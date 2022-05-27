@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - Protocol
 protocol ProfileSceneViewDelegate: NSObjectProtocol {
-    func logOut()
+    func proceedToLoginScene()
 }
 
 // MARK: - View controller
@@ -57,7 +57,7 @@ class ProfileSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        logOut()
+        presenter.logOut()
     }
     
     // MARK: - Private methods
@@ -71,7 +71,11 @@ class ProfileSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.navigationItem.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
+        if let userName = AppDefaults.shared.userName {
+            self.navigationItem.title = "\(randomGreeting!.hello), \(userName)!"
+        } else {
+            self.navigationItem.title = "\(randomGreeting!.hello)!"
+        }
     }
     
     private func generateData() {
@@ -103,7 +107,7 @@ extension ProfileSceneViewController: UITableViewDataSource {
 
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
-    func logOut() {
+    func proceedToLoginScene() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
         present(entryPoint, animated: true)

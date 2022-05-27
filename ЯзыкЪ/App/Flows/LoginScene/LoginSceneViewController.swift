@@ -22,7 +22,6 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
-    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginProviderStackView: UIStackView!
     
     // MARK: - Services
@@ -46,13 +45,6 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
-    }
-    
-    // MARK: - Actions
-    @IBAction func loginButtonTapped(_ sender: Any) {
-        presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
-        loginButton.isEnabled = false
-        loginButton.backgroundColor = .systemGray5
     }
     
     // MARK: - Private methods
@@ -99,15 +91,13 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
             
+            if fullName?.givenName != nil { AppDefaults.shared.userName = fullName?.givenName }
+            if email != nil { AppDefaults.shared.userEmail = email }
+
             AppDefaults.shared.userID = userIdentifier
-            AppDefaults.shared.userName = fullName?.givenName
-            AppDefaults.shared.userEmail = email
+            AppDefaults.shared.userSignedIn = true
             
-            print(userIdentifier)
-            print(fullName?.givenName ?? "non")
-            print(email ?? "non")
-            
-            self.proceedToMainScene()
+            presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
             
         default:
             break

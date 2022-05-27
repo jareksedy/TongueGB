@@ -27,4 +27,7 @@ final class AppDefaults {
     @WrappedDefaultOptional(key: "userEmail")
     var userEmail: String?
     
+    // User is signed in
+    @WrappedDefault(key: "userSignedIn")
+    var userSignedIn: Bool = false
 }

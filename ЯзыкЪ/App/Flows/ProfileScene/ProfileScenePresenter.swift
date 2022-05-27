@@ -18,6 +18,11 @@ final class ProfileScenePresenter {
     }
         
     // MARK: - Public methods
+    func logOut() {
+        AppDefaults.shared.userSignedIn = false
+        viewDelegate?.proceedToLoginScene()
+    }
+    
     func fetchProfileInfo(completion: @escaping (ProfileFirebase?) -> Void) {
         var profile = ProfileFirebase(user: "", categoriesCount: 0, cardsCount: 0)
         var counts: [String: Int] = [:]
