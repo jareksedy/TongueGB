@@ -75,7 +75,7 @@ class EmptyCardView: UIControl {
         
         headingLabel = UILabel()
         headingLabel.font = UIFont.preferredFont(forTextStyle: .title3)
-        headingLabel.text = "Сейчас здесь совершенно пусто"
+        headingLabel.text = "Здесь пусто..."
         headingLabel.numberOfLines = 0
         headingLabel.textAlignment = .center
         frontView.addSubview(headingLabel)
@@ -83,7 +83,7 @@ class EmptyCardView: UIControl {
         subHeadingLabel = UILabel()
         subHeadingLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
         subHeadingLabel.alpha = 0.5
-        subHeadingLabel.text = "Нажмите чтобы добавить вашу первую карточку"
+        subHeadingLabel.text = "Нажмите чтобы добавить вашу первую карточку."
         subHeadingLabel.numberOfLines = 0
         subHeadingLabel.textAlignment = .center
         frontView.addSubview(subHeadingLabel)
@@ -139,7 +139,7 @@ class EmptyCardView: UIControl {
     // MARK: - Selectors
     @objc func tapUp() {
         UIView.animate(withDuration: tapAnimationDuration, delay: 0, options: animationOptions, animations: tapUpAnimation)
-        // tap action here
+        viewDelegate?.emptyCardTapped()
     }
     
     @objc func tapDown() {

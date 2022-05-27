@@ -30,8 +30,9 @@ extension UIView {
     }
     
     func presentAddCardScenePopover(delegate: AddCardSceneDelegate, viewController: UIViewController) -> Bool {
-        if let addCardSceneViewController = viewController.storyboard?.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
-            
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let addCardSceneViewController = storyboard.instantiateViewController(withIdentifier: "AddCardScene") as? AddCardSceneViewController {
             addCardSceneViewController.delegate = delegate
             let navigationController = UINavigationController(rootViewController: addCardSceneViewController)
             
