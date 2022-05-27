@@ -143,7 +143,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
             return
         }
         let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 25, y: 0)
-        let offsetLeft = CGPoint(x: -20, y: 0)
+        let offsetLeft = CGPoint(x: -15, y: 0)
         let options: UIView.AnimationOptions = [.curveEaseInOut, .allowUserInteraction]
         
         UIView.animate(withDuration: 0.15,
@@ -152,7 +152,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
                        animations: { self.cardsScrollView.setContentOffset(offsetRight, animated: false) },
                        completion:  { _ in
             
-            UIView.animate(withDuration: 0.20,
+            UIView.animate(withDuration: 0.25,
                            delay: 0,
                            options: options,
                            animations: { self.cardsScrollView.setContentOffset(offsetLeft, animated: false) },
