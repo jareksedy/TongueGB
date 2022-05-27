@@ -14,4 +14,17 @@ final class AppDefaults {
     // Last entered category
     @WrappedDefaultOptional(key: "lastCategory")
     var lastCategory: String?
+    
+    // Apple User ID
+    @WrappedDefaultOptional(key: "userID")
+    var userID: String?
+    
+    // User's name
+    @WrappedDefaultOptional(key: "userName")
+    var userName: String?
+    
+    // User's email
+    @WrappedDefaultOptional(key: "userEmail")
+    var userEmail: String?
+    
 }

@@ -14,7 +14,7 @@ protocol LoginSceneViewDelegate: NSObjectProtocol {
 }
 
 // MARK: - View controller
-class LoginSceneViewController: UIViewController {
+class LoginSceneViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     lazy var presenter = LoginScenePresenter(firebaseAPI)
     
     // MARK: - Outlets
@@ -23,6 +23,7 @@ class LoginSceneViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var appVersionLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginProviderStackView: UIStackView!
     
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
@@ -39,6 +40,7 @@ class LoginSceneViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDelegate = self
         setupUI()
+        setupProviderLoginView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +66,56 @@ class LoginSceneViewController: UIViewController {
     
     private func setupNavigationOptions() {
         self.navigationItem.title = "\(randomGreeting.hello)!"
+    }
+    
+    // MARK: - Sign in with Apple
+    func setupProviderLoginView() {
+        let authorizationButton = ASAuthorizationAppleIDButton()
+        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        self.loginProviderStackView.addArrangedSubview(authorizationButton)
+    }
+    
+    @objc
+    func handleAuthorizationAppleIDButtonPress() {
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+    
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            
+            let userIdentifier = appleIDCredential.user
+            let fullName = appleIDCredential.fullName
+            let email = appleIDCredential.email
+            
+            AppDefaults.shared.userID = userIdentifier
+            AppDefaults.shared.userName = fullName?.givenName
+            AppDefaults.shared.userEmail = email
+            
+            print(userIdentifier)
+            print(fullName?.givenName ?? "non")
+            print(email ?? "non")
+            
+            self.proceedToMainScene()
+            
+        default:
+            break
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print(error.localizedDescription)
     }
 }
 

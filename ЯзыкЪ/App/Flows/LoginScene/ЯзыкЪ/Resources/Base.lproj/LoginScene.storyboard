@@ -55,18 +55,28 @@
                                 <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-ac-2Yo">
+                                <rect key="frame" x="0.0" y="423" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vUF-yn-Dbo"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQ0-UY-t23"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FNc-ac-2Yo" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" id="0DC-tm-nQ4"/>
                             <constraint firstItem="Xsy-4t-CL2" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="9ca-RU-gsg"/>
                             <constraint firstItem="Xsy-4t-CL2" firstAttribute="top" secondItem="ums-67-cYI" secondAttribute="bottom" constant="35" id="G05-Jd-2Ub"/>
                             <constraint firstItem="ums-67-cYI" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="IGX-ZW-dBp"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="top" secondItem="WQ0-UY-t23" secondAttribute="top" constant="15" id="Ktv-e8-6rO"/>
+                            <constraint firstItem="FNc-ac-2Yo" firstAttribute="trailing" secondItem="WQ0-UY-t23" secondAttribute="trailing" id="MYP-Hf-div"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="ums-67-cYI" secondAttribute="trailing" constant="17" id="OTV-gI-MFB"/>
                             <constraint firstItem="d4y-kF-i1q" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="PVj-Vu-WQv"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="KCW-Yo-76Y" secondAttribute="trailing" constant="17" id="QKA-43-7tQ"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="top" secondItem="eUE-Fs-xF8" secondAttribute="bottom" constant="15" id="QVx-uv-NCa"/>
+                            <constraint firstItem="FNc-ac-2Yo" firstAttribute="centerY" secondItem="0xS-ee-wJd" secondAttribute="centerY" id="UsP-aT-b4Z"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="d4y-kF-i1q" secondAttribute="trailing" constant="17" id="WuX-m6-sFG"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="Xya-uU-EkU"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="bGS-2p-1NA"/>
@@ -81,6 +91,7 @@
                         <outlet property="appVersionLabel" destination="Xsy-4t-CL2" id="rBJ-GK-NEX"/>
                         <outlet property="greetingLabel" destination="KCW-Yo-76Y" id="mX6-QL-8IK"/>
                         <outlet property="loginButton" destination="ums-67-cYI" id="pZM-9m-LCW"/>
+                        <outlet property="loginProviderStackView" destination="FNc-ac-2Yo" id="SMe-k1-fxz"/>
                         <outlet property="transcriptionLabel" destination="eUE-Fs-xF8" id="82m-V2-xNy"/>
                         <outlet property="welcomeLabel" destination="d4y-kF-i1q" id="G00-0V-j2m"/>
                     </connections>

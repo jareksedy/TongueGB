@@ -95,6 +95,7 @@
 		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
 		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
+		CA2FCE0E28413F1D00C7A0DA /* ЯзыкЪ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ЯзыкЪ.entitlements"; sourceTree = "<group>"; };
 		CA4982A62840BFF200BD2C33 /* ProfileFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFirebase.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
@@ -325,6 +326,7 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
+				CA2FCE0E28413F1D00C7A0DA /* ЯзыкЪ.entitlements */,
 				CAA118EF282F5A020056013D /* App */,
 				CAA118F0282F5A090056013D /* Core */,
 				CAA118F1282F5A150056013D /* Resources */,
@@ -758,6 +760,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
@@ -789,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
