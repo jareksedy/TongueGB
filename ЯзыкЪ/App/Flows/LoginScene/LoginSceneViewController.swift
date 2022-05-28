@@ -7,6 +7,7 @@
 
 import UIKit
 import AuthenticationServices
+import KeychainSwift
 
 // MARK: - Protocol
 protocol LoginSceneViewDelegate: NSObjectProtocol {
@@ -87,16 +88,20 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
+            let keychain = KeychainSwift()
+            keychain.synchronizable = true
             
-            if fullName?.givenName != nil { AppDefaults.shared.userName = fullName?.givenName }
-            if email != nil { AppDefaults.shared.userEmail = email }
-
-            AppDefaults.shared.userID = userIdentifier
+            if let userName = appleIDCredential.fullName?.givenName {
+                keychain.set(userName, forKey: "userName")
+            }
+            
+            if let userEmail = appleIDCredential.email {
+                keychain.set(userEmail, forKey: "userEmail")
+            }
+            
+            keychain.set(appleIDCredential.user, forKey: "userID")
+            
             AppDefaults.shared.userSignedIn = true
-            
             presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
             
         default:
