@@ -101,6 +101,9 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
             
             keychain.set(appleIDCredential.user, forKey: "userID")
             
+            let creationDate = Date().dateFormatted()
+            keychain.set(creationDate, forKey: "userCreationDate")
+            
             // MARK: -- ЗДЕСЬ МЫ СОЗДАЕМ НОВОГО ПОЛЬЗОВАТЕЛЯ ИЛИ АВТОРИЗУЕМ ЕГО В ФБ --
             
             AppDefaults.shared.userSignedIn = true
