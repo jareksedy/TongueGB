@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
@@ -32,6 +33,7 @@ class MainSceneViewController: UIViewController {
     // MARK: - Services
     let mockCardsProvider = MockCardsProvider()
     let firebaseAPI = FirebaseAPI()
+    let keychain = KeychainSwift()
     
     // MARK: - Properties
     var cards: [CardFirebase]?
@@ -61,8 +63,9 @@ class MainSceneViewController: UIViewController {
         cardsActivityIndicator.isHidden = false
         
         // MARK: -- ЗДЕСЬ МЫ АВТОРИЗУЕМ ПОЛЬЗОВАТЕЛЯ В ФБ, ПОСЛЕ ЧЕГО ПОДТЯГИВАЕМ КАРТОЧКИ --
-        
-        presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
+        guard let keychainUserEmail = keychain.get("userEmail"), let keychainUserID = keychain.get("userID") else { return }
+        let firebaseUser = UserFirebase(userEmail: keychainUserEmail, userId: keychainUserID)
+        presenter.authUserForFirebase(firebaseUser)
     }
     
     private func reloadCardView() {

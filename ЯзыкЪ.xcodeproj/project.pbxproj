@@ -771,7 +771,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
@@ -803,7 +803,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";

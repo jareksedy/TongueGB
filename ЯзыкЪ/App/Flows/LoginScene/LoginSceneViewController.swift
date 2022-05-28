@@ -104,7 +104,10 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
             // MARK: -- ЗДЕСЬ МЫ СОЗДАЕМ НОВОГО ПОЛЬЗОВАТЕЛЯ ИЛИ АВТОРИЗУЕМ ЕГО В ФБ --
             
             AppDefaults.shared.userSignedIn = true
-            presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
+            
+            guard let keychainUserEmail = keychain.get("userEmail"), let keychainUserID = keychain.get("userID") else { return }
+            let userFirebase = UserFirebase(userEmail: keychainUserEmail, userId: keychainUserID)
+            presenter.createUserForFirebase(userFirebase)
             
         default:
             break
