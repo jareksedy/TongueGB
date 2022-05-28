@@ -28,6 +28,7 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
     // MARK: - Services
     let greetingGenerator = GreetingGenerator()
     let firebaseAPI = FirebaseAPI()
+    let keychain = KeychainSwift()
     
     // MARK: - Properties
     var randomGreeting: Greeting!
@@ -41,6 +42,8 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
         presenter.viewDelegate = self
         setupUI()
         setupProviderLoginView()
+        
+        keychain.synchronizable = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,9 +90,6 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            
-            let keychain = KeychainSwift()
-            keychain.synchronizable = true
             
             if let userName = appleIDCredential.fullName?.givenName {
                 keychain.set(userName, forKey: "userName")

@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FNc-ac-2Yo">
-                                <rect key="frame" x="0.0" y="728.5" width="414" height="45"/>
+                                <rect key="frame" x="0.0" y="753.5" width="414" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="vUF-yn-Dbo"/>
                                 </constraints>
@@ -59,7 +59,7 @@
                             <constraint firstItem="d4y-kF-i1q" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="PVj-Vu-WQv"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="KCW-Yo-76Y" secondAttribute="trailing" constant="17" id="QKA-43-7tQ"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="top" secondItem="eUE-Fs-xF8" secondAttribute="bottom" constant="15" id="QVx-uv-NCa"/>
-                            <constraint firstItem="Xsy-4t-CL2" firstAttribute="top" secondItem="FNc-ac-2Yo" secondAttribute="bottom" constant="50" id="S6o-R3-lfA"/>
+                            <constraint firstItem="Xsy-4t-CL2" firstAttribute="top" secondItem="FNc-ac-2Yo" secondAttribute="bottom" constant="25" id="S6o-R3-lfA"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="d4y-kF-i1q" secondAttribute="trailing" constant="17" id="WuX-m6-sFG"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="Xya-uU-EkU"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="bGS-2p-1NA"/>
