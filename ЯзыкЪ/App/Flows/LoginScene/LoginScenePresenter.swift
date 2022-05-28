@@ -17,8 +17,8 @@ final class LoginScenePresenter {
     }
     
     // MARK: - Public methods
-    func authUserFromFirebase(_ user: UserFirebase) {
-        firebaseAPI.signInUser(user, completion: {
+    func createUserForFirebase(_ user: UserFirebase) {
+        firebaseAPI.createUser(user, completion: {
             self.viewDelegate?.proceedToMainScene()
         })
     }

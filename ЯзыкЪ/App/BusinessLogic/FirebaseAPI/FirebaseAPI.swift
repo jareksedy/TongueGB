@@ -20,6 +20,17 @@ class FirebaseAPI: Firebasable {
     
 
     // MARK: --  UserData funcs
+    
+    func createUser(_ user: UserFirebase, completion: @escaping () -> Void) {
+        authService.createUser(withEmail: user.userEmail, password: user.userId) { auth, error in
+            guard error == nil else {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            completion()
+        }
+    }
+    
     func signInUser(_ user: UserFirebase, completion: @escaping () -> Void ) {
          authService.signIn(withEmail: user.userEmail, password: user.userId) { auth, error in
              guard error == nil else {

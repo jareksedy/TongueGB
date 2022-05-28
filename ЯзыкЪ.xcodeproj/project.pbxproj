@@ -76,6 +76,7 @@
 		CAAD503A2841D045008EC93D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CAAD50392841D045008EC93D /* KeychainSwift */; };
 		CAAD503C2841E847008EC93D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD503B2841E847008EC93D /* UIViewController.swift */; };
 		CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */; };
+		CAF224AD284216D800EDCCCF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF224AC284216D800EDCCCF /* Date.swift */; };
 		CAF6F958283FC46F0039196B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6F957283FC46F0039196B /* UIStackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CAAD503B2841E847008EC93D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesProvider.swift; sourceTree = "<group>"; };
+		CAF224AC284216D800EDCCCF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CAF6F957283FC46F0039196B /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 				CA6AFD9D2827AAAF0098718E /* UIColor.swift */,
 				CAA118F6282F60CF0056013D /* CGFloat.swift */,
 				CAF6F957283FC46F0039196B /* UIStackView.swift */,
+				CAF224AC284216D800EDCCCF /* Date.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				CAAD503C2841E847008EC93D /* UIViewController.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
+				CAF224AD284216D800EDCCCF /* Date.swift in Sources */,
 				CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
 				CA1848E82838CB5000E66F2B /* DictionaryResponse.swift in Sources */,
@@ -771,7 +775,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";
@@ -803,7 +807,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4NK62H99X6;
+				DEVELOPMENT_TEAM = WBQRF7BRYB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ЯзыкЪ/Environments/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "ЯзыкЪ";

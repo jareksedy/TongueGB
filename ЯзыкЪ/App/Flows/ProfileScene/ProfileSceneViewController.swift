@@ -32,8 +32,6 @@ class ProfileSceneViewController: UIViewController {
     // MARK: - Services
     let keychain = KeychainSwift()
     let greetingGenerator = GreetingGenerator()
-    lazy var categoriesCount = MockCategoriesProvider().createMockCategories().count
-    lazy var cardsCount = MockCardsProvider().createMockCards().count
     
     // MARK: - Properties
     var randomGreeting: Greeting!
@@ -49,7 +47,6 @@ class ProfileSceneViewController: UIViewController {
         quickStatsTableView.registerCell(type: QuickStatsTableViewCell.self)
         
         setupUI()
-        generateData()
         
         keychain.synchronizable = true
     }
@@ -57,6 +54,7 @@ class ProfileSceneViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavigationOptions()
+        fetchProfileData()
     }
     
     // MARK: - Actions
@@ -82,10 +80,15 @@ class ProfileSceneViewController: UIViewController {
         }
     }
     
-    private func generateData() {
-        quickStatsData = [["Количество категорий", "\(categoriesCount)"],
-                          ["Количество карточек", "\(cardsCount)"],
-                          ["Дата регистрации", "9 мая 2022"]]
+    private func fetchProfileData() {
+        presenter.fetchProfileInfo { profile in
+            guard let profile = profile else { return }
+            self.quickStatsData = [["Количество категорий", "\(profile.categoriesCount)"],
+                              ["Количество карточек", "\(profile.cardsCount)"],
+                              ["Дата регистрации", "\(profile.creationDate)"]]
+
+        }
+        
     }
 }
 
