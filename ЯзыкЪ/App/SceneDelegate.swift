@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import AuthenticationServices
+import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +20,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        if AppDefaults.shared.userSignedIn == false {
+            proceedToLoginScene()
+        }
+        
+        // MARK: - Check if user is signed in
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let keychain = KeychainSwift()
+        
+        keychain.synchronizable = true
+        
+        if let userID = keychain.get("userID") {
+            appleIDProvider.getCredentialState(forUserID: userID) { (credentialState, error) in
+                switch credentialState {
+                case .authorized: break
+                case .revoked, .notFound: self.proceedToLoginScene()
+                default: break }
+            }
+        } else {
+            proceedToLoginScene()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +71,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    // MARK: - Private methods
+    func proceedToLoginScene() {
+        DispatchQueue.main.async {
+            self.window?.rootViewController?.proceedToLoginScene()
+        }
+    }
 }
 

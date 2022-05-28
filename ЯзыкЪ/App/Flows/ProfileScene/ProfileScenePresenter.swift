@@ -20,7 +20,7 @@ final class ProfileScenePresenter {
     // MARK: - Public methods
     func logOut() {
         AppDefaults.shared.userSignedIn = false
-        viewDelegate?.proceedToLoginScene()
+        viewDelegate?.proceedToLoginScreen()
     }
     
     func fetchProfileInfo(completion: @escaping (ProfileFirebase?) -> Void) {

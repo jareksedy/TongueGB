@@ -10,7 +10,7 @@ import KeychainSwift
 
 // MARK: - Protocol
 protocol ProfileSceneViewDelegate: NSObjectProtocol {
-    func proceedToLoginScene()
+    func proceedToLoginScreen()
 }
 
 // MARK: - View controller
@@ -111,7 +111,7 @@ extension ProfileSceneViewController: UITableViewDataSource {
 
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
-    func proceedToLoginScene() {
+    func proceedToLoginScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
         present(entryPoint, animated: true)

@@ -30,6 +30,7 @@ final class MainScenePresenter {
     
     func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
+        
         firebaseAPI.fetchAllCards { cardsFirebase in
             guard let cardsFirebase = cardsFirebase else {
                 completion(nil)
