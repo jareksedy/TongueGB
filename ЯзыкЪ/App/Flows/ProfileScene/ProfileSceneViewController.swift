@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import KeychainSwift
 
 // MARK: - Protocol
 protocol ProfileSceneViewDelegate: NSObjectProtocol {
-    func logOut()
+    func proceedToLoginScreen()
 }
 
 // MARK: - View controller
@@ -29,6 +30,7 @@ class ProfileSceneViewController: UIViewController {
     let firebaseAPI = FirebaseAPI()
     
     // MARK: - Services
+    let keychain = KeychainSwift()
     let greetingGenerator = GreetingGenerator()
     lazy var categoriesCount = MockCategoriesProvider().createMockCategories().count
     lazy var cardsCount = MockCardsProvider().createMockCards().count
@@ -48,6 +50,8 @@ class ProfileSceneViewController: UIViewController {
         
         setupUI()
         generateData()
+        
+        keychain.synchronizable = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +61,7 @@ class ProfileSceneViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func logoutButtonTapped(_ sender: Any) {
-        logOut()
+        presenter.logOut()
     }
     
     // MARK: - Private methods
@@ -71,7 +75,11 @@ class ProfileSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        self.navigationItem.title = "\(randomGreeting?.hello ?? "Привет"), Ярослав!"
+        if let userName = keychain.get("userName") {
+            self.navigationItem.title = "\(randomGreeting!.hello), \(userName)!"
+        } else {
+            self.navigationItem.title = "\(randomGreeting!.hello)!"
+        }
     }
     
     private func generateData() {
@@ -103,7 +111,7 @@ extension ProfileSceneViewController: UITableViewDataSource {
 
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
-    func logOut() {
+    func proceedToLoginScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
         present(entryPoint, animated: true)

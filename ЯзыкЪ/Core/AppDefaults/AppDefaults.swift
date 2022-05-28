@@ -14,4 +14,8 @@ final class AppDefaults {
     // Last entered category
     @WrappedDefaultOptional(key: "lastCategory")
     var lastCategory: String?
+    
+    // User is signed in
+    @WrappedDefault(key: "userSignedIn")
+    var userSignedIn: Bool = false
 }

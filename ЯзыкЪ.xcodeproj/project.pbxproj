@@ -73,6 +73,8 @@
 		CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E7282BD4E900BC975E /* FirebaseDatabase */; };
 		CAA663EA282BD4E900BC975E /* FirebaseDatabaseSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = CAA663E9282BD4E900BC975E /* FirebaseDatabaseSwift-Beta */; };
 		CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CAA663ED282BD81800BC975E /* GoogleService-Info.plist */; };
+		CAAD503A2841D045008EC93D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CAAD50392841D045008EC93D /* KeychainSwift */; };
+		CAAD503C2841E847008EC93D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAD503B2841E847008EC93D /* UIViewController.swift */; };
 		CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */; };
 		CAF6F958283FC46F0039196B /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF6F957283FC46F0039196B /* UIStackView.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +97,7 @@
 		CA1848F82838CE9200E66F2B /* DictionaryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequest.swift; sourceTree = "<group>"; };
 		CA1848FA2838CF8500E66F2B /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		CA1848FD2838D00B00E66F2B /* DictionaryRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRequestFactory.swift; sourceTree = "<group>"; };
+		CA2FCE0E28413F1D00C7A0DA /* ЯзыкЪ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ЯзыкЪ.entitlements"; sourceTree = "<group>"; };
 		CA4982A62840BFF200BD2C33 /* ProfileFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileFirebase.swift; sourceTree = "<group>"; };
 		CA6AFD852827A7C70098718E /* MockCardsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCardsProvider.swift; sourceTree = "<group>"; };
 		CA6AFD922827AA8C0098718E /* EmptyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCardView.swift; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 		CAA5B77F283A031300EC00D5 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
 		CAA60DB8283CF220008C31AE /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		CAA663ED282BD81800BC975E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CAAD503B2841E847008EC93D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CADE437C2830B8C300CDFF1A /* MockCategoriesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCategoriesProvider.swift; sourceTree = "<group>"; };
 		CAF6F957283FC46F0039196B /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,7 @@
 				CA1848F22838CDB900E66F2B /* Alamofire in Frameworks */,
 				CAA663E8282BD4E900BC975E /* FirebaseDatabase in Frameworks */,
 				CAA663E4282BD4E900BC975E /* FirebaseAuth in Frameworks */,
+				CAAD503A2841D045008EC93D /* KeychainSwift in Frameworks */,
 				CAA663EA282BD4E900BC975E /* FirebaseDatabaseSwift-Beta in Frameworks */,
 				CAA5B77E2839FFB400EC00D5 /* Foil in Frameworks */,
 				CAA663E6282BD4E900BC975E /* FirebaseAuthCombine-Community in Frameworks */,
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				CAA118F92830295E0056013D /* UIView.swift */,
+				CAAD503B2841E847008EC93D /* UIViewController.swift */,
 				CA98BBD3283F6B5B001BF223 /* Sequence.swift */,
 				CA0955FB2833607600F35D64 /* UITableView.swift */,
 				CA6AFD9E2827AAAF0098718E /* String.swift */,
@@ -325,6 +331,7 @@
 		CA8B60872818D78300D7769B /* ЯзыкЪ */ = {
 			isa = PBXGroup;
 			children = (
+				CA2FCE0E28413F1D00C7A0DA /* ЯзыкЪ.entitlements */,
 				CAA118EF282F5A020056013D /* App */,
 				CAA118F0282F5A090056013D /* Core */,
 				CAA118F1282F5A150056013D /* Resources */,
@@ -462,6 +469,7 @@
 				CAA663E9282BD4E900BC975E /* FirebaseDatabaseSwift-Beta */,
 				CA1848F12838CDB900E66F2B /* Alamofire */,
 				CAA5B77D2839FFB400EC00D5 /* Foil */,
+				CAAD50392841D045008EC93D /* KeychainSwift */,
 			);
 			productName = "ЯзыкЪ";
 			productReference = CA8B60852818D78300D7769B /* ЯзыкЪ.app */;
@@ -495,6 +503,7 @@
 				CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CA1848F02838CDB900E66F2B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CAA5B77C2839FFB400EC00D5 /* XCRemoteSwiftPackageReference "Foil" */,
+				CAAD50382841D045008EC93D /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = CA8B60862818D78300D7769B /* Products */;
 			projectDirPath = "";
@@ -540,6 +549,7 @@
 				CA1848EA2838CD0000E66F2B /* AbstractErrorParser.swift in Sources */,
 				CADE437D2830B8C300CDFF1A /* MockCategoriesProvider.swift in Sources */,
 				CA847195282B97CB008861E5 /* CategoryFirebase.swift in Sources */,
+				CAAD503C2841E847008EC93D /* UIViewController.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
 				CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */,
@@ -758,6 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
@@ -789,6 +800,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ЯзыкЪ/ЯзыкЪ.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4NK62H99X6;
@@ -863,6 +875,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		CAAD50382841D045008EC93D /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -895,6 +915,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CAA663E2282BD4E900BC975E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseDatabaseSwift-Beta";
+		};
+		CAAD50392841D045008EC93D /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAAD50382841D045008EC93D /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

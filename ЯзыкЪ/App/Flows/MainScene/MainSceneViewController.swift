@@ -9,6 +9,7 @@ import UIKit
 
 // MARK: - Protocol
 protocol MainSceneViewDelegate: NSObjectProtocol {
+    func fetchAllCards()
     func addCard(word: String, translation: String, transcription: String, category: String)
     func scrollToStart(completion: ((Bool) -> Void)?)
     func emptyCardTapped()
@@ -59,13 +60,9 @@ class MainSceneViewController: UIViewController {
         
         cardsActivityIndicator.isHidden = false
         
-        presenter.fetchCardsFromFirebase { cards in
-            self.cardsActivityIndicator.isHidden = true
-            self.cards = cards
-            self.reloadCardView()
-        }
+        // MARK: -- ЗДЕСЬ МЫ АВТОРИЗУЕМ ПОЛЬЗОВАТЕЛЯ В ФБ, ПОСЛЕ ЧЕГО ПОДТЯГИВАЕМ КАРТОЧКИ --
         
-        
+        presenter.authUserFromFirebase(UserFirebase(userEmail: "test@test.ru", userId: "123456"))
     }
     
     private func reloadCardView() {
@@ -109,8 +106,15 @@ class MainSceneViewController: UIViewController {
 
 // MARK: - Implementation
 extension MainSceneViewController: MainSceneViewDelegate {
+    func fetchAllCards() {
+        presenter.fetchCardsFromFirebase { cards in
+            self.cardsActivityIndicator.isHidden = true
+            self.cards = cards
+            self.reloadCardView()
+        }
+    }
+    
     func addCard(word: String, translation: String, transcription: String, category: String) {
-        
         presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
         
         if isEmpty {
