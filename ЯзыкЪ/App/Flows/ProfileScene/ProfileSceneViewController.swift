@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 // MARK: - Protocol
 protocol ProfileSceneViewDelegate: NSObjectProtocol {
@@ -29,6 +30,7 @@ class ProfileSceneViewController: UIViewController {
     let firebaseAPI = FirebaseAPI()
     
     // MARK: - Services
+    let keychain = KeychainSwift()
     let greetingGenerator = GreetingGenerator()
     lazy var categoriesCount = MockCategoriesProvider().createMockCategories().count
     lazy var cardsCount = MockCardsProvider().createMockCards().count
@@ -48,6 +50,8 @@ class ProfileSceneViewController: UIViewController {
         
         setupUI()
         generateData()
+        
+        keychain.synchronizable = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +75,7 @@ class ProfileSceneViewController: UIViewController {
     }
     
     private func setupNavigationOptions() {
-        if let userName = AppDefaults.shared.userName {
+        if let userName = keychain.get("userName") {
             self.navigationItem.title = "\(randomGreeting!.hello), \(userName)!"
         } else {
             self.navigationItem.title = "\(randomGreeting!.hello)!"
