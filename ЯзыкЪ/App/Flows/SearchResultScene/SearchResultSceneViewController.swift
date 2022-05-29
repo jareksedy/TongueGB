@@ -63,7 +63,7 @@ class SearchResultSceneViewController: UIViewController {
                 cardView.transcription = card.transcription
                 cardView.category = card.category
                 cardView.isFront = true
-                cardView.viewDelegate = self
+                cardView.showsContextMenuButton = false
                 
                 self.cardsStackView.addArrangedSubview(cardView)
             }
@@ -93,37 +93,8 @@ class SearchResultSceneViewController: UIViewController {
         
         self.view.layoutIfNeeded()
     }
-    
-    private func deleteCard(by word: String) {
-        cardsStackView.arrangedSubviews.forEach { view in
-            let cardView = view as? CardView
-            
-            if let cardView = cardView, cardView.word == word {
-                cardsStackView.killView(cardView)
-                cards?.removeAll { $0.word == word }
-                presenter.deleteWordCardFromFirebase(word: word)
-                
-                UIView.animate(withDuration: 0.18) {
-                    self.cardsStackView.layoutSubviews()
-                }
-            }
-        }
-    }
 }
 
 // MARK: - Implementation
 extension SearchResultSceneViewController: SearchResultSceneViewDelegate {
 }
-
-extension SearchResultSceneViewController: CardActionsViewDelegate {
-    func didCallDeleteCard(word: String) {
-        guard word != "" else { return }
-        
-        self.popupAlert(title: "Удалить \(word)?",
-                        message: "Вы действительно желаете удалить эту карточку?",
-                        actionTitles: ["Удалить", "Отменить"],
-                        actionStyle: [.destructive, .default],
-                        actions: [ { _ in self.deleteCard(by: word) }, nil ])
-    }
-}
-

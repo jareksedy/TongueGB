@@ -80,6 +80,8 @@ class MainSceneViewController: UIViewController {
                 cardView.transcription = card.transcription
                 cardView.category = card.category
                 cardView.viewDelegate = self
+                cardView.showsContextMenuButton = true
+                
                 self.cardsStackView.addArrangedSubview(cardView)
             }
         } else {
