@@ -18,14 +18,22 @@ final class LoginScenePresenter {
     
     // MARK: - Public methods
     func createUserForFirebase(_ user: UserFirebase) {
-        firebaseAPI.createUser(user, completion: {
-            self.viewDelegate?.proceedToMainScene()
+        firebaseAPI.createUser(user, completion: { error in
+            if let error = error {
+                self.viewDelegate?.displayError(error)
+            } else {
+                self.viewDelegate?.proceedToMainScene()
+            }
         })
     }
     
     func authUserForFirebase(_ user: UserFirebase) {
-        firebaseAPI.signInUser(user, completion: {
-            self.viewDelegate?.proceedToMainScene()
+        firebaseAPI.signInUser(user, completion: { error in
+            if let error = error {
+                self.viewDelegate?.displayError(error)
+            } else {
+                self.viewDelegate?.proceedToMainScene()
+            }
         })
     }
 }

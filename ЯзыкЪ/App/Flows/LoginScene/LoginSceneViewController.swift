@@ -12,6 +12,7 @@ import KeychainSwift
 // MARK: - Protocol
 protocol LoginSceneViewDelegate: NSObjectProtocol {
     func proceedToMainScene()
+    func displayError(_ error: Error)
 }
 
 // MARK: - View controller
@@ -117,6 +118,10 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
 
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
+    func displayError(_ error: Error) {
+        self.quickAlert(message: error.localizedDescription)
+    }
+    
     func proceedToMainScene() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
