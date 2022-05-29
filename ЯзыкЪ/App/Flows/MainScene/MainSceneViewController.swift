@@ -66,7 +66,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func reloadCardView() {
-        cardsStackView.removeAllArrangedSubviews()
+        cardsStackView.killAllViews()
         
         if let cards = cards, cards.count > 0 {
             for card in cards {
@@ -84,6 +84,16 @@ class MainSceneViewController: UIViewController {
             emptyCardView.viewDelegate = self
             cardsStackView.addArrangedSubview(emptyCardView)
             isEmpty = true
+        }
+    }
+    
+    private func deleteCard(by word: String) {
+        cardsStackView.arrangedSubviews.forEach { view in
+            let cardView = view as? CardView
+            
+            if let cardView = cardView, cardView.word == word {
+                cardsStackView.killView(cardView)
+            }
         }
     }
     
@@ -119,7 +129,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
         presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
         
         if isEmpty {
-            cardsStackView.removeAllArrangedSubviews()
+            cardsStackView.killAllViews()
             isEmpty = false
         }
         
@@ -180,11 +190,10 @@ extension MainSceneViewController: MainSceneViewDelegate {
     
     func cardLongPressed(word: String) {
         self.popupAlert(title: "Удалить \(word)?",
-                               message: "Вы действительно желаете удалить карточку со словом \(word)?",
-                               actionTitles: ["Удалить", "Отмена"],
-                               actionStyle: [.destructive, .default],
-                               actions: [ { _ in print("Карточка \(word) успешно удалена!") }, nil ],
-                               vc: self)
+                        message: "Вы действительно желаете удалить карточку со словом \(word)?",
+                        actionTitles: ["Удалить", "Отмена"],
+                        actionStyle: [.destructive, .default],
+                        actions: [ { _ in self.deleteCard(by: word) }, nil ])
     }
 }
 
