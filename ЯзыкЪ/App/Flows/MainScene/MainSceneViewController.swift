@@ -93,10 +93,15 @@ class MainSceneViewController: UIViewController {
             
             if let cardView = cardView, cardView.word == word {
                 cardsStackView.killView(cardView)
+                cards?.removeAll { $0.word == word }
                 
                 UIView.animate(withDuration: 0.18) {
                     self.cardsStackView.layoutSubviews()
                 }
+            }
+            
+            if cards?.count == 0 {
+                reloadCardView()
             }
         }
     }
@@ -143,6 +148,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
         cardView.translation = translation
         cardView.transcription = transcription
         cardView.category = category
+        cardView.viewDelegate = self
         cardView.isFront = true
         
         cardView.alpha = 0
