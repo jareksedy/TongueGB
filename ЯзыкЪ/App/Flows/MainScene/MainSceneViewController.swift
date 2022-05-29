@@ -16,6 +16,10 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
     func emptyCardTapped()
 }
 
+protocol CardActionsViewDelegate: NSObjectProtocol {
+    func didCallDeleteCard(word: String)
+}
+
 // MARK: - View controller
 class MainSceneViewController: UIViewController {
     lazy var presenter = MainScenePresenter(firebaseAPI)
@@ -65,7 +69,7 @@ class MainSceneViewController: UIViewController {
     }
     
     private func reloadCardView() {
-        cardsStackView.removeAllArrangedSubviews()
+        cardsStackView.killAllViews()
         
         if let cards = cards, cards.count > 0 {
             for card in cards {
@@ -75,6 +79,7 @@ class MainSceneViewController: UIViewController {
                 cardView.translation = card.translation
                 cardView.transcription = card.transcription
                 cardView.category = card.category
+                cardView.viewDelegate = self
                 self.cardsStackView.addArrangedSubview(cardView)
             }
         } else {
@@ -82,6 +87,25 @@ class MainSceneViewController: UIViewController {
             emptyCardView.viewDelegate = self
             cardsStackView.addArrangedSubview(emptyCardView)
             isEmpty = true
+        }
+    }
+    
+    private func deleteCard(by word: String) {
+        cardsStackView.arrangedSubviews.forEach { view in
+            let cardView = view as? CardView
+            
+            if let cardView = cardView, cardView.word == word {
+                cardsStackView.killView(cardView)
+                cards?.removeAll { $0.word == word }
+                
+                UIView.animate(withDuration: 0.18) {
+                    self.cardsStackView.layoutSubviews()
+                }
+            }
+            
+            if cards?.count == 0 {
+                reloadCardView()
+            }
         }
     }
     
@@ -117,7 +141,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
         presenter.storeAddedWordCardToFirebase(word: word, translation: translation, transcription: transcription, category: category)
         
         if isEmpty {
-            cardsStackView.removeAllArrangedSubviews()
+            cardsStackView.killAllViews()
             isEmpty = false
         }
         
@@ -127,17 +151,17 @@ extension MainSceneViewController: MainSceneViewDelegate {
         cardView.translation = translation
         cardView.transcription = transcription
         cardView.category = category
+        cardView.viewDelegate = self
         cardView.isFront = true
         
         cardView.alpha = 0
-        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         cardsScrollView.setContentOffset(.zero, animated: false)
+        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         
         UIView.animate(withDuration: 0.18) {
             cardView.alpha = 1
             self.cardsStackView.layoutSubviews()
         }
-        
     }
     
     func scrollToStart(completion: ((Bool) -> Void)?) {
@@ -181,5 +205,17 @@ extension MainSceneViewController: MainSceneViewDelegate {
 extension MainSceneViewController: AddCardSceneDelegate {
     func didTapAddCard(word: String, translation: String, transcription: String, category: String) {
         addCard(word: word, translation: translation, transcription: transcription, category: category)
+    }
+}
+
+extension MainSceneViewController: CardActionsViewDelegate {
+    func didCallDeleteCard(word: String) {
+        guard word != "" else { return }
+        
+        self.popupAlert(title: "Удалить \(word)?",
+                        message: "Вы действительно желаете удалить эту карточку?",
+                        actionTitles: ["Удалить", "Отменить"],
+                        actionStyle: [.destructive, .default],
+                        actions: [ { _ in self.deleteCard(by: word) }, nil ])
     }
 }

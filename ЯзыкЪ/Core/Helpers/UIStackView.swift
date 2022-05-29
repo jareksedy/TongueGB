@@ -7,15 +7,15 @@
 
 import UIKit
 
-extension UIStackView {
-    func removeAllArrangedSubviews() {
-        let removedSubviews = arrangedSubviews.reduce([]) { (allSubviews, subview) -> [UIView] in
-            self.removeArrangedSubview(subview)
-            return allSubviews + [subview]
+extension UIStackView {    
+    func killView(_ view: UIView) {
+        removeArrangedSubview(view)
+        view.removeFromSuperview()
+    }
+    
+    func killAllViews() {
+        arrangedSubviews.forEach { view in
+            killView(view)
         }
-        // Deactivate all constraints
-        NSLayoutConstraint.deactivate(removedSubviews.flatMap({ $0.constraints }))
-        // Remove the views from self
-        removedSubviews.forEach({ $0.removeFromSuperview() })
     }
 }

@@ -17,4 +17,13 @@ extension UIViewController {
             completionHandler?()
         }
     }
+    
+    func popupAlert(title: String?, message: String?, actionTitles:[String?], actionStyle:[UIAlertAction.Style], actions:[((UIAlertAction) -> Void)?]) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            for (index, title) in actionTitles.enumerated() {
+                 let action = UIAlertAction(title: title, style: actionStyle[index], handler: actions[index])
+                 alert.addAction(action)
+            }
+            self.present(alert, animated: true, completion: nil)
+       }
 }
