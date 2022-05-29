@@ -8,6 +8,7 @@
 import UIKit
 
 class CardView: UIControl {
+    weak var viewDelegate: MainSceneViewDelegate?
     
     // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.80
@@ -181,6 +182,9 @@ class CardView: UIControl {
         
         tieConstraintsToSuperView(frontView)
         tieConstraintsToSuperView(backView)
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
+        self.addGestureRecognizer(longPressRecognizer)
     }
     
     private func setupFrontViewConstraints() {
@@ -226,6 +230,14 @@ class CardView: UIControl {
 @objc extension CardView {
     
     // MARK: - Selectors
+    func longPress(sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
+            if let word = word {
+                viewDelegate?.cardLongPressed(word: word)
+            }
+        }
+    }
+    
     func speakButtonTapped() {
         guard let wordToSpeak = word else { return }
         

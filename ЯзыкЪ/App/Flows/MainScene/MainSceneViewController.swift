@@ -14,6 +14,7 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCard(word: String, translation: String, transcription: String, category: String)
     func scrollToStart(completion: ((Bool) -> Void)?)
     func emptyCardTapped()
+    func cardLongPressed(word: String)
 }
 
 // MARK: - View controller
@@ -75,6 +76,7 @@ class MainSceneViewController: UIViewController {
                 cardView.translation = card.translation
                 cardView.transcription = card.transcription
                 cardView.category = card.category
+                cardView.viewDelegate = self
                 self.cardsStackView.addArrangedSubview(cardView)
             }
         } else {
@@ -174,6 +176,15 @@ extension MainSceneViewController: MainSceneViewDelegate {
     
     func emptyCardTapped() {
         _ = UIView().presentAddCardScenePopover(delegate: self, viewController: self)
+    }
+    
+    func cardLongPressed(word: String) {
+        self.popupAlert(title: "Удалить \(word)?",
+                               message: "Вы действительно желаете удалить карточку \(word)?",
+                               actionTitles: ["Удалить", "Отмена"],
+                               actionStyle: [.destructive, .default],
+                               actions: [ { _ in print("Карточка \(word) успешно удалена!") }, nil ],
+                               vc: self)
     }
 }
 
