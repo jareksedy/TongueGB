@@ -93,13 +93,8 @@ class ProfileSceneViewController: UIViewController {
 
 // MARK: - TableView
 extension ProfileSceneViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return quickStatsData.count
-    }
+    func numberOfSections(in tableView: UITableView) -> Int { 1 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { quickStatsData.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: QuickStatsTableViewCell.self, for: indexPath) as? QuickStatsTableViewCell

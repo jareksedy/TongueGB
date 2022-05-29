@@ -57,6 +57,8 @@
 		CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B60932818D78500D7769B /* LaunchScreen.storyboard */; };
 		CA8C7E6028341FE90039E5E4 /* QuickStatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */; };
 		CA8C7E6128341FE90039E5E4 /* QuickStatsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */; };
+		CA8CA6882843245F0045C918 /* NoCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8CA6872843245F0045C918 /* NoCategoriesCell.swift */; };
+		CA8CA68B284324EC0045C918 /* NoCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA8CA68A284324EC0045C918 /* NoCategoriesCell.xib */; };
 		CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED0F28356977006BD7C7 /* LoginScene.storyboard */; };
 		CA97ED13283569DB006BD7C7 /* MainScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED12283569DB006BD7C7 /* MainScene.storyboard */; };
 		CA97ED1628356A44006BD7C7 /* AddCardScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA97ED1428356A44006BD7C7 /* AddCardScene.storyboard */; };
@@ -133,6 +135,8 @@
 		CA8B60962818D78500D7769B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickStatsTableViewCell.swift; sourceTree = "<group>"; };
 		CA8C7E5F28341FE90039E5E4 /* QuickStatsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuickStatsTableViewCell.xib; sourceTree = "<group>"; };
+		CA8CA6872843245F0045C918 /* NoCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCategoriesCell.swift; sourceTree = "<group>"; };
+		CA8CA68A284324EC0045C918 /* NoCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoCategoriesCell.xib; sourceTree = "<group>"; };
 		CA97ED1028356977006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/LoginScene.storyboard"; sourceTree = "<group>"; };
 		CA97ED12283569DB006BD7C7 /* MainScene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainScene.storyboard; sourceTree = "<group>"; };
 		CA97ED1528356A44006BD7C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "ЯзыкЪ/Resources/Base.lproj/AddCardScene.storyboard"; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 		CA6AFDB52827AB260098718E /* SearchScene */ = {
 			isa = PBXGroup;
 			children = (
+				CA8CA689284324630045C918 /* NoCategoriesCell */,
 				CA095601283367BD00F35D64 /* CategoryTableViewCell */,
 				CA97ED1728356ADA006BD7C7 /* SearchScene.storyboard */,
 				CA6AFDB22827AB1F0098718E /* SearchSceneViewController.swift */,
@@ -350,6 +355,15 @@
 				CA8C7E5E28341FE90039E5E4 /* QuickStatsTableViewCell.swift */,
 			);
 			path = QuickStatsTableViewCell;
+			sourceTree = "<group>";
+		};
+		CA8CA689284324630045C918 /* NoCategoriesCell */ = {
+			isa = PBXGroup;
+			children = (
+				CA8CA6872843245F0045C918 /* NoCategoriesCell.swift */,
+				CA8CA68A284324EC0045C918 /* NoCategoriesCell.xib */,
+			);
+			path = NoCategoriesCell;
 			sourceTree = "<group>";
 		};
 		CAA118EF282F5A020056013D /* App */ = {
@@ -525,6 +539,7 @@
 				CA095600283367B200F35D64 /* CategoryTableViewCell.xib in Resources */,
 				CA97ED1628356A44006BD7C7 /* AddCardScene.storyboard in Resources */,
 				CA8B60952818D78500D7769B /* LaunchScreen.storyboard in Resources */,
+				CA8CA68B284324EC0045C918 /* NoCategoriesCell.xib in Resources */,
 				CAA663EE282BD81800BC975E /* GoogleService-Info.plist in Resources */,
 				CA97ED1128356977006BD7C7 /* LoginScene.storyboard in Resources */,
 				CA97ED1928356ADA006BD7C7 /* SearchScene.storyboard in Resources */,
@@ -554,6 +569,7 @@
 				CA847195282B97CB008861E5 /* CategoryFirebase.swift in Sources */,
 				CA06A835281CF0F10086BD0B /* LoginScenePresenter.swift in Sources */,
 				CA0955FC2833607700F35D64 /* UITableView.swift in Sources */,
+				CA8CA6882843245F0045C918 /* NoCategoriesCell.swift in Sources */,
 				CAF224AD284216D800EDCCCF /* Date.swift in Sources */,
 				CA1848FE2838D00B00E66F2B /* DictionaryRequestFactory.swift in Sources */,
 				CA6AFDB32827AB1F0098718E /* SearchSceneViewController.swift in Sources */,
