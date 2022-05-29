@@ -82,14 +82,12 @@ class ProfileSceneViewController: UIViewController {
     
     private func fetchProfileData() {
         presenter.fetchProfileInfo { profile in
-            guard let profile = profile else { return }
-            self.quickStatsData = [["Количество категорий", "\(profile.categoriesCount)"],
-                                   ["Количество карточек", "\(profile.cardsCount)"],
+            self.quickStatsData = [["Количество категорий", "\(profile?.categoriesCount ?? 0)"],
+                                   ["Количество карточек", "\(profile?.cardsCount ?? 0)"],
                                    ["Дата регистрации", "\(self.keychain.get("userCreationDate") ?? "Нет данных")"]]
             
             self.quickStatsTableView.reloadData()
         }
-        
     }
 }
 
