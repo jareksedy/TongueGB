@@ -180,7 +180,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
     
     func cardLongPressed(word: String) {
         self.popupAlert(title: "Удалить \(word)?",
-                               message: "Вы действительно желаете удалить карточку \(word)?",
+                               message: "Вы действительно желаете удалить карточку со словом \(word)?",
                                actionTitles: ["Удалить", "Отмена"],
                                actionStyle: [.destructive, .default],
                                actions: [ { _ in print("Карточка \(word) успешно удалена!") }, nil ],
