@@ -93,6 +93,10 @@ class MainSceneViewController: UIViewController {
             
             if let cardView = cardView, cardView.word == word {
                 cardsStackView.killView(cardView)
+                
+                UIView.animate(withDuration: 0.18) {
+                    self.cardsStackView.layoutSubviews()
+                }
             }
         }
     }
@@ -142,14 +146,13 @@ extension MainSceneViewController: MainSceneViewDelegate {
         cardView.isFront = true
         
         cardView.alpha = 0
-        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         cardsScrollView.setContentOffset(.zero, animated: false)
+        self.cardsStackView.insertArrangedSubview(cardView, at: 0)
         
         UIView.animate(withDuration: 0.18) {
             cardView.alpha = 1
             self.cardsStackView.layoutSubviews()
         }
-        
     }
     
     func scrollToStart(completion: ((Bool) -> Void)?) {
@@ -190,7 +193,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
     
     func cardLongPressed(word: String) {
         self.popupAlert(title: "Удалить \(word)?",
-                        message: "Вы действительно желаете удалить карточку со словом \(word)?",
+                        message: "Вы действительно желаете удалить эту карточку?",
                         actionTitles: ["Удалить", "Отмена"],
                         actionStyle: [.destructive, .default],
                         actions: [ { _ in self.deleteCard(by: word) }, nil ])
