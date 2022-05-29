@@ -8,7 +8,7 @@
 import UIKit
 
 class CardView: UIControl {
-    weak var viewDelegate: MainSceneViewDelegate?
+    weak var viewDelegate: CardActionsViewDelegate?
     
     // MARK: - Public properties
     var screenWidthMultiplier: CGFloat = 0.80
