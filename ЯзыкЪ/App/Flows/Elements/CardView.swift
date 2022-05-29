@@ -51,6 +51,7 @@ class CardView: UIControl {
     
     // MARK: - Private properties
     private var speakButton: UIButton!
+    private var contextButton: UIButton!
     private var wordLabel: UILabel!
     private var descriptionLabel: UILabel!
     private var categoryLabel: UILabel!
@@ -157,6 +158,21 @@ class CardView: UIControl {
         categoryLabelBack.textAlignment = .center
         backView.addSubview(categoryLabelBack)
         
+        contextButton = UIButton()
+        contextButton.setImage(UIImage(systemName: "ellipsis")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        contextButton.tintColor = .label
+        contextButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        contextButton.adjustsImageWhenHighlighted = false
+        
+        contextButton.menu = makeContextMenu()
+        contextButton.showsMenuAsPrimaryAction = true
+        
+        //        if #available(iOS 15.0, *) {
+        //            contextButton.changesSelectionAsPrimaryAction = true
+        //        }
+        
+        backView.addSubview(contextButton)
+        
         backView.addTarget(self, action: #selector(tapDown), for: [.touchDown])
         backView.addTarget(self, action: #selector(flip), for: [.touchUpInside])
         backView.addTarget(self, action: #selector(tapUpCancelled), for: [.touchDragExit, .touchCancel, .touchUpOutside])
@@ -182,9 +198,6 @@ class CardView: UIControl {
         
         tieConstraintsToSuperView(frontView)
         tieConstraintsToSuperView(backView)
-        
-        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPress))
-        self.addGestureRecognizer(longPressRecognizer)
     }
     
     private func setupFrontViewConstraints() {
@@ -214,6 +227,7 @@ class CardView: UIControl {
     private func setupBackViewConstraints() {
         translationLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabelBack.translatesAutoresizingMaskIntoConstraints = false
+        contextButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             translationLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -222,22 +236,35 @@ class CardView: UIControl {
             
             categoryLabelBack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             categoryLabelBack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
-            categoryLabelBack.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50)
+            categoryLabelBack.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -50),
+            
+            contextButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            contextButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 40)
         ])
+    }
+    
+    private func makeContextMenu() -> UIMenu {
+        let editCardAction = UIAction(title: "Править",
+                                      image: UIImage(systemName: "pencil"),
+                                      identifier: nil,
+                                      attributes: .disabled,
+                                      state: .off,
+                                      handler: { _ in })
+        
+        
+        let deleteCardAction = UIAction(title: "Удалить",
+                                        image: UIImage(systemName: "trash"),
+                                        identifier: nil,
+                                        attributes: .destructive,
+                                        state: .off,
+                                        handler: { _ in self.viewDelegate?.didCallDeleteCard(word: self.word ?? "") })
+        
+        return UIMenu(children: [editCardAction, deleteCardAction])
     }
 }
 
 @objc extension CardView {
-    
     // MARK: - Selectors
-    func longPress(sender: UILongPressGestureRecognizer) {
-        if sender.state == .ended {
-            if let word = word {
-                viewDelegate?.cardLongPressed(word: word)
-            }
-        }
-    }
-    
     func speakButtonTapped() {
         guard let wordToSpeak = word else { return }
         

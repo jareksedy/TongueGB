@@ -14,7 +14,7 @@ protocol MainSceneViewDelegate: NSObjectProtocol {
     func addCard(word: String, translation: String, transcription: String, category: String)
     func scrollToStart(completion: ((Bool) -> Void)?)
     func emptyCardTapped()
-    func cardLongPressed(word: String)
+    func didCallDeleteCard(word: String)
 }
 
 // MARK: - View controller
@@ -197,10 +197,12 @@ extension MainSceneViewController: MainSceneViewDelegate {
         _ = UIView().presentAddCardScenePopover(delegate: self, viewController: self)
     }
     
-    func cardLongPressed(word: String) {
+    func didCallDeleteCard(word: String) {
+        guard word != "" else { return }
+        
         self.popupAlert(title: "Удалить \(word)?",
                         message: "Вы действительно желаете удалить эту карточку?",
-                        actionTitles: ["Удалить", "Отмена"],
+                        actionTitles: ["Удалить", "Отменить"],
                         actionStyle: [.destructive, .default],
                         actions: [ { _ in self.deleteCard(by: word) }, nil ])
     }
