@@ -35,4 +35,9 @@ final class SearchResultScenePresenter {
             }
         }
     }
+    
+    func deleteWordCardFromFirebase(word: String) {
+        guard let userEmail = firebaseAPI.authService.currentUser?.email else { return }
+        firebaseAPI.deleteWordCard(word, userEmail)
+    }
 }

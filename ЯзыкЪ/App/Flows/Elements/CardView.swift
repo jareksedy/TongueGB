@@ -33,6 +33,11 @@ class CardView: UIControl {
         set { categoryLabel.text = newValue; categoryLabelBack.text = newValue }
     }
     
+    var showsContextMenuButton: Bool? {
+        get { return !contextButton.isHidden }
+        set { contextButton.isHidden = !(newValue ?? false) }
+    }
+    
     var isFront = true
     
     // MARK: - Configurable properties
@@ -166,10 +171,6 @@ class CardView: UIControl {
         
         contextButton.menu = makeContextMenu()
         contextButton.showsMenuAsPrimaryAction = true
-        
-        //        if #available(iOS 15.0, *) {
-        //            contextButton.changesSelectionAsPrimaryAction = true
-        //        }
         
         backView.addSubview(contextButton)
         
