@@ -12,6 +12,7 @@ import KeychainSwift
 // MARK: - Protocol
 protocol LoginSceneViewDelegate: NSObjectProtocol {
     func proceedToMainScene()
+    func displayError(_ error: Error)
 }
 
 // MARK: - View controller
@@ -91,29 +92,22 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             
-            if let userName = appleIDCredential.fullName?.givenName {
+            if let userEmail = appleIDCredential.email, let userName = appleIDCredential.fullName?.givenName {
                 keychain.set(userName, forKey: "userName")
-            }
-            
-            if let userEmail = appleIDCredential.email {
                 keychain.set(userEmail, forKey: "userEmail")
+                keychain.set(appleIDCredential.user, forKey: "userID")
+                
+                let creationDate = Date().dateFormatted()
+                keychain.set(creationDate, forKey: "userCreationDate")
+                
+                let user = UserFirebase(userEmail: userEmail, userId: appleIDCredential.user)
+                presenter.createUserForFirebase(user)
+            } else if let userEmail = keychain.get("userEmail") {
+                let user = UserFirebase(userEmail: userEmail, userId: appleIDCredential.user)
+                presenter.authUserForFirebase(user)
             }
             
-            keychain.set(appleIDCredential.user, forKey: "userID")
-            
-            let creationDate = Date().dateFormatted()
-            keychain.set(creationDate, forKey: "userCreationDate")
-            
-            // MARK: -- ЗДЕСЬ МЫ СОЗДАЕМ НОВОГО ПОЛЬЗОВАТЕЛЯ ИЛИ АВТОРИЗУЕМ ЕГО В ФБ --
-            
-            AppDefaults.shared.userSignedIn = true
-            
-            guard let keychainUserEmail = keychain.get("userEmail"), let keychainUserID = keychain.get("userID") else { return }
-            let userFirebase = UserFirebase(userEmail: keychainUserEmail, userId: keychainUserID)
-            presenter.createUserForFirebase(userFirebase)
-            
-        default:
-            break
+        default: break
         }
     }
     
@@ -124,9 +118,15 @@ class LoginSceneViewController: UIViewController, ASAuthorizationControllerDeleg
 
 // MARK: - Implementation
 extension LoginSceneViewController: LoginSceneViewDelegate {
+    func displayError(_ error: Error) {
+        self.quickAlert(message: error.localizedDescription)
+    }
+    
     func proceedToMainScene() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! UITabBarController
+        
+        AppDefaults.shared.userSignedIn = true
         present(mainTabBarController, animated: true)
     }
 }

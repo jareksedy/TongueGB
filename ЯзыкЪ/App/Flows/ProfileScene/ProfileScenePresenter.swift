@@ -27,31 +27,20 @@ final class ProfileScenePresenter {
     }
     
     func fetchProfileInfo(completion: @escaping (ProfileFirebase?) -> Void) {
-        
-        var profile = ProfileFirebase(userName: "", categoriesCount: 0, cardsCount: 0, creationDate: "")
-        var counts: [String: Int] = [:]
+        var profile = ProfileFirebase(cardsCount: 0, categoriesCount: 0)
         var categories: [CategoryWithCount] = []
         
-        guard let keychainUserName = keychain.get("userName"), let keychainUserCreationDate = keychain.get("userCreationDate") else {
-            completion(nil)
-            return
-        }
-        
         firebaseAPI.fetchAllCards { cardsFirebase in
-            guard let cardsFirebase = cardsFirebase, let currentUserEmail = self.firebaseAPI.authService.currentUser?.email else { return }
-            profile.userName = currentUserEmail
-            counts = cardsFirebase.reduce(into: [:]) { counts, card in counts[card.category, default: 0] += 1 }
-            
-            counts.forEach { cardCount in
-                categories.append(CategoryWithCount(name: cardCount.key, count: cardCount.value))
+            guard let cardsFirebase = cardsFirebase else {
+                completion(nil)
+                return
             }
             
-            profile.userName = keychainUserName
-            profile.creationDate = keychainUserCreationDate
+            categories = cardsFirebase.reduce(into: [:]) { counts, card in counts[card.category, default: 0] += 1 }.map { CategoryWithCount(name: $0.key, count: $0.value) }
             profile.categoriesCount = categories.count
             profile.cardsCount = cardsFirebase.count
             
-            completion(profile == ProfileFirebase(userName: "", categoriesCount: 0, cardsCount: 0, creationDate: "") ? nil : profile)
+            completion(profile)
         }
     }
 }

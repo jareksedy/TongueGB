@@ -8,8 +8,6 @@
 import Foundation
 
 struct ProfileFirebase: Equatable {
-    var userName: String
-    var categoriesCount: Int
     var cardsCount: Int
-    var creationDate: String
+    var categoriesCount: Int
 }

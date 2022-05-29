@@ -82,25 +82,19 @@ class ProfileSceneViewController: UIViewController {
     
     private func fetchProfileData() {
         presenter.fetchProfileInfo { profile in
-            guard let profile = profile else { return }
-            self.quickStatsData = [["Количество категорий", "\(profile.categoriesCount)"],
-                              ["Количество карточек", "\(profile.cardsCount)"],
-                              ["Дата регистрации", "\(profile.creationDate)"]]
-
+            self.quickStatsData = [["Количество категорий", "\(profile?.categoriesCount ?? 0)"],
+                                   ["Количество карточек", "\(profile?.cardsCount ?? 0)"],
+                                   ["Дата регистрации", "\(self.keychain.get("userCreationDate") ?? "Нет данных")"]]
+            
+            self.quickStatsTableView.reloadData()
         }
-        
     }
 }
 
 // MARK: - TableView
 extension ProfileSceneViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return quickStatsData.count
-    }
+    func numberOfSections(in tableView: UITableView) -> Int { 1 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { quickStatsData.count }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueCell(withType: QuickStatsTableViewCell.self, for: indexPath) as? QuickStatsTableViewCell
@@ -115,6 +109,7 @@ extension ProfileSceneViewController: UITableViewDataSource {
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
     func proceedToLoginScreen() {
+        AppDefaults.shared.userSignedIn = false
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
         present(entryPoint, animated: true)

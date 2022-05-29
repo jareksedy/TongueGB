@@ -45,6 +45,7 @@ class MainSceneViewController: UIViewController {
         presenter.viewDelegate = self
         setupConstraints()
         setupUI()
+        fetchAllCards()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,11 +62,6 @@ class MainSceneViewController: UIViewController {
         cardsStackView.layoutMargins.right = CGFloat.cardStackSpacing / 2
         
         cardsActivityIndicator.isHidden = false
-        
-        // MARK: -- ЗДЕСЬ МЫ АВТОРИЗУЕМ ПОЛЬЗОВАТЕЛЯ В ФБ, ПОСЛЕ ЧЕГО ПОДТЯГИВАЕМ КАРТОЧКИ --
-        guard let keychainUserEmail = keychain.get("userEmail"), let keychainUserID = keychain.get("userID") else { return }
-        let firebaseUser = UserFirebase(userEmail: keychainUserEmail, userId: keychainUserID)
-        presenter.authUserForFirebase(firebaseUser)
     }
     
     private func reloadCardView() {
@@ -150,7 +146,7 @@ extension MainSceneViewController: MainSceneViewDelegate {
             return
         }
         let offsetRight = CGPoint(x: cardsScrollView.contentOffset.x + 25, y: 0)
-        let offsetLeft = CGPoint(x: -15, y: 0)
+        let offsetLeft = CGPoint(x: -20, y: 0)
         let options: UIView.AnimationOptions = [.curveEaseInOut, .allowUserInteraction]
         
         UIView.animate(withDuration: 0.15,

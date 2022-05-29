@@ -25,7 +25,11 @@ final class SearchScenePresenter {
         var categories: [CategoryWithCount] = []
         
         firebaseAPI.fetchAllCards { cardsFirebase in
-            guard let cardsFirebase = cardsFirebase else { return }
+            guard let cardsFirebase = cardsFirebase else {
+                completion(nil, nil)
+                return
+            }
+            
             cards = cardsFirebase
             categories = cardsFirebase
                 .reduce(into: [:]) { counts, card in counts[card.category, default: 0] += 1 }

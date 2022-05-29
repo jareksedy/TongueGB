@@ -12,7 +12,6 @@ import UIKit
 
 
 class FirebaseAPI: Firebasable {
-    
     // MARK: - Properties
     let authService = Auth.auth()
     let databaseService = Database.database()
@@ -20,30 +19,27 @@ class FirebaseAPI: Firebasable {
     
 
     // MARK: --  UserData funcs
-    
-    func createUser(_ user: UserFirebase, completion: @escaping () -> Void) {
+    func createUser(_ user: UserFirebase, completion: @escaping (Error?) -> Void) {
         authService.createUser(withEmail: user.userEmail, password: user.userId) { auth, error in
-            guard error == nil else {
-                print("Error: \(String(describing: error?.localizedDescription))")
-                return
+            if let error = error {
+                print(error.localizedDescription)
             }
-            completion()
+            
+            completion(error)
         }
     }
     
-    func signInUser(_ user: UserFirebase, completion: @escaping () -> Void ) {
+    func signInUser(_ user: UserFirebase, completion: @escaping (Error?) -> Void ) {
          authService.signIn(withEmail: user.userEmail, password: user.userId) { auth, error in
-             guard error == nil else {
-                 print("Error: \(String(describing: error?.localizedDescription))")
-                 return
+             if let error = error {
+                 print(error.localizedDescription)
              }
              
-             completion()
+             completion(error)
          }
      }
     
     // MARK: -- Store Funcs
-    
     func storeWordCard(_ card: CardFirebase) {
         guard let signedUserEmail = authService.currentUser?.email, signedUserEmail == card.userEmail else { return }
         

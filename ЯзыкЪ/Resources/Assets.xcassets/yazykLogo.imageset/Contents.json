@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "yazykLight.pdf",
+      "filename" : "tongue_logo_light.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "yazykDark.pdf",
+      "filename" : "tongue_logo_dark.pdf",
       "idiom" : "universal"
     }
   ],

@@ -48,11 +48,18 @@
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="17" bottom="0.0" right="17"/>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yazykLogo" translatesAutoresizingMaskIntoConstraints="NO" id="0QK-lS-mKZ">
+                                <rect key="frame" x="0.0" y="218.5" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Wda-rx-bzA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WQ0-UY-t23"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FNc-ac-2Yo" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" id="0DC-tm-nQ4"/>
+                            <constraint firstItem="0QK-lS-mKZ" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" id="84P-16-Buw"/>
                             <constraint firstItem="Xsy-4t-CL2" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="9ca-RU-gsg"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="top" secondItem="WQ0-UY-t23" secondAttribute="top" constant="15" id="Ktv-e8-6rO"/>
                             <constraint firstItem="FNc-ac-2Yo" firstAttribute="trailing" secondItem="WQ0-UY-t23" secondAttribute="trailing" id="MYP-Hf-div"/>
@@ -60,9 +67,11 @@
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="KCW-Yo-76Y" secondAttribute="trailing" constant="17" id="QKA-43-7tQ"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="top" secondItem="eUE-Fs-xF8" secondAttribute="bottom" constant="15" id="QVx-uv-NCa"/>
                             <constraint firstItem="Xsy-4t-CL2" firstAttribute="top" secondItem="FNc-ac-2Yo" secondAttribute="bottom" constant="25" id="S6o-R3-lfA"/>
+                            <constraint firstItem="0QK-lS-mKZ" firstAttribute="top" secondItem="d4y-kF-i1q" secondAttribute="bottom" constant="50" id="U6b-X6-c80"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="d4y-kF-i1q" secondAttribute="trailing" constant="17" id="WuX-m6-sFG"/>
                             <constraint firstItem="KCW-Yo-76Y" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="Xya-uU-EkU"/>
                             <constraint firstItem="eUE-Fs-xF8" firstAttribute="leading" secondItem="WQ0-UY-t23" secondAttribute="leading" constant="17" id="bGS-2p-1NA"/>
+                            <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="0QK-lS-mKZ" secondAttribute="trailing" id="c1S-5B-WQ9"/>
                             <constraint firstItem="d4y-kF-i1q" firstAttribute="top" secondItem="KCW-Yo-76Y" secondAttribute="bottom" constant="35" id="g4m-dO-nwy"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="Xsy-4t-CL2" secondAttribute="trailing" constant="17" id="qb2-ED-FJz"/>
                             <constraint firstItem="WQ0-UY-t23" firstAttribute="trailing" secondItem="eUE-Fs-xF8" secondAttribute="trailing" constant="17" id="sEn-cb-ecV"/>
@@ -84,6 +93,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="yazykLogo" width="1850" height="830"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

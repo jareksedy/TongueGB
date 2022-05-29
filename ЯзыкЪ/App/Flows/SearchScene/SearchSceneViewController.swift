@@ -39,6 +39,7 @@ class SearchSceneViewController: UIViewController {
         self.categoriesTableView.dataSource = self
         self.categoriesTableView.delegate = self
         self.categoriesTableView.registerCell(type: CategoryTableViewCell.self)
+        self.categoriesTableView.registerCell(type: NoCategoriesCell.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,37 +56,37 @@ class SearchSceneViewController: UIViewController {
         presenter.fetchCardsFromFirebase { cards, categories in
             self.categoriesActivityIndicator.isHidden = true
             
-            guard let cards = cards, let categories = categories else { return }
+            if let cards = cards, let categories = categories {
+                self.cards = cards.sorted(by: { $0.timeStamp > $1.timeStamp })
+                self.categories = categories.sorted(by: {$0.name < $1.name})
+            }
 
-            self.cards = cards.sorted(by: { $0.timeStamp > $1.timeStamp })
-            self.categories = categories.sorted(by: {$0.name < $1.name})
-            
             self.categoriesTableView.reloadData()
         }
     }
 }
 // MARK: - TableView
 extension SearchSceneViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories?.count ?? 0
-    }
+    func numberOfSections(in tableView: UITableView) -> Int { 1 }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { categories?.count ?? 1 }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
-              let category = categories?[indexPath.row]
-        else { return UITableViewCell() }
+        if let cell = tableView.dequeueCell(withType: CategoryTableViewCell.self, for: indexPath) as? CategoryTableViewCell,
+           let category = categories?[indexPath.row] {
+            
+            cell.configure(category: category.name, cardsInCategory: category.count)
+            
+            let selectedBackgroundView = UIView()
+            selectedBackgroundView.backgroundColor = .systemGray6
+            cell.selectedBackgroundView = selectedBackgroundView
+            
+            return cell
+        }
         
-        cell.configure(category: category.name, cardsInCategory: category.count)
+        let cell = tableView.dequeueCell(withType: NoCategoriesCell.self, for: indexPath) as! NoCategoriesCell
         
-        // Set custom selection color
-        let selectedBackgroundView = UIView()
-        selectedBackgroundView.backgroundColor = .systemGray6
-        cell.selectedBackgroundView = selectedBackgroundView
+        cell.configure(text: "Категории отсутствуют")
+        cell.selectionStyle = .none
         
         return cell
     }
