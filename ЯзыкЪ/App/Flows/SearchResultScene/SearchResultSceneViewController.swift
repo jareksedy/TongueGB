@@ -101,6 +101,7 @@ class SearchResultSceneViewController: UIViewController {
             if let cardView = cardView, cardView.word == word {
                 cardsStackView.killView(cardView)
                 cards?.removeAll { $0.word == word }
+                presenter.deleteWordCardFromFirebase(word: word)
                 
                 UIView.animate(withDuration: 0.18) {
                     self.cardsStackView.layoutSubviews()
