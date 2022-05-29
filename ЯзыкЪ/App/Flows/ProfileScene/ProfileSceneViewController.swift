@@ -115,6 +115,7 @@ extension ProfileSceneViewController: UITableViewDataSource {
 // MARK: - Implementation
 extension ProfileSceneViewController: ProfileSceneViewDelegate {
     func proceedToLoginScreen() {
+        AppDefaults.shared.userSignedIn = false
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let entryPoint = storyboard.instantiateViewController(withIdentifier: "EntryPoint") as! MainNavigationController
         present(entryPoint, animated: true)

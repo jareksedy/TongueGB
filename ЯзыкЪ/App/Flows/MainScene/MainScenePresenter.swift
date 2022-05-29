@@ -28,12 +28,6 @@ final class MainScenePresenter {
         firebaseAPI.storeWordCard(card)
     }
     
-    func authUserForFirebase(_ user: UserFirebase) {
-        firebaseAPI.signInUser(user, completion: {
-            self.viewDelegate?.fetchAllCards()
-        })
-    }
-    
     func fetchCardsFromFirebase(completion: @escaping ([CardFirebase]?) -> Void) {
         var cards: [CardFirebase] = []
         

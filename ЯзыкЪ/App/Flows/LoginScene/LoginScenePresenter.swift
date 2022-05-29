@@ -22,4 +22,10 @@ final class LoginScenePresenter {
             self.viewDelegate?.proceedToMainScene()
         })
     }
+    
+    func authUserForFirebase(_ user: UserFirebase) {
+        firebaseAPI.signInUser(user, completion: {
+            self.viewDelegate?.proceedToMainScene()
+        })
+    }
 }
