@@ -132,4 +132,11 @@ class FirebaseAPI: Firebasable {
             completion(categories.isEmpty ? nil : categories)
         }
     }
+    
+    //MARK: -- Delete funcs
+    
+    func deleteWordCard(_ word: String, _ userEmail: String) {
+        guard let signedUserEmail = authService.currentUser?.email, signedUserEmail == userEmail else { return }
+        self.databaseService.reference(withPath: signedUserEmail.modifyEmailAddress()).child("cards").child(word).removeValue()
+    }
 }

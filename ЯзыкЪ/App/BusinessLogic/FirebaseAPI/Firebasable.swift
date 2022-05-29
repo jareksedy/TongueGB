@@ -20,4 +20,7 @@ protocol Firebasable {
     func fetchAllCards(completion: @escaping ([CardFirebase]?) -> Void)
     func fetchWordCardsByCategory(_ category: String, completion: @escaping ([CardFirebase]?) -> Void)
     func fetchCategoriesList(completion: @escaping([CategoryFirebase]?) -> Void)
+    
+    //MARK: - Deleting
+    func deleteWordCard(_ word: String, _ userEmail: String)
 }
