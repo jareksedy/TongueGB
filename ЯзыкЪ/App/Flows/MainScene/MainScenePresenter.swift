@@ -41,4 +41,9 @@ final class MainScenePresenter {
             completion(cards.isEmpty ? nil : cards)
         }
     }
+    
+    func deleteWordCardFromFirebase(word: String) {
+        guard let userEmail = firebaseAPI.authService.currentUser?.email else { return }
+        firebaseAPI.deleteWordCard(word, userEmail)
+    }
 }
