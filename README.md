@@ -43,4 +43,9 @@
 - Yandex Dictionary
 
 Developed by "Like-Minded People"
-© Copyright all rights reserved
+© Copyright all rights reserved.
+
+Licensed:
+
+![OSIApproved_1](https://user-images.githubusercontent.com/79941275/170940288-8cc2c2ae-ad9f-4228-83eb-8b32de0239a3.png)
+
