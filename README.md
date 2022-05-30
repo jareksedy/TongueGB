@@ -34,6 +34,7 @@
 - Firebase
 - KeychainSwift
 - Alamofire
+
 Используемые функционалы:
 - AppleId Auth
 - Firebase Auth
